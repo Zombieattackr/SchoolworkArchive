@@ -1,0 +1,290 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{pgfplots}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\usepackage{multicol}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 3} \smallskip\\ Due: 5pm, Friday, September 23, 2022}
+\\Hayden Fuller
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 2, page 38--40: 2(a,c,f), 3(a,c), 10(a,b), 12.
+\item
+Exercises from Chapter 3, page 44: 1, 2, 4.
+\item
+Exercises from Chapter 3, pages 50--51: 1, 2, 3(e,g), 4(c,g), 6(a,b).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) A population $y(t)$ satisfies the IVP $y'=y^2-4y+3$, $y(0)=y_0$.  Which of the following choices describes the behavior of the population?
+\begin{description}
+\item[A] $y(t)=3$ if $y_0=3$
+\item[B] $y(t)\rightarrow1$ as $t\rightarrow\infty$ if $y_0=2$		
+\item[C] $y(t)\rightarrow+\infty$ as $t\rightarrow\infty$ if $y_0=5$
+\item[D] XAll of these choicesX
+\end{description}
+
+\item (5 points) A population $y(t)$ solves $y\sp\prime=f(y)$, and has a semi-stable equilibrium at $y=0$, an unstable equilibrium at $y=1$, and an asymptotically stable equilibrium at $y=2$.  Which function $f(y)$ best describes the behavior of the population?
+\begin{description}
+\item[A] $f(y)=3y\sp2(y-1)(y-2)$
+\item[B] X$f(y)=2y(y\sp2-y)(2-y)$X
+\item[C] $f(y)=4(y\sp2-y)(y\sp2-2y)$
+\item[D] $f(y)=5(y\sp2-1)(y\sp2-2)$
+\end{description}
+
+\newpage
+\item (5 points) Consider the linear equation $(\sin t)y\sp{\prime\prime}+(\ln(t-1))y\sp\prime-(\sqrt{5-t})y=0$ with initial conditions $y(4)=0$ and $y\sp\prime(4)=-1$.  For which interval does a unique solution of the IVP exist?
+\begin{description}
+\item[A] $1<t<5$
+\item[B] $1<t<\pi/2$		
+\item[C] X$\pi<t<5$X
+\item[D] None of these choices
+\end{description}
+
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points) A population $y(t)$ of fish in a lake satisfies the rate equation
+\[
+y'=f(y),\qquad f(y)=2y\left(1-{y\over5}\right)-H,
+\]
+where $H\ge0$ is a (constant) rate at which fish are removed from the lake due to an active group of fishermen.
+\begin{enumerate}
+\item
+Plot $f(y)$ versus $y$ for the case $H=0$ and let $y_0$ denote the stable equilibrium population of fish.  Determine $y_0$ from the phase plot.  This value corresponds to the stable population when there is no fishing.
+\\
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left, 
+	xlabel = \(y\), 
+	ylabel = {\(f(x)\)},
+	]
+\addplot[
+	domain=-1:6, 
+	samples=700, 
+	color=blue,
+	]
+	{2*x*(1-(x/5))-0};
+\addlegendentry{$2y(1-\frac{y}{5})-0$}
+\addplot[
+	domain=-1:6,
+	samples=10,
+	color=black,
+	]
+	{0};
+\end{axis}
+\end{tikzpicture}
+\\$y_0 = 5$
+\\sorry, I can't find a good way to actually lable the graph with this yet
+\\
+
+\item
+At the beginning of a fishing season, the fishermen become energetic and begin catching fish at a rate $H=1$.  Plot $f(y)$ versus $y$ for $H=1$ and let $y_1$ denote the new stable equilibrium population of fish assuming $y(0)=y_0$.  Determine $y_1$.
+\\
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left, 
+	xlabel = \(y\), 
+	ylabel = {\(f(x)\)},
+	]
+\addplot[
+	domain=-1:6, 
+	samples=700, 
+	color=blue,
+	]
+	{2*x*(1-(x/5))-1};
+\addlegendentry{$2y(1-\frac{y}{5})-1$}
+\addplot[
+	domain=-1:6,
+	samples=10,
+	color=black,
+	]
+	{0};
+\end{axis}
+\end{tikzpicture}
+\\$y_1 = (5+\sqrt{15})/2$
+\item
+Note how the phase plots change from $H=0$ to $H=1$, and let $H_c$ denote a critical fishing rate such that for $H>H_c$ the fish population tends to zero for any initial state.  Determine $H_c$, which corresponds to the maximum allowable fishing rate that supports a nonzero fish population in the lake.
+\\
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left, 
+	xlabel = \(y\), 
+	ylabel = {\(f(x)\)},
+	]
+\addplot[
+	domain=-1:6, 
+	samples=700, 
+	color=blue,
+	]
+	{2*x*(1-(x/5))-2.5};
+\addlegendentry{$2y(1-\frac{y}{5})-2.5$}
+\addplot[
+	domain=-1:6,
+	samples=10,
+	color=black,
+	]
+	{0};
+\end{axis}
+\end{tikzpicture}
+\\$H_c = 2.5$
+\end{enumerate}
+
+\bigskip
+\item (15 points) Let $y_1(t)=\sqrt{t}$ and $y_2(t)=t\sp{-2}$, and consider the linear, homogeneous, second-order ODE
+\[
+y\sp{\prime\prime}+{5\over2t}\,y\sp\prime-{1\over t\sp2}\,y=0,\qquad t>0
+\]
+\begin{enumerate}
+\item
+Verify that $y_1(t)$ and $y_2(t)$ are solutions of the ODE, and compute the Wronskian of $y_1(t)$ and $y_2(t)$ to show that the solutions are independent (and thus form a fundamental set of solutions).
+\\$y_1(t)=t\sp{1/2}$, $y_1'(t)=\frac{1}{2}t\sp{-1/2}$, $y_1''(t)=\frac{-1}{4}t\sp{-3/2}$
+\\$(\frac{-1}{4}t\sp{-3/2})+\frac{5}{2t}(\frac{1}{2}t\sp{-1/2})-\frac{1}{t^2}(t\sp{1/2})=0$
+\\$(\frac{-1}{4}t\sp{-3/2})+(\frac{5}{4}t\sp{-3/2})-(t\sp{-3/2})=0$
+\\$t\sp{-3/2}(\frac{-1}{4}+\frac{5}{4}-\frac{4}{4})=0$
+\\$0=0$
+\\$y_2(t)=t\sp{-2}$, $y_2'(t)=-2t\sp{-3}$, $y_2''(t)=6t\sp{-4}$
+\\$(6t\sp{-4})+\frac{5}{2t}(-2t\sp{-3})-\frac{1}{t^2}(t\sp{-2})=0$
+\\$(6t\sp{-4})+(-5t\sp{-4})-(t\sp{-4})=0$
+\\$t\sp{-4}(6-5-1)=0$
+\\$0=0$
+\\ 
+$W=\det\begin{bmatrix}t\sp{1/2} & t\sp{-2}\\\frac{1}{2}t\sp{-1/2} & -2t\sp{-3}\end{bmatrix}=-2t\sp{-5/2}-\frac{1}{2}t\sp{-5/2}=\frac{-5}{2}t\sp{-5/2}\neq0$ if $t\neq0$
+\item
+The general solution of the ODE has the form $y(t)=C_1y_1(t)+C_2y_2(t)$, where $C_1$ and $C_2$ are constants.  Find the constants satisfying the initial conditions $y(1)=2$ and $y\sp\prime(1)=-1$.
+\\$y(1)=2=C_1\sqrt{1}+C_2(1\sp{-2})=C_1+C_2$
+\\$y'(1)=-1=C_1(\frac{1}{2}1\sp{-1/2})+C_2(-2*1\sp{-3})=\frac{1}{2}C_1-2C_2$
+\\$C_1+C_2=2$, $\frac{1}{2}C_1-2C_2=-1$, 
+\\$C_1=2-C_2$, $1-\frac{1}{2}C_2-2C_2=-1$
+\\$1-\frac{5}{2}C_2=-1$, $2=\frac{5}{2}C_2$
+\\$C_2=\frac{4}{5}$, $\frac{4}{5}+C_1=2$
+\\$C_1=\frac{6}{5}$, $C_2=\frac{4}{5}$
+
+
+
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) Consider the two constant-coefficient, second-order ODEs:
+\[
+\hbox{(DE 1)}\quad y\sp{\prime\prime}+2y\sp\prime-8y=0\qquad\qquad\hbox{(DE 2)}\quad 3y\sp{\prime\prime}+4y\sp\prime-4y=0
+\]
+\begin{enumerate}
+\item Find all solutions of the form $y(t)=e\sp{rt}$, where $r$ is a constant, for both ODEs.
+\\
+\begin{minipage}{0.45\textwidth}
+DE1
+\\$r^2+2r-8=0=(r+4)(r-2)$
+\\$r_1=-4$, $r_2=2$
+\\$y_1=e\sp{-4t}$, $y_2=e\sp{2t}$
+\\$y(t)=C_1e\sp{-4t}+C_2e\sp{2t}$
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+DE2
+\\$3r^2+4r-4=0=(r-\frac{2}{3})(r+2)$
+\\$r_1=\frac{2}{3}$, $r_2=-2$
+\\$y_1=e\sp{\frac{2}{3}t}$, $y_2=e\sp{-2t}$
+\\$y(t)=C_1e\sp{\frac{2}{3}t}+C_2e\sp{-2t}$
+\end{minipage}
+\\
+
+\item Find the solution satisfying the initial conditions $y(0)=0$ and $y\sp\prime(0)=1$ for both ODEs.
+\\
+\begin{minipage}{0.45\textwidth}
+DE1
+\\$y(t)=C_1e\sp{-4t}+C_2e\sp{2t}$
+\\$y'(t)=-4C_1e\sp{-4t}+2C_2e\sp{2t}$
+\\$y(0)=0=C_1+C_2$
+\\$y'(0)=1=-4C_1+2C_2$
+\\$C_1=-C_2$
+\\$1=4C_2+2C_2=6C_2$
+\\$C_2=\frac{1}{6}$
+\\$C_1=-\frac{1}{6}$
+\\$y(t)=-\frac{1}{6}e\sp{-4t}+\frac{1}{6}e\sp{2t}$
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+DE2
+\\$y(t)=C_1e\sp{\frac{2}{3}t}+C_2e\sp{-2t}$
+\\$y'(t)=\frac{2}{3}C_1e\sp{\frac{2}{3}t}-2C_2e\sp{-2t}$
+\\$y(0)=0=C_1+C_2$
+\\$y'(0)=1=\frac{2}{3}C_1-2C_2$
+\\$C_1=-C_2$
+\\$1=-\frac{2}{3}C_2-2C_2=-\frac{8}{3}C_2$
+\\$C_2=-\frac{3}{8}$
+\\$C_1=\frac{3}{8}$
+\\$y(t)=\frac{3}{8}e\sp{\frac{2}{3}t}+-\frac{3}{8}e\sp{-2t}$
+\end{minipage}
+\\
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

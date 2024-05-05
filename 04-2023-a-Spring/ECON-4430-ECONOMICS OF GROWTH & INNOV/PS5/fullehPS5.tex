@@ -1,0 +1,145 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{Econ of Growth and Innovation \\
+PS5}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{1} 
+(Are ideas getting harder to find?) This question asks you to consider the scale effects present in the endogenous growth model featuring input varieties developed in class. Initially, assume the set-up is identical to the in-class version: perpetual patents for intermediate input innovators, a fixed cost of R\&D equal to $\eta > 0$, and final good production of each firm i given by $Y_i=L_i^{1-\alpha}\Sigma_{N(t)}X_{ij}^\alpha$
+\begin{enumerate}[(a)]
+\item Explain in words what scale effects are, and the intuition for why they are present in this model. Show directly that they are present in the model (you may refer to an equation we derived in class without deriving it yourself).
+\\Scale effects are when things change based on the size of the economy, in our case of the IV model, growth rate increasing with respect to population. The intuition behind this is that an increased population demands more, increasing profits, increasing demand in the LF market, increasing the resources invested in R\&D, and increasing the growth rate. This is shown in the equation $\gamma_c=\frac{1}{\theta}(\frac{L}{\eta}\cdot\frac{1-\alpha}{\alpha}\cdot\alpha^{2/(1-\alpha)}-\rho)$, where increasing $L$ increases $\gamma_c$, so positive population growth $n$ makes the growth rate $\gamma_c$ grow at the same rate.
+\item Now suppose that the cost of R\&D is not constant, but instead depends on N(t) in the following way $\eta(N) = \phi N(t)^\sigma$ ; $\phi > 0$ ; $\sigma > 0$ Interpret this formulation. Do you think it is realistic?
+\\Yes, it can be explained in mutiple ways, mainly that as $N$ increases, we run out of easy ideas, and the remaining ideas are harder to find.
+\item Assume that a balanced growth equilibrium exists in this version of the model (it does), derive an expression for the equilibrium interest rate $r(t)$. Hint: it is useful to consider the no-arbitrage argument for the risk free asset (bond) paying $r$ and owning an intermediate input supplier. What is $\dot v$ in this version?
+\\$r\eta dt=\pi dt+\dot v dt$
+\\free entry requires $v=\eta=\phi N(t)^\sigma$
+\\$\dot v=\phi\sigma N(t)^{\sigma-1}$
+\\$r\phi N(t)^\sigma=pi+\phi\sigma N(t)^{\sigma-1}$
+\\$r=\frac{\pi}{\phi N(t)^\sigma}+\frac{\sigma}{N(t)}$
+\\$r=\frac{L}{\phi N(t)^\sigma}\cdot\frac{1-\alpha}{\alpha}\cdot\alpha^{2/(1-\alpha)}+\frac{\sigma}{N(t)}$
+\\$\dot v=\phi\sigma N(t)^{\sigma-1}$
+\item How does the interest rate depend upon N(t) and the rate of growth of N? Interpret this.
+\\they have the relationship $r=1/N(t)^\sigma+\sigma/N(t)$, so as $N(t)$ increases with time, $r$ will decrease, at a decreasing rate. As ideas get harder to find, it will cost more to look for them, so there will be less demand in the LF market. Increasing the rate of growth $\sigma$ will make $r$ decrease faster.
+\item Using your answer from part (d), explain how the model can be consistent with positive population growth and a balanced growth equilibrium. (You don't need to show this directly mathematically, just provide a sentence or two of intuition.)
+\\The population growth increases demand, profits, and growth rate over time, but this can be balanced out by the ideas getting harder to find, decreasing the growth rate over time, and possibly getting us to a balanced equilibrium
+\end{enumerate}
+
+
+\newpage
+
+\vspace{0.1in}
+
+\item \textbf{2} 
+(Policy in the IV model)
+\begin{enumerate}[(a)]
+\item Explain the concepts of static and dynamic ineffciency in the context of the input variety model (general description). How do we determine if the model is statically and/or dynamically ineffcient?
+\\Dynamic efficiency is how resources are divided between the present and the future to maximize growth. Static efficiency is how today's resources are divided up to maximize consumption, in the IV model, between consumption and R\&D.
+\item Use our depiction of patent protected monopoly in the input market to illustrate/describe the model's two types of ineffciency.
+\\The monopoly has static inefficiency because monopolies always under produce to maximize profits. It's dynamically inefficient because they only internalize their profit and not total surplus, so they only invest in R\&D until $r=\frac{\pi}{\eta}$, whereas a social planner would go to $r=\frac{\pi+cs+DWL}{\eta}$
+\item Consider the following policy (A simplified version of the Bayh-Doyle Act passed in 1980) - the government subsidizes R\&D through a grant system, decreasing the private cost of innovation to $\beta\eta$, where $0 < \beta < 1$. The government allows firms (or universities) that receive a grant to obtain a patent on the resulting innovation. However, the government retains "march-in rights," which allows the government to assume control of licensing the innovation (essentially voiding the patent) if the government can show that it serves the public interest.
+\begin{enumerate}
+\item Describe how this policy attempts to strike a balance between promoting static and dynamic effciency.
+\\It solves dynamic inefficiency by subsudizing R\&D, increasing growth to more socially optimal levels. It can solve static inefficiency by allowing the government to void the patent if prices are being set far too high above socially optimal levels.
+\item What do you think of the policy? Do you think it will be successful in practice? Do you expect any problems to come up?
+\\What stands out to me is that the possible loss of profit by the solution to static inefficiency will decrease the incentive to innovate, working against the R\&D subsidy that was working to solve dynamic inefficiency. This means the subsidies would have to be quite high to balance out that profit loss.
+\end{enumerate}
+\end{enumerate}
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

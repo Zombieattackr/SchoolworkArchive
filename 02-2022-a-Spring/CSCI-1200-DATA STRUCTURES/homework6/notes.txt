@@ -1,0 +1,12 @@
+keep track of stars in each row/col with an array
+areas are objects stored in vector ars with chars as names, a size, and vectors of vectors of ints, 
+	representing vector of rows, vector of column chords
+sort the vector of these objects using opor< which compares the size? could be better to leave it as is.
+only needs to look at relative chordinates when doing a circle
+while looking for position of star, first check if the row is possible, 
+if it is, then check if the column is possible, 
+if it is, then check surrounding 8 for others
+start search for second star where the first one left off, and so on.
+
+//setup
+//create array object, use HW5 for refrence of simple class in the same file

@@ -1,0 +1,233 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 4} \smallskip\\ Due: 5pm, Friday, September 30, 2022}
+\\Hayden Fuller
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 3, page 50--51: 3(j), 4(h,i,j), 5(a,d,g,f), 6(c).
+\item
+Exercises from Chapter 3, pages 77--78: 1(a,b,c,d), 2(a,b).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Select the linear, {\em homogeneous} DE for which $y(t)=e\sp{-3t}$ is a solution
+\begin{description}
+\item[A] $y\sp{\prime\prime}+2y\sp\prime=3e\sp{-3t}$
+\item[B] $y\sp{\prime\prime}+9y=0$
+\item[C] X$ty\sp{\prime\prime}-y\sp\prime-3(1+3t)y=0$X
+\item[D] None of these choices.
+\end{description}
+
+\item (5 points) Assume $y(t)$ solves the ODE $y\sp{\prime\prime}+by\sp\prime+cy=0$ and the initial conditions $y(0)=0$, $y\sp\prime(0)=1$.  For what values of $b$ and $c$ does the solution decay to zero as $t\rightarrow\infty$:
+\begin{description}
+\item[A] X$b=4$ and $c=4$X
+\item[B] $b=-2$ and $c=6$
+\item[C] Both choices A and B
+\item[D] Neither choice A or B
+\end{description}
+
+\item (5 points) Select the Cauchy-Euler equation for which $y(x)=x\sp2\cos(\ln x)$, $x>0$, is a solution
+\begin{description}
+\item[A] $x\sp2y\sp{\prime\prime}-5xy\sp\prime+5y=0$
+\item[B] X$x\sp2y\sp{\prime\prime}-3xy\sp\prime+5y=0$X
+\item[C] $x\sp2y\sp{\prime\prime}-3xy\sp\prime+y=0$
+\item[D] None of these choices
+\end{description}
+
+\end{enumerate}
+
+\newpage\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\bigskip
+\item (15 points) Consider the linear, homogeneous, second-order ODE
+\[
+y\sp{\prime\prime}+{3\over2t}\,y\sp\prime-{3\over t\sp2}\,y=0,\qquad t>0
+\]
+\begin{enumerate}
+\item
+Verify that $y_1(t)=t\sp{-2}$ is a solution of the ODE, and find a second solution $y_2(t)$ using the method of reduction of order.
+\\$y=t^{-2}$\qquad$y'=-2t^{-3}$\qquad$y''=6t^{-4}$
+\\$6t^{-4}+\frac{3}{2t}(-2)t^{-3}-\frac{3}{t^2}t^{-2}=0$
+\\$6t^{-4}-3t^{-4}-3t^{-4}=0$
+\\$0=0$
+\\$y_2(t)=y_1(t)h(t)=t^{-2}h(t)$
+\\$y'_2(t)=-2t^{-3}h(t)+t^{-2}h'(t)$
+\\$y''_2(t)=(6t^{-4}h(t)-2t^{-3}h'(t))+(-2t^{-3}h'(t)+t^{-2}h''(t))=6t^{-4}h(t)-4t^{-3}h'(t)+t^{-2}h''(t)$
+\\$y''_2+\frac{3}{2t}y'_2-\frac{3}{t^2}y=0$
+\\$(6t^{-4}h(t)-4t^{-3}h'(t)+t^{-2}h''(t))+\frac{3}{2t}(-2t^{-3}h(t)+t^{-2}h'(t))-\frac{3}{t^2}t^{-2}h(t)=0$
+\\$6t^{-4}h(t)-4t^{-3}h'(t)+t^{-2}h''(t)+-3t^{-4}h(t)+\frac{3}{2}t^{-3}h'(t)-3t^{-4}h(t)=0$
+\\$-\frac{5}{2}t^{-3}h'(t)+t^{-2}h''(t)=0$
+\\$u=h'$, $u'=h''$
+\\$-\frac{5}{2}t^{-3}u(t)+t^{-2}u'(t)=0$
+\\$t^{-2}u'=\frac{5}{2}t^{-3}u$
+\\$\frac{1}{u}u'=\frac{5}{2}t^{-1}$
+\\$\int\frac{1}{u}du=\int\frac{5}{2}t^{-1}dt$
+\\$\ln|u|=\frac{5}{2}\ln|t|+C$
+\\$u=Ce^{\frac{5}{2}\ln|t|}=Ct^{\frac{5}{2}}$
+\\$h(t)=\int u dt=\int Ct^{\frac{5}{2}}dt$
+\\$h(t)=\frac{2}{7}Ct^{\frac{7}{2}}+D$
+\\$C=\frac{7}{2}$ and $D=0$
+\\$h(t)=t^{\frac{7}{2}}$
+\\$y_2(t)=y_1(t)h(t)=(t^{-2})(t^{\frac{7}{2}})$
+\\$y_2(t)=t^{\frac{3}{2}}$
+\item
+Compute the Wronskian of $y_1(t)$ and $y_2(t)$ to show that the solutions are independent (and thus form a fundamental set of solutions).
+\\$y_1(t)=t^{-2}$\qquad$y_2(t)=t^{\frac{3}{2}}$
+\\$y'_1(t)=-2t^{-3}$\qquad$y'_2(t)=\frac{3}{2}t^{\frac{1}{2}}$
+\\$W(t)=\det\begin{bmatrix}t^{-2} & t^{\frac{3}{2}} \\ -2t^{-3} & \frac{3}{2}t^{\frac{1}{2}}\end{bmatrix}=(t^{-2}*\frac{3}{2}t^{\frac{1}{2}})-(t^{\frac{3}{2}}*-2t^{-3})=\frac{3}{2}t^{\frac{-3}{2}}+2t^{\frac{-3}{2}}=\frac{7}{2}t^{\frac{-3}{2}}$
+\\$\frac{7}{2}t^{\frac{-3}{2}}\ne0$ for $t>0$, so the solutions are independent.
+\end{enumerate}
+
+\item (15 points)  Consider the initial-value problem
+\[
+y\sp{\prime\prime}+4y\sp\prime+13y=0,\qquad y(0)=-1,\quad y\sp\prime(0)=5
+\]
+\begin{enumerate}
+\item Find real-valued solutions $y_1(t)$ and $y_2(t)$ in the general solution $y(t)=C_1y_1(t)+C_2y_2(t)$ of the constant-coefficient ODE, and then apply the initial conditions to determine the constants in the general solution.
+\\$r=\frac{-4\pm\sqrt{16-4*13}}{2}=\frac{-4\pm\sqrt{-36}}{2}=\frac{-4\pm6i}{2}=-2\pm3i$
+\\$y_1(t)=e^{(-2+3i)t}$\qquad$y_2(t)=e^{(-2-3i)t}$
+\\$y_1(t)=e^{-2t}\cos(3t)$\qquad$y_2(t)=e^{-2t}\sin(3t)$
+\\$y'_1(t)=-2e^{-2t}\cos(3t)-3e^{-2t}\sin(3t)$\qquad$y'_2=-2e^{-2t}\sin(3t)+3e^{-2t}\cos(3t)$
+\\$y(t)=C_1e^{-2t}\cos(3t)+C_2e^{-2t}sin(3t)$
+\\$y'(t)=C_1(-2e^{-2t}\cos(3t)-3e^{-2t}\sin(3t))+C_2(-2e^{-2t}\sin(3t)+3e^{-2t}\cos(3t))$
+\\$y(0)=-1=C_1e^0\cos(0)+C_2e^0sin(0)=C_1=-1$
+\\$y'(0)=5=-(-2e^0\cos(0)-3e^0\sin(0))+C_2(-2e^0\sin(0)+3e^0\cos(0))$
+\\$y'(0)=5=(2)+C_2(3)$\qquad$3C_2=3$\qquad$C_2=1$
+\\$C_1=-1$\qquad$C_2=1$
+\\$y(t)=-e^{-2t}\cos(3t)+e^{-2t}sin(3t)$
+\item Write the solution in part (a) in the \lq\lq polar'' form $y(t)=Re\sp{\lambda t}\cos(\omega t-\phi)$ following an example discussed in class.  Give the constants $R$, $\lambda$, $\omega$ and $\phi$, and use the polar form to sketch the solution.
+\\$C_1=-1=R\cos(\phi)$\qquad$C_2=1=R\sin(\phi)$
+\\$-\cos(\phi)=\sin(\phi)$\qquad$\phi=-\frac{\pi}{4}+k\pi$, use $k=0$, $\phi=-\frac{\pi}{4}$
+\\$1=R\sin(-\frac{\pi}{4})=R(\frac{-\sqrt{2}}{2})$\qquad$R=\frac{2}{-\sqrt{2}}=-\sqrt{2}$
+\\$R=-\sqrt{2}$\qquad$\phi=\frac{-\pi}{4}$\qquad$\lambda=-2$\qquad$\omega=3$
+\\$y(t)=-\sqrt{2}e^{-2t}\cos(3t+\frac{\pi}{4})$
+\\I can't figure out how to add a polar graph, but it can be found at:
+\\https://www.desmos.com/calculator/yewobyquvi
+\end{enumerate}
+
+
+\bigskip
+\item (15 points)
+\begin{enumerate}
+\item
+Find $y(t)$ satisfying the initial-value problem
+\[
+9y\sp{\prime\prime}+6y\sp\prime+y=0,\qquad y(0)=1,\quad y\sp\prime(0)={2\over3}
+\]
+\\$y(t)=e^{rt}$
+\\$9r^2+6r+1=0$
+\\$(3r+1)^2=0$
+\\$r=-\frac{1}{3}=r_1=r_2$
+\\$y_1(t)=e^{rt}$\qquad$y_2(t)=te^{rt}$
+\\$y_1(t)=e^{-\frac{1}{3}t}$\qquad$y_2(t)=te^{-\frac{1}{3}t}$
+\\$y(t)=C_1e^{-\frac{1}{3}t}+C_2te^{-\frac{1}{3}t}$
+\\$y'(t)=-\frac{1}{3}C_1e^{-\frac{1}{3}t}+C_2(e^{-\frac{1}{3}t}-\frac{1}{3}te^{-\frac{1}{3}t})$
+\\$y(0)=1=C_1e^0+C_20e^0=C_1=1$
+\\$y'(0)=\frac{2}{3}=-\frac{1}{3}1e^0+C_2(e^0-0)=-\frac{1}{3}+C_2$
+\\$C_1=1$\qquad$C_2=1$
+\\$y(t)=e^{-\frac{1}{3}t}+te^{-\frac{1}{3}t}$
+\\$y(t)=(1+t)e^{-\frac{1}{3}t}$
+\item
+Find real-valued functions $u_1(x)$ and $u_2(x)$ in the general solution $u(x)=C_1u_1(x)+C_2u_2(x)$ of the Cauchy-Euler equation
+\[
+4x\sp2u\sp{\prime\prime}+8xu\sp\prime+u=0,\qquad x>0
+\]
+Find $C_1$ and $C_2$ in the general solution so that $u(1)=0$ and $u\sp\prime(1)=3$.
+\\$u=x^r$
+\\$ax^2(r(r-1)x^{r-2})+bx(rx^{x-1}+cx^r=0$
+\\$a=4$\qquad$b=8$\qquad$c=1$
+\\$x^r(ar(r-1)+br+c)=0$
+\\$ar(r-1)+br+c=0$
+\\$4r(r-1)+8r+1=0$
+\\$4r^2+4r+1=0$
+\\$(2r+1)^2=0$
+\\$r=r_1=r_2=-\frac{1}{2}$
+\\$u_1(x)=x^r$\qquad$u_2(x)=x^r\ln(x)$
+\\$u(x)=C_1x^r+C_2x^r\ln(x)$
+\\$u(x)=C_1x^{-\frac{1}{2}}+C_2x^{-\frac{1}{2}}\ln(x)$
+\\$u'(x)=-\frac{1}{2}C_1x^{-\frac{3}{2}}+C_2(-\frac{1}{2}x^{-\frac{3}{2}}\ln(x)+x^{-\frac{1}{2}}\frac{1}{x})$
+\\$u(1)=0=C_1*1+C_2*1*0=C_1=0$
+\\$u'(1)=3=-\frac{1}{2}*0*1+C_2(-\frac{1}{2}*1*0+1*1)=-\frac{1}{2}*0+C_2(1)=C_2=3$
+\\$C_1=0$\qquad$C_2=3$
+\\$u(x)=0*x^{-\frac{1}{2}}+3*x^{-\frac{1}{2}}\ln(x)$
+\\$u(x)=3x^{-\frac{1}{2}}\ln(x)$
+
+
+
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

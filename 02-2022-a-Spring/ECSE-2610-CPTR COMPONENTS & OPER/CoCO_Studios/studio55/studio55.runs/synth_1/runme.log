@@ -1,0 +1,288 @@
+
+*** Running vivado
+    with args -log toplevel5.vds -m64 -mode batch -messageDb vivado.pb -notrace -source toplevel5.tcl
+
+
+****** Vivado v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source toplevel5.tcl -notrace
+Command: synth_design -top toplevel5 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 27696 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 306.113 ; gain = 99.125
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'toplevel5' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/toplevel5.vhd:21]
+INFO: [Synth 8-3491] module 'a74x148priorityencoder8to3' declared at 'C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x148priorityencoder8to3.vhd:4' bound to instance 'encoder' of component 'a74x148priorityencoder8to3' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/toplevel5.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'a74x148priorityencoder8to3' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x148priorityencoder8to3.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'a74x148priorityencoder8to3' (1#1) [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x148priorityencoder8to3.vhd:12]
+INFO: [Synth 8-3491] module 'a74x138decoder3to8' declared at 'C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x138decoder3to8.vhd:4' bound to instance 'decoder' of component 'a74x138decoder3to8' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/toplevel5.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'a74x138decoder3to8' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x138decoder3to8.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'a74x138decoder3to8' (2#1) [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x138decoder3to8.vhd:12]
+INFO: [Synth 8-3491] module 'a74x138decoder3to8' declared at 'C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/a74x138decoder3to8.vhd:4' bound to instance 'decoder2' of component 'a74x138decoder3to8' [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/toplevel5.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'toplevel5' (3#1) [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/sources_1/new/toplevel5.vhd:21]
+WARNING: [Synth 8-3331] design toplevel5 has unconnected port LED[7]
+WARNING: [Synth 8-3331] design toplevel5 has unconnected port LED[5]
+WARNING: [Synth 8-3331] design toplevel5 has unconnected port sw[9]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 343.574 ; gain = 136.586
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 343.574 ; gain = 136.586
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100MHZ]'. [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Hayden/Desktop/ExportBack/CoCO_Studios/studio55/studio55.srcs/constrs_1/new/testenc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel5_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel5_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 626.246 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design toplevel5 has unconnected port sw[9]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 626.246 ; gain = 419.258
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 626.246 ; gain = 419.258
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT3  |     2|
+|2     |LUT4  |     1|
+|3     |LUT5  |     2|
+|4     |LUT6  |    12|
+|5     |IBUF  |    18|
+|6     |OBUF  |    14|
+|7     |OBUFT |     2|
++------+------+------+
+
+Report Instance Areas: 
++------+----------+-------------------+------+
+|      |Instance  |Module             |Cells |
++------+----------+-------------------+------+
+|1     |top       |                   |    51|
+|2     |  decoder |a74x138decoder3to8 |     4|
++------+----------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 626.246 ; gain = 419.258
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 626.246 ; gain = 115.145
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 626.246 ; gain = 419.258
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 7 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 626.246 ; gain = 401.969
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 626.246 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 16:44:36 2022...

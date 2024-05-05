@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Intro to Elctronics S 2024 Crib Sheet Exam 1 Hayden Fuller
+\begin{large}
+\\Basic:
+\\Voltage divider: $V_2=\frac{R_2}{R_1+R_2}$ \hfill Current divider: $I_2=I\frac{G_2}{G_1+G_2}$
+\\Capacitor: $Z_C=\frac{1}{jwC}$, $I=C\frac{dV}{dt}$, $E=\frac{1}{2}CV^2$ \hfill Inductor: $Z_L=jwC$, $V=C\frac{dI}{dt}$, $E=\frac{1}{2}LI^2$
+\\LCR: resonance: $w=\frac{1}{\sqrt{LC}}$
+\\Superposition: Short voltage, open current, analyze the thing, add.
+\\Voltage to current: $I_{IS}=V_{VS}$, $R_{CS}=\frac{1}{R{VS}}$
+\\OP AMP:      Inverting Amp: $A=\frac{V_{out}}{V_{in}}=-\frac{R_F}{R_in}$
+\\Summing Inverting Amp: $V_{out}=-R_F(\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3})$
+\\Subtraction: Inverting amp with voltage divider on plus: $V_{out}=V_{plus}\frac{R_G}{R_{in,plus}+R_G}\cdot\frac{R_{in,minus}+R_F}{R_{in,minus}}-V_{minux}\frac{R_F}{R_{in,minus}}$
+\\H response: $H(w)=\frac{V_{out}}{V_{in}}$
+\\Integrator: $R_F$ is a capacitor, $V_{out}=-\frac{1}{R_{in}C}\int_0^tV_{in}dt$
+\\Detailed amplification: op amp
+\\diff: $V_{out}=A_{diff}(V_+-V_-)$
+\\CM: $V_{out}=A_{CM}(V_++V_-)$
+\\total amplification: $V_{out}=A_{diff}(V_+-V_-)+A_{CM}(V_++V_-)$
+\\CMRR: common mode rejection ratio: $\frac{A_{diff}}{A_{CM}}$, $20\log(CMRR)dB$
+\\Gain Bandwidth Product: Gain$\cdot$Bandwidth, $A\cdot f$
+\\Constant gain at low frequency, decreases linearly because slew rate at high frequency
+\\knee frequency: $w=\frac{1}{RC}=\frac{1}{T}=\frac{1}{2\pi RC}$, $=>$ $H(w)=\frac{1}{\sqrt{2}}$, $-3dB$
+\\above knee frequncy: $H(w)=\frac{1}{wRC}$, $-20dB$ per decade
+\\high pass: $H(w)=wRC$, $20dB$ per decade, slope multiplied by N stages.
+\\Slew rate: $=dV_{out}/dt$
+\\ex: $SR=1V/us$, pulse $0-2V$, $T=2us$,  1V triangle wave
+\\good sine wave: $SR>=2\pi f V_0$
+\\DIODES:     forward bias, apply +V to holes, push holes(p) and electrons(n) together, get conduction
+\\IV: $I=I_0(e^{\frac{V}{V_t}}-1)$
+\\Thermal voltage: $V_t=\frac{kT}{e}=26mV$
+\\Threashold voltage: $V_{th}~=0.7V$
+\\Reverse saturation current: $I_0$ around $10^{-10}$
+\\For $V>>V_t$, $I~=I_0e^{\frac{V}{V_t}}$
+\\Differential resistance: $r_D=\frac{V_t}{I}$ (I from above equation)
+\\Basic DR circuit: $V_B=IR+V_D$, $I=I_D=I_0e^{\frac{V}{V_t}}$
+\\Graphically solve: $V_B=I_0e^{\frac{V}{V_t}}R+V_D$, $V_B-V_D=I_0e^{\frac{V}{V_t}}$
+\\Approximate analytic solution: $V_D=V_{th}=0.7V$, $I=\frac{V_B-0.7}{R}$
+\\Linearization: $r_D=\frac{V_t}{I_D}$, can treat as this resistor for an AC signal, just account for DC offset with superposition.
+\\find I with DC (probably $\frac{V-0.7}{R}$), and $r_D=\frac{.026}{I}$, then add AC signal with $r_D$
+\\Rectification: $P=V_{th}I$   AM: through diode and R and past C to filter out frequency, left with audio.Also LED and solar cell.
+\\ZENER DIODE:  width of depletion region changed with doping
+\\Breakdown: at $V=V_{breakdown}=V_Z$
+\\IV: turn on at $V_{th}=0.7$, reverse turn on at $-V_Z$, typically used backwards, so flip V, expect $+$   $|<$  $-$
+\\$V<V_Z$ $=>$ $r_Z=\frac{dV}{dI}=\infty$ OR $V>=V_Z$, $r_Z=\frac{dV}{dI}=0$
+\\$I~=I_0e^{\frac{V-V_Z}{V_t}}$
+\\Basic ZDR circuit:
+\\Graphical: $V_{Bat}-IR=V_Z(I)$
+\\Approx analytical assume $V_Z$=constant, $I=\frac{V_B-V_Z}{R}$
+\\Voltage stabalization: $V_{out}=V_Z=$constant, wastes power, must have significant $R_Load$
+\\Voltage clipper: two parallel to load, facing away, V clipped at $V_Z+V_{th}$
+\\Voltage shifter: one series, cuts $V_Z$ off of input
+
+
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

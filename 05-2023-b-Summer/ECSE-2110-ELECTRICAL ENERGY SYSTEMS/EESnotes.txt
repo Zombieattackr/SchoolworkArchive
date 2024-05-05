@@ -1,0 +1,108 @@
+reduce current, increase voltage, 
+lagging inductive +j , leading capacitive -j
+add the opposite to compensate
+parallel example:
+200V
+Z1=100+0j
+Z2=10+20j
+inductive
+I1=200<0/100=2A
+I2=200<0/10+20j=4-j8 A
+S1=VI1*=200<0(2-j0)=400+j0
+S2=VI2*=200<0(4+j8)=800+j1600
+S=P+jQ=1200+j1600
+I=S*/V*=10<-53A
+PF=cos(-53)=.6 lagging
+need PF=.8
+\theta'=arccos(.8)=37
+Q'=P tan(\theta')=900
+Qc=1600-900=700
+S=VI*=|V|^2/Z*
+Zc=|V|^2/Sc*=200^2/j700=-j57
+C=10^6/(2pi*60*57)=46uF
+two loads connevted via inductor, only real power transfer when out of phase
+
+three phase, star first: neutral at center
+clockwise
+EAn=Ep<0
+EBn=Ep<-120
+ECn=Ep<120
+ccw, B120 C-120
+balanced, 120, all the same magnitude (and loads must be the same magnitude and phase as well)
+can transmit more power for the same amount of wire
+
+machine: motor, generator, transformer. 
+Constant torque produced by three phase machine. Can be self starting
+Vab Vbc Vca are line to line coltages
+Vab=Van-Vbn=sqrt3*|Vp|<30
+always leading 30 when clockwise b-120
+line currents: Ia=Van/Zp=|Ip|<-\theta
+Ib=|Ip|<-120-\theta
+Ic=|Ip|<-240-\theta
+line currents are equal to phase currents when balanced
+
+now delta:
+kinda swap voltage and current since we switch from parallel to series (or vise versa? phasee and line voltage are now parallel)
+no neutral so no Van etc, just Vab etc
+currents feed into points of the delta
+Ia=sqrt3
+transformed versions, same voltage and same current, Zy=Zd/3 (only balanced)
+
+in Y, can connect n or leave it disconnected
+when balanced, neutral cancels out to 0
+unbalanced, Ia+Ib+Ic=In
+remove neutral wire and voltage must shift
+now Ia=Ib+Ic=0 again, make this in terms of voltage
+(Ea-Eo)/Za+...=0
+(max) 33kV generation 750kV transmission 
+susceptibility, ability for it to rearrange into a magnet
+how many stay after switching off field is retentivity
+they always fight eachother, like resistivity and conductivity
+air core transformrs can't become saturated
+laminated core, normal cores have large eddy currents, waste energy and makes heat, a laminated core has more resistance, less current, less losses
+autotransforers, inductor becomes pot, connected, no core
+isolation transformers
+pad mounted and pole mounted, solid foundation, possible spill catch basin,
+
+DC vs magnetic
+current - flux
+emf - mmf
+current - H field
+B flux in core
+
+BH curve of material
+new material never exposed to fields, as current increases, field is: flat at start from magnetic inertia, speeds up, curve approaches saturation, because of retentive stuff, curve stays up as current drops back down, eventually negative, stays negative on way back up, 
+
+
+ideal transformer has 
+0 resistance
+infinite core permeability u_c
+no leakage flux, all in the core and links the windings
+core loss is 0
+
+hysteresis loss because BH curve
+
+good real model, T model, add resistors on two horizontal inductors for their resistance, add parallel resistor on vertical inductor for magnetic flux losses. Current downwards is magnetizing current
+uses an ideal transformer, secondary winding can be on the secondary side
+
+voltage drop and current are negligable in open circuit, just take care of magnetic losses, dependent on voltage and frequency
+% voltage regulation VR=no load V - full load V/full load v *100%
+varioable transformer: on line load tap-changing.
+not gonna mess with weird D Y connections
+YY DD, same ratio holds, no phase shift
+
+autotransformers. Smartly use one winding for both
+
+per unit system. Normalize all variables
+pick a single phase system, Volt-Ampere (=S) call it S_B is the base quantity
+no units, it's just a ratio. S_pu=S/S_B
+S_B remains the same for the whole system, V_B is changed per voltage level. normalizes voltage to 1
+only magnitude, no phase affected
+three phase: 
+pick S_B
+pick V_B for each level, voltages are line to line
+Calculate base impedance, Z_B=V_B,LL ^2/S_B 3p = V_B,LN^2/S_B 1p
+calculate base current I_B 3p= I_B 1p
+convert actual values to per unit
+
+

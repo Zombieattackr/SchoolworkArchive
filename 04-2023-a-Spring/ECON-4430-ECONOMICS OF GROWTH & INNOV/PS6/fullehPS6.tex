@@ -1,0 +1,138 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{Econ of Growth and Innovation \\
+PS6}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{1} 
+Dynamic ineffciency - quality ladders versus input varieties.
+\begin{enumerate}[(a)]
+\item Argue that the equilibrium growth rate in the input varieties model is always ineffciently low by illustrating the social versus private value of an innovation in a graph of the intermediate input/innovation market.
+\vspace{2in}
+\\Green=private value, Red=social value, social value is always larger than private value. This is because there's consumer surplus that goes unrealized.
+\item Argue that the equilibrium growth rate in the quality ladder model may be either inefficiently low or high by illustrating the social versus private value of an innovation in a graph of the intermediate input/innovation market.
+\vspace{2in}
+\\Green=private value, Red=social value, the two areas aren't directly correlated. With large innovations social value can be larger, and with small innovations private value can be larger. This is because a portion of the private value is "stolen" from the previous firm. They realize a gain that is someone else's loss and a net 0 for society, and dont realize the increase to consumer surplus.
+\item Which do you consider a more realistic interpretation? Why?
+\\Both in part as which works better will depend on the situation. It's similar to compliments vs substitutes, some innovations are compliments, they create a new market entirely and don't kick any older technology or firms out. Some innovations are substitutes, and make an improvement on something that already exists. You could use different models for different situations, but looking at modeling the economy as a whole, I'd choose QL since that's more similar to large firms in competition with each other, thinking Intel vs AMD or similar.
+\end{enumerate}
+
+\vspace{0.2in}
+
+\item \textbf{2} 
+Consider the quality ladder model presented in class. However, instead of innovations increasing the productivity of the input category, assume that innovations reduce the marginal cost of producing the input. That is, each final goods producer has a production function of $Y_i=L_i^{1-\alpha}\sum_{j=1}^NX_{ij}^\alpha$ Where $N$ is fixed, and the marginal productivity of inputs does not change with innovation. The marginal cost of producing one unit of Xj changes with innovation
+according to $c(k_j)=\frac{1}{q^{k_j}}$, $q>1$
+\begin{enumerate}[(a)]
+\item Interpret this conceptualization of innovation. Do you think it is realistic? Provide a real world example of this type of innovation.
+\\I believe this means innovations no longer make inputs to final goods more productive, but instead make them cheaper to produce. I think this is very realistic, but doesn't really need to be differentiated because firstly, it would be extremely difficult, and secondly, it should have approximately the same result either way. As opposed to an innovation making machines in a factory more productive, it makes them cheaper to produce so more can be bought for the same price.
+\item Set-up the final goods producer's maximization problem. Derive the aggregate demand of each input as a function of its price (first order condition).
+\\$Y_i=L_i^{1-\alpha}\sum_{j=1}^NX_{ij}^\alpha$ since there's no quality change so $\tilde X_{ij} = X_{ij}$
+\\profit=revenue-wages-inputs, $\pi=Y_i-wL_i-\sum_{j=1}^NP_jX_{ij}$
+\\$\alpha(\frac{L}{X_{ij}})^{1-\alpha}=\frac{1}{q^{k_j}} P_j$
+\\$\alpha(\frac{L}{X_{ij}})^{1-\alpha}q^{k_j}= P_j$, same exact equation. Multiplying quality and dividing cost have the same result.
+\\$X_j=L(\frac{\alpha q^{\alpha k_j}}{P_j})^{1/((1-\alpha)}$
+\item Set-up the static maximization problem of the R\&D firm with the monopoly right of sale to the current highest quality (lowest cost) in an arbitrary industry j. Try to derive the optimal monopoly price of inputs. It is OK if you can't get the math to work out exactly - do you expect the optimal price to be constant?
+\\No, optimal price won't be constant. Final goods firms choose the lowest priced option avalible. R\&D firms can drop the costs of their previous innovation down to compete with the newer innovations to sqeeze more profit out until they reach their MC.
+\\$\max_{P_j(t)}\pi = [P_j \frac{1}{q^{k_j}} -1]X_j$
+\\$P_j=\frac{1}{\alpha q^{k_j}}$
+\end{enumerate}
+
+\vspace{0.2in}
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

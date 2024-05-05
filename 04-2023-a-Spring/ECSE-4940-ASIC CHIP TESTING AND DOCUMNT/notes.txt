@@ -1,0 +1,33 @@
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install docker
+$ sudo apt-get install docker.io
+// restart wsl
+// make sure that docker exists when you type:
+$ groups
+$ sudo usermod -aG docker $USER 
+// where $USER is your linux username
+// fork the repo at https://github.com/efabless/caravel_user_project
+$ mkdir $FOLDERNAME
+$ cd $FOLDERNAME
+// where $FOLDERNAME is any folder name
+$ git init
+$ git clone https://github.com/your_name/caravel_user_project
+$ echo yourmom
+
+// efabless provides a wrapper that you can connect your project to that will interface with the physical board
+$ cd verilog/rtl
+$ vim user_proj_example.v
+// verilog is p much the same as VHDL if you took CoCO
+// explore this file
+
+// rtl is like a compiler for verilog
+// after verification
+// a makefile will turn the rtl file into gds file
+//   gds is like the stl for 3d printing
+//   kind of like a 3d model for the sillicon
+
+// make a test bench for your own verilong file to test it before 
+//   you send it to be made.
+$ cd ../dv/la_test1
+$ vim la_test1_tb.v

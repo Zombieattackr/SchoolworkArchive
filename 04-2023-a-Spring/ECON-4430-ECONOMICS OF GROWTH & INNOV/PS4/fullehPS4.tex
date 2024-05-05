@@ -1,0 +1,142 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{Econ of Growth and Innovation \\
+PS4}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{1} 
+Learning by doing (LBD) model concepts - No need to derive anything, just provide
+an answer in a few sentences.
+\begin{enumerate}[(a)]
+\item Describe the source of technology/knowledge growth in the LBD model. Do you think that it is a realistic way to model technology growth?
+\\The source of tech growth in the LBD model is exactly what the name suggests. As work is done, people and companies will naturally try new and different things and some of those result in a productivity boost. This means technology growth is directly correlated to capital being produced.
+\\It is certianly a realistic thing that happens, but there are also many other factors to consider like funded research and development with pattents and intelectual property laws. I'd call this a good enough for our purposes generalization, similar to how we assumed all perfectly competitive markets.
+\item Describe the presence of diminishing returns to factors of production in the model and connect this to our balanced growth equilibrium
+\\The LBD model has diminishing returns to individual capital $K_i$ rather than to $K$. This is what allows for endogenous growth and gives us a growth equilibrium. Without it, more capital produced would always lead to increased growth rate, leading to more capital produced and a feedback loop of rapid exponential growth.
+\item How do we determine if a market equilibrium is effcient (in general)? Is the market equilibrium in the LBD model effcient?
+\\We firstly solve for what's optimal for an individual in the market where they maximize their own utility, then we solve for what's optimal for a hypothetical social planner that maximises the sum of everyone's utility. The market equilibrium in LBD is not efficient.
+\item Describe the source of this market ineffciency.
+\\This is because firms don't internalize the gains in technology from their investment that other firms also get, so they don't invest enough. The social planner is able to increase everyone's investment, increasing technology and growth for everyone. Withiout a social planner, this can be solved with subsidies.
+\end{enumerate}
+
+
+\newpage
+
+\vspace{0.1in}
+
+\item \textbf{2} 
+(Production subsidy in the LBD model). Consider the Cobb-Douglass version of the learning by doing model that we analyzed in class. Each firm i's output is given by $Y_i=K_i^\alpha(KL_i)^{1-\alpha}$ and households have log utility $u(c)=ln(c)$.
+\begin{enumerate}[(a)]
+\item Suppose that the government implements a production subsidy to correct market ineffciency. Specifically, the government will help defray the cost of production by $0<s_y<1$ for each unit of output that they produce. Use a typical firm's profit maximization problem to derive the demand for loanable funds and labor as a function of the subsidy. Hint: firm i's revenue is now $(1+s_y)Y_i$
+\\$\max_{K_i,L_i} \pi_i=(1+s_y)(K_i^\alpha(KL_i)^{1-\alpha})-RK_i-wL_i$
+\\$R=\frac{\delta Y_i}{\delta K_i}=(1+s_y)(\alpha K_i^{\alpha-1}(KL_i)^{1-\alpha})$
+\\$w=\frac{\delta Y_i}{\delta L_i}=(1+s_y)(1-\alpha)(K_i^\alpha(KL_i)^{1-\alpha})/L_i$
+\\$R=(1+s_y)(\alpha K^{\alpha-1}(KL)^{1-\alpha})$
+\\$w=(1+s_y)(1-\alpha)(K^\alpha(KL)^{1-\alpha})/L$
+\\$R=D_{LF}=(1+s_y)(\alpha L^{1-\alpha})$
+\\$w=D_L=(1+s_y)(1-\alpha)kL^{1-\alpha}$
+\item Determine the value of $s_y$ that corrects the market ineffciency.
+\\needs to cancel out the $\alpha < 1$ that we get from the Euler equation that's missing from the optimal social planner function. I've been trying to think this out for a while and I think I'm kinda stuck on this one... It's obvious why that it exists and is between 0 and 1, but I can't think of how to solve for it?
+\item Suppose the government runs a balanced budget, and finances the subsidy through a tax on consumption (just like the investment subsidy we examined in class). Determine the level of $t_c$ that is required to maintain a balanced budget
+\\Transfers=Taxes, $s_y*Y=t_c*Y$, $t_c=s_y$
+\item Compare this production subsidy to the investment subsidy we analyzed in class - provide some intuition for how both policies can accomplish the goal of eliminating market ineffciency. (a few sentences is fine)
+\\They both incentivise more capital, one by subsidizing outputs, therefore encouraging firms to invest in capital to output more, and one by subsidizing investments so that firms are encouraged to invest and then output more. Though they work in slightly different ways, they both make it cheaper for firms to output more, and push us towards optimal levels of investment for maximized growth.
+\end{enumerate}
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

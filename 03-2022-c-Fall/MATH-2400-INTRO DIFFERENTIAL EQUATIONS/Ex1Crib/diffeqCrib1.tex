@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+MATH-2400 DIFFEQ F 2022 Crib Sheet Exam 1 Tuesday, October 4, 2022 Hayden Fuller
+\begin{large}
+\noindent Notes:
+\\CLASIFICATION/FIRST ORDER
+\\ODE-one var\qquad PDE-multi var
+\\linear:$F(t,y(t),y'(t))$ : $f(t,y)=p(t)y+q(t)=g(t)$
+\\homo:$y(t)=0$ is a solution,  $g(t)=0$
+\\seperable: y on left, t on right, $y'=F(t)G(y)$
+\\$y'=F(t)G(y)$; $\frac{dy}{G(y)dt}=F(t)$; $\int\frac{1}{G(y)}dy=\int F(t)dt+C$; plug in IC, solve for C; plug in C, solve for y(t)
+\\$y'+p(t)y=q(t)$; $\mu(t)=e^{\int p(t)dt}$; steps:$\mu'(t)=p(t)\mu(t)=p(t)e^{\int p(t)dt}$; $\mu y'+\mu'y=\mu q$; 
+\\$y(t)=\frac{1}{\mu(t)}\int\mu(t)q(t)dt+\frac{C}{\mu(t)}$
+\\interval where t solution exists? $y'+p(t)y=q(t)$ where $p(t)$ and $q(t)$ are continuous. 
+\\Interval with $t_0$ has unique solution for $y(t)$ for any $t$ on interval and any $y(t_0)=a$ and $y'(t_0)=b$
+\\Modeling: rate constant(only): $Q'=kQ$; $Q(t)=Ce^{kt}$; (with addition): $Q'=kQ+R$; $Q=Ce^{kt}-\frac{R}{k}$
+\\Population: direction field: ind:t,y dep:y'
+\\phase plot: $y'=f(y)$, 0=solution, decreasing 0=stable, increasing 0=unstable.
+\\SECOND ORDER: $y''+p(t)y'+q(t)y=g(t)$; $y(t)=C_1y_1(t)+C_2y_2(t)$
+\\wronskion: $w(t)=det[y_1,y_2,//,y_1',y_2']=y_1y_2'-y_1'y_2\ne0$ (linearly independent, not multiples of each other)
+\\$L[y_1]=y''_1+p(t)y'_1+q(t)y=g(t)$
+\\CONSTANT COEFFICIENT: $ay''+by'+cy=0$; $y(t)=e^{rt}$; $ar^2+br+c=0$
+\\CASE 1$r_1,r_2\in R$, $r_1\ne r_2$; $b^2-4ac>0$; $y(t)=C_1e^{r_1t}+C_2e^{r_2t}$
+\\CASE 2$r_1,r_2\in R$, $r_1=r_2$; $b^2-4ac=0$; $y(t)=C_1e^{rt}+C_2te^{rt}$
+\\REDUCTION OF ORDER:
+\\$y_2=y_1h$, $y'_2=y'_1h+y_1h'$, $y''_2=y''_1h+2y'_2h'+y_1h''$
+\\$y''_1h+2y'_2h'+y_1h''+p(t)(y'_1h+y_1h')+q(t)(y_1h)=(y''+py'+qy)h+(2y'+py)h'+yh''$ (should) $=(2y'+py)h'+yh''$, $u=h'$; $yu'+(2y'+py)u=0$
+\\get $u$ to one side, integrate to find $u$(has C); integrate to get $h$(has D) and plug in to $y_2=y_1h$; choose $C$ and $D$ to be easy.
+\\CASE 3$r_1,r_2\not\in R$; $b^2-4ac<0$; $\frac{-b\pm\sqrt{b^2-4ac}}{2a}=r=\lambda\pm i\omega$; 
+\\$y_1^c=e^{\lambda+i\omega}=e^{\lambda t}(\cos(\omega t)+i\sin(\omega  t))$
+\\$y_2^c=e^{\lambda-i\omega}=e^{\lambda t}(\cos(\omega t)-i\sin(\omega  t))$
+\\$y_1(t)=e^{\lambda t}\cos(\omega t)$\qquad$y_2(t)=e^{\lambda t}\sin(\omega t)$
+\\CAUCHY-EULER
+\\$ax^2y''+bxy'+cy=0$; $y=x^r$; $ar(r-1)+br+c=0$ roots $r_1$,$r_2$
+\\CASE 1: $y=C_1x^{r_1}+C_2x^{r_2}$
+\\CASE 2: $y=C_1x^r+C_2x^r\ln(x)$
+\\CASE 3: $y=C_1x^{\lambda}\cos(\omega\ln(x))+C_2x^{\lambda}\sin(\omega\ln(x))$
+\\polar: $y=Re^{\lambda t}\cos(\omega t-\phi)$; $y(t)=(R\cos(\phi))e^{\lambda t}\cos(\omega t)+(\sin(\phi))e^{\lambda t}\sin(\omega t)$
+\\$R\cos\phi=C_1$, $R\sin\phi=C_2$
+\end{large}
+
+\noindent
+Examples:
+\\$3y''+4y'-7y=0$; $y(t)=7e^{at}$; $y'(t)=yae^{at}$; $y''(t)=7a^2e^{at}$
+\\$21a^2e^{at}+28ae^{at}-49e^{at}=0$; $21a^2+28a-49=0$; $a=1$
+\\1: $t^3y'+4t^2y=e^t$; $y(1)=0$, $t>0$, $y'+4t^{-1}y=e^tt^{-3}$, use $\mu=\exp(\int4t^{-1}dtt)=\exp(4\ln(t))=t^4$
+\\$(t^4y)'=te^t$
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

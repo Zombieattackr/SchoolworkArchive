@@ -1,0 +1,333 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 4} \smallskip\\ Due: 5pm, Friday, September 30, 2022}\\
+\textbf{Submitted to LMS By:\\ Joseph Hutchinson\\ 662022852 \\ Section 17 }
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 3, page 50--51: 3(j), 4(h,i,j), 5(a,d,g,f), 6(c).
+\item
+Exercises from Chapter 3, pages 77--78: 1(a,b,c,d), 2(a,b).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Select the linear, {\em homogeneous} DE for which $y(t)=e\sp{-3t}$ is a solution
+\begin{description}
+\item[A] $y\sp{\prime\prime}+2y\sp\prime=3e\sp{-3t}$
+\item[B] $y\sp{\prime\prime}+9y=0$
+\item\textcolor{red}{\textbf{[C]} $\bm{ty\sp{\prime\prime}-y\sp\prime-3(1+3t)y=0}$}
+\item[D] None of these choices.
+\end{description}
+
+\item (5 points) Assume $y(t)$ solves the ODE $y\sp{\prime\prime}+by\sp\prime+cy=0$ and the initial conditions $y(0)=0$, $y\sp\prime(0)=1$.  For what values of $b$ and $c$ does the solution decay to zero as $t\rightarrow\infty$:
+\begin{description}
+\item\textcolor{red}{\textbf{[A] $\bm{b=4}$ and $\bm{c=4}$}}
+\item[B] $b=-2$ and $c=6$
+\item[C] Both choices A and B
+\item[D] Neither choice A or B
+\end{description}
+
+\item (5 points) Select the Cauchy-Euler equation for which $y(x)=x\sp2\cos(\ln x)$, $x>0$, is a solution
+\begin{description}
+\item[A] $x\sp2y\sp{\prime\prime}-5xy\sp\prime+5y=0$
+\item\textcolor{red}{\textbf{[B] $\bm{x\sp2y\sp{\prime\prime}-3xy\sp\prime+5y=0}$}}
+\item[C] $x\sp2y\sp{\prime\prime}-3xy\sp\prime+y=0$
+\item[D] None of these choices
+\end{description}
+
+\end{enumerate}
+
+\newpage\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\bigskip
+\item (15 points) Consider the linear, homogeneous, second-order ODE
+\[
+y\sp{\prime\prime}+{3\over2t}\,y\sp\prime-{3\over t\sp2}\,y=0,\qquad t>0
+\]
+\begin{enumerate}
+\item
+Verify that $y_1(t)=t\sp{-2}$ is a solution of the ODE, and find a second solution $y_2(t)$ using the method of reduction of order.\\
+
+If $y_1(t)=t\sp{-2}$ is a solution of the ODE, then we should be able to find $y_1\sp{\prime}(t)$ and $y_1\sp{\prime\prime}(t)$. Then, plug these in to the ODE and check if the result$=0$.\\\\
+$y_1(t)=t\sp{-2}$\\
+$y_1\sp{\prime}(t)=-2t\sp{-3}$\\
+$y_1\sp{\prime\prime}(t)=6t\sp{-4}$\\
+Plug these into the ODE and simplify:\\
+$y\sp{\prime\prime}+{3\over2t}\,y\sp\prime-{3\over t\sp2}\,y=0$\\
+$(6t\sp{-4})+{3\over2t}\,(-2t\sp{-3})-{3\over t\sp2}\,(t\sp{-2})=0$\\
+$6t\sp{-4}-3t\sp{-4}-3t\sp{-4}=0$\\
+$0=0$\\
+The terms of the ODE cancel nicely and sum to 0, so $y_1(t)$ is a valid solution!\\\\
+Now, find the second solution $y_2(t)$ via reduction of order. It will have the form:\\
+$y_2(t)=y_1(t)h(t)$\\
+$y_2(t)=t\sp{-2}h$\\
+Find the derivatives $y_2\sp\prime(t)$ and $y_2\sp{\prime\prime}(t)$:\\
+$y_2\sp\prime(t)=-2t\sp{-3}h + t\sp{-2}h\sp\prime$\\
+
+$y_2\sp{\prime\prime}(t)=(6t\sp{-4}h - 2t\sp{-3}h\sp\prime) + (-2t\sp{-3}h\sp\prime + t\sp{-2}h\sp{\prime\prime})$\\
+$y_2\sp{\prime\prime}(t)=6t\sp{-4}h - 4t\sp{-3}h\sp\prime + t\sp{-2}h\sp{\prime\prime}$\\
+
+Plug these into the ODE:\\
+$y\sp{\prime\prime}+{3\over2t}\,y\sp\prime-{3\over t\sp2}\,y=0$\\
+$(\textcolor{red}{6t\sp{-4}h} - 4t\sp{-3}h\sp\prime + t\sp{-2}h\sp{\prime\prime})+{3\over2t}\,(\textcolor{red}{-2t\sp{-3}h} + t\sp{-2}h\sp\prime)-{3\over t\sp2}\,(\textcolor{red}{t\sp{-2}h})=0$\\
+The \textcolor{red}{red terms} above cancel with each other, giving:\\
+$ - 4(t\sp{-3}h\sp\prime) + t\sp{-2}h\sp{\prime\prime}+{3\over2}\,( t\sp{-3}h\sp\prime)=0$\\
+$ t\sp{-2}h\sp{\prime\prime} - {5\over2}(t\sp{-3}h\sp\prime) =0$\\
+
+Perform a \textbf{change of variable} where $w = h\sp\prime$ and $w\sp\prime = h\sp{\prime\prime}$\\
+$ t\sp{-2}w\sp{\prime} - {5\over2}t\sp{-3}w =0$\\
+Now we have a first order ODE which can be solved:\\
+$ t\sp{-2}w\sp{\prime} = {5\over2}t\sp{-3}w $\\
+$ {1\over w}w\sp{\prime} = {5\over2}t\sp{-1} $\\
+$ \int{{1\over w}dw} = \int{{5\over2}t\sp{-1}dt} $\\
+$ \ln|w| = {5\over2}\ln|t|+C $\\
+$ w = Ce\sp{{5\over2}\ln|t|} = Ct\sp{5\over2} $\\
+Because of our change of variable, $h(t) = \int{w\,dt}$. Solve for $h(t)$:\\
+$h(t) = \int{Ct\sp{5\over2}\,dt}$\\
+$h(t) = C{2\over7}t\sp{7\over2}+k$\\
+Can choose the constants $C$ and $k$ to be anything we want, so choose $C={7\over2}$ and $k=0$ for convenience:\\
+$h(t) = t\sp{7\over2}$\\
+
+Now, the second solution $y_2(t) = y_1(t)h(t) = t\sp{-2}(t\sp{7\over2})$:\\
+$\bm{y_2(t) = t\sp{3\over2}}$\\
+
+\item
+Compute the Wronskian of $y_1(t)$ and $y_2(t)$ to show that the solutions are independent (and thus form a fundamental set of solutions).\\
+
+$y_1(t) = t\sp{-2}$ and $y_2(t) = t\sp{3\over2}$\\
+$y_1\sp\prime(t) = -2t\sp{-3}$ and $y_2\sp\prime(t) = {3\over2}t\sp{1\over2}$\\
+
+$W(t)=\det\begin{bmatrix}y_1(t) & y_2(t) \\ y_1\sp\prime(t) & y_2\sp\prime(t)\end{bmatrix} = \det\begin{bmatrix}t\sp{-2} & t\sp{3\over2} \\ -2t\sp{-3} & {3\over2}t\sp{1\over2}\end{bmatrix}$\\
+$W(t)=(t\sp{-2}*{3\over2}t\sp{1\over2}) - (t\sp{3\over2}*-2t\sp{-3})$\\
+$W(t)={3\over2}t\sp{-3\over2} + 2t\sp{-3\over2}$\\
+\textbf{No value of $\bm{t>0}$ can make the above Wronskian term $\bm{= 0}$, so the solutions are independent (and could be combined to form a general one).}\\
+
+\end{enumerate}
+
+\item (15 points)  Consider the initial-value problem
+\[
+y\sp{\prime\prime}+4y\sp\prime+13y=0,\qquad y(0)=-1,\quad y\sp\prime(0)=5
+\]
+\begin{enumerate}
+\item Find real-valued solutions $y_1(t)$ and $y_2(t)$ in the general solution $y(t)=C_1y_1(t)+C_2y_2(t)$ of the constant-coefficient ODE, and then apply the initial conditions to determine the constants in the general solution.\\
+
+Because this is a constant-coefficient, linear, homogeneous, 2nd-order ODE, we can perform a substitution assuming an answer comes in the form $y(t)=e\sp{rt}$. Let $y(t)=e\sp{rt}$ in the original ODE, and simplify to find:\\
+
+$r\sp{2}+4r+13=0$\\
+Since this is a quadratic polynomial, we can find the root(s) $r$ using the quadratic formula. In this case, $a=1$, $b=4$, and $c=13$.\\
+$r=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$\\
+$r=\frac{-4\pm\sqrt{16-(4*13)}}{2}$\\
+$r=-2\pm\frac{\sqrt{-36}}{2}$\\
+$r=-2\pm3i$\\
+
+From this, we know there will be two solutions:\\
+$y_1(t) = e\sp{(-2+3i)t}$ and $y_2(t) = e\sp{(-2-3i)t}$\\
+To find the real versions of these (without an imaginary component), use Euler's formula. End up with:\\
+$y_1(t) = e\sp{\lambda t}\cos(\omega t)$ and $y_2(t) = e\sp{\lambda t}\sin(\omega t)$\\
+$y_1(t) = e\sp{-2t}\cos(3t)$ and $y_2(t) = e\sp{-2t}\sin(3t)$\\
+
+For the general solution, perform a linear combination to get:\\
+$y(t) = C_{1}e\sp{-2t}\cos(3t) + C_{2}e\sp{-2t}\sin(3t)$\\
+Before applying the ICs to determine $C_1$ and $C_2$, determine $y\sp\prime(t)$ using the product rule for each term:\\
+$y\sp\prime(t) = C_{1}(-2e\sp{-2t}\cos(3t) - 3e\sp{-2t}\sin(3t))+ C_{2}(-2e\sp{-2t}\sin(3t) + 3e\sp{-2t}\cos(3t))$\\
+
+Plug in $y(0)=-1$ for $y(t)$:\\
+$-1 = C_{1}e\sp{0}\cos(0) + C_{2}e\sp{0}\sin(0)$\\
+$-1 = C_{1}(1)(1) + C_{2}(1)(0)$\\
+$C_{1} = -1$\\
+
+Plug in $y\sp\prime(0)=5$ and $C_{1} = -1$ for $y\sp\prime(t)$ in order to determine $C_2$:\\
+$y\sp\prime(t) = -(-2e\sp{0}\cos(0) - 3e\sp{0}\sin(0))+ C_{2}(-2e\sp{0}\sin(0) + 3e\sp{0}\cos(0))$\\
+$5 = -(-2 - 0)+ C_{2}(0 + 3)$\\
+$5 = 2+ 3C_{2}$\\
+$C_2 = 1$\\
+
+\textbf{Given $\bm{C_{1} = -1}$ and $\bm{C_{2} = 1}$, the overall solution $\bm{y(t)}$ is:}\\
+$\bm{y(t) = -e\sp{-2t}\cos(3t) + e\sp{-2t}\sin(3t)}$\\
+
+
+\item Write the solution in part (a) in the \lq\lq polar'' form $y(t)=Re\sp{\lambda t}\cos(\omega t-\phi)$ following an example discussed in class.  Give the constants $R$, $\lambda$, $\omega$ and $\phi$, and use the polar form to sketch the solution.\\
+
+$C_1 = R\cos(\phi)$ and $C_2 = R\sin(\phi)$\\
+So $-1 = R\cos(\phi)$ and $1 = R\sin(\phi)$\\
+Rearrange and find that: $R ={-1\over \cos(\phi)}$. Plug in to the 2nd equation:\\
+$1 = ({-1\over \cos(\phi)})\sin(\phi)$\\
+$-1 = {\sin(\phi)\over \cos(\phi)} = \tan(\phi)$\\
+$\tan(\phi) = -1$\\
+Assume $\bm{\phi = -{\pi \over4}}$ and that only, rather than entertain other possible alternatives.\\
+%$\bm{\phi = -{\pi \over4}\pm2n\pi}$ \textbf{OR} $\bm{\phi = {3\pi \over 4}\pm 2n\pi}$\\
+Now, solve for $R$:\\
+$-1 = R\cos(-{\pi \over 4})$\\
+$R = {-1\over \cos(-{\pi \over 4})}$\\
+$R = {-1\over \cos(-{\pi \over 4})} = {-1\over {1 \over \sqrt{2}}} = -\sqrt{2}$\\
+$R = -\sqrt{2}$\\
+
+From part (a) above, we know that $\bm{\lambda = -2}$ and $\bm{\omega = 3}$\\
+
+\textbf{The polar form of the solution is:}\\
+$\bm{y(t)=-\sqrt{2}e\sp{-2t}\cos(3t+{\pi\over4})} $\\
+
+Will touch the envelope bounds when $(3t+{\pi\over4})=0$ or $\pi$, because that is where the $cos()$ term will be maximized/minimized from 1 to -1.\\
+\begin{tabular}{ c c } 
+ $3t+{\pi\over4}=0$ & $3t+{\pi\over4}=\pi$ \\ 
+ $t=-{\pi\over12}$ & $t={\pi\over4}$ \\ 
+\end{tabular}
+
+So, the curve will touch either one of the envelope bounds $\sqrt{2}e\sp{-2t}$ or $-\sqrt{2}e\sp{-2t}$ when $t = -{\pi\over12}$ or $t={\pi\over4}$.\\
+When $t=0$, the envelope bounds will $= \sqrt{2}$ and $-\sqrt{2}$. The y-intercept of the curve occurs at $y(0) = -1$.\\
+
+At $t = -{\pi\over12}$:\\
+$y(-{\pi\over12})=-\sqrt{2}e\sp{2\pi \over 12}\cos(-{3\pi \over 12}+{\pi\over4}) = -\sqrt{2}e\sp{\pi \over 6}\cos(0)$\\
+$y(-{\pi\over12})=-\sqrt{2}e\sp{\pi \over 6}(1) = -\sqrt{2}e\sp{\pi \over 6}$\\
+
+At $t = {\pi\over4}$:\\
+$y({\pi\over4})=-\sqrt{2}e\sp{-{\pi\over2}}\cos({3\pi\over4}+{\pi\over4}) = -\sqrt{2}e\sp{-{\pi\over2}}\cos(\pi)$\\
+$y({\pi\over4})= -\sqrt{2}e\sp{-{\pi\over2}}(-1) = \sqrt{2}e\sp{-{\pi\over2}}$\\\\
+
+Graph would look like:\\
+\begin{figure}[h]
+%\includegraphics[scale=1.2]{scancropped}
+\centering
+\end{figure}
+
+\end{enumerate}
+
+
+\newpage
+\item (15 points)
+\begin{enumerate}
+\item
+Find $y(t)$ satisfying the initial-value problem
+\[
+9y\sp{\prime\prime}+6y\sp\prime+y=0,\qquad y(0)=1,\quad y\sp\prime(0)={2\over3}
+\]
+Since this is a constant-coefficient, 2nd-order, linear, homogeneous ODE, we can perform a substitution assuming an answer comes in the form $y(t)=e\sp{rt}$. Let $y(t)=e\sp{rt}$ in the original ODE, and simplify to find:\\
+$9r\sp{2} + 6r + 1 = 0$\\
+
+Solve this quadratic in order to find its roots, $r_1$ and $r_2$.\\
+It appears to be factorable:\\
+$(3r + 1)(3r + 1) = 0$\\
+$ 3r + 1 = 0$\\
+$ r = -\frac{1}{3}$ (double root)\\
+
+For this case of a double root, there will still be two solutions, with the second of a slightly different form:\\
+$y_1(t) = e\sp{rt}$ and $y_2(t) = te\sp{rt}$\\
+$y_1(t) = e\sp{-\frac{1}{3}t}$ and $y_2(t) = te\sp{-\frac{1}{3}t}$\\
+
+Perform a linear combination to find the general solution $y(t)$:\\
+$y(t) = C_{1}e\sp{-\frac{1}{3}t} + C_{2}te\sp{-\frac{1}{3}t}$\\
+
+Before applying the ICs to determine $C_1$ and $C_2$, determine $y\sp\prime(t)$ by taking the first-derivative of each term:\\
+$y\sp\prime(t) = -\frac{1}{3}C_{1}e\sp{-\frac{1}{3}t} + C_{2}(e\sp{-\frac{1}{3}t} - \frac{1}{3}te\sp{-\frac{1}{3}t})$\\
+
+Plug in $y(0)=1$ for $y(t)$:\\
+$1 = C_{1}e\sp{0} + C_{2}(0)e\sp{0}$\\
+$C_{1} = 1$\\
+
+Plug in $y\sp\prime(0)=\frac{2}{3}$ and $C_{1} = 1$ for $y\sp\prime(t)$:\\
+$\frac{2}{3} = -\frac{1}{3}(1)e\sp{0} + C_{2}(e\sp{0} - \frac{1}{3}(0)e\sp{0})$\\\\
+$\frac{2}{3} = -\frac{1}{3} + C_{2}(1 - 0)$\\\\
+$ -\frac{1}{3} + C_{2}= \frac{2}{3} $\\
+$ C_{2}= 1 $\\
+
+\textbf{Given $\bm{C_{1} = 1}$ and $\bm{C_{2} = 1}$, the overall solution $\bm{y(t)}$ is:}\\
+$y(t) = e\sp{-\frac{1}{3}t} + te\sp{-\frac{1}{3}t}$\\
+$\bm{y(t) = (1+t)e\sp{-\frac{1}{3}t}}$\\
+
+\item
+Find real-valued functions $u_1(x)$ and $u_2(x)$ in the general solution $u(x)=C_1u_1(x)+C_2u_2(x)$ of the Cauchy-Euler equation
+\[
+4x\sp2u\sp{\prime\prime}+8xu\sp\prime+u=0,\qquad x>0
+\]
+Find $C_1$ and $C_2$ in the general solution so that $u(1)=0$ and $u\sp\prime(1)=3$.\\
+
+\newpage
+Let $u = x\sp{r}$, the form of a solution, and substitute into the ODE (while also performing simple power rule derivatives for $x\sp{r}$):\\
+$ax\sp2(r(r-1)x\sp{r-2})+bx(rx\sp{r-1})+c(x\sp{r})=0$\\
+$ax\sp2(r(r-1)x\sp{r-2})+bx(rx\sp{r-1})+c(x\sp{r})=0$\\
+
+In this Cauchy-Euler equation, the constants are as follows:\\
+$a=4$, $b=8$, $c=1$\\
+The above simplifies to:\\
+$x\sp{r}(ar(r-1)+br+c) = 0$\\
+The $x\sp{r}$ term cannot be 0, so:\\
+$(ar(r-1)+br+c) = 0$\\
+Plug in our equation's constants:\\
+$(4r(r-1)+8r+1) = 0$\\
+$4r\sp{2} +8r - 4r + 1= 0$\\
+$4r\sp{2} +4r + 1= 0$\\
+$(2r+1)(2r+1)=0$\\
+$r = -1/2 = -0.5$, a double root\\
+
+Since the root is real and double, solutions will take the form:\\
+$u_1(x) = x\sp{r}$ and $u_2(x) = x\sp{r}\ln(x)$\\
+General solution would look like:\\
+$u(x) = C_1x\sp{r} + C_2x\sp{r}\ln(x)$\\
+$u(x) = C_1x\sp{-0.5} + C_2x\sp{-0.5}\ln(x)$\\
+
+And the first-derivative would be:\\
+$u\sp\prime(x) = -0.5C_1x\sp{-1.5} + (-0.5C_2x\sp{-1.5}\ln(x) + {C_2x\sp{-0.5} \over x})$\\
+$u\sp\prime(x) = -0.5C_1x\sp{-1.5} - 0.5C_2x\sp{-1.5}\ln(x) + C_2x\sp{-1.5}$\\
+
+Plug in IC $u(1)=0$ to $u(x)$:\\
+$0 = C_1(1)\sp{-0.5} + C_2(1)\sp{-0.5}\ln(1)$\\
+$0 = C_1 + C_2(0)$\\
+\textbf{So} $\bm{C_1 = 0}$\\
+
+Now, plug in IC $u\sp\prime(1)=3$ and $C_1 = 0$ to $u\sp\prime(x)$:\\
+$3 = -0.5(0)(1)\sp{-1.5} - 0.5C_2(1)\sp{-1.5}\ln(1) + C_2(1)\sp{-1.5}$\\
+$3 = 0 - 0 + C_2$\\
+$\bm{C_2 = 3}$\\
+
+\textbf{Now, the overall solution is:}\\
+$\bm{u(x) =  3x\sp{-0.5}\ln(x)}$\\
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
+

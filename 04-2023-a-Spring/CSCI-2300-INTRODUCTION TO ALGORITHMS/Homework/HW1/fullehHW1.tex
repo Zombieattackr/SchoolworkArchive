@@ -1,0 +1,97 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{CSCI 2300 --- Algo \\
+Homework 1}
+\\Hayden Fulle
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{Q1} 
+\\0.1. In each of the following situations, indicate whether $f = O(g)$(<=), or $f =\Omega (g)$(>=), or
+both (in which case $f = \Theta(g)$(==)).
+\begin{enumerate}[(a)]
+\item $\Theta$
+\item $O$
+\item $\Theta$
+\item $\Theta$
+\item $\Theta$
+\item $\Theta$
+\item $\Omega$
+\item $\Omega$
+\item $\Omega$
+\item $\Omega$
+\item $\Omega$
+\item $O$
+\item $O$
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Q2} 
+\\$T(n)=2^n$
+\\This code can be represented by $T(0)=1$ and $T(n)=1+T(n-1)+T(n-2)+...+T(0)$
+\\$=1+\sum_{i=0}^{n-1} T(i)$
+\\Proof via induction
+\\Base: $T(0)=1=2^0$
+\\Induction: 
+\\$T(n)=T(n-1)+T(n-2)+...+T(0)+1$
+\\$T(n-1)=T(n-2)+T(n-3)+...+T(0)+1$
+\\$T(n)=T(n-1)+T(n-1)=2*T(n-1)$
+\\$T(n+1)=2T(n)$
+\\therefore, $T(n)=2^n$$\hfill{\blacksquare}$
+
+\vspace{0.1in}
+
+\item \textbf{Q3} 
+\\$\max(f(n),g(n))=\Theta(f(n)+g(n))$
+\\Growth rate is determined by the term with the greatest growth rate, and as $n$ approaches infinity, it becomes the only term that matters. This means that as $n$ approaches infinity, it will choose the function with the larger growth rate. When adding the f and g, the term with the largest growth rate will remain the same, so it will still have that growth rate. Since the two sides share the same term with the highest growth rate, $\max(f(n),g(n))=\Theta(f(n)+g(n))$
+
+\vspace{0.1in}
+
+\item \textbf{Q4} 
+\\a) no
+\\b) because $2^{2n}=2^n*2^n$ so $\frac{2^{2n}}{2^n}=\frac{2^n*2^n}{2^n}=2^n$, which grows towards infinity without bound as $n$ approaches infinity.
+
+\end{itemize}
+
+\end{document}

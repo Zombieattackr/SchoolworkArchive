@@ -1,0 +1,14 @@
+Experimental:
+1.1
+take a picture of consistent wiring. There's literally 1 wire. Blue to red?
+
+1.3 request regrade? The photo is right fucking there. The fuck do you mean inconsistent wiring? It's literally the same fucking photo as every single other one in the document.
+
+1.4 copy and paste the same photo from everywhere else in the document to here. It's the same fucking circuit you incompetent fucks
+
+1.6 rebuild that exact same fucking op amp circuit. Inverting amp, Vin=10, Vout=500, +-5V, input V=50m
+
+Community Help:
+1.2 Fuck it it's Joe I don't give a fuck and they're not gonna check
+
+1.5 This was already fucking full credit you piece of shit eat my ass. I analyzed and calculated the tiny differences between Calculated, Simulated, and Measured. Nowhere in the rubric did you mention that I needed to include photos of these things. Time to add screenshots of Matlab, LT spice, and a physical circuit. (it's exactly the same as above)

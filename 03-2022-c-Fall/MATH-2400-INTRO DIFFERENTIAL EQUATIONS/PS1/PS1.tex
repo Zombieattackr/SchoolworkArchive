@@ -1,0 +1,164 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 1} \smallskip\\ Assigned: Friday, September 2, 2022 \\ Due: 5pm, Friday, September 9, 2022 \\ Hayden Fuller}
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 1, pages 4--6: 1(b,c,g), 2(g,i), 3(f), 5(d), 6(a).
+\item
+Exercises from Chapter 2, pages 12--14: 1(c,f,l,m), 2(d,f,h), 3(f,g,h), 4(c,d).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Consider the DE $t^2y^{\prime\prime} + y\sp\prime\ln(t) = y\cos(t)$.  Choose the best answer among the following classifications of the DE.
+\begin{description}
+\item[A] Linear and homogeneous
+\item[B] Nonlinear 
+\item[C] Linear
+\item[DX]Linear and non-homogeneous
+\end{description}
+
+\item (5 points) For what value of $a$ does the DE $ty'' + a y' + t y + 2 \sin(2t)=0$ admit $y(t) = t \sin(2t)$ as a solution?
+\begin{description}
+\item[A] $a=2$
+\item[B] $a=-2$
+\item[C] $a=-1$
+\item [DX]No value of $a$
+\end{description}
+
+\newpage
+\item (5 points) Consider the DE $y' = 2y + 4$.  A plot of the direction field reveals the qualitative behavior of solutions $y(t)$ of the DE.  Suppose a solution is chosen such that $y(0)=C$.  Select the value of $C$ for which the remains bounded as $t \to \infty.$
+\begin{description}
+\item[A]  $C=2$
+\item[BX]$C=-2$		
+\item[C] All values of $C$
+\item[D] No value of $C$	
+\end{description}
+
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)
+\begin{enumerate}
+\item Find all values of the constant $a$, if any, such that $u(t)=(3+a\sin t)\sp{-1/2}$ is a solution of the first-order ODE $4u' + u^3 \cos t = 0$.
+\\$u'=-1/2  (3+a\sin t)\sp{-3/2}a\cos t$
+\\$-2a+1=0$
+\\$a=1/2$
+\item Find all values of the constant $b$, if any, such that $v(t)=6e\sp{bt}$ is a solution of the second-order ODE $v\sp{\prime\prime}+5v\sp\prime+6v=0$.
+\\$v'=6be\sp{bt}$
+\\$v''=6b^2e\sp{bt}$
+\\$6b^2e\sp{bt}+30be\sp{bt}+36e\sp{bt}=0$
+\\$b^2+5b+6=0$
+\\$b=-3$\hspace{0.25in}$b=-2$
+\item Find all values of the constant $c$, if any, such that $w(x,t)=\sin(x-ct)$ is a solution of the second-order PDE $w_{tt}=9w_{xx}$.
+\\$w_{t}=-c\cos(x-ct)$\hspace{0.5in}$w_{xx}=-c^2\sin(x-ct)$
+\\$w_{x}=\cos(x-ct)$\hspace{0.5in}$w_{xx}=-\sin(x-ct)$
+\\$-c^2\sin(x-ct)=-9\sin(x-ct)$
+\\$c=3\hspace{0.5in}c=-3$
+\end{enumerate}
+
+\bigskip
+\item (15 points) Consider the DE
+\[
+y\sp\prime+5y=3
+\]
+\begin{enumerate}
+\item Find constants $a$ and $b$ such that $y(t)=Ce\sp{at}+b$ is a solution of the DE for any value of the constant $C$.
+\\$y'=Cae\sp{at}$
+\\$Cae\sp{at}+5Ce\sp{at}+5b=3$
+\\$a=-5$\hspace{0.5in}$b=-3/5$
+\item Find $C$ such that $y(t)$ satisfies the DE and the initial condition $y(0)=-2$.
+\\$y(0)=-2=Ce\sp{-5*0}-3/5$
+\\$-2=C-3/5$
+\\$C=-7/5$
+\end{enumerate}
+
+\bigskip
+\newpage
+\item (15 points) Consider the DE 
+\[
+yy' = \sin(2t)
+\]
+Integrate both sides of the equation to determine $y(t)$ satisfying the DE and the initial condition $y(0)=-1$.
+\\$\int(y\frac{dy}{dt}) dt =\int(\sin(2t)) dt$
+\\$\int(y) dy=\int(\sin(2t))dt$
+\\$\frac{y^2}{2}=-\frac{1}{2}\cos(2t)+C$
+\\$\frac{(-1)^2}{2}=-\frac{1}{2}\cos(2*0)+C$
+\\$1/2=-1/2+C$
+\\$C=1$
+\\$\frac{y^2}{2}=-\frac{1}{2}\cos(2t)+1$
+\\$y^2=-cos(2t)+2$
+\\$y=\sqrt{-cos(2t)+2}$
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

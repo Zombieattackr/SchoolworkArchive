@@ -1,0 +1,116 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{CSCI 2300 --- Algo \\
+Homework 2}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{Q1} 
+\\$2^{2^n}$ in linear time, assuming multiplication of arbitrary size integers takes unit time. What is the bit-complexity if multiplications do not take unit time, but are a function of the bit-length.
+\\
+\\result = $(1 << (1 << n))$
+\\
+\\base:$(1 << (1 << 1))=(1 << 2)=4=2^{2^1}=2^2=4$
+\\Bit shifting left is the same as multiplying by 2, so if you start with a 1, bit shifting left x times is the same as $2^x$. This is simply done twice to get our result.
+\\We multiply by bit shifting, which takes unit time for any modern processor, making this equation run in unit time. If this were an older processer where bit shifting is O($n$), this would be O($n^2$).
+
+\vspace{0.1in}
+
+\item \textbf{Q2} 
+\\$N!$
+\begin{enumerate}[(a)]
+\item If N is an n-bit number, how many bits long is N! in O() notation
+\\$\lfloor \log_2((2^x-1)!)\rfloor+1$
+
+\item Give an algorithm to compute N! and analyze its running time
+\\def fact(n):
+\\result = 1
+\\i in range(1,n+1): result = result * i
+\\return result
+\\
+\\O(n) loops
+\\each multiplication is O($n$)
+\\totals to O($n^2$)
+
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Q3} 
+\\Find the GCD of 1492 and 1776, using
+\begin{enumerate}[(a)]
+\item the prime factorization method and using Euclid's method, and
+\\$1776/1492=1r284
+\\1492/284=5r72
+\\284/72=3r68
+\\72/68=1r4
+\\68/4=17r0
+\\$GCD$(1492,1776)=17$
+\\
+
+\item express the GCD as an integer linear combination of the two inputs.
+\\$a b=q r
+\\r=a-q*b
+\\4=72-1*68
+\\68=284-3*72
+\\72=1492-5*284
+\\284=1776-1*1492
+\\
+\\4=1*72-1*68
+\\4=1*72-1*(284-3*72)
+\\4=-1*284+4*72
+\\4=-1*284+4*(1492-5*284)
+\\4=4*1492-21*284
+\\4=4*1492-21*(1776-1*1492)
+\\4=-21*1776+25*1492
+\\
+\\4=-21*1776+25*1492$
+\\
+
+\end{enumerate}
+
+\end{itemize}
+
+\end{document}

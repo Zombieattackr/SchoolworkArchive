@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Physics II S 2023 Crib Sheet Exam 1 Hayden Fuller
+\begin{large}
+\noindent Notes:
+\\\indent Culombs Law, conductors, insulators, polarization, induced charges, adding vector fields and forces
+\\$\vec F_{1on2}=\vec F_{12}=-\vec{F}_{21}=q_2\vec{E}_1=k\frac{q_1q_2}{r_{12}^2}\frac{\vec{r}_{12}}{r_{12}}=k\frac{q_1q_2}{r_{12}^2}\hat r_{12}$; $\vec{F}_{tot}=q_0\vec{E}_{tot}$; $\vec{E}_{tot}(X_0,y_0,z_0)=\int \vec{dE}(x',y',z')=\int k\frac{dq'(x',y',z')}{r_0'^2}\frac{\vec{r}'_0}{r'_0}$, $\vec{r}'_0=\vec{r}_0-\vec{r}'=(x_0-x')\hat i+$... , $\vec{r}'=x'\hat i +$...
+\\distance away from line charge linearly, line starts at 0, at x=-D, $\vec{E}=-k\int_0^L\frac{\lambda dx'}{(D+x')^2}\hat i$, $V=k\lambda\ln(\frac{D+L}{D})$
+\\with $\theta$ up from x axis, $r_x=x\cos\theta$, $r_y=y\sin\theta$, $r=\sqrt{r_x^2+r_y^2}$, $k=9*10^9=\frac{1}{4\pi \epsilon_0}$, $\epsilon_0=8.85*10^{-12}$
+\\\indent Electric field for point charges, electric field for a continuous distribution of charge
+\\$\vec{F}_E=q\vec{E}$; $\vec{E}_s=k\frac{q_s}{r^2}\frac{\vec{r}}{r}=k\frac{q_s}{r^2}\hat r$
+\\\indent Gauss's law and elecctric flux through a surface, Use of Gauss's law to find field
+\\$\Phi_E=\oint\vec{E}\cdot d\vec{A}=\int E \cdot dA \cos \phi=\frac{Q_{encl}}{\epsilon_0}$, $\phi=\angle \vec E-d\vec A$, $d\vec A= dA\hat n$ net elec field $\vec{E}=0$, $V=c$ within a cond.
+\\gauss sphere: $\Phi_E=\oint\vec E (r)\cdot d\vec A=E(r)4\pi r^2$, $E(r)=k\frac{q}{r^2}$,
+\\sphere radius R: outside or point charge: $V=k\frac{q}{r}$, $E=k \frac{q}{r^2}$ inside: cond: $V=k\frac{q}{R}$, $E=0$, insulating: $E=k\frac{qr}{R^3}$
+\\long thin wire: $E(r)=\lambda/(2\pi r\epsilon_0)$ \quad thin flat sheet: $E=\sigma/(2\epsilon_0)$, stepped: go from in to out matching net $Q_in$
+\\infinite plane w/ cylinder in it, $E=\sigma/\epsilon_0$
+\\\indent Electric potential for point charge, distribution. Electric field vs potential, equipotential. Potential for group of points, conservation of energy.
+\\Change Elec Pot Engry $\Delta U=-\int_{\vec{r}_A}^{\vec{r}_B} q\vec{E}\cdot d\vec{s}=-W_{AB}$; Change Elec Pot $\Delta V =\frac{\Delta U_E}{q}= -\int_{\vec{r}_A}^{\vec{r}_B} \vec{E}\cdot d\vec{s}$ so $\Delta U_E = q\Delta V$
+\\Point charge, $\Sigma$ for system $V(r)=\frac{kq}{r}$, $U_E=k\frac{q_1q_2}{R_{12}}+$...; Field from pot: $E_x=-\Delta V=-\frac{\delta V}{\delta x}-$... .
+\\work on closed path =0; 
+\\\indent Caps, Dielectrics, steads state, equiv, energy storage, electric fielld energy density
+\\$C=Q/V=\frac{\epsilon_0 A}{d}=kC_0$, ElcPotEnrInCap $U_E=.5 Q V =.5 Q^2/C = .5 C V^2$, EnrFieldDen $u_E=.5 \epsilon_0 E^2$, $E=\frac{\sigma}{k\epsilon_0}$, $V_1=V\frac{C_{equiv}}{C_1}$
+\\\indent Current and densityJ, Resistance and itivity, Power relations and dissipation, DC steady state, KCVL Ohms
+\\$I=\frac{dQ}{dT}$, $I=\vec J d\vec A$, $\vec J=q n \vec v_d=I/A$. $E=\rho J$, $V=IR$, $R=\rho L/A$, $P=IV=I^2R=V^2/R$; $V_{bat}=$EMF$-Ir$
+\\Temp: conductor: $\rho(T)=\rho_0+\rho_0\alpha(T-T_0)$ semi: $\rho(T)=\rho_0e^{(\frac {E_a}{kT})}$, $E_a=$ actiEngr, $k=1.38e-23=$bolt const.
+\\\indent Magnetic forces and fields
+\\$\vec{F}=q \vec v \times \vec B$, finger velocity, curl field, thumb force, flip for negative. $\vec F_B=I \vec L \times \vec B$, $r=\frac{mv}{|q|B}$
+\\\indent misc
+\\$W=q\Delta V$, Centripital force $F=mv^2/r$, $E=-\Delta V/d$, $V=kq/r$, $V=\Delta KE=-\Delta PE$, $KE=0.5*mv^2$
+\\$F=ma$, earth south is north, use conventional, $\vec c=\vec a \times\vec b$, $|\vec c|=|\vec a| |\vec b|\sin\theta_{ab}$, cross is det, dot is sum
+\\RMS = $\sqrt{\sum(x^2)}$, \%error = (act-exp)/exp
+\\
+\begin{tabular}{ c c c c c }
+Force 		& $F$ 		& $kg*m/s^2$ 	& Newton 		& $N$ \\
+Energy/Work	& $U, KE | W$	& $N*m, W*s$ 	& Joule 		& $J$ \\
+Charge 		& $Q$		& $A*s$ 		& Coulomb 	& $C$ \\
+Chg den linear	& $\lambda$ 	& $C/m$		& -- 			& $C/m$ \\
+Chg den surface	& $\sigma$ 	& $C/m^2$	& -- 			& $C/m^2$ \\
+Chg den volume	& $\rho$ 		& $C/m^3$	& -- 			& $C/m^3$ \\
+Elec Field 		& $E$		& $N/C$ 		& -- 			& $N/C$ \\
+Elec Flux 		& $\Phi$ 		& $N*m^2/C$ 	& -- 			& $Nm^2/C$ \\
+Elec Potential	& $V$ 		& $J/C, W/A$	& Volt		& $V$ \\
+Current		& $I$			& $C/s$		& Amp		& $A$ \\
+Current density	& $J$		& $I/m^2$		& --			& $I/m^2$ \\
+Resistance		& $R$		& $V/A$		& Ohm		& $\Omega$ \\
+Resistivity		& $\rho$		& $E/J, RA/L$	& -- 			& $\Omega m$ \\
+Power		& $P$		& $VA, J/s$	& Watt		& $W$ \\
+Capacitance 	& $C$		& $Q/V$		& Farad		& $F$ \\
+Magnetic field	& $B$		& $Ns/Cm,N/mA$	& Tesla	& $T$
+
+\end{tabular}
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

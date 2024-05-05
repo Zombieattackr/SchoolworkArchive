@@ -1,0 +1,466 @@
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{CSCI 2200 --- Foundations of Computer Science (FoCS) \\
+Homework 1 (document version 1.0)}
+\\Hayden Fuller \& Alex Litchfield
+\end{center}
+
+\section*{Overview}
+\begin{itemize}
+\item This homework is due by 11:59PM on Thursday, September~15
+\item You may work on this homework in a group of no more than four students;
+  unlike recitation problem sets,
+  \textbf{your teammates may be in any section}
+\item You may use at most \textbf{two} late days on this assignment
+\item Please start this homework early and ask questions during
+  office hours and at your September~14 recitation section;
+  also ask (and answer) questions on the Discussion Forum 
+\item Please be concise in your answers;
+  even if your solution is correct, if it is not well-presented,
+  you may still lose points
+\item You can type or hand-write (or both) your solutions
+  to the required graded problems below;
+  \textbf{all work must be organized in one PDF that lists
+  all teammate names}
+\item You are strongly encouraged to use LaTeX, in particular for
+  mathematical symbols;
+  see references in Course Materials
+\item \textbf{EARNING LATE DAYS:}
+  for each homework that you complete using LaTeX
+  (including any tables, graphs, etc., i.e.,~no hand-written anything),
+  you earn one additional late day;
+  you can draw graphs and other diagrams
+  in another application and include them as image files
+\end{itemize}
+
+\vspace{0.2in}
+
+\newpage
+\section*{Warm-up exercises}
+The problems below are good practice problems to work on.
+Do not submit these as part of your homework submission.
+\textbf{These are ungraded problems.}
+
+\begin{multicols}{2}
+\begin{itemize}
+
+\item \textbf{Problem 1.26}
+
+\item \textbf{Problem 2.19}
+
+\item \textbf{Problem 3.4}
+
+\item \textbf{Problem 3.13}
+
+\item \textbf{Problem 3.14}
+
+\item \textbf{Problem 3.22}
+
+\item \textbf{Problem 3.24}
+
+\item \textbf{Problem 3.43}
+
+\item \textbf{Problem 3.47}
+
+\end{itemize}
+\end{multicols}
+
+\section*{Graded problems}
+The problems below are required and will be graded.
+\begin{itemize}
+
+\item \textbf{Problem 2.16 (Cartesian Product).}
+
+\item \textbf{Problem 2.29}
+
+\item \textbf{Problem 3.20 (DNF). Parts (a) and (b) only.}
+
+\item \textbf{Problem 3.23}
+
+\item \textbf{Problem 3.31}
+
+\item \textbf{Problem 3.44}
+
+\item \textbf{Problem 3.56}
+
+\item \textbf{Problem 4.7. Part (a) only.}
+
+\end{itemize}
+
+
+All of the above problems (both graded an ungraded)
+are transcribed in the pages that follow.
+
+Graded problems are noted with an asterisk~(*).
+
+If any typos exist below, please use the textbook description.
+
+\newpage
+\begin{itemize}
+
+\item \textbf{Problem 1.26.}
+  Two players alternately pick numbers without replacement
+  from the set $\{1,2,3,\ldots,9\}$.
+  The first player to obtain three numbers that sum to 15 wins.
+  What is your strategy?
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 2.16 (Cartesian Product).}
+  Let $A=\{1,2,3\}$ and $B=\{a,b,c,d\}$.
+  The Cartesian product $A\times B$ is the set of pairs formed
+  from elements of A and elements of B,
+  $$A\times B = \{(a,b)\ |\ a\in A,\ b\in B\}$$
+
+  \begin{enumerate}[(a)]
+  \item List the elements in $A\times B$.
+    What is $|A\times B|$?
+\\$A\times B=\{(1,a),(1,b),(1,c),(1,d),(2,a),(2,b),(2,c),(2,d),(3,a),(3,b),(3,c),(3,d)\}$
+\\$|A\times B|=12$
+  \item List the elements in $B\times A$.
+    What is $|B\times A|$?
+\\$B\times A=\{(a,1),(a,2),(a,3),(b,1),(b,2),(b,3),(c,1),(c,2),(c,3),(d,1),(d,2),(d,3)\}$
+\\$|B\times A|=12$
+  \item List the elements in $A\times A=A^2$.
+    What is $|A\times A|$?
+\\$A\times A=\{(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),(3,1),(3,2),(3,3)\}$
+\\$|A\times A|=9$
+  \item List the elements in $B\times B=B^2$.
+    What is $|B\times B|$?
+\\ \hphantom{0} \hspace{-0.75in}$B\times B=\{(a,a),(a,b),(a,c),(a,d),(b,a),(b,b),(b,c),(b,d),(c,a),(c,b),(c,c),(c,d),(d,a),(d,b),(d,c),(d,d)\}$
+\\$|B\times B|=16$
+  \end{enumerate}
+
+  Generalize the definition of $A\times B$ to a Cartesian product
+  of three sets $A\times B\times C$.
+\\$A\times B\times C = \{(a,b,c)\ |\ a\in A, b\in B, c\in C\}$
+
+\vspace{0.1in}
+
+\item \textbf{Problem 2.19.}
+  How many binary sequences are of length $1,2,3,4,5$?
+  Guess the pattern.
+\\$2,4,8,16,32$
+\\$2^n$
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 2.29.}
+  Mimic the method we used to prove $\sqrt{2}$ is irrational and
+  prove $\sqrt{3}$ is irrational.
+\\Assume that $\sqrt{3}$ is rational, which means we can write it as a fraction 
+\\$\sqrt{3}=\{\frac{a_{1}}{b_{1}},\frac{a_{2}}{b_{2}},\frac{a_{3}}{b_{3}},...\}$
+\\Each numerator is unique; and each denominator is unique
+\\From the Well-Ordering Principle, there must be a minimum denominator $b_{*}$ 
+\\and a corresponding minimum numerator $a_{*}$ \qquad $\sqrt{3}=\frac{a_{*}}{b_{*}}$
+\\For $b_{*}$ to be the minimum possible, it must be that $a_{*}$ and $b_{*}$ have no common factors
+\\$a_{*}^2=3b_{*}^2$
+\\If $n^2$ is threeven, $n$ must be threeven. A threeven number squared is threeven because $(3k)^2=3(3k^2)$. A non-threeven number squared is not threeven because $(3k+1)^2=3(3k^2)+3(2k)+1$ and $(3k+2)^2=3(3k^2)+3(4k)+3+1$.
+\\$a_{*}^2$ is threeven since it's a multiple of 3, so $a_{*}$ is threeven and we can say $a_{*}=3k$ \qquad $k\in \mathbb{N}$
+\\$(3k)^2=3b_{*}^2$ so $b_{*}^2=3k^2$ so $b_{*}^2$ is threeven so $b_{*}$ is threeven
+\\since $a_{*}$ and $b_{*}$ are both threeven, they have a common facotor of three
+\\for the minimum $a_{*}$ and $b_{*}$ to be possible, they musst have no common factors, but they have a common factor of 3.
+
+  Now use the same method to try and prove $\sqrt{9}$ is irrational.
+  What goes wrong?
+\\Assume that $\sqrt{9}$ is rational, which means we can write it as a fraction 
+\\$\sqrt{9}=\{\frac{a_{1}}{b_{1}},\frac{a_{2}}{b_{2}},\frac{a_{3}}{b_{3}},...\}$
+\\Each numerator is unique; and each denominator is unique
+\\From the Well-Ordering Principle, there must be a minimum denominator $b_{*}$ 
+\\and a corresponding minimum numerator $a_{*}$ \qquad $\sqrt{9}=\frac{a_{*}}{b_{*}}$
+\\For $b_{*}$ to be the minimum possible, it must be that $a_{*}$ and $b_{*}$ have no common factors
+\\$a_{*}^2=9b_{*}^2$
+\\$a_{*}^2$ is divisible by 9 since it's a multiple of 9,
+\\but we can not say $a_{*}$ is divisible by 9. 
+\\If $n^2$ is divisible by 9, $n$ must be divisible by 9. A number divisible by 9 squared is divisible by 9 because $(9k)^2=9(9k^2)$. A number not divisible by 9 squared can also be divisible by 9 because $(9k+3)^2=9(9k^2)+9(6k)+9$ and $(9k+6)^2=9(9k^2)+9(12k)+9(4)$.
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.4.}
+  Define the propositions $p=$~``Kilam is a CS major''
+  and $q=$~``Kilam is a hockey player''.
+  Use the connectors $\OR$, $\AND$, $\imp$ to formulate these claims.
+  \begin{enumerate}[(a)]
+  \item Kilam is a hockey player and CS major.
+\\$q\AND p$
+  \item Kilam either plays hockey or is a CS major.
+\\$(qOR p) AND NOT(qAND p)$
+  \item Kilam plays hockey, but he is not a CS major.
+  \item Kilam is neither a hockey player nor a CS major.
+  \item Kilam is a CS major or a hockey player, not both.
+  \item Kilam is not a hockey player but is a CS major.
+  \end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.13.}
+  If it rains on a day, it rains the next day.
+  Today it didn't rain.
+  On which days must there be no rain? \\
+  (a) Tomorrow.
+  (b) All future days.
+  (c)X Yesterday.X
+  (d) All previous days.
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.14.}
+  For $p=$~``You're sick'', $q=$~``You miss the final'',
+  $r=$~``You pass FOCS'', translate into English:
+  \begin{enumerate}[(a)]
+  \item $q\imp\neg r$. If you miss the final, you will not pass FOCS.
+  \item $(p\imp\neg r)\OR(q\imp\neg r)$. If you're sick, you will not pass FOCS or if you miss the final you will not pass FOCS.
+  \item $(p\AND q)\OR(\neg q\AND r)$. You're sick and you miss the final, or your not sick and you pass FOCS.
+  \end{enumerate}
+
+\newpage
+
+\item \textbf{*Problem 3.20 (DNF). Parts (a) and (b) only.}
+  Use $\neg$, $\AND$, $\OR$ to give compound propositions with these truth-tables.
+  [Hint: You need only consider the rows which are \textsc{t}
+  and use \textsc{or} of \textsc{and}'s.]
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item
+    \begin{tabular}{cc|c}
+      $q$&$r$&$q \AND  \neg r$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{f}\\
+      \textsc{t}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{f}\\
+      \textsc{f}&\textsc{f}&\textsc{f}\\
+    \end{tabular}
+  \item
+    \begin{tabular}{cc|c}
+      $q$&$r$&$\neg r$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{f}\\
+      \textsc{t}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{f}\\
+      \textsc{f}&\textsc{f}&\textsc{t}\\
+    \end{tabular}
+  \end{enumerate}
+  \end{multicols}
+
+  (\textsc{and-or-not} formulas use only $\neg$, $\AND$, $\OR$.
+   Any truth-table can be realized by an \textsc{and-or-not} formula.
+   Even more, one can construct an \textsc{or} or \textsc{and}'s,
+   the \textit{disjunctive normal form (DNF)}.)
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.22.}
+  How many rows are in the truth table of $\neg(p\OR q)\AND\neg r$?
+  Give the truth table.
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 3.23.}
+  \begin{enumerate}[(a)]
+  \item Give the truth-table for these compound propositions.
+    $$p\AND\neg p;\ \ \ p\OR\neg p;\ \ \ p\imp(p\OR q);\ \ \ ((p\imp q)\AND(\neg q))\imp\neg p$$
+\begin{multicols}{4}
+
+    \begin{tabular}{cc|c}
+      $p$&$q$&$p \AND \neg p$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{f}\\
+      \textsc{t}&\textsc{f}&\textsc{f}\\
+      \textsc{f}&\textsc{t}&\textsc{f}\\
+      \textsc{f}&\textsc{f}&\textsc{f}\\
+    \end{tabular}
+\begin{tabular}{cc|c}
+      $p$&$q$&$p \OR \neg p$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{t}\\
+    \end{tabular}
+\begin{tabular}{cc|c}
+      $p$&$q$&$p \imp (p \OR q)$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{t}\\
+    \end{tabular}
+\begin{tabular}{cc|c}
+      $p$&$q$&$((p \imp q) \AND (\neg q)) \imp \neg p$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{t}\\
+    \end{tabular}
+\end{multicols}
+
+  \item How many rows are in the truth-table of the proposition
+    $(p\OR q)\imp(r\imp s)$?
+\\$2^4=16$
+
+  \item Show that $(p\imp q)\OR p$ is ALWAYS true.
+    This is called a tautology.
+\\By implication rules, $(p\imp q)\equiv\neg p \OR q$ so $(p\imp q)\OR p\equiv\neg p \OR q \OR p$
+\\$\neg p\OR p\equiv$ True
+  \end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.24.}
+  Let $q\imp p$ be \textsc{f} and $q\imp r$ be \textsc{t}.
+  Answer \textsc{t}/\textsc{f}: (a)~$p\OR q$ (b)~$p\imp q$ (c)~$p\AND q\AND r$.
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 3.31.}
+  Use truth tables to determine the logical equivalence of the compound statements.
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $(p\imp q)\imp r$ and $p\imp (q\imp r)$
+\\
+\begin{tabular}{ccc|cc}
+      $p$&$q$&$r$&$a$&$b$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{t}&\textsc{f}&\textsc{f}&\textsc{f}\\
+      \textsc{t}&\textsc{f}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{f}&\textsc{f}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{f}&\textsc{f}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{f}&\textsc{f}&\textsc{t}\\
+    \end{tabular}
+not equivalent
+  \item $(p\AND\neg q)\OR q$ and $p\OR q$\\
+\begin{tabular}{cc|cc}
+      $p$&$q$&$a$&$b$\\
+      \hline
+      \textsc{t}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{t}&\textsc{f}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{t}&\textsc{t}&\textsc{t}\\
+      \textsc{f}&\textsc{f}&\textsc{f}&\textsc{f}\\
+    \end{tabular}
+equivalent
+  \end{enumerate}
+  \end{multicols}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.43.}
+  For $x\in\{1,2,3,4,5\}$ and $y\in\{1,2,3\}$,
+  determine \textsc{t}/\textsc{f} with short justifications.
+  \begin{enumerate}[(a)]
+  \item $\exists x:x+3=10$
+  \item $\forall y:y+3\le7$
+  \item $\exists x:(\forall y:x^2<y+1)$
+  \item $\forall x:(\exists y:x^2+y^2<12)$
+  \end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 3.44.}
+  For $x,y\in\Z$, determine \textsc{t}/\textsc{f} with short justifications.
+  \begin{enumerate}[(a)]
+  \item $\forall x:(\exists y:x=5/y)$ F, there is no integer solution for $0=5/y$.
+  \item $\forall x:(\exists y:y^4-x<16)$ F, $y^4$ can not be less than $0$ since a negative real number to an even power is positive, but if $x$ is less than $-16$, the left side will become greater than 16 and $y^4$ will not be able to subtract from that. Contradiction: $x=-16, y^4-(-16)<16, y^4<0$, which is imposible if $y\in\R$.
+  \item $\forall x:(\exists y:\log_2 x\ne y^3)$ T, $log_2 x$ and $y^3$ are not equal constants, therefore no matter the value of one, you will always be able to pick a value of the other that does not match.
+  \end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 3.47.}
+  Use quantifiers to precisely formulate the associative laws
+  for multiplication and addition and the distributive law
+  for multiplication over addition.
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 3.56.}
+  In which (if any) of the domains $\N,\Z,\Q,\R$ are these claims \textsc{t}?
+  ($x$ and $y$ can have different domains.)
+  \begin{enumerate}[(a)]
+  \item $\exists x:x^2=4$ $\N, \Z, \Q, \R$
+  \item $\exists x:x^2=2$ $\R$
+  \item $\forall x: (\exists y:x^2=y)$ $x \N,\Z, y \N,\Z,\Q,\R$ , $x \Q, y \Q,\R$ , $x \R, y \R$
+  \item $\forall y: (\exists x:x^2=y)$ $y \N, x \R$ , $y \Z, \Q, \R, x$
+  \end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 4.7. Part (a) only.}
+  Give direct proofs:
+  \begin{enumerate}[(a)]
+  \item $x,y\in\Q\imp xy\in\Q$.
+  \end{enumerate}
+Proof. We prove the claim using a direct proof.
+\\Assume that $x,y\in\Q$.
+\\By the definition of $\Q$, $x,y$ can be writen as $\frac{a}{b},\frac{c}{d}$, where $a,b,c,d\in\Z$
+\\Since $\frac{a}{b}\frac{c}{d}=\frac{ac}{cd}$, and an integer multiplied by another integer always results in an integer, we have  $\frac{a}{b}\frac{c}{d}=\frac{e}{f}$ where $e,f\in\Z$.
+\\By the definition of $\Q$, if we have $\frac{e}{f}$ where $e,f\in\Z$, then $\frac{e}{f}\in\Q$.
+\\Therefore, $x,y\in\Q\imp xy\in\Q$ is true.
+
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

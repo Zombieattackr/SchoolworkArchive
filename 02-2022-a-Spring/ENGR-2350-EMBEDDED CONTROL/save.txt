@@ -1,0 +1,179 @@
+/*
+
+
+{
+    // Add local variables here, as needed.
+
+    // We always call the "SysInit()" first to set up the microcontroller
+    // for how we are going to use it.
+    SysInit();
+    Timer_Init();
+    GPIO_Init();
+
+    // Place initialization code (or run-once) code here
+
+    while(1){
+        // Place code that runs continuously in here
+        if(flag) {
+            times[3]++;
+            Timer_A_clearInterruptFlag(timer);
+            flag=0;
+        }
+        times[2]+=times[3]/10;
+        times[3]%=10;
+        times[1]+=times[2]/60;
+        times[2]%=60;
+        times[0]+=times[1]/60;
+        times[1]%=60;
+        times[0]%=24;
+        printf("%2u:%02u:%02u.%u\r",times[0],times[1],times[2],times[3]);
+
+    }
+}
+
+// Add function declarations here as needed
+Timer_Init()
+{
+    timer.clockSource = TIMER_A_CLOCKSOURCE_SMCLK;
+    timer.clockSourceDivider = TIMER_A_CLOCKSOURCE_DIVIDER_64;
+    timer.timerPeriod = 37500;
+    timer.timerInterruptEnable_TAIE = 1;
+    void Timer_A_registerInterrupt(timer, TIMER_A_CCR0_INTERRUPT,Timer_ISR);
+    void Timer_A_configureUpMode(TIMER_A1_BASE, tim);
+    Timer_A_startCounter();
+}
+
+void Timer_ISR(void) {
+    Timer_A_clearInterruptFlag(timer);
+    flag=1;
+    times[3]++;
+
+}
+
+void Port3_ISR(void) {
+    GPIO_clearInterruptFlag(GPIO_PORT_Px,GPIO_PINy)
+}
+
+void GPIO_Init(){
+    GPIO_setAsInputPin(GPIO_PORT_P5, GPIO_PIN7);
+    GPIO_registerInterrupt(GPIO_PORT_Px,GPIO_ISR);
+    GPIO_interruptEdgeSelect(GPIO_PORT_Px,GPIO_PINy,GPIO_LOW_TO_HIGH_TRANSITION);
+    GPIO_enableInterrupt(GPIO_PORT_Px,GPIO_PINy)
+}
+// Add interrupt functions last so they are easy to find
+*/
+
+
+/*
+// We'll always add this include statement. This basically takes the
+// code contained within the "engr_2350_msp432.h" file and adds it here.
+#include "engr2350_msp432.h"
+
+// Add function prototypes here, as needed.
+void Timer_Init();
+void GPIO_Init();
+void Timer_ISR(void);
+void Port4_ISR(void);
+
+// Add global variables here, as needed.
+Timer_A_UpModeConfig timer;
+uint8_t times[4];
+uint8_t flag=0;
+uint8_t flagh=0;
+uint8_t flagm=0;
+uint8_t flags=0;
+
+int main(void)
+{
+    // Add local variables here, as needed.
+
+    // We always call the "SysInit()" first to set up the microcontroller
+    // for how we are going to use it.
+    SysInit();
+    Timer_Init();
+    GPIO_Init();
+
+    // Place initialization code (or run-once) code here
+
+    while(1){
+        // Place code that runs continuously in here
+        if(flag) {
+            times[3]++;
+            Timer_A_clearInterruptFlag(TIMER_A1_BASE);
+            flag=0;
+        }
+        if(flagh) {
+            times[0]++;
+            GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN0);
+            flagh=0;
+        }
+        if(flagm) {
+            times[1]++;
+            GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN2);
+            flagm=0;
+        }
+        if(flags) {
+            times[2]=0;
+            times[3]=0;
+            GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN3);
+            flags=0;
+        }
+        times[2]+=times[3]/10;
+        times[3]%=10;
+        times[1]+=times[2]/60;
+        times[2]%=60;
+        times[0]+=times[1]/60;
+        times[1]%=60;
+        times[0]%=24;
+        printf("%2u:%02u:%02u.%u\r",times[0],times[1],times[2],times[3]);
+
+    }
+}
+
+// Add function declarations here as needed
+void Timer_Init() {
+    timer.clockSource = TIMER_A_CLOCKSOURCE_SMCLK;
+    timer.clockSourceDivider = TIMER_A_CLOCKSOURCE_DIVIDER_64;
+    timer.timerPeriod = 37500;
+    timer.timerInterruptEnable_TAIE = 1;
+    Timer_A_configureUpMode(TIMER_A1_BASE, &timer);
+    Timer_A_startCounter(TIMER_A1_BASE, TIMER_A_UP_MODE);
+    Timer_A_registerInterrupt(TIMER_A1_BASE, TIMER_A_CCR0_INTERRUPT,Timer_ISR);
+}
+
+void GPIO_Init() {
+    GPIO_setAsInputPin(GPIO_PORT_P4, GPIO_PIN0|GPIO_PIN2|GPIO_PIN3);
+    GPIO_registerInterrupt(GPIO_PORT_P4,Port4_ISR);
+    GPIO_interruptEdgeSelect(GPIO_PORT_P4,GPIO_PIN0,GPIO_HIGH_TO_LOW_TRANSITION);
+    GPIO_interruptEdgeSelect(GPIO_PORT_P4,GPIO_PIN2,GPIO_HIGH_TO_LOW_TRANSITION);
+    GPIO_interruptEdgeSelect(GPIO_PORT_P4,GPIO_PIN3,GPIO_HIGH_TO_LOW_TRANSITION);
+    GPIO_enableInterrupt(GPIO_PORT_P4,GPIO_PIN0|GPIO_PIN2|GPIO_PIN3);
+}
+// Add interrupt functions last so they are easy to find
+void Timer_ISR(void) {
+    Timer_A_clearInterruptFlag(TIMER_A1_BASE);
+    flag=1;
+}
+
+void Port4_ISR(void) {
+    __delay_cycles(240e3);
+    uint8_t active_pins = GPIO_getEnabledInterruptStatus(GPIO_PORT_P4);
+    if(active_pins & GPIO_PIN0){
+        GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN0);
+        if(!GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN0)){
+            flagh=1;
+        }
+    }
+    if(active_pins & GPIO_PIN2){
+        GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN2);
+        if(!GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN2)){
+            flagm=1;
+        }
+    }
+    if(active_pins & GPIO_PIN3){
+        GPIO_clearInterruptFlag(GPIO_PORT_P4,GPIO_PIN3);
+        if(!GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)){
+            flags=1;
+        }
+    }
+}

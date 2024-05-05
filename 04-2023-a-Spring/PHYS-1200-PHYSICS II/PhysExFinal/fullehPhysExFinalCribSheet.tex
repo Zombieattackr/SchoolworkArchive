@@ -1,0 +1,170 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Physics II S 2023 Crib Sheet Exam 3 Hayden Fuller
+\begin{large}
+\begin{Large}\\EXAM 1\end{Large}
+\\\indent Culombs Law, conductors, insulators, polarization, induced charges, adding vector fields and forces
+\\$\vec F_{1on2}=\vec F_{12}=-\vec{F}_{21}=q_2\vec{E}_1=k\frac{q_1q_2}{r_{12}^2}\frac{\vec{r}_{12}}{r_{12}}=k\frac{q_1q_2}{r_{12}^2}\hat r_{12}$; $\vec{F}_{tot}=q_0\vec{E}_{tot}$; $\vec{E}_{tot}(X_0,y_0,z_0)=\int \vec{dE}(x',y',z')=\int k\frac{dq'(x',y',z')}{r_0'^2}\frac{\vec{r}'_0}{r'_0}$, $\vec{r}'_0=\vec{r}_0-\vec{r}'=(x_0-x')\hat i+$... , $\vec{r}'=x'\hat i +$...
+\\distance away from line charge linearly, line starts at 0, at x=-D, $\vec{E}=-k\int_0^L\frac{\lambda dx'}{(D+x')^2}\hat i$, $V=k\lambda\ln(\frac{D+L}{D})$
+\\with $\theta$ up from x axis, $r_x=x\cos\theta$, $r_y=y\sin\theta$, $r=\sqrt{r_x^2+r_y^2}$, $k=9*10^9=\frac{1}{4\pi \epsilon_0}$, $\epsilon_0=8.85*10^{-12}$
+\\\indent Electric field for point charges, electric field for a continuous distribution of charge
+\\$\vec{F}_E=q\vec{E}$; $\vec{E}_s=k\frac{q_s}{r^2}\frac{\vec{r}}{r}=k\frac{q_s}{r^2}\hat r$
+\\\indent Gauss's law and elecctric flux through a surface, Use of Gauss's law to find field
+\\$\Phi_E=\oint\vec{E}\cdot d\vec{A}=\int E \cdot dA \cos \phi=\frac{Q_{encl}}{\epsilon_0}$, $\phi=\angle \vec E-d\vec A$, $d\vec A= dA\hat n$ net elec field $\vec{E}=0$, $V=c$ within a cond.
+\\gauss sphere: $\Phi_E=\oint\vec E (r)\cdot d\vec A=E(r)4\pi r^2$, $E(r)=k\frac{q}{r^2}$,
+\\sphere radius R: outside or point charge: $V=k\frac{q}{r}$, $E=k \frac{q}{r^2}$ inside: cond: $V=k\frac{q}{R}$, $E=0$, insulating: $E=k\frac{qr}{R^3}$
+\\long thin wire: $E(r)=\lambda/(2\pi r\epsilon_0)$ \quad thin flat sheet: $E=\sigma/(2\epsilon_0)$, stepped: go from in to out matching net $Q_in$
+\\infinite plane w/ cylinder in it, $E=\sigma/\epsilon_0$
+\\\indent Electric potential for point charge, distribution. Electric field vs potential, equipotential. Potential for group of points, conservation of energy.
+\\Change Elec Pot Engry $\Delta U=-\int_{\vec{r}_A}^{\vec{r}_B} q\vec{E}\cdot d\vec{s}=-W_{AB}$; Change Elec Pot $\Delta V =\frac{\Delta U_E}{q}= -\int_{\vec{r}_A}^{\vec{r}_B} \vec{E}\cdot d\vec{s}$ so $\Delta U_E = q\Delta V$
+\\Point charge, $\Sigma$ for system $V(r)=\frac{kq}{r}$, $U_E=k\frac{q_1q_2}{R_{12}}+$...; Field from pot: $E_x=-\Delta V=-\frac{\delta V}{\delta x}-$... .
+\\work on closed path =0; 
+\\\indent Caps, Dielectrics, steads state, equiv, energy storage, electric fielld energy density
+\\$C=Q/V=\frac{\epsilon_0 A}{d}=kC_0$, ElcPotEnrInCap $U_E=.5 Q V =.5 Q^2/C = .5 C V^2$, EnrFieldDen $u_E=.5 \epsilon_0 E^2$, $E=\frac{\sigma}{k\epsilon_0}$, $V_1=V\frac{C_{equiv}}{C_1}$
+\\\indent Current and densityJ, Resistance and itivity, Power relations and dissipation, DC steady state, KCVL Ohms
+\\$I=\frac{dQ}{dT}$, $I=\vec J d\vec A$, $\vec J=q n \vec v_d=I/A$. $E=\rho J$, $V=IR$, $R=\rho L/A$, $P=IV=I^2R=V^2/R$; $V_{bat}=$EMF$-Ir$
+\\Temp: conductor: $\rho(T)=\rho_0+\rho_0\alpha(T-T_0)$ semi: $\rho(T)=\rho_0e^{(\frac {E_a}{kT})}$, $E_a=$ actiEngr, $k=1.38e-23=$bolt const.
+\\\indent Magnetic forces and fields
+\\$\vec{F}=q \vec v \times \vec B$, finger velocity, curl field, thumb force, flip for negative. $\vec F_B=I \vec L \times \vec B$, $r=\frac{mv}{|q|B}$
+\\\indent misc
+\\$W=q\Delta V$, Centripital force $F=mv^2/r$, $E=-\Delta V/d$, $V=kq/r$, $V=\Delta KE=-\Delta PE$, $KE=0.5*mv^2$
+\\$F=ma$, earth south is north, use conventional, $\vec c=\vec a \times\vec b$, $|\vec c|=|\vec a| |\vec b|\sin\theta_{ab}$, cross is det, dot is sum
+\\RMS = $\sqrt{\sum(x^2)}$, \%error = (act-exp)/exp
+\begin{Large}\\EXAM 2\end{Large}
+\indent Sources of magnetic fields, law of Biot-Savart for moving charges and current elements, Magnetic fields of current carrying wires and loops, Magnetic forces between conductors
+\\field from point charge moving $\vec B=\frac{\mu_0}{4\pi} \frac{q\vec v\times\vec r}{r^3}=\frac{\mu_0}{4\pi} \frac{q\vec v\times\hat r}{r^2}$, $B=\frac{\mu_0}{4\pi}\frac{qv\sin\theta}{r^2}$, velocity, radius to measurement, from current element Biot-Savart swap $q\vec v>\int Id\vec l$, right hand, thumb conventional current/positive charge. axis of loop: $B_x=\frac{\mu_0Ia^2}{2(x^2+a^2)^{3/2}}=\frac{\mu_0\mu}{2\pi(s^2+a^2)^{3/2}}$, $\mu=IA$, $x=$far -> $B=\frac{\mu}{x^3}$
+\\Current same direction, fields oppose, attract. $F=L\frac{\mu_0I_1I_2}{2\pi r}$
+\\Straight wire: $B=\frac{\mu_0I}{2\pi r}$, Center of a loop: $B=\frac{\mu_0I}{2r}$, inside:$\frac{\mu_0I}{2\pi R^2}r$
+\\Solenoid: inductancec: $L=\frac{\Phi_B}{i}=\frac{N\Phi_{B,loop}}{i}=\frac{NBA_{loop}}{i}=\frac{Nu_0niA_{loop}}{i}=\mu_0N\frac{N}{l}A_{loop}=\frac{\mu_0N^2\pi r_s^2}{l}=\pi\mu_0n^2r_s^2l$
+\\inside a Solenoid: $B=\mu_0nI$, voltage $\int_a^b\vec E_{nc}\cdot d\vec l=-\frac{d\Phi_B}{dt}=-L\frac{di}{dt}$, i from + to - increase, EMF 
+\\\indent Ampere's law, calculating magnetic fields from ampere's law. Maagnetic moments and magnetism, magnetic force and torque on a current loop/magnetic moment
+\\Ampere's law: $\oint\vec B\cdot d\vec l=\mu_0I_{enc}$ total field in a circular path around a wire is equal to $\mu_0$ times current enclosed
+\\current density $\vec J$, $I_{enc}=\int\vec J_{net}\cdot d\vec A=J\cdot A \cos\theta$
+\\Magnetic moment: $\vec \mu=I\vec A$, current in loop times area of loop, right hand direction. Torque $\tau_{B,net}=\vec\mu\times\vec B$, right hand rule for spin direction
+\\\indent Magnetic flux, Faraday's law, Lenz's law, Electromagnetic Induction.
+\\Magnetic flux $\Phi_B=\int\vec V\cdot d\vec A=\int B dA\cos\theta$, Faraday's law: EMF from changing Mflux $\epsilon=\oint\vec E\cdot d\vec l=-\frac{d}{dt}\Phi_B$, for $N$ loops, $\cdot N$.\qquad Lenz's law, this EMF induces oposing(attracting) magnetic field. B increase up, EMF and i cw, induced B down, net small B up 
+\\\indent Displacement current, Maxwell's equations:
+"displacement current" is built up charge, $I_d=\epsilon_0\frac{d}{dt}\Phi_E$, fixed Ampere's $\oint\vec B\cdot d\vec l=\mu_0(I_c+I_d)_enc=\mu_0I_{c,enc}+\mu_0\epsilon_0\frac{d}{dt}\Phi_{E,enc}$
+\\Maxwell's: Gauss's for $\vec E$: $\oint\vec E\cdot d\vec A=\frac{q_{enc}}{\epsilon_0}$ for $\vec B$: $\oint\vec B\cdot d\vec A=0$
+\\Faraday stationary: $\oint\vec E\cdot d\vec l=-\frac{d}{dt}\Phi_B$, Ampere stationary: $\oint\vec B\cdot d\vec l=\mu_0(i_c+\epsilon_0\frac{d}{dt}\Phi_E)_enc$
+\\\indent Self and mutual Inductance, EMF and current in circuits, Magnetic field energy and energy density
+\\self inductance: $\Phi_B=Li$, $L=\frac{\Phi_B}{i}$, Mutual: $M=M_{12}=\frac{N_1\Phi_{B1}}{i_2}=M_{21}=\frac{N_2\Phi_{B2}}{i_1}$, $\frac{d\Phi_B}{dt}=\frac{d}{dt}Li=L\frac{di}{dt}$, $\epsilon_L=-L\frac{di}{dt}$, $\epsilon_1=-M\frac{di_2}{dt}$
+\\magnetic energy in an inductor $U_B=0.5Li^2$, region in field $\vec B$ has energy density $u_B=\frac{U_B}{v}=\frac{B^2}{2\mu_0}$
+\\\indent Circuit Transients, RC, RL, LC, and RLC. Charactaristic decay times and oscillation frequencies
+\\$I(C)=C\frac{dV_C}{dt}$, $V(L)=L\frac{dI_L}{dt}$
+\\RC: charge $q(t)=C\epsilon(1-e^{-t/RC})$, $i=\frac{dq}{dt}$, $i(t)=\frac{\epsilon}{R}e^{-t/RC}$ discharge: $q(t)=Q_0e^{-t/RC}$, $i(t)=-\frac{Q_0}{RC}e^{-t/RC}$
+\\RL: charge $i(t)=\frac{\epsilon}{R}(1-e^{-tR/L})$, discharge $i(t)=i_0e^{-tR/L}$
+\\LC: Q(C) $q(t)=Q\cos(\omega t+\phi)$, I(L) $i(t)=\frac{dq}{dt}=-\omega Q\sin(\omega t+\phi)$, $\omega=1/\sqrt{LC}$ $T=\frac{2\pi}{\omega}$, $\omega=2\pi*\omega$, $U_E=\frac{(q(t))^2}{2C}$, $U_B=0.5L(i(t))^2$, $U_{tot}=U_E+U_B=\frac{Q^2}{2C}$, $L\frac{di}{dt}=-\frac{q}{C}$, $\frac{d^2q}{dt^2}=-\frac{1}{LC}q$
+\\\indent Alternating current circuits, phasors, reactance, impedance, resonance, power, transformers
+\\AC: $RMS=\frac{1}{\sqrt{2}} max$, $X_L=\omega L$, $V_L$ is 90 ahead, $X_C=\frac{1}{\omega C}$, $V_C$ is 90 behind
+\\$i(t)=I\cos(\omega t)$,  L: $V_L(t)=\omega LI\cos(\omega t+\pi/2)=V_L\cos(\omega t+\pi/2)$
+\\series LRC AC: $V=\sqrt{V_R^2+(V_L-V_C)^2}=I\sqrt{R^2+(X_L-X_C)^2}$, *net* impedance $Z=\sqrt{R^2+(X_L-X_C)^2}$
+\\current phasor is shared, $V_R$ matches, $V_L$ leads 90, $V_C$ lags 90, $V_S=VR+VL+VC$, some phase inbetween $\phi$, $\tan\phi=\frac{V_L-V_C}{V_R}=\frac{X_L-X_C}{R}$, resonance: at $\omega_0$, $X_L=X_C$, $Z=R$, 
+\\$q(t)=Qe^{-t/\tau_d}\cos(\omega't+\phi)$, $\tau_d=2L/R$, $\omega'=\sqrt{\frac{1}{LC}-(\frac{R}{2L})}^2$
+\\Power: $P_{average}=0.5V_{amp}I_{amp}\cos\phi_{V-I}=V_{RMS}I_{RMS}\cos\phi_{V-I}$, $\cos\phi=R/Z$ for series LRC
+\\Transformer: $\frac{V2}{V1}=\frac{N2}{N1}$
+\\
+\begin{Large}\\EXAM 3\end{Large} 
+\\
+\\\indent EM basics: $\frac{\delta B_z}{\delta x}=-\epsilon_0\mu_0\frac{\delta E_y}{\delta t}$, $\frac{\delta B_z}{\delta t}=-\frac{\delta E_y}{\delta x}$, $\epsilon_0\mu_0\frac{\delta^2E_y}{\delta t^2}=\frac{\delta^2E_y}{\delta x^2}$, $\epsilon_0\mu_0\frac{\delta^2B_z}{\delta t^2}=\frac{\delta^2B_z}{\delta x^2}$, $E_m=cB_m$
+\\Poynting vector $\vec S=\frac{1}{\mu_0}\vec E\times\vec B$, Intensity $I=c\frac{1}{2}\epsilon_0E_m^2=c\frac{1}{2\mu_0}B_m^2=P/A=P/(4\pi r^2)$
+\\result wave of form$E_{tot}=E_m\cos(-\omega t+\frac{\Delta\phi}{2})$, interference result magnitude $E_m=2E_0\cos(\frac{\Delta\phi}{2})$
+\\\indent EM waves and Light, index of refraction, Wave fronts and rays, hygen's principle, polarization, malus's law
+\\Radiation pressure $p_{rad}=S_{av}/c=I/c$, $*2$ for reflection. Polarization, $I=I_0\cos^2(\phi)$. 
+\\$c=\omega/k=\lambda f=\lambda/T$;\\Index of refraction $v_n=c/n=f/\lambda_n$, $\lambda_n=\lambda/n$ 
+\\Huygens principle, wave is source of wavelets. Polarization: $I=0.5*I_0$, $I=I_0(\cos^2(\phi))$
+\\\indent interference: $I=4I_0\cos^2(\Delta\phi/2)$, $I_0=0.5 c \epsilon_0E_0^2$, $d*n$, $\Delta\phi=2\pi(n_1L_1-n_2L_2)/\lambda$,
+\\double slit $y_m=m\lambda D/d$, diffraction grating: $d\sin\theta=m\lambda$
+\\\indent Diffraction, single slit diffraction pattern and intensity, two slit interference with difraction, circular apertures, resolution
+\\slits: $I=I_0[\frac{\sin(\beta/2)}{(\beta/2)}]^2\cos^2(\alpha/2)=I_0$*single slit*double slit, $\beta=\frac{2\pi a}{\lambda}\sin\theta$, $\alpha=\frac{2\pi d}{\lambda}\sin\theta$
+\\double slit: I=above, max $y_m*d=Dm\lambda$, $d\sin\theta=m\lambda$, min $(m+0.5)$
+\\single slit: I=above, min $y_m=D\tan\theta_m$, $a\sin\theta=m\lambda$, max $0 and (m+0.5)$, small slit long wavelength get one wide max
+\\circular pinhole: first dark ring $\sin\theta_1=1.22\lambda/D$, $\theta_R=\sin^{-1}(1.22\lambda/D)$, approx at small angle $\theta_R=1.22\lambda/D$, distinguishable if max of second is outside first min of first
+\\\indent special relativity, frames of refrence, lorentz factor, time dialation, length contraction, relativistic momoentum and energy, energy and mass units
+\\$\gamma=1/\sqrt{1-(v/c)^2}$. moving clock appears to orun slowly, things look shorter. Length viewed $L$ of moving object actaul length $L_0$, $L=1/\gamma L_0$, $x'=\gamma(x-ut)$, $t'=\gamma(t-ux/c^2)$
+\\momentum $p=\gamma mv$, $KE=(\gamma-1)mc^2$, $Energy total=K+E_0=(\gamma-1)mc^2+mc^2=\gamma mc^2$. $E^2=(pc)^2+(mc^2)^2$
+\\$m=E_0/(c^2)$, $1eV=1.6*10^-19 J$
+\\\indent photons, photoelectric effect, stopping potential, Einstein's photoelectric equation, work function, intensity in the photon model, photon momentum and the compton experiment, intro to wave particle duality
+\\$KE_{max}=eV_0$, induvidual photon energy $E=hf$, $KE=hf-\phi$, $V_0=hf/e-\phi/e$, $V_0$ vs $f$, slope h/e, intercept $-\phi/e$
+\\I=power/area=energy/(time*area), for photons $I=N*hf/(t*A)=F*E$=photon flux * photon energy.
+\\$E^2=(pc)^2$, $p=E/c=hf/c=h/\lambda$
+\\compton experiment: $\lambda'-\lambda=h/(mc)(1-\cos\phi)$, $\lambda'=$after collision, $\phi=$scatter angle, m=electron
+\\duallity, it exists.
+\\$x=1.60218*10^{-19}$ ; $E: eV=x J$ ; $p: eV/c = x^2 kg m/s$ ; $m: eV/c^2=x^3 kg$
+\\Nuclear binding energy: $E_B=(ZM_H+NM_N-^A_ZM)c^2$, $M_H$=hydrogen mass, $M_N$=neutron mass, $N=A-Z$=neutrons, $^A_ZM$=mass of atom, Z=atomic number, A=isotope mass number ; rest energy of nucleus $=E_0-E_B$
+\\$A+B\rightarrow C+D$, $E_A+E_B=E_C+E_D+Q$, $Q=(M_A+M_B-M_C-M_D)c^2$
+\\magnitude charge of an electron, 1eV in J, $e=1.60218*10^{-19}$
+\\$h=6.62607*10^{-34}$ ; $m_e=9.10938*10^{-31}$ ; $m_p=1.6726*10^{-27}$ ; $m_n=1.6749*10^{-27}$
+\\$\mu_0=4\pi*10^-7$ ; $\epsilon_0=1/(\mu_0c^2)=8.854*10^{-12}$
+\\one atomic mass unit $u=1.6605*10^{-27}$ ; electron rest energy $m_ec^2=0.51099MeV$
+\\
+\begin{Large}EXAM FINAL\end{Large} 
+\\wave particle duality: $\hbar=h/(2\pi)$
+\\single slit: triangle where base=$p_x$, height=$p_y$, hypotenuse=$p$, $\theta=\delta$, small angle $\theta\approx\sin\theta=\lambda/a$, $p_x\approx p$, $\delta\approx\tan\delta=p_y/p$
+\\uncertianty: $\Delta p_y\Delta y\ge\hbar/2$, $\Delta E\Delta t\ge\hbar/2$, $\Delta E=h\Delta f$
+\\matter waves: $\lambda = h/p=h/(mv)=h/\sqrt{2mK}$, $f=E/h$
+\\wave functions: 1D motion mass m, wave function $\Psi$, potential energy $U$, $\frac{\hbar^2}{2m}\frac{\delta^2\Psi(x,t)}{\delta x^2}+U(x)\Phi(x,t)=i\hbar\frac{\delta\Psi(x,t)}{\delta t}$
+\\$U=0$: $\Psi(x,t)=Ae^{i(kx-\omega t)}=A\cos(kx-\omega t)+iA\sin(kx-\omega t)$, wave number$k=2\pi/\lambda$, $p=\frac{h}{\lambda}=\hbar k$, $\omega=2\pi f$, $E=hf=\hbar\omega$
+\\wave packets: Real$\Psi(x,t)$ is sin, Imagingary$\Psi(x,t)$ is cos, $2\pi/k_{av}=\lambda_{av}$ is one period, $x$ is whole length of packet
+\\$\Delta x$ is possible positions, width of wave.
+\\$|\Psi|^2=\Psi_r^2+\Psi_i^2\ge0$, pos of find part betw $x$ and $x+dx$ is $P(x,x+dx,t)=|\Phi(x,t)|^2dx$, $P(x_1,x_2,t)=\int_{x_1}^{x_2}|\Psi(x,t)|^2dx$
+\\possible Prob functions: 1)must be unity, area = 1. 2)single valued fucntion. 3)continuous. 4)spatial derivative continuous
+\\$\Delta k\Delta x\approx 1$
+\\$\Psi(x,t)=\psi(x)e^{iEt/\hbar}$, $|\Psi(x,t)|^2=\Psi(x,t)\cdot\Psi(x,t)^*=|\psi(x)|^2$
+\\distortion: $L_{felt}=\frac{1}{\gamma}L_0$ and it doesn't take as long to travel as it seems. $\Delta t=\gamma\Delta t_0$, feels like $\Delta t_0=\frac{1}{\gamma}\Delta t=\frac{1}{\gamma}\frac{26 c yrs}{.90 c}$
+\\kg to eV: $m=m\frac{c^2}{c^2}=\frac{kg*(m/s)^2}{c^2}\cdot\frac{1eV}{1.6*10^{-19}J}$
+\\PUT UNITS EVEN IF YOU DON'T KNOW THE ANSWER
+
+
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin -0.5in
+\evensidemargin +0.5in
+\textheight 9.0in
+\topmargin -1in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\NOT{\neg}
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+
+\begin{document}
+
+CSCI-2200 FOCS F 2022 Crib Sheet Exam 1 Tuesday, October 5, 2022 Hayden Fuller
+\begin{large}
+\noindent Notes:
+\\NEGATION: $a\OR b$ => $\NOT a\AND\NOT b$; $a\AND b$ => $\NOT a\OR\NOT b$; if $a$, then $b$=$a\imp b$ => $a\AND\NOT b$
+\\$\forall x$, $A(x)$ => $\exists x : \NOT A(x)$; $\exists x:A(x)$ => $\forall x \NOT A(x)$
+\\$\forall x:(\exists y:2x-y=0)=T$(already know $x$); $\exists y:(\forall x:2x-y=0)=F$(can't predict $x$); $\exists y:(\forall x:xy=0)=T$(x doesn't matter, y=0)
+\\statement: $p\imp q$ converse: $q\imp p$ inverse: $\NOT p\imp\NOT q$ contrapositive: $\NOT q\imp\NOT p$
+\\$\cup$ union; $\cap$ intersection; $\subset$ proper subset; $\subseteq$ subset(can be equal);
+
+What type of proof is appropriate? Contradiction:
+\\There is a prime number greater than $ab$
+\\$2^{\frac{1}{p}}$ is irrational for any integer $p>2$, given: $a,b,c,n\in\N$, $n>2$, $a^n+b^n\ne c^n$
+\\Contraposition:
+\\Direct:
+\\There is an even number grater than $ab$ (either $ab+1$ or $ab+2$ is even)
+\\if $n$ and $q$ are natural numbers, then there exists unique intergers $d$ and $r$ satisfying $n=dq+r$, with $d\in{0}\cup\N$ and $0\le r\le q$.
+\\Leaping induction:
+\\Induction:
+\\$(a+b)^n\ge a^n+b^n$, when $n$ is a natural number.
+\\$n^2\le2^n$ for all $n\ge4$
+\\$5$ divides $11^n-6$ for all $n\ge5$; show $5$ divides $11^5-6$ and show for $n\ge5$, if $5$ divides $11^n-6$, then $5$ divides $11^{n+1}-6$
+\\Weak induction:
+\\$11^n-6$ is divisible by $5$ if $n$ is a natural number.
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{Econ of Growth and Innovation \\
+PS3}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{1} 
+Consider the addition of dynamic consumer/household optimization to Solow growth
+model. In class, we argued that the solution to the HH optimization problem is an
+Euler equation of the form: $\frac{\dot c}{c}=\frac{1}{\theta}(r-\rho)$
+\begin{enumerate}[(a)]
+\item Interpret this equation in a few sentences. What does it tell us? Which exogenous
+parameters and endogenous variables does it depend on?
+\\Consumption growth over time should equal a prefrence constant times the net growth rate of the value of your assets. This prefrence constant is somewhere between consuming nothing in order to maximize the future, at the cost of having nothing today, and consuming everything you have today, at the cost of having nothing in the future. The net growth rate of the value of your assets is split into two factors, growth minus depreciation, basically "intrest minus inflation".
+\\This depends on exogenous things like the rate of depreciation, population growth and the production function, and on endogenous variables like current assets and consumption elasticity of time constant.
+\item Describe how we can think of the Euler equation as providing an upward sloping
+supply curve in the loanable funds market.
+\\With higher R, there's also higher r, which is a variable in the Euler equation. A higher r leads to lower consumption, as your money will be worth even more tomorrow. This leads to higher savings, investment, and capital stock. Since higher R leads to higher K, we have an increasing supply slope in the loanable funds market.
+\item How do we dene the model's equilibrium? (i.e. what are the equilibrium condi-
+tions?)
+\\$\dot k=f(k)-c-(n+\delta)k$ means the change in k is what's produced minus what's consumed minus depreciation. $\frac{\dot c}{c}=\frac{1}{\theta}(f'(k)-\delta-\rho)$ is how consumers consume. How they spread consumption over time times how much it grows/shrinks with time. These will intersect and the growth of k and c should be zero for steady state.
+\item Sketch the typical phase diagram that we use to illustrate equilibrium. Include
+the arrows that show the direction of movement for k and c in each of the four
+quadrants of the diagram. Provide a brief explanation for these arrows in each
+quadrant.
+\\The arrows in the top right move down and left towards equilibrium. The bottom right moves down and right toward zero consumption, which is never the optimal choice. The bottom left moves up and right towards equilibrium. The top left moves up and left towards zero capital, and once all the capital has been used up, consumption will drop to zero as there's no production of anything to consume, which is never the optimal decision, and people must choose to consume less for a better long run. Sorry I'm not going in my graphic design program right now, but it's consumption c vs capital stock k. Theres a parabola opening down going through the origin and an upward sloping line intersecting it at one point.
+\end{enumerate}
+
+
+\newpage
+
+\vspace{0.1in}
+
+\item \textbf{2} 
+Optimal growth -
+\begin{enumerate}[(a)]
+\item Write down the dynamic household optimization problem and the social planner's
+problem. Compare the two. What is the same? What is diferent?
+\\HH: choose $c(t)$ to maximize $\int_0^\infty u(c(t))*e^{-(\rho-n)t} dt$ subject to $\dot a = ra +w -c -na$
+\\Social planner: choose $c(t)$ to maximize $\int_0^\infty u(c(t))*e^{-(\rho-n)t} dt$ subject to $\dot k = f(k) -c - (\delta-n)k$
+\\They both choose the same consumption function to maximize utility over time, but they have different constraints. The HH is subject to their assets, where the change is their earned interest and wage minus consumption and depreciation(due to population growth), while the social planner is subject to their capital stock, where the change is equal to what's produced minus what's consumed minus depreciation.
+\item In a few sentences, describe how we use the social planner's problem to determine
+the efciency of the market equilibrium.
+\\The social planner optimizes for everyone with the simple constraint of how much capital stock there is to go around, as compared to consumers that have their assets and could be greedy and hurt the whole. If these two have the exact same outcome, that means markets optimize perfectly. If they had different outcomes, then that would mean that consumers optimizing for themselves has an outcome that is sub-optimal.
+\item Is the market equilibrium efcient in this model? What is the main assumption
+that delivers this conclusion?
+Under the assumption of perfect competition in the markets, they have the same outcome, meaning that perfectly competitive markets are perfectly efficient.
+\end{enumerate}
+
+
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

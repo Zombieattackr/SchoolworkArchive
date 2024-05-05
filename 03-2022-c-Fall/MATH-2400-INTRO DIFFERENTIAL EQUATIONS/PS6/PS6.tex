@@ -1,0 +1,234 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 6} \smallskip\\ Due: 11pm, Tuesday, October 25, 2022}
+\\Hayden Fuller
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 3, pages 72--75: 1(c,d), 2, 4, 7, 8, 12, 13.
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+\item (5 points) The displacement $u(t)$ of a mass-spring-damper system is governed by $mu\sp{\prime\prime} + cu\sp\prime + ku = 0$, where $m=2$ and $k=8$.  For what value of the damping coefficient $c$ is the system critically damped? 
+\begin{description}
+\item[A] $c=4$
+\item[B] X$c=8$	X
+\item[C] $c=16$
+\item[D] None of these choices
+\end{description}
+$c=\sqrt{4km}=\sqrt{64}=8$
+
+\item (5 points) The displacement $u(t)$ of a forced mass-spring-damper system is governed by the linear DE $mu\sp{\prime\prime} + cu\sp\prime + ku = 5\cos(2t)$.  For what values of the mass $m$, damping coefficient~$c$ and spring constant $k$ is the system in resonance? 
+\begin{description}
+\item[A] $m=1$, $c=0$, $k=2$
+\item[B] $m=2$, $c=1$, $k=4$
+\item[C] $m=2$, $c=1$, $k=8$
+\item[D] XNone of these choicesX
+\end{description}
+$5\cos(2t)$; $\omega=2$
+\\$\omega_0=\sqrt{\frac{k}{m}}=\sqrt{2}\ne2=\omega$
+
+\newpage
+\item (5 points) The displacement $u(t)$ of a forced mass-spring system is governed by $u\sp{\prime\prime} + 2u\sp{\prime} +3u = 4\cos(t)$.  The amplitude $R$ of the forced  response is given by
+\begin{description}
+\item[A]  $R=1$
+\item[B]  X$R=\sqrt2$X
+\item[C]  $R=2$  
+\item[D] None of these choices
+\end{description}
+$R=\frac{F_0}{\sqrt{D}}$
+\\$F_0=4$
+\\$\omega=0$
+\\$\omega_0=\sqrt{\frac{k}{m}}=\sqrt{3}$
+\\$D=c^2\omega^2+(k-m\omega^2)^2=2^2\omega^2+(3-1\omega^2)^2$
+\\$2^21^2+(3-1*1^2)^2=4+4=8$
+\\$\frac{4}{\sqrt{8}}=\frac{4\sqrt{8}}{8}=\sqrt{2}$
+\end{enumerate}
+
+\bigskip\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  A mass weighing $8\;{\rm lb}$ stretches a spring $4\;{\rm in}$.  Assume the mass is pulled downward, stretching the spring a distance of $6\;{\rm in}$, and then set in motion with an upward velocity of $3\;{\rm ft}/{\rm s}$.  There is no damping in the system and the acceleration due to gravity is $g=32\;{\rm ft}/{\rm s}\sp2$.
+\begin{enumerate}
+\item
+Determine an initial-value problem for the downward displacement $u(t)$ in units of ${\rm ft}$.
+\\$mg=ku$; $8=k\frac{1}{3}$; $k=24$; $m32=8$; $m=\frac{1}{4}$
+\\$u_0=\frac{1}{2}$; $u'_0=-3$
+\\$\frac{1}{4}u''+24u=0$
+
+\item
+Solve the IVP and express the solution in the polar form $u(t)=R\cos(\omega_0t-\phi)$.
+\\$r=\frac{0\pm\sqrt{0-4\frac{1}{4}24}}{2\frac{1}{4}}=\pm2\sqrt{24}i=\pm4\sqrt{6}i$
+\\$\omega_0=\sqrt{\frac{k}{m}}=\sqrt{24*4}=4\sqrt{6}$
+\\$u(t)=u_0\cos(\omega_0t)+\frac{u'_0}{\omega_0}\sin(\omega_0t)$
+\\$u(t)=\frac{1}{2}\cos(4\sqrt{6}t)-\frac{3}{4\sqrt{6}}\sin(4\sqrt{6}t)$
+\\$u(t)=\frac{1}{2}\cos(4\sqrt{6}t)-\frac{\sqrt{6}}{8}\sin(4\sqrt{6}t)$
+\\$R=\sqrt{\frac{1}{2}^2+\frac{-\sqrt{6}}{8}^2}$
+\\$R=\sqrt{\frac{1}{4}+\frac{6}{64}}$
+\\$R=\sqrt{\frac{8}{32}+\frac{3}{32}}$
+\\$R=\sqrt{\frac{11}{32}}$
+\\$\tan(\phi)=\frac{C_2}{C_1}$
+\\$\phi=\arctan(\frac{-\frac{\sqrt{6}}{8}}{\frac{1}{2}})$
+\\$\phi=\arctan(\frac{-\sqrt{6}}{4})$
+\\
+\\$u(t)=R\cos(\omega_0t-\phi)$
+\\$u(t)=\sqrt{\frac{11}{32}}\cos(4\sqrt{6}t-\arctan(\frac{-\sqrt{6}}{4}))$
+\\
+
+\item
+Determine the frequency, period and amplitude of the oscillation.  Sketch the solution.
+\\frequency $=\frac{2\sqrt{6}}{\pi}$ Hz.
+\\period $=\frac{2\pi}{4\sqrt{6}}=\frac{\pi}{2\sqrt{6}}$ seconds.
+\\amplitude $=\sqrt{\frac{11}{32}}$ feet.
+\\A cosine wave with y intercept at $0.5$ with a slope of $-3$ at that point, an amplitude of $\sqrt{\frac{11}{32}}$, and a period of $\frac{\pi}{2\sqrt{6}}$.
+\\https://www.desmos.com/calculator/9bs2160hyx
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) A force of $4\;{\rm N}$ stretches a spring $10\;{\rm cm}$.  A mass of $2\;{\rm kg}$ is hung from the spring, and the mass is also attached to a viscous damper that exerts a force of $16\;{\rm N}$ when the velocity of the mass is $2\;{\rm m}/{\rm s}$.  The mass is set into motion from its equilibrium position by an initial downward velocity of $20\;{\rm cm}/{\rm s}$.
+\begin{enumerate}
+\item
+Determine an initial-value problem for the {\bf upward} displacement $u(t)$ in units of meters.
+\\$4=0.1k$; $k=40$; $m=2$; $16=2c$; $c=8$
+\\$u_0=0$; $u'_0=-0.2$
+\\$u(t)=2u''+8u'+40u=0$
+\item
+Solve the IVP and sketch the solution.
+\\$u=e^{rt}$; $2r^2+8r+40=0$; $r=\frac{-8\pm\sqrt{8^2-4*2*40}}{2*2}=\frac{-8\pm\sqrt{64-320}}{4}=\frac{-8\pm\sqrt{-256}}{4}=-2\pm4i$
+\\$\lambda=-2$; $\omega=4$
+\\$u(t)=e^{\lambda t}(C_1\cos(\omega t)+C_2\sin(\omega t))$
+\\$u(t)=e^{-2t}(C_1\cos(4t)+C_2\sin(4t))$
+\\$u(0)=0=e^{0}(C_1\cos(0)+C_2\sin(0))$
+\\$u(0)=0=C_1$
+\\$u(t)=e^{-2t}C_2\sin(4t)$
+\\$u'(t)=-2e^{-2t}C_2\sin(4t)+e^{-2t}C_24\cos(4t)$
+\\$u'(0)=-0.2=-2e^{0}C_2\sin(0)+e^{0}C_24\cos(0)$
+\\$u'(0)=-0.2=4C_2$
+\\$C_2=-0.05$; $C_1=0$
+\\$u(t)=-e^{-2t}0.05\sin(4t)$
+\\A sine wave through the origin with a slope of $-0.2$ at that point and a period of $\frac{\pi}{2}$, with an amplitude in the envelope bounded above by $0.05e^{-2t}$ and below by $-0.05e^{-2t}$.
+\\https://www.desmos.com/calculator/y3qnqf77uz
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) The displacement $u(t)$ of a forced mass-spring-damper system satisfies the DE
+\[
+u\sp{\prime\prime}+2u\sp\prime+3u=\cos(\omega t)
+\]
+\begin{enumerate}
+\item The forced response of the system has the form $u_p(t)=A\cos(\omega t)+B\sin(\omega t)$.  Determine formulas for $A$ and $B$.  (Note: your formulas will involve the frequency $\omega$ of the forcing.)
+\\$m=1$; $c=2$; $k=3$
+\\$\omega_0=\sqrt{\frac{3}{1}}=\sqrt{3}$
+\\$u_p(t)=A\cos(\omega t)+B\sin(\omega t)$
+\\$u'_p(t)=-A\omega\sin(\omega t)+B\omega\cos(\omega t)$
+\\$u''_p(t)=-A\omega^2\cos(\omega t)-B\omega^2\sin(\omega t)$
+\\let $s=\sin(\omega t)$ and $c=\cos(\omega t)$
+\\$u_p(t)=Ac+Bs$
+\\$u'_p(t)=-A\omega s+B\omega c$
+\\$u''_p(t)=-A\omega^2c-B\omega^2s$
+\\$L[u_p]=(-A\omega^2c-B\omega^2s)+2(-A\omega s+B\omega c)+3(Ac+Bs)=c$
+\\$c(-A\omega^2+2B\omega+3A)+s(-B\omega^2-2A\omega+3B)=c$
+\\$-A\omega^2+2B\omega+3A=1$
+\\$A(-\omega^2+3)+B(2\omega)=1$
+\\$A(-\omega^2+3)^2+B(2\omega)(-\omega^2+3)=(-\omega^2+3)$
+\\$-B\omega^2-2A\omega+3B=0$
+\\$A(-2\omega)+B(-\omega^2+3)=0$
+\\$A(-2\omega)^2+B(-\omega^2+3)(-2\omega)=0$
+\\$A((-2\omega)^2+(-\omega^2+3)^2)=(-\omega^2+3)$
+\\$A=\frac{(-\omega^2+3)}{((-2\omega)^2+(-\omega^2+3)^2)}=\frac{-\omega^2+3}{4\omega^2+(3-\omega^2)^2}$
+\\$D=c^2\omega^2+(k-m\omega^2)^2=2^2\omega^2+(3-1\omega^2)^2=4\omega^2+(3-\omega^2)^2$
+\\$A=\frac{3-\omega^2}{D}$
+\\$A(-2\omega)+B(-\omega^2+3)=0$
+\\$\frac{3-\omega^2}{D}(-2\omega)+B(-\omega^2+3)=0$
+\\$B(-\omega^2+3)=\frac{3-\omega^2}{D}(2\omega)$
+\\$B=\frac{1}{D}(2\omega)$
+\\$B=\frac{2\omega}{D}$
+\\$u_p(t)=\frac{3-\omega^2}{D}\cos(\omega t)+\frac{2\omega}{D}\sin(\omega t)$
+\item The amplitude of the forced response $R$ is given by $R=\sqrt{A\sp2+B\sp2}$, where $A$ and $B$ are given by the formulas from part~(a).  Determine the frequency $\omega$ that maximizes the amplitude of the forced response.  (Hint: consult an in-class example.)
+\\$R=\sqrt{A^2+B^2}=\sqrt{(\frac{3-\omega^2}{D})^2+(\frac{2\omega}{D})^2}=\sqrt{\frac{4\omega^2+(3-\omega^2)^2}{D^2}}=\sqrt{\frac{D}{D^2}}=\sqrt{\frac{1}{D}}=D^{-\frac{1}{2}}$
+\\$R'=0$; $D'=0$
+\\$D=4\omega^2+(3-\omega^2)^2=4\omega^2+9-6\omega^2+\omega^4=\omega^4-2\omega^2+9$
+\\$D'=0=4\omega^3-4\omega=4\omega(\omega^2-1)$
+\\$\omega=-1$, $0$, or $1$
+\\$\omega=1$
+\\$\omega_0=\sqrt{3}$
+\\$\omega$ is close enough to $\omega_0$, makes sense.
+\\$\omega=1$Hz
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

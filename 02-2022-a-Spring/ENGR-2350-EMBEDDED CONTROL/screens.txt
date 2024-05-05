@@ -1,0 +1,627 @@
+{
+  "Config": {
+    "Id": "AOC2402__0.BOE0998__0.DEL4014_DC32367OADJT_0",
+    "AllScreens": [
+      {
+        "Id": "BOE0998__0",
+        "IdResolution": "1920x1080",
+        "Primary": true,
+        "Orientation": 0,
+        "PhysicalRotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "0,0,344,194",
+          "OutsideBounds": "-20,-20,384,234"
+        },
+        "InMm": {
+          "Borders": "20,20,20,20",
+          "Bounds": "0,25.617021276596,344,194",
+          "OutsideBounds": "-20,5.61702127659601,384,234"
+        },
+        "InMmUnrotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "0,25.617021276596,344,194",
+          "OutsideBounds": "-20,5.61702127659601,384,234"
+        },
+        "InPixel": {
+          "Borders": "0,0,0,0",
+          "Bounds": "0,0,1920,1080",
+          "OutsideBounds": "0,0,1920,1080"
+        },
+        "InDip": {
+          "Borders": "0,0,0,0",
+          "Bounds": "0,0,1536,864",
+          "OutsideBounds": "0,0,1536,864"
+        },
+        "RealPitch": {
+          "X": 0.17916666666666667,
+          "Y": 0.17962962962962964
+        },
+        "PhysicalRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "Pitch": {
+          "X": 0.17916666666666667,
+          "Y": 0.17962962962962964
+        },
+        "OverallBoundsWithoutThisInMm": "4.2632564145606E-14,-289.765957446808,729.398648648649,509.382978723404",
+        "GuiLocation": "0,0,0,0",
+        "WinDpiX": 120.0,
+        "WinDpiY": 120.0,
+        "RawDpi": {
+          "X": 141.0,
+          "Y": 141.0
+        },
+        "EffectiveDpi": {
+          "X": 120.0,
+          "Y": 120.0
+        },
+        "DpiAwareAngularDpi": {
+          "X": 123.0,
+          "Y": 123.0
+        },
+        "WpfToPixelRatio": {
+          "X": 1.25,
+          "Y": 1.25
+        },
+        "PixelToDipRatio": {
+          "X": 0.8,
+          "Y": 0.8
+        },
+        "PhysicalToPixelRatio": {
+          "X": 5.5813953488372094,
+          "Y": 5.56701030927835
+        },
+        "MmToDipRatio": {
+          "X": 4.4651162790697674,
+          "Y": 4.4536082474226806
+        },
+        "RealDpi": {
+          "X": 141.76744186046511,
+          "Y": 141.4020618556701
+        },
+        "DpiX": {
+          "X": 141.76744186046511,
+          "Y": 141.4020618556701
+        },
+        "RealDpiAvg": 141.58486972253624
+      },
+      {
+        "Id": "AOC2402__0",
+        "IdResolution": "0x0",
+        "Primary": false,
+        "Orientation": 0,
+        "PhysicalRotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "0,0,345.398648648649,194",
+          "OutsideBounds": "-20,-20,385.398648648649,234"
+        },
+        "InMm": {
+          "Borders": "20,20,20,20",
+          "Bounds": "384,25.617021276596,345.398648648649,194",
+          "OutsideBounds": "364,5.61702127659601,385.398648648649,234"
+        },
+        "InMmUnrotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "384,25.617021276596,345.398648648649,194",
+          "OutsideBounds": "364,5.61702127659601,385.398648648649,234"
+        },
+        "InPixel": {
+          "Borders": "0,0,0,0",
+          "Bounds": "1920,6,1920,1080",
+          "OutsideBounds": "1920,6,1920,1080"
+        },
+        "InDip": {
+          "Borders": "0,0,0,0",
+          "Bounds": "1536,4.8,1920,1080",
+          "OutsideBounds": "1536,4.8,NaN,1080"
+        },
+        "RealPitch": {
+          "X": 0.17989512950450451,
+          "Y": 0.17962962962962964
+        },
+        "PhysicalRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "Pitch": {
+          "X": 0.17989512950450451,
+          "Y": 0.17962962962962964
+        },
+        "OverallBoundsWithoutThisInMm": "0,-289.765957446808,344,509.382978723404",
+        "GuiLocation": "0,0,0,0",
+        "WinDpiX": 96.0,
+        "WinDpiY": 96.0,
+        "RawDpi": {
+          "X": 92.0,
+          "Y": 92.0
+        },
+        "EffectiveDpi": {
+          "X": 96.0,
+          "Y": 96.0
+        },
+        "DpiAwareAngularDpi": {
+          "X": 91.0,
+          "Y": 91.0
+        },
+        "WpfToPixelRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "PixelToDipRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "PhysicalToPixelRatio": {
+          "X": 5.5587941861147518,
+          "Y": 5.56701030927835
+        },
+        "MmToDipRatio": {
+          "X": 5.5587941861147518,
+          "Y": 5.56701030927835
+        },
+        "RealDpi": {
+          "X": 141.19337232731468,
+          "Y": 141.4020618556701
+        },
+        "DpiX": {
+          "X": 141.19337232731468,
+          "Y": 141.4020618556701
+        },
+        "RealDpiAvg": 141.29775561946207
+      },
+      {
+        "Id": "DEL4014_DC32367OADJT_0",
+        "IdResolution": "0x0",
+        "Primary": false,
+        "Orientation": 0,
+        "PhysicalRotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "0,0,344,275.382978723404",
+          "OutsideBounds": "-20,-20,384,315.382978723404"
+        },
+        "InMm": {
+          "Borders": "20,20,20,20",
+          "Bounds": "4.2632564145606E-14,-289.765957446808,344,275.382978723404",
+          "OutsideBounds": "-20,-309.765957446808,384,315.382978723404"
+        },
+        "InMmUnrotated": {
+          "Borders": "20,20,20,20",
+          "Bounds": "4.2632564145606E-14,-289.765957446808,344,275.382978723404",
+          "OutsideBounds": "-20,-309.765957446808,384,315.382978723404"
+        },
+        "InPixel": {
+          "Borders": "0,0,0,0",
+          "Bounds": "637,-1024,1280,1024",
+          "OutsideBounds": "637,-1024,1280,1024"
+        },
+        "InDip": {
+          "Borders": "0,0,0,0",
+          "Bounds": "509.6,-819.2,1280,1024",
+          "OutsideBounds": "509.6,-819.2,NaN,1024"
+        },
+        "RealPitch": {
+          "X": 0.26875,
+          "Y": 0.26892869015957449
+        },
+        "PhysicalRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "Pitch": {
+          "X": 0.26875,
+          "Y": 0.26892869015957449
+        },
+        "OverallBoundsWithoutThisInMm": "0,25.617021276596,729.398648648649,194",
+        "GuiLocation": "0,0,0,0",
+        "WinDpiX": 96.0,
+        "WinDpiY": 96.0,
+        "RawDpi": {
+          "X": 86.0,
+          "Y": 86.0
+        },
+        "EffectiveDpi": {
+          "X": 96.0,
+          "Y": 96.0
+        },
+        "DpiAwareAngularDpi": {
+          "X": 85.0,
+          "Y": 85.0
+        },
+        "WpfToPixelRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "PixelToDipRatio": {
+          "X": 1.0,
+          "Y": 1.0
+        },
+        "PhysicalToPixelRatio": {
+          "X": 3.7209302325581395,
+          "Y": 3.7184578536660742
+        },
+        "MmToDipRatio": {
+          "X": 3.7209302325581395,
+          "Y": 3.7184578536660742
+        },
+        "RealDpi": {
+          "X": 94.511627906976742,
+          "Y": 94.448829483118274
+        },
+        "DpiX": {
+          "X": 94.511627906976742,
+          "Y": 94.448829483118274
+        },
+        "RealDpiAvg": 94.480233912596688
+      }
+    ],
+    "AutoUpdate": false,
+    "PrimaryScreen": {
+      "Id": "BOE0998__0",
+      "IdResolution": "1920x1080",
+      "Primary": true,
+      "Orientation": 0,
+      "PhysicalRotated": {
+        "Borders": "20,20,20,20",
+        "Bounds": "0,0,344,194",
+        "OutsideBounds": "-20,-20,384,234"
+      },
+      "InMm": {
+        "Borders": "20,20,20,20",
+        "Bounds": "0,25.617021276596,344,194",
+        "OutsideBounds": "-20,5.61702127659601,384,234"
+      },
+      "InMmUnrotated": {
+        "Borders": "20,20,20,20",
+        "Bounds": "0,25.617021276596,344,194",
+        "OutsideBounds": "-20,5.61702127659601,384,234"
+      },
+      "InPixel": {
+        "Borders": "0,0,0,0",
+        "Bounds": "0,0,1920,1080",
+        "OutsideBounds": "0,0,1920,1080"
+      },
+      "InDip": {
+        "Borders": "0,0,0,0",
+        "Bounds": "0,0,1536,864",
+        "OutsideBounds": "0,0,1536,864"
+      },
+      "RealPitch": {
+        "X": 0.17916666666666667,
+        "Y": 0.17962962962962964
+      },
+      "PhysicalRatio": {
+        "X": 1.0,
+        "Y": 1.0
+      },
+      "Pitch": {
+        "X": 0.17916666666666667,
+        "Y": 0.17962962962962964
+      },
+      "OverallBoundsWithoutThisInMm": "4.2632564145606E-14,-289.765957446808,729.398648648649,509.382978723404",
+      "GuiLocation": "0,0,0,0",
+      "WinDpiX": 120.0,
+      "WinDpiY": 120.0,
+      "RawDpi": {
+        "X": 141.0,
+        "Y": 141.0
+      },
+      "EffectiveDpi": {
+        "X": 120.0,
+        "Y": 120.0
+      },
+      "DpiAwareAngularDpi": {
+        "X": 123.0,
+        "Y": 123.0
+      },
+      "WpfToPixelRatio": {
+        "X": 1.25,
+        "Y": 1.25
+      },
+      "PixelToDipRatio": {
+        "X": 0.8,
+        "Y": 0.8
+      },
+      "PhysicalToPixelRatio": {
+        "X": 5.5813953488372094,
+        "Y": 5.56701030927835
+      },
+      "MmToDipRatio": {
+        "X": 4.4651162790697674,
+        "Y": 4.4536082474226806
+      },
+      "RealDpi": {
+        "X": 141.76744186046511,
+        "Y": 141.4020618556701
+      },
+      "DpiX": {
+        "X": 141.76744186046511,
+        "Y": 141.4020618556701
+      },
+      "RealDpiAvg": 141.58486972253624
+    },
+    "PhysicalOutsideBounds": "-20,-309.765957446808,769.398648648649,549.382978723404",
+    "PhysicalBounds": "0,-289.765957446808,729.398648648649,509.382978723404",
+    "Enabled": true,
+    "LoadAtStartup": true,
+    "LoopAllowed": true,
+    "LoopX": false,
+    "LoopY": false,
+    "IsRatio100": false,
+    "AdjustPointerAllowed": false,
+    "AdjustPointer": false,
+    "AdjustSpeedAllowed": false,
+    "AdjustSpeed": false,
+    "AllowCornerCrossing": true,
+    "HomeCinema": false,
+    "Pinned": false,
+    "ConfigLocation": "0,0,0,0",
+    "AllowOverlaps": false,
+    "AllowDiscontinuity": false,
+    "MaxEffectiveDpiX": 120.0,
+    "MaxEffectiveDpiY": 120.0
+  },
+  "Monitors": [
+    {
+      "DeviceId": "MONITOR\\BOE0998\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002",
+      "PnpCode": "BOE0998",
+      "IdMonitor": "BOE0998_",
+      "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002",
+      "DeviceString": "Generic PnP Monitor",
+      "Devices": [
+        {
+          "AttachedToDesktop": true,
+          "DisplayModes": [],
+          "DeviceCaps": {
+            "Size": "0,0",
+            "Resolution": "0,0",
+            "LogPixels": "0,0",
+            "Aspect": "0,0",
+            "BitsPixel": 0
+          },
+          "CurrentMode": null,
+          "DeviceName": "\\\\.\\DISPLAY1\\Monitor0",
+          "DeviceString": "Generic PnP Monitor",
+          "State": 3,
+          "DeviceId": "MONITOR\\BOE0998\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002",
+          "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002"
+        }
+      ],
+      "AttachedDevice": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "0,0",
+          "Resolution": "0,0",
+          "LogPixels": "0,0",
+          "Aspect": "0,0",
+          "BitsPixel": 0
+        },
+        "CurrentMode": null,
+        "DeviceName": "\\\\.\\DISPLAY1\\Monitor0",
+        "DeviceString": "Generic PnP Monitor",
+        "State": 3,
+        "DeviceId": "MONITOR\\BOE0998\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0002"
+      },
+      "AttachedDisplay": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "344,194",
+          "Resolution": "1920,1080",
+          "LogPixels": "120,120",
+          "Aspect": "36,36",
+          "BitsPixel": 32
+        },
+        "CurrentMode": {
+          "Position": "0,0",
+          "BitsPerPixel": 32,
+          "Pels": "1920,1080",
+          "DisplayFlags": 0,
+          "DisplayFrequency": 165,
+          "DisplayFixedOutput": 0,
+          "DisplayOrientation": 0
+        },
+        "DeviceName": "\\\\.\\DISPLAY1",
+        "DeviceString": "AMD Radeon(TM) Graphics",
+        "State": 524293,
+        "DeviceId": "PCI\\VEN_1002&DEV_1638&SUBSYS_380C17AA&REV_C5",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Video\\{1E62ACC3-35E1-11EC-8AE5-806E6F6E6963}\\0000"
+      },
+      "MonitorArea": "0,0,1920,1080",
+      "WorkArea": "0,0,1920,1020",
+      "HKeyName": "\\REGISTRY\\MACHINE\\SYSTEM\\ControlSet001\\Enum\\DISPLAY\\BOE0998\\5&317332e&0&UID512\\Device Parameters",
+      "AttachedToDesktop": true,
+      "Primary": true,
+      "Edid": {
+        "ProductCode": "0998",
+        "Serial": "00000000",
+        "PhysicalSize": "344,194",
+        "ManufacturerCode": "BOE",
+        "Model": "",
+        "SerialNo": ""
+      },
+      "EffectiveDpi": "120,120",
+      "AngularDpi": "123,123",
+      "RawDpi": "141,141",
+      "ScaleFactor": 1.0,
+      "CapabilitiesString": null,
+      "MonitorNo": 1
+    },
+    {
+      "DeviceId": "MONITOR\\AOC2402\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003",
+      "PnpCode": "AOC2402",
+      "IdMonitor": "AOC2402_",
+      "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003",
+      "DeviceString": "Generic PnP Monitor",
+      "Devices": [
+        {
+          "AttachedToDesktop": true,
+          "DisplayModes": [],
+          "DeviceCaps": {
+            "Size": "0,0",
+            "Resolution": "0,0",
+            "LogPixels": "0,0",
+            "Aspect": "0,0",
+            "BitsPixel": 0
+          },
+          "CurrentMode": null,
+          "DeviceName": "\\\\.\\DISPLAY15\\Monitor0",
+          "DeviceString": "Generic PnP Monitor",
+          "State": 3,
+          "DeviceId": "MONITOR\\AOC2402\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003",
+          "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003"
+        }
+      ],
+      "AttachedDevice": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "0,0",
+          "Resolution": "0,0",
+          "LogPixels": "0,0",
+          "Aspect": "0,0",
+          "BitsPixel": 0
+        },
+        "CurrentMode": null,
+        "DeviceName": "\\\\.\\DISPLAY15\\Monitor0",
+        "DeviceString": "Generic PnP Monitor",
+        "State": 3,
+        "DeviceId": "MONITOR\\AOC2402\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0003"
+      },
+      "AttachedDisplay": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "527,296",
+          "Resolution": "1920,1080",
+          "LogPixels": "120,120",
+          "Aspect": "36,36",
+          "BitsPixel": 32
+        },
+        "CurrentMode": {
+          "Position": "1920,6",
+          "BitsPerPixel": 32,
+          "Pels": "1920,1080",
+          "DisplayFlags": 0,
+          "DisplayFrequency": 144,
+          "DisplayFixedOutput": 0,
+          "DisplayOrientation": 0
+        },
+        "DeviceName": "\\\\.\\DISPLAY15",
+        "DeviceString": "DisplayLink USB Device",
+        "State": 1,
+        "DeviceId": "USB\\VID_17E9&PID_6000&REV_3197&MI_00",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Video\\{70DCDC87-7805-11EC-8AEB-E00AF642B240}\\0000"
+      },
+      "MonitorArea": "1920,6,1920,1080",
+      "WorkArea": "1920,6,1920,1032",
+      "HKeyName": "\\REGISTRY\\MACHINE\\SYSTEM\\ControlSet001\\Enum\\DISPLAY\\AOC2402\\9&233b3933&0&UID256\\Device Parameters",
+      "AttachedToDesktop": true,
+      "Primary": false,
+      "Edid": {
+        "ProductCode": "2402",
+        "Serial": "000091E3",
+        "PhysicalSize": "527,296",
+        "ManufacturerCode": "AOC",
+        "Model": "24G2W1G4",
+        "SerialNo": ""
+      },
+      "EffectiveDpi": "96,96",
+      "AngularDpi": "91,91",
+      "RawDpi": "92,92",
+      "ScaleFactor": 1.0,
+      "CapabilitiesString": null,
+      "MonitorNo": 2
+    },
+    {
+      "DeviceId": "MONITOR\\DEL4014\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001",
+      "PnpCode": "DEL4014",
+      "IdMonitor": "DEL4014_DC32367OADJT",
+      "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001",
+      "DeviceString": "Generic PnP Monitor",
+      "Devices": [
+        {
+          "AttachedToDesktop": true,
+          "DisplayModes": [],
+          "DeviceCaps": {
+            "Size": "0,0",
+            "Resolution": "0,0",
+            "LogPixels": "0,0",
+            "Aspect": "0,0",
+            "BitsPixel": 0
+          },
+          "CurrentMode": null,
+          "DeviceName": "\\\\.\\DISPLAY16\\Monitor0",
+          "DeviceString": "Generic PnP Monitor",
+          "State": 3,
+          "DeviceId": "MONITOR\\DEL4014\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001",
+          "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001"
+        }
+      ],
+      "AttachedDevice": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "0,0",
+          "Resolution": "0,0",
+          "LogPixels": "0,0",
+          "Aspect": "0,0",
+          "BitsPixel": 0
+        },
+        "CurrentMode": null,
+        "DeviceName": "\\\\.\\DISPLAY16\\Monitor0",
+        "DeviceString": "Generic PnP Monitor",
+        "State": 3,
+        "DeviceId": "MONITOR\\DEL4014\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Class\\{4d36e96e-e325-11ce-bfc1-08002be10318}\\0001"
+      },
+      "AttachedDisplay": {
+        "AttachedToDesktop": true,
+        "DisplayModes": [],
+        "DeviceCaps": {
+          "Size": "376,301",
+          "Resolution": "1280,1024",
+          "LogPixels": "120,120",
+          "Aspect": "36,36",
+          "BitsPixel": 32
+        },
+        "CurrentMode": {
+          "Position": "637,-1024",
+          "BitsPerPixel": 32,
+          "Pels": "1280,1024",
+          "DisplayFlags": 0,
+          "DisplayFrequency": 60,
+          "DisplayFixedOutput": 0,
+          "DisplayOrientation": 0
+        },
+        "DeviceName": "\\\\.\\DISPLAY16",
+        "DeviceString": "DisplayLink USB Device",
+        "State": 1,
+        "DeviceId": "USB\\VID_17E9&PID_6000&REV_3197&MI_00",
+        "DeviceKey": "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Video\\{70DCDC87-7805-11EC-8AEB-E00AF642B240}\\0001"
+      },
+      "MonitorArea": "637,-1024,1280,1024",
+      "WorkArea": "637,-1024,1280,976",
+      "HKeyName": "\\REGISTRY\\MACHINE\\SYSTEM\\ControlSet001\\Enum\\DISPLAY\\DEL4014\\9&233b3933&0&UID259\\Device Parameters",
+      "AttachedToDesktop": true,
+      "Primary": false,
+      "Edid": {
+        "ProductCode": "4014",
+        "Serial": "41444A54",
+        "PhysicalSize": "376,301",
+        "ManufacturerCode": "DEL",
+        "Model": "DELL 1907FP",
+        "SerialNo": "DC32367OADJT"
+      },
+      "EffectiveDpi": "96,96",
+      "AngularDpi": "85,85",
+      "RawDpi": "86,86",
+      "ScaleFactor": 1.0,
+      "CapabilitiesString": null,
+      "MonitorNo": 3
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+80144 innovation
+75934 phys ii
+75885 circuits
+76885 algo			midterm march 15 wed 6-8 dcc 308/318
+
+no spotify pause
+char counter
+platform indicators
+
+power tools program windows
+
+Vc(s)=10/s+V1(s)((1/(s*e-8))/(200+s*e-4+1/(s*e-8)))
+
+
+misc
+Fix 4 year plan,
+laundry towels
+melancolia, robothead logo red+blue wallpaper reupload and mobile resolution
+
+altium
+circuit diagram and shit
+Circ POSs stuff
+
+ASAP
+read over circ exam
+circ hw4 practicew
+
+saturday
+	Algo HW04 due@ midn
+	phys lab8 due@ midn
+
+sunday
+
+monday
+	algo lecture 10a-11a
+phys HW11 due@ 8.5a right befor lecture tomorrow
+	circ lecture 4pm-6pm
+
+tuesday
+phys HW11 due@ 8.5a right befor lecture
+	Phys QU11 due@ 10am right after lecture dne
+	phys lecture 8.5-9.5
+	phys lab 10-12
+	Econ lecture 2-4
+	EHC OPEN SHOP HOURS CLEAN SHIT UP AND LABEL IT
+
+wednesday
+	circ lab 9am-12p
+	algo lab 12-2
+	Algo LB07 due@ 12-2 endof lab
+	PHYS lab13 due@ midn
+	EHC_ ofic meet 6-7p
+	LOW 3034 from 6-8pm EHC workshop fucked up
+	circ omega lab one project manual due midn
+
+thursday
+	algo lecture 10a-11a
+	check in for flight asap 12:50 4CC5DB
+	circ lecture 4pm-6pm
+	circ proof of skills due@ midn
+	circ essential skills survey due@ midn
+	Circ HW05 due@ midn (8a)
+phys HW10 due@ 8.5a right before lecture tomorrow 
+
+friday
+phys HW12 due@ 8.5a right before lecture 
+phys lecture 8.5-9.5
+phys lab 10-12 LEAVE ASAP
+
+leave by 10:50
+flight at 12:50
+
+	Econ lecture 2-4 TAKE A LOOK AT THE READINGS BY THEN
+	Algo HW05 due@ midn 
+
+saturday
+
+sunday 
+	Circ HW04 due@ midn (8a)
+next monday
+	Circ HW04 due@ 8a 
+
+
+next tuesday
+
+next wednesday
+
+next thursday
+
+next friday 
+
+next saturday
+
+next sunday
+
+next next monday
+
+next next tuesday
+
+next next wednesday circuits lab due midnight
+
+next next thursday circuits HW4 due midnight (8am)
+
+next next friday Econ first draft/outline
+
+Algo midtm Wednesd Mar 15 6p-10p
+two remote Circ 21+24
+MAR 22 WED SAINT MOTEL CONCERT SAINT MOTEL SAINT MOTEL SAINT MOTEL
+Circ exam2 Tuesday Mar 28 7p-9pm crib sheet given
+Algo final Tuesday May 02 11.5-2.5
+
+clean eighty hs, lube+spring swap alpacas, stays on HS
+OR
+build helix
+
+sell the bt60 new unused w/ plate.
+
+purple stabs lubed and installed eighty soldered
+zealios on soldered eighty
+
+
+nomad 
+survival
+IFAK?
+
+
+;LAYER:
+M104 S{225 - (layer_num-7) / 50 * 5} {if layer_num > 7} ;T tower floor {(layer_num-7) / 50 * 5 + 1}{endif} \n;LAYEER:
+
+Mouse cover backpack thing in blue
+make headphone holder for school on edge of book shelf
+make altoids desk mount
+bulbasaur planter
+
+
+MIKA3D PLA 195-190
+
+Vans Customer Service
+Attn: Stickers
+N850 County Highway CB
+Appleton, WI 54914
+
+Volcom – STICKER REQUEST
+1740 Monrovia Ave.
+Costa Mesa, CA 92627
+
+Skate Warehouse
+747 Buckley Road
+San Luis Obispo, Ca, 93401
+
+share https://lovecareermagic.com/freesticker
+
+contacts
+Nancy Campbell "lock picking" printer, head of science and technology studies, drugs and addiction
+Dr. John T. Wen arch presentation, ecse department head
+Jason Anthony(mercer lab manager): anthonj4@rpi.edu
+Dr. Hella: hellam@rpi.edu
+Dr. Kraft: kraftr2@rpi.edu, emco lab
+Shekhar Garde: gardes@rpi.edu Dean of Engineering
+wilt, emco lecture
+
+i4723ge
+
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)     00-header
+
+ * Documentation:  https://help.ubuntu.com                                             10-help
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Feb  5 14:01:16 EST 2023
+
+  System load:  0.0                Processes:             8
+  Usage of /:   0.8% of 250.98GB   Users logged in:       0
+  Memory usage: 1%                 IPv4 address for eth0: 172.24.21.228
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.                    90-update
+
+
+
+This message is shown once a day. To disable it please create the
+/root/.hushlogin file.
+
+
+50-motd enabled in /etc/default/motd-news configuration
+
+50-land ?
+85-fwupd ?
+88- esm ?
+
+consumer optimization
+	setup problem
+		objective function
+		choice variable
+		constraint
+	interpret solution
+		euler's equation
+	equilibruim graph
+		phase diagram
+	optimal growth
+		social planner problem
+		setup and interpretation
+
+make consumer behavior endogenous
+Solow + household optimization = neoclassical growth
+utility max, y=1/x utility equality   y=1-x budget constraint
+cake eating
+cake goes bad after T days
+cake diminishes in quality over time
+eat too much and you get sick, but you gotta have *some*
+start high and tail it off
+max \sum_{t=0}^T\beta^tu(c_t) subject to 
+k_t=k_{t-1}-c_{t-1} what you have today = what you had yesterday - what you ate yesterday
+K_t, c_t, k_0 > 0.   c_t choice. \beta<1 discount factor. b_t\ge0 no borrowing, k_0 size initially
+
+u'(c_t)=\beta u'(c_{t+1})
+continuous infinite time:
+u'->0 c->\infty    u'->infty as c->0
+max c(t)   \int_0^\infty u(c(t))*e^{-(\rho-n)t}dt
+subject to \dot a=ra+w-c-na
+a(t)\ge0, c(t)\ge0, a(0)>0
+e^{\rho t}=continuous time discounting
+e^{nt} = per capita consumption \gamma n
+effective discount rate \rho-n > 0
+wage
+consumption
+assets
+rate(ir)
+n pop
+
+\dot c /c={-u'(c)}/{u''(c)*c}*(r-\rho)
+can be + or -
+r-\rho = effective return on saving, + or -
+{-u'(c)}/{u''(c)*c} = elasticity of intertemporal substitution. zero means flat consumption over time. 
+large means you can consume large/none now or later, always +
+always assume u(c)={c^{1-\theta}-1}/{1-\theta}, \theta>0, \dot c /c = 1/\theta *(r-\rho)
+ln works with \theta=1
+\dot C/C=1/\theta *(r-\rho)+n
+\gamma C=\gamma c + \gamma L
+future consumption means savings today means high investment
+
+\dot k = f(k) -c - (n+\delta)k
+\dot c/c={1}/{\theta} (f'(k)-\delta-\rho)
+\dot k=\dot c = 0
+f'(k)=\delta+\rho -> r*=\rho
+R=MPK=f'(k*)
+c*=f(k*)-(n+\delta)k*
+
+y=-(x-1)^2+1   =\dot k = 0   b/c c=f(k)
+y=x    = c(k)
+
+
+phys right hand rule 
+fingers v
+curl B
+thumb F
+negative or left flips
+
+
+
+intersect out  0Uc5VS3UsD74warWnTrPPl
+add to all in  3kaYhTiZSmsr8WdhsKqhKk
+added input    1fC6j8SNByIzRnKEVf0Icm
+ haydenfuller02
+
+
+https://accounts.spotify.com/en/login?continue=https%3A%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Dplaylist-modify-public%2Bplaylist-modify-private%26response_type%3Dtoken%26redirect_uri%3Dhttp%253A%252F%252Ftk5Vc6D835LtapxZIRMtfdWeWrJj5h2B-spotify-playlist-set-theory.com%252F%26client_id%3Dbd9297adefb44ddfac570814af8aaa05
+
+
+Learning by doing
+unrealized gains
+consumers don't save enough
+
+policy:
+gov pays portion of cost R on each unit S_K, total S_K*R
+firm pays remaining (1-S_K)*R
+HH receive full r=R-\delta
+financed through tax on consumption - sales tax of T_c on each unit C
+cost of consumption for HH is (1+T_c)*C
+requires that T_C*C=S_K*R*K
+gov revenue GR changes with \dot{GR}=tax-pay=T_c*C-S_K*R*K=0
+
+subsidy impacts the LF market:
+demand:
+\pi=Y_i-(1-S_K)*R*K-w*L_i)
+y_i=K_i^\alpha*(K*L_i)^{1-\alpha}
+dpi_i/dK_i=0
+dy_i/dK_i=(1-S_K)R
+\alpha*k_i^{\alpha-1}(K*L_i)^{1-\alpha}=(1-S_K)R
+in aggregate
+K_i=K
+k's cancel
+\alpha L^{1-\alpha}=(1-S_K)*R
+R=\alpha*L^{1-\alpha}/(1-S_K)
+
+supply:
+euler
+budget
+\dot a=r*a+w-(1+T_c)*C
+no change to objective utility function
+no change to intertemporal utility max
+\gamma c=r-\rho   u(c)=ln(c)
+
+what S_k elimenates innefficiency?
+forces \gamma c = \gamma c*
+         euler    social planner
+r-\rho=L^(1-\a)-\delta-\rho
+plug in for r
+\a*l^(1-\a)/(1-S_k)-\dleta-\rho=L^(1-\a)-\delta-\rho
+\a=1-S_K
+S_K=1-\a
+comes from the growth at y=ki^\a*(K*Li)^(1-\a) that firms don't internalize
+
+how much do we have to tax consumption?
+balance budget
+Tc*c=Sk*R*K
+Tc=(1-\a)L^(1-\a)*K/C
+K/C?
+LOM \dot K=I-\delta K=Y-C-\delta K
+\gamma K=Y/K-C/K-\delta
+Y/K=L^(1-\a)
+\gamma K=\gamma c
+K/C=1/\rho
+
+T_C=(1-\a)L^(1-\a)/\rho
+win-win-win in our model
+tax is balanced by intrest rate income
+
+
+yZ8nRFfE!SHPqG
+
+
+
+Input Varieties model
+intentional costly R&D investment
+startups: can enter the market, needs to get a loan, survives if they innovate successfully
+patents: start as perfect and perpetual, full monopoly, becomes a bit more advanced
+startups start as small monopolies, imperfect competition
+innovations are new inputs (input varieties), improves production technology. diminishing returns? (others exist with output innovation)
+
+agents:
+HH, same as before, no population growth, n=0, rent assets, work for wage, supply LF consume/save to max utility
+Final goods producers, almost the same, hire labor and intermediate inputs (innovations) to produce final good. These inputs replace capital growth, final goods market if perfectly competitive
+R&D, startups, totally new, demand LF, driven by desire to invest in R&D, innovates, patent, monopoly behavior, sell the input to final good producers, monopolistic competition
+
+same HH <-> firms, but now R&D is in the middle. HH gives assets LF to R&D for interest. R&D gives inputs to final firm for money
+
+capital replaced with innovation
+Y_i(t)=L_i^(1-a) \sum_j=1^N(t) X_{ij}^a  0<a<1
+
+Xij is amount of jth type of input
+N is number of inputs avalible at time
+diminishing returns to L and each X
+
+considering a constant N, constant returns to scale. Demand double X and get double Y
+doesn't matter what quantity is demanded of other things, marginal product is totally per X
+compliments vs substitutes? in this case looks like imperfect substitutes. Take whatever's cheaper, but *each* has diminishing returns, so spread out as much as you can.
+even while spending the exact same on tech, you still grow because you can spread out more and more as N grows
+
+X is not accumulated, needs to be used. Not a great assumption, but otherwise time X was made is important and it's a headache
+
+only state variable is N
+
+final goods maximization
+max L_i,X_ij pi_i=Y_i-wL_i-\sum_j^N P_j X_ij
+price for tech is a given because patent
+
+dY/dL=w=(1-a)(Y/L)
+dY/dX=P_j=a(L/X)^(1-a)
+demand for each tech is downward sloping, constant price eleasticity of demand -1/(1-a)
+
+R&D firms
+entry decision: will I make enough money to pay off the loan? pattent and innovation is guaranteed, but is it worth the interest?
+Okay, so what would the optimal price be and what profit comes from that and does that profit cover costs?
+
+monopoly firm review:
+basic demand function P=a-bx cost c(x)=c*x
+optimal P* or x*
+maximize pi= P*x-c*x
+(a-bx)x-cx=(a-c)x-bx^2
+d/dx=a-c-2bx
+x=(a-c)/2b
+P*=a-bx*
+P*=a-a/2-c/2
+P*=a/2-c/2
+P*=(a-c)/2
+pi(P)=(P-c)P(x)
+
+graph:
+P vs x
+D: P=a-bx, intercept P at a and x and a/b
+MR=a-2bx, same intercept P at a and half intercept x at a/2b
+MC: P=c.
+MR=MC determines x, then go up to D to get P
+top triangle corner is consumer surplus
+middle square is profit, producer surplus
+bottom square is cost
+middle right triangle is Dead Weight Loss
+
+what's the trade off of inefficient monopolies incentivizing R&D and growth
+
+demand from final goods firms is given for monopolies, Xj=L*(a/P)^(1/(1-a))
+startup profit max_P=(P-1)X=L(P-1)(a/P)^(1/(1-a))
+results in price of P = 1/a. constant markup 1/a over cost
+curved downward demand, monopoly
+
+no \delta, so r=R
+future profits are discounted at rate r because just get it now and invest
+value of innovation v = \int_0^\infty e^{-rt}dt*\pi=\pi/r
+firms can enter at upfront cost of \eta (n), free entry assumption
+v=\etta is necessary for equilibrium, benefit=cost
+
+LF market:
+R=r vs A, rate vs quantity of R&D loans
+D=\pi/\eta (if v<eta, D=0. if v>eta, D=\infty)
+supply is upward sloping
+number of innovations N = A*/\eta, A*=eta N, =cost * speed
+r*\eta*dt=\pi*dt+\dot v*dt -> \dot v = 0
+
+HH and Euler are exactly the same
+HH max_c(t) \int_0^\infty u(c(t))*e^{-\rho*t} dt
+Euler \gamma_c=1/\theta * (r-\rho)
+just plug in r
+\gamma_c=1/\theta(L/\eta)(1-a)/a *a^{2/(1-a)}-\rho
+\gamma y = \gamma c
+
+scale effects
+let \gamma m = market equilibrium growth rate
+d gm/d gL > 0?
+input market P vx X, monopoly behavior downward D, P=1/a > mc=1
+L up, Din up, pi up, X up
+LF market r=R vs A, supply up (Euler equation), D = r = pi/eta
+because pi up, r up, Dlf up, Slf up, A up, \dot N up, \gamma m up, infinite growth.
+
+efficiency?
+usually output just goes to consumption and savings/investment
+now we have to allocate over time
+now goes to consumption C, existing production X, and startup investment \eta\dot N
+aggregate resource constraint is Y=L^{1-a}N^{1-a}X^a=C+\eta\dot N+X
+social planner:
+max w/ c,X  \int_0^\infty u(c)*e^{-\rho t} dt
+subject to L^{1-a}N^{1-a}X^a=C+\eta\dot N+X
+solves to two optimality conditions and two sources of innefficeincy
+X_sp=a^{1/(1-a)}LN
+\gamma_sp=1/\theta * (L/\eta * (1-a)/a * a^{1/(1-a)}-\rho)
+
+static (in)efficiency allocation of resourcecs across activities that don't affect time, c and X at each time t  --  for any given R&D spending \eta\dot N, how do you split what remains?
+dynamic (in)efficiency allocation of resources that determine time dynamics, allocation for future use. What do we invest in R&D \eta\dot N and what do we use today c+X
+
+
+static:
+each innovation/input use X_j to produce so aggregate is just X=NX_j
+X_m=a^{2/(1-a)}LN
+social planner gives 
+X_m=a^{1/(1-a)}LN
+
+inefficient 2 comes from monopoly Dead Weight Loss
+not enough production
+X_monopoly produces at D=P=1/a
+X_socialPlanner produces at D=MC
+X_m < X_sp
+
+dynamic:
+Euler equation:
+\gamma_sp=1/\theta * (L/\eta * (1-a)/a * a^{2/(1-a)}-\rho)
+Social planner:
+\gamma_sp=1/\theta * (L/\eta * (1-a)/a * a^{1/(1-a)}-\rho)
+
+same 2 pops up again
+\gamma_m<\gamma_sp
+
+LF market,
+monopoly A_m is at S=r=\pi/\eta, depends on private return to R&D, same as why static is inefficient. With social planner, consumer is internalized and maximized, no DWL, higher X, higher r=(\hat A+\hat B+\hat C)/\eta, higher A
+
+
+policy: 
+subsidize output
+subsidize R&D (lower \eta (cost of R&D))
+  grant system
+  tax deductions
+patents, already assumed as strong as possible, infinite and indefinite, so what if we weaken?
+  pattent term? don't want to fuck with it rn
+  forced price reduction, much easier to model
+    sorta like partial market power because of knockoffs
+subsidize purchases of the innovation
+  cheaper to buy patents
+  subsizide sale of solar pannel tech
+
+subsidize R&D, \eta becomes (1-s)\eta
+\eta down
+LF market r=1/((1-s)\eta) is up
+Investment in R&D A is up
+no change to static inefficiency, this only fixes dynamic
+
+weak patents, can't get away with monopoly markup
+P down, X up
+improved static inefficiency
+\pi down, lower demand for LF, r down, A down, 
+increased dynamic inefficiency
+can't really calculate anything here, so eh, it depends, competing effects
+
+pattents are a necessary evil
+
+subsidize purchase of patents
+gov pays s portion 
+final goods producers pay (1-s)P
+monopoly price remains 1/a
+D_in right, \pi up, X up, r up, D_LF up, A up
+improves both static and dynamic
+
+f)  a=R/2L=2.5E3, w=1E4, a<w, underD,  B=9682.5, IL(t)=e^{-2.5E3t}[A1cos(9682t)+A2sin(9682t)]
+    IL(0)=0=A1, A1=0, IL(t)=e^{-2.5E3t}[A2sin(9682t)], 
+    IL'(t)=[-2.5E3e^{-2.5E3t}A2sin(9682t)]+[e^{-2.5E3t}9682A2cos(9682t)]
+    IL'(0)=9682A2=5E2, A2=.0516,  IL(t)=e^{-2.5E3t}[0.0516sin(9682t)]
+    VL(t)=[-2.5E3e^{-2.5E3t}0.0516sin(9682t)]+[e^{-2.5E3t}0.0516*9682sin(9682t)]
+    VL(t)=[-129e^{-2.5E3t}sin(9682t)]+[500e^{-2.5E3t}sin(9682t)]
+
+scale effects of IV
+\gamma c = 1/\theta, (L/\eta * (1-a)/a * a^{2/(1-a)}-\rho)
+with pop growth, growth rate grows over time
+L up, demand for inputs up, profits up, demand for LF up, more R&D investment, 
+watch growth in N
+A doesn't grow with pop of scientists and engineers
+
+
+research output=research inputs * research productivity
+out=growth, factor productivity, life  expectancy,
+input=r&d spending, number of researchers, grant money,
+out/in=prod
+as researches have increased, prod has decreased
+
+case study: real, good data, not general, hard to find
+
+moores law:
+clear output, transistors per inch
+extremely high growth
+input? R&D of all the big firms, ,divided by average wage, gets number of workers
+we do have 35% growth, but we also have input increased by 20 times 70to15
+issues: 
+firm selection, missing early R&D as those companies died off
+public funding? has it been falling?
+shifting R&D priorities: used to go straight towards increasing transistor counts. when you hit difficulties in improving, you shift resourcecs elsewhere, what's profitable changes over time
+
+agriculture, crop yields:
+yields increasing approx linearly, if not faster
+input: effective researchers, use USDA
+factor increase has increased linearly if not exponentially recently
+gov control, subsudies, pay farmers not to grow, price control,
+climate change??, would things be dropping without R&D?
+crops are improved elsewhere? need less water, resistant to disease? not all R&D goes into yield growth
+consumer tastes? people starting to prefer farm to table? Max quality over yields?
+regulations, things need to be tested for longer before going into public use?
+
+life expectancy:
+output: life year added
+input: not looking at R&D of big compamies, R&D goes to quality of life too, fast release Tylenol, captures many things
+looked at number of publications, clinical trial grants, instead
+years of life saved, huge boom made in the 90's, on the scale of like 13 days
+years saved per trial or per publication is dropping over time
+input output lag issues, publication to actual time added to life could be insanely long
+infant mortality vs life expectancy?
+decreasing intensives to research, fucked up profitability lol
+cancer avoided? how is it related to death rates and things that cause cancer?
+cross country differences, has research left the US
+food quality declining?
+
+pick one
+discribe
+biggest problem
+
+
+
+
+
+
+QL model
+
+innovation is now quality improvements, previous innovator gets kicked out when a new firm enters
+innovation cost is no longer known and deterministic, pay for a chance at innovation
+monopoly pricing is unchanged
+v/= pi/r
+p(k)=phi(k)*A(k)
+chance of innovation = research productivity * invested amount
+expected value = pi/(r+p) = \bar pi * q^{k_j a / (1-a)}/(r+p(k)), p(k) in denominator because it's chance of being kicked out
+A(k)=p(k)*Ev(k+1)
+cost of investment = probability * expected value
+phi=(1/phi) * q^{-(k+1)a/(1-a)}, ideas are getting harder to find
+r+p(k+1)=\bar pi/phi
+r=\bar pi/phi  - p, downward sloping demand to draw!!!
+eta was a yes no decision, now it's continuous as you can invest a little
+supply of loanable funds \gamma C = 1/theta * (r-rho)
+equilibrium \gamma m = 1/theta ....
+
+
+efficiency and optimality:
+X_m=a^{2/(1-a)}LQ, X_sp=a^{1/(1-a)}LQ
+Q is an average quality term, produce more better stuff and less bad stuff, but when comparing, assume Q=1 (would be IV)
+X_m < X_sp, static inefficiency 
+complicated but in general gamma sp /= gamma m, can be < or >, unlike the IV model where gamma sp > gamma m, (not enough innovation), here it can be excessive
+
+excessive example
+input market P vs X, P=1/a, MC=1, Demand = downward sloping D_k, 
+Monopoly behavior X_m,k at P=1/a=D, social planner X_sp,k at MC=D, easy to see static inefficiency
+private return is smaller than social return
+we get D_k+1 to the right, X_m,k+1 and X_sp,k+1 are now to the right
+returns to R&D? private, larger pi. social, area between the two D curves, it's surplus that's been added.
+social return exceed private (underinvestment) when area under is greater than profit box
+private return exceed social (overinvestment) for small profits. Old profit box isn't new surplus, it's stolen from the old buisness. Tiny innovation gives almost nothing to society, but new firm steals a whole lot
+
+
+input market with kth to kth+1
+monopoly graph
+mc=1
+P=1/a
+Demand D_k
+going to k+1, shifts demand right D_k+1m price remains, quantity grows, profit grows
+x_k+1=X_k * q^a/(1-a)
+pi_k+1=pi_k * q^a/(1-a)
+new firm overtakes old one, absorbs all of the old profit and demand
+like IV: compare discounted value of future profits to cost to enter
+unlike IV: earns profits until the next innovation arrives
+
+innovation is now uncertian, we assume risk neutrality
+p(k)=phi(k)+A(k)
+phi(k), ensures p(k) is well defined,
+phi(k) can be increasing or decreasing in k, research productivity, should be decreasing according to paper
+k is quality. p(k) is probability that new R&D k is better than existing k, p(k) decreases with k
+E=pi(k)/(r+p(k))
+
+policy:
+weak patents:
+forced price cap, or else we get knockoffs, no perfect monopoly
+1 < P_weak < P_monopoly = 1/a
+input market P vs X
+P=1/a, MC=1, demand down=D_k
+X starts at D=P=1/a
+lf market r=R vs A
+downward demand, r=\bar pi/phi - p(A)
+upward supply
+policy created: lower P, lower pi, X up, static inefficiency improved
+lower profits means demand down, r down, A down, growth rate gamma down, dynamic inefficiency indeterminate IDK
+likely to improve dynamic innovation: 
+
+
+
+R&D subsidies, grants:
+gov pays s share of R&D costs, firms pay (1-s) share,
+
+
+review dynamic vs static inefficiency in OL
+return to next innovation
+social is added surplus, big gains from big innovations
+private return is profits, and beating a competitor steals their profit, so even small innovation gives a pretty big profit 
+seen on inputs P vs X graph, price vs quantity of product, monopoly
+
+
+
+*the death of innovation, the end of growth*
+
+
+exam 2 prep:
+Learning By Doing: PS4
+	setup
+		conceptualization of innovation/knowledge
+		how does innovation enter the model
+		equilibrium definition
+		graphical depictions
+			LF market
+				Investment and capital
+				euler equation
+	inefficiency 
+		how to diagnose
+		source
+		interpretation
+			firms don't internalize the gains that everyone gets from what they learn
+	policy solutions
+		subsidy to investment
+		final goods subsidy
+	discussion of data and evidence
+		form of data/evidence
+		critiques (Thompson reading)
+		Embodiment of Learning (Levitt and List reading) (what level does learning occur at?)
+			meaning, importance, how to assess
+Input Variety: PS5
+	setup (repeat of the previous setup)
+		input market (patent holder is a monopoly)
+		LF market
+		R&D behaviour, two stage decision process, enter and price, profitable and monopoly
+			pattent holder's monopoly behavior. Profits, surplus,
+			and LF
+	inefficiency
+		static vs dynamic
+		show the inefficiency in a graph
+	policy solutions
+		weaker patents, (price ceiling, knockoffs)
+		R&D subsidy / grant system
+		subsidy to input purchases, (subsidy of final product, solar panels, electric cars, etc)
+  Scale Effects and Productivity Trends
+  	meaning, important, show presence, 
+  	data for scale effects
+  	productivity slowdown
+  		no clear single answer, possible causes and explanation
+  			Are ideas getting harder to find? paper (Bloom et. al.)
+  			Basic idea
+  			Three case studies
+  				Moore's law,
+  				crop yields
+  				life expectancy
+Quality Ladder: PS6
+	setup (repeat of previous setups)
+		input market
+		LF market
+	inefficiency 
+	policy solutions
+		policy solutions can be related to innovation size (only give grants and subsidies to large innovations)
+	Innovation policy discussion
+		critiques of the patent system (Boldrin Levine reading)
+			patent trolls, regulatory capture
+		alternatives to patents?
+			secrecy, but incentive?
+				Prizes
+				grants
+
+
+poisson process?
+expected present discount value, Ev(k)=pi(k)/(r+p(k)), p(k)=0, never replaced, just in IV model. p(k)=infty, you'll be replaced instantly and make no profit, so don't invest.

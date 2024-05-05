@@ -1,0 +1,29 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Tue Jan 18 04:43:54 UTC 2022.
+#
+# This is license NODELOCKED to HOSTID=ANY;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Tue Jan 18 04:43:54 UTC 2022
+INCREMENT SDK xilinxd 2023.01 permanent uncounted 93E26C592C64 \
+VENDOR_STRING=fulleh@rpi.edu,SDK,software,permanent,_212385582_0_0_160 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=18-Jan-2022 TS_OK
+#
+# This is a permanent license generated on Tue Jan 18 04:43:54 UTC 2022
+INCREMENT V_WebPACK xilinxd 2023.01 permanent uncounted 3D385CE287F7 \
+VENDOR_STRING=fulleh@rpi.edu,V_WebPACK,software,permanent,_212385582_0_0_368 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=18-Jan-2022 TS_OK
+#
+# This is a permanent license generated on Tue Jan 18 04:43:54 UTC 2022
+INCREMENT Analyzer xilinxd 2023.01 permanent uncounted 94C759008D29 \
+VENDOR_STRING=fulleh@rpi.edu,Analyzer,software,permanent,_212385582_0_0_448 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=18-Jan-2022 TS_OK
+#
+# This is a permanent license generated on Tue Jan 18 04:43:54 UTC 2022
+INCREMENT HLS xilinxd 2023.01 permanent uncounted 5BCE11DBC4B7 \
+VENDOR_STRING=fulleh@rpi.edu,HLS,software,permanent,_212385582_0_0_369 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=18-Jan-2022 TS_OK
+#
+# ----- REMOVE LINES BELOW HERE --------------------------

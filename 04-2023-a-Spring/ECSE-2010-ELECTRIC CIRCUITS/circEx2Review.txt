@@ -1,0 +1,31 @@
+for V_c(t):
+	find \a \w_0
+	compare cases
+	write v_{cn} natural
+	v_c(t)=v_{cn}+v_{cf} natuaral plus forced =A_1_ + A_2_ + A_
+	s = \sigma + j \omega
+	real and imaginary =0, DC steady state
+	real=0, no dampening, AC steady state
+	imaginary=0, no oscilation, 
+
+	z_c=1/(sc)
+	z_r=R
+
+	2s/(s^2+8s+25)
+	find out how to do complex conjugates with quadratic function on calculator
+	\w=5
+	\a=4
+	\B=\sqrt(\w^2-\a^2)
+	=sqrt(25-16)=sqrt(9)=3
+	-\a+-j\B=-4+-3j
+	P1=-4+3j
+	P2=-4-3j
+	2s/((s-(-4+3j))(s-(-4-3j)))
+	expand
+	=A/(s-(-4+3j)) + A^*/(s-(-4-3j))
+	2s(s-(-4+3j))/((s-(-4+3j))(s-(-4-3j))) 
+	s=-4+3i
+	2(-4+3j)/((-4+3i)-(-4-3j))=
+	=-8+6j/6j *j/j
+	-8j-6/-6=
+	=(8j+6)/6

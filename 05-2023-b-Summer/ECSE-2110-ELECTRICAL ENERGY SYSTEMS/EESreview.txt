@@ -1,0 +1,84 @@
+Start at 13
+node=bus, line=branch
+I=Ybus V
+diagonals are Yii=sum of admittances connected to it
+otherwise, Yij=-yij
+can see admitance or impedance by inductor +j for imp, -j for adm
+
+14
+P and Q are non linear because of the sin and cos terms
+PQ loads 
+PV generators
+Vtheta slack generator
+
+solved with:
+
+gauss iteration:
+x=h(x)
+put in guess to h(x) to get new x guess
+convergence not guaranteed, can hit multiple roots, kinda slow
+
+Gauss Seidel method, used to get initial guess, gonna be on the exam
+x=x+a[g(x)-x]
+15
+Newton Raphson
+f1(x1,x2)=..., f2(x1,x2)=...
+J(x)=df1/dx1, df1/dx2; df2/dx1, df2/dx2
+x0=[guess;guess]
+Dx0=[1;1]
+C=constants of f: x1^2+x=3, f=x1^2+x, C=3
+
+k=0
+f0=f(x0)[;]
+Dc0=C-f0
+J0=J(x0)=[,;,]
+(J0^-1)=(J0)^-1=[a,b;c,d]^-1=1/(ad-bc) [d,-b;-c,a]
+Dx0=J0^-1 Dc0=[;]
+x1=x0+Dx0
+k=1
+
+17 RENEWABLES
+wind, solar, tidal, geothermal, etc
+
+18
+charge from dust water and ice rubbing and static, large potential ionizes air to get to ground
+bearing and gear faults
+do maintinance on a set scheduel to save costs of failure
+yaw turning, pitch push back and control blades, roll spinning direction and not wanted
+Vertical Axis Wind Turbine, no access to high altitude winds, easier maintinance because everything is on the ground, less economical
+kinetic energy from wind, you can extract 2/3 of it, 1/3 needed to get air out of the way Vd/V=1/3
+
+19
+prob PDF useful for area selection, get as much area as possible between vmin and vmax
+synchronus goes to dc and back to ac
+doubly fed has a portion go dc to ac to go to the rotor to manage frequency generated
+
+20
+recent, review on my own I guess
+SOLAR
+cell -> module -> panel -> array -> system
+electron doNor, EMF with electron flow N->P
+diode allows current P->N, Positive to Negative
+photons hit N type and electrons flow through load to P
++V at P, -V at N, 
+
+I up V up current up diode down resistors parallel(L) and series(S)
+as usual, series adds voltage, parallel adds current
+V=Vdiode-IRseries
+
+
+
+double check all theory questions from hw
+what is a bus? Comparable to a node in a circuit, usually thick bars or pipes they have 4 factors that are effectively consistent throughout them: real power P, imaginary power Q, voltage V, and phase angle Delta
+
+Graph theory? A buses vertices and components are edges. Buses have the four factors P,Q,V, and delta. Components include things like transmission lines, generators, loads, and transmission lines, which are represented with either an impedance or an admittance.
+
+The admittance matrix shows self and mutual admittance between all nodes in the graph, and using V=IR -> I=YV, we can solve for any desired variable. They're particularly useful when making programs since a computer can work with these matrices very quickly and efficiently.
+
+I NEED TO FIGURE OUT MATRIX MATH SHIT
+make matrix is easy
+column vectors 5x1=5x5 5x1  I=YV
+
+lightning strike protection: lines are protected by grounded shield wires and structures are protected by lightning arresters. These provide an easier path to ground for a lightning strike than hitting the transmission lines or structures. Power stations can be protected by lightning arresters, a "net" of shield wires, or both.
+
+non linear power flow? because 

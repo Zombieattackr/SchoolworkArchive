@@ -1,0 +1,215 @@
+Exams: 25%*3, attendance/in class 5%, HW20%/about 10-12
+Exam crib sheet given (and in advance), limited curve at best
+HW due 11:59:00 Monday, not late
+Random attendance, be involved 
+Regrade on gradescope within 2 days
+In class depends on participation and there are bonus points 
+Textbook on piazza
+
+
+Signals in all systems:
+Discrete and continuous, by measuring system
+Systems: we use linear and time invariant LTI
+Time domain to frequency domain signals with: convolution, Fourier series and transform, Laplace, Z transform,
+Signals are made of frequency 
+Stability- gives expected response
+Systems have memory 
+f(t) means continuous 
+f[n] means discrete
+Feedback around 1/10 of natural frequency
+
+pulse u(t)=M[u(t-a)-u(t-b)]
+gate function g(t)=u(t)-u(t-1) one second pulse
+g(t)-g(t-1)=u(t)-2*u(t-1)+u(t-2) one second positive one second negative, up one, down two, up one
+r(t+1)-2*r(t)+e(t-1) sloped peak from -1 to 1. slope: 0 up one to 1, down two to -1, up one to 0
+time flip y(t)=x(-t), remember to flip the offset as well.
+can also use infinite straight lines and step functions to turn on and off
+\delta_\epsilon(t)=0,1/e,0 for t<=0, 0<t<e, e<=t
+integrate to get 0, slope of 1/e for e, then 1. Unit step function with short ramp
+impulse is infinite small infinite height, uses weight instead which is area under curve, 
+sampling property: \int^inf_-inf x(t) * \delta(\Tau)d\Tau=x(0)
+impulse is derivative of a jump
+
+in a list of n's, underlined is at t=0
+Kronecker Delta is the discrete version (height of 1 is the weight)
+integration is running sum
+differentiation is first difference
+homogeneity: Scale before or after the system, same output. T(a*x(t))=a*T(x(t))
+additivity: Can sum before or after, same output. T(x1(t)+x2(t))=T(x1(t))+T(x2(t))
+linearity: both homogeneous and additive
+Time invariant: time shift before or after system, same result
+
+memory-less, depends on present
+memory, depends on past present and future
+causality, depends only on present and past
+stability, small inputs do not lead to divergence
+BIBO with a bounded input, the output is bounded
+\delta(t) pulse gives response h(t), can completely characterize the LTI system
+
+impulse is important because it contains all frequencies, horizontal in s domain
+throwing a stone in a pond is an impulse response, what you see is the natural frequency, taping a mic
+step input is important too
+y(t)=x(t) *(convolution) h(t)
+convolution: *, ordinary multiplication is \cdot 
+x(t) -> y(t)
+a \cdot x(t) -> a \cdot y(t)
+a \cdot x(t-t0) -> a \cdot y(t-t0)
+a1 \cdot x1(t-t1)+a2 \cdot x2(t-t2)... -> a1 \cdot y1(t-t1)+a2 \cdot y2(t-t2)...   sum a bunch of inputs with scale and phase shift
+\Sum_{k=1}^n ak \cdot xk(t-tk) -> \Sum_{k=1}^n ak \cdot yk(t-tk)
+xk(t) -> yk(t)
+
+characterize the system by having the inpulse response \delta[n] -> h[n]
+estimate the system response for an arbitrary input
+
+three methods, analytical, easy for closed form step sequence signals
+array algorithm, works well for fewer elements in convolution
+graphiscsl?
+
+
+ex: impulse response is h[n]=(1/4)^n u([n]
+Find output y[n] when input is x[n]=(1/2)^n u[n]
+y[n]=\Sum_m=-infty^infty x[m]\cdot h[n-m]=x[n]*h[n]
+n=5?
+y[5]=x[m]\cdoth[5-m]=(1/2)^m u[m] \cdot (1/4)^{5-m} u[5-m]
+u[m], flip to u[-m], then shift right 5 u[5-m]
+u[m] is 0 for m<0, lower limit
+u[5-m]=0 for m>5, upper limit
+m=012345
+y[5]=\Sum_m=0^5 (1/2)^m (1/4)^5-m
+y[5]=(1/4)^5 \Sum_m=0^5 (1/2)^m (1/4)^-m
+y[5]=(1/4)^5 \Sum_m=0^5 2^m
+replace 5 with n
+y[n]=(1/4)^n \Sum_m=0^n 2^n
+
+array algorithm
+y[n]=\Sum_m=-infty^infty x[m]\cdoth[n-m]
+X    x0   x1   x2   x3   x4
+h0  x0h0 x1h0 x2h0 x3h0 x4h0  (multiplication)
+h1  ...
+h2       ...
+h3            ...
+h4
+diagonal arrows down left (sums products) (first is y[0])
+y[1]=x[0]h[1]+x[1]h[0]
+
+
+ex:
+x[n]=[1,2,-1,3,-2]
+h[n]=[-1,0,2,5,-2]
+X   1  2 -1  3 -2
+-1 -1 -2  1 -3  2
+ 0  0  0  0  0  0
+ 2  2  4 -2  6 -4
+ 5  5 10 -5 15 -10
+-2 -2 -4  4 -6  4
+y[3]=2+0+1=3
+y[5]=-2+10-2+0+2=8
+use matlab!!!
+
+
+y[n]=x[n]*h[n]=\Sumx[m]\cdot h[n-m]
+change variables n to m
+time flip one signal and offset so there's no offset
+no overlap, x\cdot h=0
+y[n] gives offset n, moves h to the right, now we have overlap, and now the multiplication is non-zero
+
+continuous time convolution
+find y(t)=u(t)*[u(t)-u(t-1)] (unit step and unit pulse)
+g(t-\Tau), phase shift pulse right with higher \Tau
+Calculating overlap. y(t) starts 0, ramps up to 1, plateaus at 1
+
+polynomial application
+p(x)=a2x^2+a1x+a0
+q(x)=b2x^2+b1x+b0
+p(x).q(x)=c4x^4+...c0
+c4=a2b2
+c3=a2b1+a1b2
+c2=a2b0+a1b1+a0b2
+c1=a1b0+a0b1
+c0=a0b0 
+pretty easy pattern, anything that sums is summed
+can do this with a matrix
+
+with an impulse?
+x(t)*d(t)=x(t) from sampling property
+
+time reversal with convolution
+if c(t)=a(t)*b(t)
+then c(-t)=a(-t)*b(-t), time flipped components means time flipped result
+commutative property
+x(t)*h(t)=h(t)*x(t)
+cascade connections (series)
+(x(t)*h(t))*h2(t)=x(t)*(h(t)*h2(t))
+time shift
+c(t-t1-t2)=a(t-t1)*b(t-t2), both time shifts just move over to c. applies to d as well
+symetrical even*even=even
+ex:
+a(t)=2*pulse(-3,3)
+b(t)=2*pulse(-4,4)
+c(t)=24*ramp(-7,-1)+24*flat(-1,1)+24*rampdown(1,7)
+d/dt c(t)=4*pulse(-7,-1)
+even*odd=odd
+d/dt a(t)=2*impulse(-3)-2*impulse(3)
+b(t)=same b(t)
+c(t)=4*pulse(-7,1)-4*pulse(-1,7)=4*pulse(-7,-1)-4*pulse(1,7)
+odd*odd=even
+a(t)=-a(-t)
+b(t)=-b(-t)
+c(t)=c(-t)
+
+a(t)=-impulse(-1)+impulse(1)
+b(t)=a(t)
+c(t)=impulse(-2)-2*impulse(0)+impulse(2)
+a1*b1=1 and happens at -1+-1=-2
+a1*b2=-1 and happens at -1+1=0
+a2*b1=-1 and happens at 1+-1=0
+a2*b2=1 and happens at 1+1=2
+
+
+distributive property
+a(t)*[b(t)+c(t)]=a(t)*b(t)+a(t)*b(t)
+
+impulse response:
+
+inverse
+h_inv
+x*h*h_inv=x
+h*hinv=\delta
+x*\delta=x
+
+step response: steady state
+h(t)*u(t)=y_step(t)
+
+y=int_-inf^inf u(tau)h(t-tau)dtau=int_0^inf h(t-tau)dtau
+t-tau=v
+dtau=-dv
+tau=0, v=t
+tau=inf, v=inf
+y=int_-inf^th(v)dv
+y=int h(t)
+
+example
+series resistor and cap, cap voltage output, 
+i=d/dt y(t)
+x(t)=i(t)+y(t)
+let x(t)=u(t), y(t)=y_step(t)
+u(t)=y_step(t)+d/dt y_step(t)
+e^t y_step(t)+e^t d/dt y_step(t)=e^t
+
+e^t y_step(t)=e^t -1
+h(t)=d/dt y_step(t)
+h(t)=e^-t u(t)
+
+orthogonal signals
+no shared energy
+2d coordinates, x and y
+
+complex eponentials: 
+complex s=sigma+jw
+H(s)=eigen value
+e^st=eigen function
+
+e^st -> LTI -> H(s).e^st
+
+orthogonal set of signals
+{e^-j2wt,e^-jwt,1,e^jwt,e^j2wt}

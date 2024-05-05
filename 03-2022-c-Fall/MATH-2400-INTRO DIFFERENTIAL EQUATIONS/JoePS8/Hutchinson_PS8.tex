@@ -1,0 +1,266 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 8} \smallskip\\ Due: 11pm, Tuesday, November 15, 2022}\\
+\textbf{\\Submitted to LMS By:\\ Joseph Hutchinson\\ 662022852 \\ Section 17 }
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 7, pages 179--180: 1(a,c,e), 2(a,c), 3(b,d,e).
+\item
+Exercises from Chapter 7, pages 186--187: 1(b,d), 2(b,d), 5(b,d), 7(b,d)
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+\item (5 points)  Identify the correct statement, or select \lq\lq None of these choices'' if none of the statements are correct.
+\begin{description}
+\item\textcolor{red}{\textbf{[A] The only solution of the DE $\bm{y\sp{\prime\prime}-y=0}$ with BCs $\bm{y(0)=0}$ and $\bm{y(\pi)=0}$ is the trivial solution.}}
+% A is CORRECT, because we get constants such that $y(x)=0$ is the only solution (trivial)
+\item[B] The only solution of the DE $y\sp{\prime\prime}+y=0$ with BCs $y(0)=0$ and $y(\pi)=0$ is the trivial solution.
+% B is incorrect, as there is the infinite set of solutions $y(x) = C_2 sin(x)$, meaning that the trivial is NOT the only solution
+\item[C] The DE $x\sp2y\sp{\prime\prime}+xy\sp\prime+y=0$ with BCs $y(1)=0$ and $y(2)=0$ has nontrivial solutions.
+% C is incorrect, because the only working solution is the trivial, where $y(x)=0$
+\item[D] None of these choices
+\end{description}
+
+\item (5 points) Identify the correct statement, or select \lq\lq All of these choices'' if all of the statements are correct.  For each statement, $\lambda$ is a constant.
+\begin{description}
+\item[A] Setting $u(x,y)=F(x)G(y)$ in the PDE $u_{xx}+u_{yy}=0$ leads to the separated equations $F\sp{\prime\prime}-\lambda F=0$ and $G\sp{\prime\prime}+\lambda G=0$.
+% A is correct
+\item[B] Setting $v(x,t)=F(x)G(t)$ in the PDE $v_{tt}=v_{xx}$ leads to the separated equations $F\sp{\prime\prime}+\lambda F=0$ and $G\sp{\prime\prime}+\lambda G=0$.
+% B is correct
+\item[C] Setting $w(r,t)=F(r)G(t)$ in the PDE $w_{t}=w_{rr}+{1\over r}w_r$ leads to the separated equations\\ $rF\sp{\prime\prime}+F\sp{\prime}+\lambda rF=0$ and $G\sp{\prime}+\lambda G=0$.
+% C is correct
+\item\textcolor{red}{\textbf{[D] All of these choices}}
+% Since A,B,C are all correct, D must be the answer
+\end{description}
+
+\end{enumerate}
+
+\newpage\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  For each boundary-value problem, determine whether or not a solution exists.  If a solution exists, then determine whether or not it is unique.
+\[
+\begin{array}{lc}
+\hbox{(a)}\qquad & y\sp{\prime\prime}+2y\sp\prime-3y=4e\sp{x},\qquad y(0)=0,\quad y\sp\prime(1)=0 \medskip\\
+
+\hbox{(b)}\qquad & y\sp{\prime\prime}+4y=6\cos4x,\qquad y\sp\prime(0)=0,\quad y\sp\prime(\pi)=0
+\end{array}
+\]
+\textbf{(a)} Need to find the general solution. Find homogeneous solution first, using substitution $y=e^{rt}$:\\
+$y\sp{\prime\prime}+2y\sp\prime-3y=0 $\\
+$r\sp{2} + 2r -3=0$\\
+$(r-1)(r+3)=0$\\
+$r = 1, -3$\\
+$y_h(x) = C_1e^{x} + C_2e^{-3x}$\\\\
+For the particular solution, make a guess for $y_p(x)$ and plug it into the DE. The guess must be multiplied by a factor of x, to avoid resonance with the homog. solutions:\\
+$y_p(x) = x(Ae^x)$\\
+$y_p\,\sp{\prime}(x) = Ae^x + x(Ae^x)$\\
+$y_p\,\sp{\prime\prime}(x) = 2Ae^x + x(Ae^x)$\\\\
+$2Ae^x + x(Ae^x) + 2(Ae^x + x(Ae^x)) - 3(x(Ae^x))= 4e^x$\\
+$4Ae^x + 3x(Ae^x) - 3x(Ae^x)= 4e^x$\\
+$4Ae^x = 4e^x$\\
+$A=1$, so $y_p(x) = xe^x$\\\\
+General solution:\\
+$y(x) = C_1e^{x} + C_2e^{-3x} + xe^x$\\\\
+Plug in the first BC, $y(0)=0$:\\
+$y(0) = C_1e^{0} + C_2e^{0} + 0 = 0$\\
+$C_1 + C_2= 0$, so $C_1 = -C_2$\\\\
+Find $y\sp\prime(x)$ then plug in the BC $y\sp\prime(1)=0$:\\
+$y\sp\prime(x) = C_1e^{x} - 3C_2e^{-3x} + e^x + xe^x$\\
+$y\sp\prime(1) = C_1e^{1} - 3C_2e^{-3} + e^1 + e^1 = 0$\\
+$C_1e - 3C_2e^{-3} + 2e = 0$\\
+$(-C_2) - 3C_2e^{-4} = -2$\\
+$C_2(-1 - 3e^{-4}) = -2$\\
+$C_2 = {2 \over (1 + 3e^{-4})}$\\\\
+Multiply top and bottom by $e^4$:\\
+$C_2 = {2e^4 \over e^4 + 3}$, so $C_1 = -{2e^4 \over e^4 + 3}$\\\\
+\textcolor{teal}{\textbf{This is a \emph{unique} solution:}}\\
+$\textcolor{teal}{\bm{y(x) = -{2e^4 \over e^4 + 3}e^{x} + {2e^4 \over e^4 + 3}e^{-3x} + xe^x}}$\\
+\newpage
+\textbf{(b)} Need to find the general solution. Find homogeneous solution first:\\\\
+$y\sp{\prime\prime}+4y=6\cos4x$\\
+$r^2+4=0$\\
+$r=\pm 2i$\\
+$y_h(x) = C_1\cos(2x) + C_2\sin(2x)$\\\\
+Find particular solution by making a guess for $y_p(x)$:\\
+$y_p(x) = B\cos(4x)$\\
+$y_p\,\sp{\prime}(x) = -4B\sin(4x)$\\
+$y_p\,\sp{\prime\prime}(x) = -16B\cos(4x)$\\\\
+Plug into the DE:\\
+$-16B\cos(4x) + 4B\cos(4x)= 6cos(4x)$\\
+$-12B = 6$\\
+$B = -{1\over2}$\\
+$y_p(x) = -{1\over2}\cos(4x)$\\\\
+General solution:\\
+$y(x) = C_1\cos(2x) + C_2\sin(2x) -{1\over2}\cos(4x)$\\
+$y\,\sp\prime(x) = -2C_1\sin(2x) + 2C_2\cos(2x) + 2\sin(4x)$\\\\
+Plug in the BC $y\,\sp\prime(0)=0$:\\
+$y\,\sp\prime(0) = -2C_1\sin(0) + 2C_2\cos(0) + 2\sin(0) = 0$\\
+$C_2 = 0$\\\\
+Plug in the other BC $y\,\sp\prime(\pi)=0$:\\
+$y\,\sp\prime(\pi) = -2C_1\sin(2\pi) + 2\sin(4\pi) = 0$\\
+$-2C_1\sin(2\pi) + 2\sin(4\pi) = 0$\\
+$C_1(0)= 0$\\
+Any value of $C_1$ works, so:\\\\
+$\textcolor{teal}{\bm{y(x) = C_1\cos(2x) - {1\over2}\cos(4x)}}$\\
+\textcolor{teal}{\textbf{Where $\bm{C_1}$ is arbitrary, so that there are an infinite number of solutions (non-unique)}}\\
+
+\newpage
+\item (15 points)  Consider the eigenvalue problem
+\[
+y\sp{\prime\prime}+\lambda y=0,\qquad y(0)=0,\quad y\sp\prime(1)=0
+\]
+\begin{enumerate}
+\item
+Find all eigenvalues $\lambda$ and corresponding eigenfunctions $y(x)$ for the case $\lambda>0$.  (Note that the boundary condition at $x=1$ involves the derivative of $y(x)$.)\\\\
+Find general solution:\\
+$r^2 + \lambda = 0$\\
+$r = \pm\sqrt{-\lambda}$\\
+$r = \pm i\sqrt{\lambda}$\\
+$y(x) = C_1\cos(x\sqrt{\lambda}) + C_2\sin(x\sqrt{\lambda})$\\
+$y\sp\prime(x) =(0) + \sqrt{\lambda}C_2\cos(x\sqrt{\lambda})$\\\\
+Apply BC that $y(0)=0$:\\
+$y(0) = C_1\cos(0) + C_2\sin(0) = 0$\\
+$C_1 = 0$\\\\
+Apply BC that $y\sp\prime(1) = 0$:\\
+$y\sp\prime(1) = \sqrt{\lambda}C_2\cos(\sqrt{\lambda}) = 0$\\
+$C_2\cos(\sqrt{\lambda}) = 0$\\\\
+Either $C_2 = 0$ or $\cos(\sqrt{\lambda})=0$, but $C_2=0$ would just lead to the trivial solution, so:\\
+$\cos(\sqrt{\lambda}) = 0$\\
+$\sqrt{\lambda} = ({2n-1\over2})\pi$ where (n=1,2,3...)\\\\
+\textcolor{teal}{\textbf{Eigenvalues:\\
+$\bm{\lambda = ({2n-1\over2})^2\pi^2}$ where ($\bm{n=1,2,3...}$), $\bm{n\neq 0}$\\\\
+Eigenfunction:\\
+$\bm{y(x) = C_2\sin(({2n-1\over2})\pi x)}$ where ($\bm{n=1,2,3...}$), $\bm{n\neq 0}$}}\\
+
+\item
+Determine whether $\lambda=0$ is an eigenvalue.\\\\
+$y\sp{\prime\prime}+\lambda y=0$\\
+$y\sp{\prime\prime}=0$\\
+$y\sp{\prime}=A$\\
+$y = Ax + B$\\\\
+Apply BC $y(0)=0$:\\
+$y(0) = 0 + B = 0$\\
+$B = 0$\\
+Apply BC $y\sp\prime(1)=0$:\\
+$y\sp{\prime}(1) = A = 0$\\
+$A = 0$\\\\
+Since $A=0$ and $B=0$, $y(x)=0$ is the only solution for $\lambda=0$. Thus:\\
+\textcolor{teal}{\textbf{$\bm{\lambda = 0}$ is NOT an eigenvalue, and $\bm{y(x)=0}$ is NOT an eigenfunction.}}
+
+\end{enumerate}
+
+
+\newpage
+\item (20 points) The temperature $u(x,t)$ in a metal bar solves the heat equation
+\[
+u_t=3u_{xx},\qquad 0<x<1,\quad t>0
+\]
+subject to the boundary conditions
+\[
+u(0,t)=0,\qquad u_x(1,t)=0,\qquad t>0
+\]
+and the initial condition
+\[
+u(x,0)=2\sin\left({\pi x\over2}\right),\qquad 0<x<1
+\]
+Follow the steps below to find the solution of the heat flow problem using separation of variables.
+\begin{enumerate}
+\item Let $u(x,t)=F(x)G(t)$.  Separate the variables in the PDE to verify that the separated equations are $F\sp{\prime\prime}+\lambda F=0$ and $G\sp\prime+3\lambda G=0$, where $\lambda$ is a constant.\\\\
+$u_t=3u_{xx}$\\\\
+$u_t = {du\over dt} = FG\,\sp\prime$ and $u_{xx} = {d^2u\over dx^2} = GF\,\sp{\prime\prime}$, so:\\
+$FG\,\sp\prime = 3GF\,\sp{\prime\prime}$\\
+${G\,\sp\prime\over 3G} = {F\,\sp{\prime\prime} \over F}$\\
+The ratio of these terms is constant. Set them equal to $-\lambda$:\\
+${G\,\sp\prime\over 3G} = {F\,\sp{\prime\prime} \over F} = -\lambda$\\\\
+\textcolor{teal}{\textbf{$\bm{F\,\sp{\prime\prime} + \lambda F = 0}$ and $\bm{G\,\sp\prime + 3\lambda G = 0}$}}\\
+
+
+\item Determine boundary conditions for $F(x)$ and solve the resulting eigenvalue problem.  (Hint: recall your work on a previous problem.)\\\\
+For $u(0,t)=0$:\\
+$F(0)G(0)=0$\\
+So \textcolor{teal}{$\bm{F(0)=0}$}\\\\
+For $u_x(1,t)=0$:\\
+${d\over dx}[F(1)G(0)]=0$\\
+$G(0){d\over dx}[F(1)]=0$\\
+And \textcolor{teal}{$\bm{F\sp\prime(1)=0}$}\\
+
+With $F\,\sp{\prime\prime} + \lambda F=0$ and these conditions (identical to problem 2), the solution is:\\
+$F(x)=C_2\sin(({2n-1\over2})\pi x)$ where ($n=1,2,3...$), $n\neq 0$\\
+Pick $C_2 = 1$:\\\\
+\textcolor{teal}{$\bm{F(x)=\sin(({2n-1\over2})\pi x)}$ \textbf{where ($\bm{n=1,2,3...}$),} $\bm{n\neq 0}$\\
+$\bm{\lambda = ({2n-1\over2})^2\pi^2}$ \textbf{where ($\bm{n=1,2,3...}$),} $\bm{n\neq 0}$}\\
+
+\item Solve the separated equation for $G(t)$.  Sum over all available solutions for $F(x)G(t)$ to determine the general solution for $u(x,t)$ satisfying the PDE and the BCs.\\\\
+$G\,\sp\prime + 3\lambda G = 0$\\
+$G\,\sp\prime = -3\lambda G$\\
+Let $G=e^{rt}$ and solve:\\
+$r = -3\lambda$\\\\
+$G(t)= Ae\sp{-3\lambda t} = Ae\sp{-3({2n-1\over2})^2\pi^2 t}$\\
+$u(x,t) = G(t)F(x) = Ae\sp{-3({2n-1\over2})^2\pi^2 t} * \sin(({2n-1\over2})\pi x)$\\\\
+Sum over all values of n:
+\[
+\textcolor{teal}{\bm{u(x,t) = \sum_{n=1}^{\infty} \;{ A_ne\sp{-3({2n-1\over2})^2\pi^2 t} * \sin\left(({2n-1\over2})\pi x\right)}\;}}
+\]
+
+\item Apply the initial condition to determine the solution of the heat flow problem.\\\\
+Using the IC $u(x,0)=2\sin\left({\pi x\over2}\right)$. With $t=0$, the $e\,^{\text{stuff}}$ term becomes $e^0 = 1$:\\\\
+$u(x,0) = \sum_{n=1}^{\infty} \;[ A_n \sin\left(({2n-1\over2})\pi x\right)] = 2\sin\left({\pi x\over2}\right)$\\\\
+Expand the Fourier Sine Series:\\
+$A_1 \sin\left(({2n-1\over2})\pi x\right) + A_2 \sin\left(({2n-1\over2})\pi x\right) + A_3 \sin\left(({2n-1\over2})\pi x\right) +...= 2\sin\left({\pi x\over2}\right)$\\\\
+Only care about the term with $n=1$. Set $A_1=2$, and $A_n = 0$ when $n\geq2$\\\\
+The solution of the heat flow problem is:
+\[
+\textcolor{teal}{\bm{u(x,t) = 2e\sp{-3\left({\pi\over2}\right)^2 t} * \sin\left({\pi x\over 2}\right)}}
+\]
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
+

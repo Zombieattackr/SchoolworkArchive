@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\usepackage{multicol}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Algo S 2023 Crib Sheet Midterm Hayden Fuller
+%\begin{large}
+\\\noindent Notes:
+\\\indent Time Complexity:
+\\O $\Theta$ $\Omega$, $ f(n)/g(n)=c \rightarrow f(n)\in \Theta(g(n))$, $=0 \rightarrow f\in O(g(n))$, $=\infty \rightarrow f\in \Omega(g(n))$
+\\$T(n)=2^n \rightarrow T(n)=1+\Sigma_{i=0}^{n-1}T(i)$
+\\bit complexity, $k=\log_2N$, $N=2^k$
+\\\indent Modular Arithmetic: $x \mod N =0 \rightarrow x^y \mod N =0$ ; GCD(a+b,b)=GCD(a,b) ; Fermat $a^n \mod n = a$, $a^{n-1} \mod n = 1$
+\\$a^m\mod n = a^{m\mod (n-1)}\mod n$ ; $a\equiv b\mod n \rightarrow a^k\equiv b^k \mod n$ ex: $3^{201}\mod11=3^{201\mod 10}\mod11=3^1\mod11=3$
+\\$53^{1069}\mod54=(-1)^{1069}\mod54=-1\mod54=53$
+\\Euclid's method: \begin{verbatim}
+def Euclid: if b=0: return a ; return Euclid(b,a mod b)
+def extend: if b=0: return 1,0,a ; x,y,d=extend(b,a mod b) ; return y, (x-((floor(a/b))*y)), d #ax+by=d=GCD(a,b)
+a/b   r=a mod b   x  y  d
+25/11 3=25-2(11)  4 -9  1
+11/3  2=11-3(3)  -1  4  1
+3/2   1=3-1(2)    1 -1  1
+2/1   0           0  1  1
+1/0               1  0  1
+GCD(25,11)=1=4(25)-9(11)=100-99=1\end{verbatim} %add modular multiplicative inverse?
+\indent Recursion  Master's Theorem:
+\\master's theorem: $T(n)=aT(n/b)+O(n^d)$ for $a>0, b>1, d\ge0$, n=nodes, divided by b each step of the tree
+\\$d>\log_ba, T(n)=O(n^d)$, $d=\log_ba, T(n)=O(n^d\log n$, $d<\log_ba, T(n)=O(n^{\log_ba})$
+\\\indent Finding a particular element in a list:
+\\Merge sort: O(n log n), T(n)=2T(n/2)+O(n)
+\begin{verbatim}
+def mergesort(S): 
+  if len(S) < 2: return S
+  return merge(mergesort(S[:(len(S)//2)]), mergesort(S[(len(S)//2):]))
+def merge(x,y): 
+  if len(x)==0: return y
+  if len(y)==0: return x
+  if x[1] <- y[1]: return x[1]+merge(x[2:],y)
+  return y[1]+merge(x,y[2:])
+\end{verbatim}
+Quick sort:
+\begin{verbatim}
+def quickSort(S,low,high):
+    if low < high:
+        r=random.randint(low,high) #this really doesn't need to be done randomly
+        S[low],S[r]=S[r],S[low] #just uses the low value, but swaps with a random
+        v=low
+        i=low+1
+        for j in range(low+1,high+1): #for everything in the current area
+            if S[j] <= S[v]: #if current index is less than pivor
+                S[i],S[j]=S[j],S[i] #swap it with pivot
+                i+=1
+        S[v],S[i-1]=S[i-1],S[v] #lmao idk, just accounting for things
+        v=i-1
+        quickSort(S,low,v-1) #continue sorting left side
+        quickSort(S,v+1,high) #continue sorting right side
+    return S #unnecessary, just return
+ans = quickSort(S,0,n-1) #not necessary, just call quickSort(S,0,n-1) #driver
+\end{verbatim}
+k'th element (just run with floor(k/2) for median): O($n^2$), unlikely
+\begin{verbatim}
+def kth(S,k):
+    v = S[random.randint(0,len(S)-1)] ; sl=[] ; sv=[] ; sr=[] ;
+    for i in S:
+        if i<v: sl.append(i)
+        elif i>v: sr.append(i)
+        else: sv.append(i)
+    if k<len(sl): return selection(sl,k)
+    elif k>len(sl)+len(sv): return selection(sr,k-len(sl)-len(sv))
+    else: return v;
+\end{verbatim}
+\indent Average Case Analysis
+%\\\indent ??
+\\\indent Graph Theory
+DFS: O(V+E)
+\begin{verbatim}
+def dfs(g):
+    v=[] ; pre=[None for i in range(len(g))] ; post = pre ; clk = 0
+    for i in range(len(g)):     #visit everything not yet visited
+        if i not in v:  v,clk,pre,post = dfss(g,v,i,clk,pre,post)
+def dfss(g,v,i,clk,pre,post): #graph, visited, index, clock
+    v.append(i) ; pre[i]=clk ; clk+=1
+    for j in g[i]: #visit all connected nodes
+        if j not in v: #only if not yet visited that haven't been visited
+            v,clk,pre,post = dfss(g,v,j,clk,pre,post) #continue dfss on them
+    post[i]=clk ; clk+=1
+    return v,clk,pre,post
+\end{verbatim}
+BFS: O(V+E)
+\begin{verbatim}
+def bfs(g,s): #graph, start
+  dist = [infinity for i in range(len(g))] ; dist[s]=0
+  Q=[s]
+  while Q is not empty: #for evey node at this depth
+    u=eject(Q)
+    for v in g[u]: #for every node connected to this
+      if dist[v]=infinity: #if unvisited
+        inject(Q,v)
+        dist[v]=dist[u]+1
+\end{verbatim}
+Dijktra's
+\begin{verbatim}
+def bfs(g,l,s): #graph, lengths, start
+  prev = [None for i in range(len(g))] ; dist = [infinity for i in range(len(g))] ; dist[s]=0
+  H=makequeue(range(len(g))) #using dist values as keys
+  while H is not empty: #for evey node at this depth
+    u=deletemin(H)
+    for v in g[u]: #for every node connected to this
+      if dist[v]>dist[u]+l[u][v]: dist(v)=dist[u]+l[u][v] ; prev[v] = u ; decreasekey(H,v)
+\end{verbatim}
+%\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+MATH-2400 DIFFEQ F 2022 Crib Sheet Exam 3 Friday, December 9, 2022 Hayden Fuller
+\begin{large}
+\noindent Notes:
+\\SECOND ORDER: $y''+p(t)y'+q(t)y=g(t)$; $y(t)=C_1y_1(t)+C_2y_2(t)$
+\\wronskion: $w(t)=det[y_1,y_2,//,y_1',y_2']=y_1y_2'-y_1'y_2\ne0$ (linearly independent, not multiples of each other)
+\\$L[y_1]=y''_1+p(t)y'_1+q(t)y=g(t)$
+\\CONSTANT COEFFICIENT: $ay''+by'+cy=0$; $y(t)=e^{rt}$; $ar^2+br+c=0$
+\\CASE 1$r_1,r_2\in R$, $r_1\ne r_2$; $b^2-4ac>0$; $y(t)=C_1e^{r_1t}+C_2e^{r_2t}$
+\\CASE 2$r_1,r_2\in R$, $r_1=r_2$; $b^2-4ac=0$; $y(t)=C_1e^{rt}+C_2te^{rt}$
+\\REDUCTION OF ORDER:
+\\$y_2=y_1h$, $y'_2=y'_1h+y_1h'$, $y''_2=y''_1h+2y'_2h'+y_1h''$
+\\$y''_1h+2y'_2h'+y_1h''+p(t)(y'_1h+y_1h')+q(t)(y_1h)=(y''+py'+qy)h+(2y'+py)h'+yh''$ (should) $=(2y'+py)h'+yh''$, $u=h'$; $yu'+(2y'+py)u=0$
+\\get $u$ to one side, integrate to find $u$(has C); integrate to get $h$(has D) and plug in to $y_2=y_1h$; choose $C$ and $D$ to be easy.
+\\CASE 3$r_1,r_2\not\in R$; $b^2-4ac<0$; $\frac{-b\pm\sqrt{b^2-4ac}}{2a}=r=\lambda\pm i\omega$; 
+\\$y_1^c=e^{\lambda+i\omega}=e^{\lambda t}(\cos(\omega t)+i\sin(\omega  t))$
+\\$y_2^c=e^{\lambda-i\omega}=e^{\lambda t}(\cos(\omega t)-i\sin(\omega  t))$
+\\$y_1(t)=e^{\lambda t}\cos(\omega t)$\qquad$y_2(t)=e^{\lambda t}\sin(\omega t)$
+\\CAUCHY-EULER
+\\$ax^2y''+bxy'+cy=0$; $y=x^r$; $ar(r-1)+br+c=0$ roots $r_1$,$r_2$
+\\CASE 1: $y=C_1x^{r_1}+C_2x^{r_2}$
+\\CASE 2: $y=C_1x^r+C_2x^r\ln(x)$
+\\CASE 3: $y=C_1x^{\lambda}\cos(\omega\ln(x))+C_2x^{\lambda}\sin(\omega\ln(x))$
+\\polar: $y=Re^{\lambda t}\cos(\omega t-\phi)$; $y(t)=(R\cos(\phi))e^{\lambda t}\cos(\omega t)+(\sin(\phi))e^{\lambda t}\sin(\omega t)$
+\\$R\cos\phi=C_1$, $R\sin\phi=C_2$
+\\METHOD OF UNDETERMINED COEFFICIENTS (must be constant coefficient)
+\\$ae^{bt} \rightarrow Ae^{bt}$
+\\$a\cos(ct)+b\sin(ct) \rightarrow A\cos(ct)+B\sin(ct)$
+\\$at^n \rightarrow A_{n+1}t^n+$ ... $+A_1$
+\\$g(t)=P_n(t)e^{at}(\alpha\cos(bt)+\beta\sin(bt))$ ; $y_p(t)=Q_n(t)e^{at}\cos(bt)+R_n(t)e^{at}\sin(bt)$
+\\addition of $g_1$, $g_2$... results in addition of solutions
+\\you just guessed $y_p$, derive $y'_p$ and $yh''_p$, multiply t if resonance
+\\plug those in to $L[y_p]=g$ and solve for A's and B's; sets of (A's and B's) for each term
+\\plug those into guess for $y_p$ and $y(t)=y_h+y_p$, plug in ICs to solve for $C_1$, $C_2$
+\\VARIATION OF PARAMETERS (must be in standard form)
+\\must know homo $y_1$, $y_2$ ;  $y_p(t)=u_1y_1+u_2y_2$ ;  $u_1'=\frac{-y_2g}{W}$;$u_2'=\frac{y_1g}{W}$
+\\$u=\int u' dt + A_n$, plug in to get $y_p$, choose $A_1$, $A_2$ to make it easy.
+\\LINEAR OSCILATOR
+\\$mu''+cu'+ku=F_0\cos(\omega t)$
+\\$\omega_0=\sqrt{\frac{k}{m}}$ ;  $kx=mg$ ;  $c=\frac{F}{v}$ ;  $r=\pm\sqrt{\frac{-k}{m}}$
+\\$u(t)=e^{\lambda t}(C_1\cos(\cos(\omega t)+\sin(\omega t))$
+\\undetermined coefficients oscilator: $D=c^2\omega^2+(k-m\omega^2)^2$
+\\$u_p(t)=A\cos(\omega t)+B\sin(\omega t)$; $u'_p=-A\omega\sin(\omega t)+B\omega\cos(\omega t)$; $u''_p=-\omega^2A\cos(\omega t)-\omega^2B\sin(\omega t)$
+\\max amplitude? $R'=0$, $D=0$, $R=\sqrt{A^2+B^2}$, $\omega$ sorta close to $\omega_0$
+\\FREE UNDAMPED
+\\$u(t)=C_1\cos(\omega_0 t)+C_2\sin(\omega_0 t)=R\cos(\omega_0 t-\phi)$
+\\$C_1=u(0)=R\cos(\phi)$; $C_2=\frac{u'(0)}{\omega_0}=R\sin(\phi)$
+\\$=\frac{2\pi}{\omega_0}$ ;  frequency$=\frac{\omega_0}{2\pi}=\frac{1}{period}$ ;  amplitude$=R=\sqrt{C_1^2+C_2^2}$ ;  $\phi=\arctan(\frac{C_2}{C_1})$
+\\FREE DAMPED
+\\$u=e^{rt}$; $r=\frac{-c\pm\sqrt{c^2-4mk}}{2m}$; sqrt: ($<0$ under, not strong, overshoots, disipating wave) ($=0$ cryticially, perfect, decays as fast as possible without overshooting) ($>0$ over, too strong, slower, slow decay
+\\FORCED UNDAMPED
+\\$\omega_0\ne\omega$ small wave. $\omega_0\approx\omega$ bigger wave. $\omega_0=\omega$ resonance, grows linearly
+\\FORCED DAMPED
+\\$u_p(t)=A\cos(\omega t)+B\sin(\omega t)$
+\\LAPLACE TRANSFORM
+\\$F(s)=\int_0^\infty f(t)e^{-st} dt$
+\\linear, $L(af(t)+bg(t))=aL(f(t))+bL(g(t))$
+\\$ay''+by'+cy=f(t)$; $a(s^2Y-sy_0-y'_0)+b(sY-y_0)+c(Y)=F$; $Y=\frac{F+asy_0+ay'_0+by_0}{as^2+bs+c}$
+\\
+\\BOUNDARY VALUE PROBLEMS
+\\given DE $y''+Ay'-3y=f(x)$ and boundary conditions such as $y(0)=0$ or $y'(1)=0$
+\\homo sols $y=e^{rt}$; $y_h=C_1e^{r_1t}+C_2e^{r_2t}$ ; particular sol, method of undetermined coefficients
+\\apply boundary conditions to solve for $C_1$ and $C_2$
+\\EIGENVALUE PROBLEM
+\\find general sol, $y=e^{rt}$; $y''+\lambda y=0$; $y(0)=0$; $y(L)=0$; apply BCs,what $\lambda$s sols exist for, 
+\\$\lambda=p^2=(\frac{n\pi}{L})^2$ ; check for trivials at zero and stuff
+\\HEAT EQUATION
+\\$u_t=Du_{xx}$ ; $0\le x\le L$ ; $t\ge0$ ; $u(0,t)=0$ ; $u_x(L,t)=0$ ; $u(x,0)=f(x)$
+\\let $u(x,t)=F(x)G(t)$; $u_t=FG'$; $u_{xx}=F''G$; $FG'=DF''G$; $\frac{G'}{DG}=\frac{F''}{F}=-\lambda$; $F''+\lambda F=0=G'+\lambda DG$
+\\apply BCs to find BCx and BCt ; $u(0,t)=0=F(0)G(t)$ ; $F(0)=0$; $u_x(L,t)=0=F'(L)G(t)$; $F(L)=0$, 
+\\apply these BCs to functions of F and G; $F(x)=\sin(\frac{n\pi x}{L})$ ; $G(t)=Ae^{-(\frac{n\pi}{L})^2Dt}$ ; $u=GF$
+\\$u(x,t)=\sum_{n=1}^\infty A_ne^{-(\frac{n\pi}{L})^2Dt}\sin(\frac{n\pi x}{L})$ ; apply IC $u(x,0)=?$; build ? of parts from sum
+\\with $A_n$'s, build $u(x,t)$
+\\FOURIER SINE SERIES $S(x)=\sum_{n=1}^\infty b_n\sin(\frac{n\pi x}{L})$ ; $b_n=\frac{2}{L}\int_0^Lf(x)\sin(\frac{n\pi x}{L})dx$ ; average at jumps
+\\FOURIER COS SERIES $C(x)=\frac{1}{2}a_0+\sum_{n=1}^\infty a_n\cos(\frac{n\pi x}{L})$ ; $a_n=\frac{2}{L}\int_0^Lf(x)\cos(\frac{n\pi x}{L})dx$
+\\WAVE EQUATION
+\\$u_{tt}=c^2u_{xx}$; $0\le x\le L$; $t\ge0$; $u(x,0)=f(x)$; $u_t(x,0)=g(x)$; $u_{tt}=FG''$; $u_{xx}=F''G$; $\frac{G''}{c^2G}=\frac{F''}{F}=-\lambda$
+\\$F''+\lambda F=0$; $G''+\lambda c^2G=0$ ; $\lambda=(\frac{n\pi}{L})^2$ ; $G''+(\frac{n\pi c}{L})^2G=0$ ; $G=e^{rt}$ ; $r^2+(\frac{n\pi c}{L})^2=0$ ; $r=\pm i(\frac{n\pi c}{L})$
+\\$G=A\cos(\frac{n\pi c}{L}t+B\sin(\frac{n\pi c}{L}t)$; $u(x,t)=\sum+{n=1}^\infty(A\cos(\frac{n\pi c}{L}t+B\sin(\frac{n\pi c}{L}t))\sin(\frac{n\pi x}{L})$
+\\apply ICs $u(x,0)=\sum_{n=1}^\infty A_n\sin(\frac{n\pi x}{L})=f(x)$ ; $A_n=\frac{2}{L}\int_0^Lf(x)\sin(\frac{n\pi x}{L})dx$
+\\$u_t(x,t)=\sum_{n=1}^\infty(-\frac{n\pi c}{L}A_n\sin(\frac{n\pi c}{L}t)+\frac{n\pi c}{L}B_n\cos(\frac{n\pi c}{L}t))\sin(\frac{n\pi x}{L})$ ; $u_t(x,0)=\sum_{n=1}^\infty\frac{n\pi c}{L}B_n\sin(\frac{n\pi x}{L})=g(x)$
+\\$B_n=\frac{2}{n\pi c}\int_0^Lg(x)\sin(\frac{n\pi x}{L}dx$
+\\LINEAR ALGEBRA 
+\\$p(\lambda)=\det(A-\lambda I)=\lambda^2-(a+d)\lambda+\det(A)$ ; $(A-\lambda_nI)x_n=0$ ; $x_n=[\alpha\;\;\beta]^T$
+\\IVP: $x'=[1\;\;-2 /n 3\;\;-4]x$ ; $x(0)=[-2\;\;1]^T$ ; find eigenvals $r_n$ and vectors $z_n$ ; $x(t)=C_1z_1e^{r_1t}+C_2z_2e^{r_2t}$
+\\apply IC to find $C_n$ ; PHASE PLOT: REAL: $x(t)=u(t)+v(t)$; $x=u(t)$; $y=v(t)$; $r_1<0<r_2$, saddle; 
+\\$r_1<r_2<0$, sink, tangent  $r_2$ at $0$; $0<r_1<r_2$, source, tangent $r_1$ at $0$
+\\IMAGINARY: $r=\lambda\pm\mu i$ ; $a=$ real part of $z_n$; $b=$imaginary part of $z_n$; $x_1=(a+ib)e^{(\lambda+i\mu)t}$
+\\$u(t)=(a\cos(\mu t)-b\sin(\mu t))e^{\lambda t}$ ; $v(t)=(b\cos(\mu t)+a\sin(\mu t))e^{\lambda t}$
+\\$\lambda>0$, source; $\lambda<0$, sink; $\lambda=0$, center; a>-b>-a>b>a?; bottom left positive = counter clockwise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

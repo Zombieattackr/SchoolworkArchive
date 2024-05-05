@@ -1,0 +1,382 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 5} \smallskip\\ Due: 11pm, Tuesday, October 18, 2022}\\
+\textbf{\\Submitted to LMS By:\\ Joseph Hutchinson\\ 662022852 \\ Section 17 }
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 3, pages 58--59: 1(d,f,h,p), 2(c,d,g), 3(c,j).
+\item
+Exercises from Chapter 3, page 63: 1(c,d,e), 3(b).
+\end{itemize}
+
+\newpage\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}-2y\sp{\prime}+5y=\cos t - \sin 2t
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+\item[A] $y_p(t)=A\cos t+B\sin 2t$		
+\item\textcolor{red}{\textbf{[B] $\bm{y_p(t)=A\cos t+B\sin t+C\cos 2t+D\sin 2t}$}}
+\item[C] $y_p(t)=A\cos t+B\sin t+(C\cos 2t+D\sin 2t)t$
+\item[D] None of these choices
+\end{description}
+
+\bigskip\bigskip
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}+y\sp{\prime}=5te\sp{-t}-t\sp2\cos t
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+%Not A, since we need a term with (t^2)*e^(-t)
+\item[A] $y_p(t)=(A+Bt)e^{-t} + (C_0+C_1t+C_2t\sp2)(D\cos t+E\sin t)$ 
+\item[B] $y_p(t)=(At+Bt\sp2)e^{-t} + (C_0+C_1t+C_2t\sp2)(D\cos t+E\sin t)$
+%Thinking C because it best matches the general form of a particular solution, not entirely sure though
+\item\textcolor{red}{\textbf{[C] $\bm{y_p(t)=(At+Bt\sp2)e^{-t} + (C_0+C_1t+C_2t\sp2)\cos t+(D_0+D_1t+D_2t\sp2)\sin t}$}}
+\item[D] None of these choices
+\end{description}
+
+\bigskip\bigskip
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}+4y=te^{2t}\sin(2t) + \cos(2t)
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+\item[A] $y(t)=te^{2t} (A\cos 2t + B \sin 2t) + t(C\cos 2t + D \sin 2t)$ 	
+\item[B] $y(t)=te^{2t} [(At+B) \cos 2t +(Ct+D) \sin 2t] + (P\cos 2t + Q \sin 2t)$
+\item\textcolor{red}{\textbf{[C] $\bm{y(t)=e^{2t} [(At+B) \cos 2t +(Ct+D) \sin 2t] + t(P\cos 2t + Q \sin 2t)}$}}
+\item[D] None of these choices
+\end{description}
+
+
+\end{enumerate}
+
+\newpage\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  Solve the initial-value problem
+\[
+y''+3y' = e^{3t} + 4t, \qquad y(0)=0, \quad y'(0)=0
+\]
+
+Using the \textcolor{teal}{\textbf{Method of Undetermined Coefficients}}.\\
+Since the left hand side of the DE is of constant-coefficient form, we can find the\\\textbf{homogenous solution} $\bm{y_h(t)}$ as follows:\\\\
+Let $y = e^{rt}$\\
+Plug in and assume that $L[y]=0$, because these solutions are homogeneous. Simplify to get:\\
+$L[y] = r^2 + 3r = 0$\\
+$r(r+3)= 0$\\
+So $r_1 = -3$ and $r_2 = 0$\\
+
+With these real and distinct roots, we get solutions of the form:\\
+$y_1(t)=e\sp{r_1 t}= e\sp{-3t}$\\
+$y_2(t)=e\sp{r_2 t}= e\sp{0} = 1$\\
+
+The general \textbf{homogeneous solution} $\bm{y_h(t)}$ will be:\\
+$\bm{y_h(t) = C_1e\sp{-3t} + C_2}$\\
+
+The \textbf{particular solution} $\bm{y_p(t)}$ will solve $y''+3y' = e^{3t} + 4t$.\\
+%There will be two components to the particular solution: $y_{p1}$ and $y_{p2}$.\\
+We know that $L[y_{p}]$ should$= e\sp{3t} + 4t$.\\
+\textbf{Guess that $\bm{y_{p}(t) = Ae\sp{3t}+(B_0 + B_1t)}$}\\
+Because we observe that $B_0$ is a constant multiple of the homogeneous solution $y_2(t)=1$ found above, there is \emph{resonance} that must be addressed. So, multiply the term $(B_0 + B_1t)$ by $t$ so that its overall order is raised and we can avoid resonance.\\\\
+$y_{p}(t) = Ae\sp{3t}+(B_0 + B_1t)*t$\\
+(Rename the $B_n$ constants to reflect the order of the terms they apply to):\\
+\textbf{New guess: $\bm{y_{p}(t) = Ae\sp{3t}+(B_1t + B_2t^2)}$}\\
+
+Find $y_p\,\sp{\prime}(t)$ and $y_p\,\sp{\prime\prime}(t)$, in order to set $L[y_p] = g(t) = e\sp{3t} + 4t$:\\
+$y_{p}(t) = Ae\sp{3t}+B_1t + B_2t^2$\\
+$y_{p}\,\sp{\prime}(t) = 3Ae\sp{3t}+B_1 + 2B_2t$\\
+$y_{p}\,\sp{\prime\prime}(t) = 9Ae\sp{3t} + 2B_2$\\\\
+Plug in and set $L[y_p] = g(t) = e\sp{3t} + 4t$:\\
+$L[y_p] = y''+3y' = e\sp{3t} + 4t$\\
+$(9Ae\sp{3t} + 2B_2)+3(3Ae\sp{3t}+B_1 + 2B_2t) = e\sp{3t} + 4t$\\
+$(9A+9A)e\sp{3t} + (3B_1 + 2B_2) +  (6B_2)t = e\sp{3t} + 4t$\\
+$(18A)e\sp{3t} + (3B_1 + 2B_2) +  (6B_2)t = e\sp{3t} + 4t$\\
+
+So $18A = 1$, and $3B_1 + 2B_2 = 0$,  and $6B_2 = 4$.\\
+$\bm{A={1\over18}}$\\
+$\bm{B_2 = {2\over3}}$\\
+
+$3B_1 + 2{2\over3} = 0$\\
+$3B_1 = -{4\over3}$\\
+$\bm{B_1 = -{4\over9}}$\\
+
+\textbf{Given $\bm{A={1\over18}}$, $\bm{B_1 = -{4\over9}}$, and $\bm{B_2 = {2\over3}}$, the particular solution $y_p(t)$ is:}\\
+$\bm{y_{p}(t) = {1\over18}e\sp{3t}-{4\over9}t + {2\over3}t^2}$\\\\
+Combine $y_h(t)$ and $y_p(t)$ to find the \textbf{general solution:}\\
+$y(t) = y_h(t) + y_p(t)$\\
+$\bm{y(t) = C_1e\sp{-3t} + C_2 + {1\over18}e\sp{3t}-{4\over9}t + {2\over3}t^2}$\\\\
+In order to apply both ICs, find the first-derivative of this general solution (via product rule):\\
+$\bm{y\,\sp\prime(t) = -3C_1e\sp{-3t} + {1\over6}e\sp{3t} -{4\over9} + {4\over3}t}$\\
+
+Plug the IC $y(0)=0$ into $y(t)$:\\
+$y(t) = C_1e\sp{-3t} + C_2 + {1\over18}e\sp{3t}-{4\over9}t + {2\over3}t^2$\\
+$0 = C_1e\sp{0} + C_2 + {1\over18}e\sp{0}-{4\over9}(0) + {2\over3}(0)^2$\\
+$0 = C_1 + C_2 + {1\over18}$\\
+$C_1 + C_2 = -{1\over18}$\\
+
+Plug the IC $y\sp\prime(0)=0$ into $y\sp\prime(t)$:\\
+$y\,\sp\prime(t) = -3C_1e\sp{-3t} + {1\over6}e\sp{3t} -{4\over9} + {4\over3}t$\\
+$0 = -3C_1e\sp{0} + {1\over6}e\sp{0} -{4\over9} + {4\over3}(0)$\\
+$0 = -3C_1 + {1\over6} -{4\over9}$\\
+$3C_1 = {1\over6} - {4\over9}$\\
+$C_1 = {1\over18} - {4\over27} = {3\over54} - {8\over54} $\\
+$\bm{C_1 = -{5\over54}}$\\
+
+Plug $\bm{C_1 = -{5\over54}}$ back into the other term:\\
+$C_1 + C_2 = -{3\over54}$\\
+$-{5\over54} + C_2 = -{3\over54}$\\
+$\bm{C_2 = {1\over27}}$\\
+
+\textbf{With $\bm{C_1 = -{5\over54}}$ and $\bm{C_2= {1\over27}}$, the solution of the IVP is:}\\
+$\bm{y(t) = -{5\over54}e\sp{-3t} + {1\over27} + {1\over18}e\sp{3t}-{4\over9}t + {2\over3}t^2}$\\
+
+\newpage
+\item (15 points) Solve the initial-value problem
+\[
+y\sp{\prime\prime}+4y\sp{\prime}+5y=2e\sp{-2t}\sin(t)\qquad y(0)=0,\quad y\sp\prime(0)=0
+\]
+
+Using the \textcolor{teal}{\textbf{Method of Undetermined Coefficients}}.\\
+Since the left hand side of the DE is of constant-coefficient form, we can find the\\ \textbf{homogenous solution} $\bm{y_h(t)}$ as follows:\\\\
+Let $y = e^{rt}$\\
+Plug in and assume that $L[y]=0$, because these solutions are homogeneous. Simplify to get:\\
+$L[y] = r^2 + 4r + 5 = 0$\\
+Solve for the roots, where $a=1$, $b=4$, and $c=5$:\\
+$r=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$\\
+$r=\frac{-4\pm\sqrt{4^2-(4*1*5)}}{2(1)}$\\
+$r=-2\pm\frac{\sqrt{16-20}}{2}$\\
+$r=-2\pm i$\\\\
+So $\lambda = -2$ and $\omega = 1$\\
+With these complex roots, Euler's Formula is used to find the real form of the solutions:\\
+$y_1(t)=e\sp{\lambda t}\cos(\omega t) = e\sp{-2t}\cos(t)$\\
+$y_2(t)=e\sp{\lambda t}\sin(\omega t) = e\sp{-2t}\sin(t)$\\
+
+The general \textbf{homogeneous solution} $\bm{y_h(t)}$ will be:\\
+$\bm{y_h(t) = C_1e\sp{-2t}\cos(t) + C_2e\sp{-2t}\sin(t)}$\\
+
+The \textbf{particular solution} $\bm{y_p(t)}$ will solve $y\sp{\prime\prime}+4y\sp{\prime}+5y=2e\sp{-2t}\sin(t)$\\
+We know that $L[y_p]$ should$= g(t)$, where $g(t)$ is of the form $[\text{coefficient}]*[\text{exponential}]*[\text{trig function}]$.\\\\
+\textbf{Guess that $\bm{y_p(t) = [Ae\sp{-2t}\cos(t) + Be\sp{-2t}\sin(t)]*t\sp{s}}$}\\
+Because we observe that some of these terms are constant multiples of our homogeneous solutions found above, there is \emph{resonance} that must be addressed. So, \textbf{let $\bm{s=1}$ in the term $\bm{t\sp{s}}$}, so that the overall order is raised and we can avoid resonance.\\\\
+$y_p(t) = [Ae\sp{-2t}\cos(t) + Be\sp{-2t}\sin(t)]*t\sp{1}$\\
+\textbf{New guess: $\bm{y_p(t) = Ate\sp{-2t}\cos(t) + Bte\sp{-2t}\sin(t)}$}\\
+\textcolor{red}{\textbf{Let $\bm{c = \cos(t)}$ and $\bm{s = \sin(t)}$ in order to visually simplify the equation.}}\\\\
+Find $y_p\,\sp{\prime}(t)$ and $y_p\,\sp{\prime\prime}(t)$, in order to set $L[y_p] = g(t) = 2e\sp{-2t}\sin(t)$:\\
+$y_p(t) = Ate\sp{-2t}c + Bte\sp{-2t}s$\\
+$y_p(t) = A\textcolor{olive}{te\sp{-2t}c} + Bte\sp{-2t}s$\\
+Use the generic (triple, in this case) product rule for both terms:\\
+$y_p\,\sp{\prime}(t) = A[e\sp{-2t}c -2te\sp{-2t}c - te\sp{-2t}s] + B[e\sp{-2t}s - 2te\sp{-2t}s + te\sp{-2t}c]$\\
+$y_p\,\sp{\prime}(t) = A[\textcolor{purple}{e\sp{-2t}c} \,\textcolor{olive}{-2te\sp{-2t}c} - te\sp{-2t}s] + B[\textcolor{cyan}{e\sp{-2t}s} - 2te\sp{-2t}s\, \textcolor{olive}{+te\sp{-2t}c}]$\\
+
+Then, use the product rule again:\\
+First term $= A[\textcolor{red}{(e\sp{-2t}c)} + \textcolor{teal}{(-2te\sp{-2t}c)} + \textcolor{blue}{(- te\sp{-2t}s)}]$\\
+First term$\sp\prime$$=A[\textcolor{red}{(-2e\sp{-2t}c - e\sp{-2t}s)} + \textcolor{teal}{(- 2e\sp{-2t}c + 4te\sp{-2t}c + 2te\sp{-2t}s)} + \textcolor{blue}{(- e\sp{-2t}s + 2te\sp{-2t}s - te\sp{-2t}c)} ]$\\
+First term$\sp\prime$$=A[-2e\sp{-2t}c - e\sp{-2t}s - 2e\sp{-2t}c + 4te\sp{-2t}c + 2te\sp{-2t}s - e\sp{-2t}s + 2te\sp{-2t}s - te\sp{-2t}c ]$\\
+First term$\sp\prime$$=A[\textcolor{purple}{-2e\sp{-2t}c}\,\textcolor{cyan}{- e\sp{-2t}s}\,\textcolor{purple}{-2e\sp{-2t}c}\,\textcolor{olive}{+4te\sp{-2t}c} + 2te\sp{-2t}s\,\textcolor{cyan}{-e\sp{-2t}s} + 2te\sp{-2t}s\,\textcolor{olive}{-te\sp{-2t}c} ]$\\
+Combine terms of alike color from above:\\
+First term$\sp\prime$$=A[\textcolor{purple}{-4e\sp{-2t}c}\,\textcolor{cyan}{-2e\sp{-2t}s}\,\textcolor{olive}{+ 3te\sp{-2t}c} + 4te\sp{-2t}s ]$\\
+
+Second term $= B[\textcolor{red}{(e\sp{-2t}s)} + \textcolor{teal}{(-2te\sp{-2t}s)} + \textcolor{blue}{(te\sp{-2t}c)}]$\\
+Second term$\sp\prime$$= B[\textcolor{red}{(-2e\sp{-2t}s+e\sp{-2t}c)} + \textcolor{teal}{(-2e\sp{-2t}s + 4te\sp{-2t}s - 2te\sp{-2t}c)} + \textcolor{blue}{(e\sp{-2t}c - 2te\sp{-2t}c - te\sp{-2t}s)}]$\\
+Second term$\sp\prime$$= B[-2e\sp{-2t}s+e\sp{-2t}c - 2e\sp{-2t}s + 4te\sp{-2t}s - 2te\sp{-2t}c + e\sp{-2t}c - 2te\sp{-2t}c - te\sp{-2t}s]$\\
+Second term$\sp\prime$$= B[\textcolor{cyan}{-2e\sp{-2t}s}\,\textcolor{purple}{+e\sp{-2t}c}\,\textcolor{cyan}{-2e\sp{-2t}s} + 4te\sp{-2t}s\,\textcolor{olive}{-2te\sp{-2t}c}\,\textcolor{purple}{+ e\sp{-2t}c}\,\textcolor{olive}{- 2te\sp{-2t}c} - te\sp{-2t}s]$\\
+Combine terms of alike color from above:\\
+Second term$\sp\prime$$= B[\textcolor{cyan}{-4e\sp{-2t}s}\,\textcolor{purple}{+2e\sp{-2t}c} + 3te\sp{-2t}s\,\textcolor{olive}{-4te\sp{-2t}c} ]$\\
+
+$y_p\,\sp{\prime\prime}(t) = [\text{First term}\sp\prime] + [\text{Second term}\sp\prime]$\\
+$y_p\,\sp{\prime\prime}(t) = A[\textcolor{purple}{-4e\sp{-2t}c}\,\textcolor{cyan}{-2e\sp{-2t}s}\,\textcolor{olive}{+ 3te\sp{-2t}c} + 4te\sp{-2t}s ] + B[\textcolor{cyan}{-4e\sp{-2t}s}\,\textcolor{purple}{+2e\sp{-2t}c} + 3te\sp{-2t}s\,\textcolor{olive}{-4te\sp{-2t}c} ]$\\
+
+$\bm{y_p(t)}$ will solve $y\sp{\prime\prime}+4y\sp{\prime}+5y=2e\sp{-2t}\sin(t)$, so set $L[y_p] = g(t) = 2e\sp{-2t}\sin(t)$:\\
+$L[y_p] = y\sp{\prime\prime}+4y\sp{\prime}+5y$\\
+$L[y_p] = (A[\textcolor{purple}{-4e\sp{-2t}c}\,\textcolor{cyan}{-2e\sp{-2t}s}\,\textcolor{olive}{+ 3te\sp{-2t}c} + 4te\sp{-2t}s ] + B[\textcolor{cyan}{-4e\sp{-2t}s}\,\textcolor{purple}{+2e\sp{-2t}c} + 3te\sp{-2t}s\,\textcolor{olive}{-4te\sp{-2t}c} ])\\ \phantom{0.0001}+4(A[\textcolor{purple}{e\sp{-2t}c} \,\textcolor{olive}{-2te\sp{-2t}c} - te\sp{-2t}s] + B[\textcolor{cyan}{e\sp{-2t}s} - 2te\sp{-2t}s\, \textcolor{olive}{+te\sp{-2t}c}])+5(A\textcolor{olive}{te\sp{-2t}c} + Bte\sp{-2t}s)$\\
+
+$L[y_p] = A[\textcolor{purple}{-4e\sp{-2t}c}\,\textcolor{cyan}{-2e\sp{-2t}s}\,\textcolor{olive}{+ 3te\sp{-2t}c} + 4te\sp{-2t}s ] + B[\textcolor{cyan}{-4e\sp{-2t}s}\,\textcolor{purple}{+2e\sp{-2t}c} + 3te\sp{-2t}s\,\textcolor{olive}{-4te\sp{-2t}c} ]\\ \phantom{0.0001}+A[\textcolor{purple}{4e\sp{-2t}c} \,\textcolor{olive}{-8te\sp{-2t}c} - 4te\sp{-2t}s] + B[\textcolor{cyan}{4e\sp{-2t}s} - 8te\sp{-2t}s\, \textcolor{olive}{+4te\sp{-2t}c}]+A\textcolor{olive}{5te\sp{-2t}c} + B5te\sp{-2t}s$\\
+
+$L[y_p] = (-4A + 2B + 4A)\textcolor{purple}{e\sp{-2t}c} + (-2A-4B+4B)\textcolor{cyan}{e\sp{-2t}s} \,+ (3A-4B-8A+4B+5A)\textcolor{olive}{te\sp{-2t}c} \\\phantom{0.0001}+ (4A+3B-4A-8B+5B)te\sp{-2t}s$\\\\
+$L[y_p] = (2B)\textcolor{purple}{e\sp{-2t}c} + (-2A)\textcolor{cyan}{e\sp{-2t}s} \,+ (0)\textcolor{olive}{te\sp{-2t}c} + (0)te\sp{-2t}s$\\
+Set equal to $g(t) = 2e\sp{-2t}\sin(t) = (2)\textcolor{cyan}{e\sp{-2t}s} = (0)\textcolor{purple}{e\sp{-2t}c} + (2)\textcolor{cyan}{e\sp{-2t}s}$:\\
+$(2B)\textcolor{purple}{e\sp{-2t}c} + (-2A)\textcolor{cyan}{e\sp{-2t}s} = (0)\textcolor{purple}{e\sp{-2t}c} + (2)\textcolor{cyan}{e\sp{-2t}s}$\\\\
+So $2B = 0$ and $-2A = 2$\\
+\textbf{$\bm{B = 0}$ and $\bm{A = -1}$}\\
+Plug $B=0$ and $A=-1$ into my original guess for $y_p(t)$:\\
+$y_p(t) = Ate\sp{-2t}\cos(t) + Bte\sp{-2t}\sin(t)$\\
+\textbf{The particular solution $y_p(t)$ is:}\\
+$\bm{y_p(t) = -te\sp{-2t}\cos(t)}$\\\\
+Combine $y_h(t)$ and $y_p(t)$ to find the \textbf{general solution:}\\
+$y(t) = y_h(t) + y_p(t)$\\
+$\bm{y(t) = C_1e\sp{-2t}\cos(t) + C_2e\sp{-2t}\sin(t) -te\sp{-2t}\cos(t)}$\\\\
+In order to apply both ICs, find the first-derivative of this general solution (via product rule):\\
+$\bm{y\,\sp\prime(t) = C_1[-2e\sp{-2t}\cos(t) - e\sp{-2t}\sin(t)] + C_2[-2e\sp{-2t}\sin(t) + e\sp{-2t}\cos(t)]} \\ \phantom{0.0001}\bm{+ [-e\sp{-2t}\cos(t) + 2te\sp{-2t}\cos(t) + te\sp{-2t}\sin(t)]}$\\\\
+Plug in the first IC, $y(0)=0$:\\
+$y(t) = C_1e\sp{-2t}\cos(t) + C_2e\sp{-2t}\sin(t) -te\sp{-2t}\cos(t)$\\
+$0 = C_1e\sp{0}\cos(0) + C_2e\sp{0}\sin(0) -(0)e\sp{0}\cos(0)$\\
+$0 = C_1(1)(1) + C_2(1)(0) -(0)(1)(1)$\\
+$\bm{C_1 = 0}$\\\\
+Plug in the second IC, $y\sp\prime(0)=0$:\\
+$y\,\sp\prime(t) = C_1[-2e\sp{-2t}\cos(t) - e\sp{-2t}\sin(t)] + C_2[-2e\sp{-2t}\sin(t) + e\sp{-2t}\cos(t)] \\ \phantom{0.0001}+ [-e\sp{-2t}\cos(t) + 2te\sp{-2t}\cos(t) + te\sp{-2t}\sin(t)]$\\
+$0 = C_1[-2e\sp{0}\cos(0) - e\sp{0}\sin(0)] + C_2[-2e\sp{0}\sin(0) + e\sp{0}\cos(0)] + [-e\sp{0}\cos(0) + 2(0)e\sp{0}\cos(0) + (0)e\sp{0}\sin(0)]$\\
+$0 = C_1[-2] + C_2[1] + [-1]$\\
+$C_1[-2] + C_2[1] = 1$\\\\
+Plug in $\bm{C_1 = 0}$:\\
+$(0)[-2] + C_2[1] = 1$\\
+$\bm{C_2= 1}$\\\\
+\textbf{With $\bm{C_1 = 0}$ and $\bm{C_2= 1}$, the solution of the IVP is:}\\
+$\bm{y(t) = e\sp{-2t}\sin(t) -te\sp{-2t}\cos(t)}$\\
+
+
+\bigskip
+\item (15 points) Consider the linear, nonhomogeneous DE
+\[
+ty'' + (t-1) y' - y = t^2 e^{-2t}, \qquad t>0
+\]
+\begin{enumerate}
+\item Verify that $y_1(t) = e\sp{-t}$ and $y_2(t) = t-1$ are homogeneous solutions of the differential equation and compute the Wronskian.\\\\
+If $y_1(t)$ and $y_2(t)$ are homogeneous solutions, then $L[y_1]=0$ and $L[y_2]=0$.\\\\
+So, find the first and second derivatives of $y_1(t)$, then check if $L[y_1]=0$:\\
+$y_1(t) = e\sp{-t}$\\
+$y_1\,\sp{\prime}(t) = -e\sp{-t}$\\
+$y_1\,\sp{\prime\prime}(t) = e\sp{-t}$\\
+Plug in:\\
+$L[y_1] = t(e\sp{-t}) + (t-1)(-e\sp{-t}) - (e\sp{-t})$\\
+$L[y_1] = te\sp{-t} - te\sp{-t} + e\sp{-t} - e\sp{-t}$\\
+$\bm{L[y_1] = 0}$\\
+\textbf{So, $\bm{y_1(t)}$ is a homogenenous solution.}\\\\
+Now, find the first and second derivatives of $y_2(t)$, then check if $L[y_2]=0$:\\
+$y_2(t) = t-1$\\
+$y_2\sp{\prime}(t) = 1$\\
+$y_2\sp{\prime\prime}(t) = 0$\\
+Plug in:\\
+$L[y_2] = t(0) + (t-1)(1) - (t-1)$\\
+$L[y_2] = t - 1 - t + 1$\\
+$\bm{L[y_2] = 0}$\\
+\textbf{So, $\bm{y_2(t)}$ is also homogenenous solution.}\\\\
+Now, compute the Wronskian of $y_1(t)$ and $y_2(t)$ to determine if they are independent:\\
+$W(t)=\det\begin{bmatrix}y_1(t) & y_2(t) \\ y_1\,\sp\prime(t) & y_2\,\sp\prime(t)\end{bmatrix} = \det\begin{bmatrix}e\sp{-t} & (t-1) \\ -e\sp{-t} & 1\end{bmatrix}$\\
+$W(t) = (e\sp{-t})(1) - (t-1)(-e\sp{-t})$\\
+$W(t) = e\sp{-t} + te\sp{-t} - e\sp{-t}$\\\\
+$\bm{W(t) = te\sp{-t}}$\\
+\textbf{Since $\bm{t>0}$, there is no way for $\bm{W(t)=0}$, so the solutions $\bm{y_1(t)}$ and $\bm{y_2(t)}$ are linearly independent.}\\
+\newpage
+\item Use \textcolor{teal}{\textbf{Variation of Parameters}} to find the general solution of the DE.\\\\
+First, divide by $t$ on both sides to get the DE in standard form:\\
+$y'' + {(t-1)\over{t}}y' - {y\over{t}} = te^{-2t}$\\\\
+A key assumption of this method is that both homogeneous solutions $y_1(t)$ and $y_2(t)$ are known and independent. So:\\
+$L[y_1] = 0$ and $L[y_2] = 0$, because they're both homogeneous.\\
+$W(t) \neq 0$, which means means they're linearly independent.\\
+Since we proved these conditions in part (a) above, we can move forward with the method:\\\\
+The form of the \textbf{particular solution $\bm{y_p(t)}$} will be:\\
+$\bm{y_p(t) = u_1(t)y_1(t) + u_2(t)y_2(t)}$\\
+Where $u_1$ and $u_2$ will be found such that $L[y_p] = g(t) = te^{-2t}$.\\
+Take the derivatives of $y_p$ to find $y_p\,\sp\prime$ and $y_p\,\sp{\prime\prime}$(via product rule):\\
+$y_p = u_1e\sp{-t} + u_2(t-1)$\\
+$y_p\,\sp\prime = [\textcolor{red}{u_1\,\sp{\prime}e\sp{-t}} - u_1e\sp{-t}] + [\textcolor{red}{u_2\,\sp{\prime}(t-1)} + u_2]$\\
+Assume that $u_1$ and $u_2$ are such that the \textcolor{red}{sum of the red terms} $=0$.\\
+$\textcolor{red}{\bm{u_1\,\sp{\prime}e\sp{-t} + u_2\,\sp{\prime}(t-1) = 0}}$\\
+$y_p\,\sp\prime = - u_1e\sp{-t} + u_2$\\
+$y_p\,\sp{\prime\prime} = [- u_1\,\sp{\prime}e\sp{-t} + u_1e\sp{-t}] + [u_2\,\sp{\prime}]$\\\\
+Find $L[y_p]$ by substituting in each order of derivative of $y_p$:\\
+$L[y_p] = y_p'' + {(t-1)\over t}y' - {y\over t}$\\
+$L[y_p] = (- u_1\,\sp{\prime}e\sp{-t} + u_1e\sp{-t} + u_2\,\sp{\prime}) + {(t-1)\over{t}}(- u_1e\sp{-t} + u_2) - {(u_1e\sp{-t} + u_2(t-1))\over t}$\\
+Group terms:\\
+$L[y_p] = u_1\textcolor{teal}{(e^{-t} -{(t-1)\over t}e^{-t} -{e^{-t}\over t} )} + u_2\textcolor{orange}{({(t-1)\over t} - {(t-1)\over t})} + u_1\,\sp{\prime}(-e^{-t}) + u_2\,\sp{\prime}$\\\\
+The \textcolor{teal}{teal} and \textcolor{orange}{orange} terms are \textcolor{teal}{$L[y_1]$} and \textcolor{orange}{$L[y_2]$} respectively, which should both$=0$, since these solutions are homogeneous. So, remove them:\\
+$L[y_p] = u_1\,\sp{\prime}(-e^{-t}) + u_2\,\sp{\prime}$\\
+Set equal to $te^{-2t}$, since $L[y_p]\,\text{should} = g(t)$:\\
+$\textcolor{red}{\bm{-u_1\,\sp{\prime}e^{-t} + u_2\,\sp{\prime} = te^{-2t}}}$\\
+Now we have two equations in terms of $u_1\,\sp{\prime}$ and $u_2\,\sp{\prime}$. Perform some operations to cancel terms and solve for each:\\
+\textcolor{red}{$\bm{u_1\,\sp{\prime}e\sp{-t} + u_2\,\sp{\prime}(t-1) = 0}$} (eq.1)\\
+$\textcolor{red}{\bm{-u_1\,\sp{\prime}e^{-t} + u_2\,\sp{\prime} = te^{-2t}}}$ (eq.2)\\
+No need to multiply (eq.1) by anything, since $y_2\,\sp\prime = 1$.\\
+Multiply (eq.2) by $-y_2 = -(t-1)$ on both sides:\\
+$\textcolor{black}{\bm{u_1\,\sp{\prime}e^{-t}(t-1) - u_2\,\sp{\prime}(t-1) = -te^{-2t}(t-1)}}$ (eq.2)\\
+Add (eq.1) to the now modified (eq.2) to get:\\
+$\textcolor{black}{u_1\,\sp{\prime}e^{-t}+u_1\,\sp{\prime}e^{-t}(t-1) = -te^{-2t}(t-1)}$\\
+$\textcolor{black}{u_1\,\sp{\prime}te^{-t}= -te^{-2t}(t-1)}$\\
+So:\\
+$u_1\,\sp{\prime}= {-te^{-2t}(t-1)\over te^{-t}} = {-e^{-2t}(t-1)\over e^{-t}} = {-te^{-2t}+e^{-2t}\over e^{-t}} = -te^{-t}+e^{-t}$\\
+Integrate $u_1\,\sp{\prime}$ with respect to $t$, in order to determine $u_1$. Use the reverse product rule here:\\
+$\int{u_1\,\sp{\prime}dt} = \int{(-te^{-t}+e^{-t})dt}$\\
+$\bm{u_1 = te^{-t} + C_1}$\\
+
+\newpage
+In obtaining $u_1$ above, we went through the whole method, where the outcome is that:\\$u_1\,\sp{\prime} = {-y_2\,{g(t)}\over W(t)}$\\\\
+To find $u_2$, use the other derived formula rather than going through all of the steps:\\
+$u_2\,\sp{\prime} = {y_1\,{g(t)}\over W(t)}$\\
+$u_2\,\sp{\prime} = {(e^{-t})(te^{-2t})\over te\sp{-t}}$\\
+$u_2\,\sp{\prime} = (e^{-3t})(e^{t})$\\
+$u_2\,\sp{\prime} = e^{-2t}$\\
+
+Integrate $u_2\,\sp{\prime}$ with respect to $t$, in order to determine $u_2$:\\
+$\int{u_2\,\sp{\prime}dt} = \int{e^{-2t}dt}$\\
+$\bm{u_2 = -{1 \over 2}e^{-2t} + C_2}$\\
+
+The form of the \textbf{particular solution $\bm{y_p(t)}$} will be:\\
+$\bm{y_p(t) = u_1(t)y_1(t) + u_2(t)y_2(t)}$\\
+Plug in $\bm{u_1}$ and $\bm{u_2}$ as well as $\bm{y_1 = e\sp{-t}}$ and $\bm{y_2 = (t-1)}$, in order to find $y_p(t)$:\\
+$y_p(t) = (te^{-t} + C_1)(e\sp{-t}) + (-{1 \over 2}e^{-2t} + C_2)(t-1)$\\
+$y_p(t) = te^{-2t} + C_1e\sp{-t} - {1 \over 2}e^{-2t}(t-1) + C_2(t-1)$\\\\
+$y_p(t) = te^{-2t} + \textcolor{red}{C_1e\sp{-t}} - {1 \over 2}te^{-2t} + {1 \over 2}e^{-2t} + \textcolor{red}{C_2(t-1)}$\\
+Since the \textcolor{red}{red} terms above are constant multiples of the homogeneous solutions, we can pick $C_1$ and $C_2$ to be any values, since those terms should not contribute to the particular solution. In this case, there aren't any particularly clever options we could select to cancel other terms out, so pick $C_1 = 0$ and $C_2 = 0$ for convenience.\\
+$y_p(t) = te^{-2t} - {1 \over 2}te^{-2t} + {1 \over 2}e^{-2t}$\\
+$y_p(t) = {1 \over 2}te^{-2t} + {1 \over 2}e^{-2t}$\\
+$\bm{y_p(t) = {1\over2}(t+1)e^{-2t}}$\\\\
+The general solution will be a combination of both $y_h(t)$ and $y_p(t)$, where $y_h(t)$ is itself a linear combination of $y_1$ and $y_2$:\\
+$\bm{y_h(t) = A{e^{-t}} + B(t-1)}$\\
+
+$y(t) = y_h(t) + y_p(t)$\\\\
+$\bm{y(t) = A{e^{-t}} + B(t-1) + {1\over2}(t+1)e^{-2t}}$\\
+\textbf{Since there were no Initial Conditions provided, this is the most accurate ``general'' solution we can find. Based on the problem, it must also be noted that $\bm{t>0}$.}\\
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+

@@ -1,0 +1,1019 @@
+ABSTRACT
+Empirical tests in the 1990s found little evidence of poor countries catching up with rich -
+unconditional convergence - since the 1960s, and divergence over longer periods. This stylized
+fact spurred several developments in growth theory, including AK models, poverty trap models,
+and the concept of convergence conditional on determinants of steady-state income. We revisit
+these findings, using the subsequent 25 years as an out-of-sample test, and document a trend
+towards unconditional convergence since 1990 and convergence since 2000, driven by both faster
+catch-up growth and slower growth of the frontier. During the same period, many of the
+correlates of growth - human capital, policies, institutions, and culture - also converged
+substantially and moved in the direction associated with higher income. Were these changes
+related? Using the omitted variable bias formula, we decompose the gap between unconditional
+and conditional convergence as the product of two cross-sectional slopes. First, correlate-income
+slopes, which remained largely stable since 1990. Second, growth-correlate slopes controlling for
+income - the coefficients of growth regressions - which remained stable for fundamentals of the
+Solow model (investment rate, population growth, and human capital) but which flattened
+substantially for other correlates, leading unconditional convergence to converge towards
+conditional convergence.
+
+1 Introduction
+Studies of convergence in the 1990s found no tendency for poor countries to catch up with rich
+ones. If anything, there was divergence: rich countries growing faster than poor. National accounts
+data showed weak divergence across a large set of countries since the 1960s (Barro 1991), while
+historical data, for a smaller set of countries, showed stronger divergence starting as early as the
+16th century, with the ratio of per capita incomes between the richest and the poorest countries
+increasing by a factor of five from 1870 to 1990 (Pritchett 1997). The lack of convergence was a
+major challenge to models where growth is based on accumulation of capital subject to decreasing
+returns or where copying technology is easier than developing new technologies. It led to two
+responses: first, a rejection of the neoclassical growth models and the development of poverty
+trap models and AK endogenous growth models, some of which predict divergence (Romer 1986);
+second, an emphasis on underlying determinants of steady-state income, such as human capital,
+policies and institutions, leading to growth regressions and tests of convergence conditional on
+them (Barro and Sala-i Martin 1992; Durlauf et al. 2005).
+	To update the stylized facts of convergence, we revisit these empirical exercises with twentyfive
+years of additional data. We consider global trends in income and growth, as well as factors
+that might determine them – which we term the correlates of growth - such as human capital,
+policies, institutions, and culture. We find substantial changes since the late 1980s, in growth, in
+its correlates, and in the cross-country relationship between them. While we do not provide a full
+analysis of the reasons, or causal determinants, we think this is still useful, as any understanding
+of development should match the cross-country patterns.
+We begin with absolute convergence – poor countries growing faster than rich, unconditionally
+– and document convergence in income per capita in the last two decades. To study the trend in
+convergence, we regress ten-year growth in income per capita on income per capita and consider
+the evolution of the relationship since 1960. Doing so shows a steady trend towards convergence
+since the late 1980s, leading to absolute convergence since 2000, precisely when empirical tests of
+convergence fell out of fashion. In terms of magnitude, from 1985-1995 there was divergence in
+income per capita at a rate of 0.5% annually, while from 2005-2015 there was convergence at a rate
+of 0.7%.1 While lower than the 2% “iron law of [conditional] convergence” (Barro 2012), this still
+represents a substantial change. Looking further back to 1960, when the widespread collection of
+national income data began, the trend in convergence was initially flat, with neither convergence
+nor divergence, followed by a decade of a trend towards divergence in the late 1970s and early
+1980s.
+Breaking down the trend towards absolute convergence since 1990, by subsets of countries,
+provides a fuller picture of the change. There has been both faster catch-up growth and a slowdown
+of the frontier. The richest quartile of countries had the fastest growth in the 1980s but the 
+slowest growth since, being flat in the 1990s and then declining since 2000. In contrast,
+the three other quartiles all experienced substantially accelerating growth through the 1990s and
+early 2000s, inconsistent with certain poverty trap explanations for the change in convergence, in
+which countries catch up once above a certain income threshold. Fewer lower-income countries
+have had growth disasters since the mid-1990s – but removing them has little e↵ect on the recent
+trend towards convergence; instead, it removes the divergence in the late 1970s and early 1980s.
+The trend is also not driven by any one specific region, and convergence becomes stronger upon
+removing Sub-Saharan Africa or the bottom quartile of the income distribution from the date set.
+	Is convergence in the last twenty years just a blip, or does it represent a turning point in world
+history? It certainly could be a blip, as other have argued (Johnson and Papageorgiou 2020), for
+example due to high commodity prices. Yet, the trend has lasted for 25 years and is robust to
+removing resource rich countries, so we entertain the idea that it represents a turning point and
+consider its potential causes.
+Within the framework of conditional convergence, we classify possible causes into two broad
+groups. First, those which lead to faster convergence conditional on growth correlates, which could
+include faster spread of technologies due to globalization, as well as greater capital and labor mobility.
+Second, our main focus, convergence in the growth correlates themselves - human capital,
+policies, institutions, culture - which may close the gap between unconditional and conditional
+convergence. While recent literature on economic growth and institutions emphasizes the stability
+and persistence of such correlates, using their historical determinants to identify their causal
+e↵ects on economic outcomes (Acemoglu et al. 2001; Nunn 2008; Dell 2010; Michalopoulos and
+Papaioannou 2013), the finding that certain determinants of growth are highly persistent is not
+inconsistent with others changing, potentially rapidly, and being subject to global influences on
+policies and culture, for example.
+To study whether growth correlates have changed, we classify them into four groups: enhanced
+Solow fundamentals – investment rate, population growth rate, and human capital – variables
+which are fundamental determinants of steady state income in the enhanced Solow model (Mankiw
+et al. 1992); short-run correlates, variables considered by the 1990’s growth literature which may
+change in a relatively short time scale, typically policies; long-run correlates, those which change
+slowly if at all, and for which we will not have time variation, typically historical determinants
+of institutions and geography; and culture. Far from being static, even among highly persistent
+correlates we find that many have undergone large changes and themselves converged substantially
+across countries, towards those of rich countries.
+	For the Solow fundamentals and short-run correlates, we examine 35 variables in six categories:
+Solow fundamentals, labor force, political institutions, governance quality, fiscal policy, financial
+institutions. To tie our hands over which variables we include, we started from a list of variables
+commonly used in growth regressions, from the Handbook of Economic Growth chapter on “Growth
+econometrics” (Durlauf et al. 2005). We then constrained ourselves to those variables which were
+available for at least 50 countries by 1996, and we chose to focus on the period 1985-2015 as a
+compromise between the number of countries and the number of time periods. Among the 20
+variables which are comparable across time, we find significant beta-convergence (a negative slope
+of growth regressed on level) in 17. Only credit to the private sector diverged. Moreover, of the
+18 variables which were correlated with income in 1985, 15 “improved” on average, meaning they
+converged towards those associated with higher income. For a subset of correlates, we are also
+able to look further back, and we find similar, albeit slower, trends in 1960-1985.
+	Using di↵erent rounds of the World Value Survey, we also find evidence of convergence in
+culture. While culture does show persistence, eight out of the ten cultural variables we consider
+have been converging since 1990. For example, views on inequality, political participation, the
+importance of family, traditions, and work ethic have all been converging. While limited, the
+results of the exercise are consistent with papers in sociology and psychology studying cultural
+convergence (Inglehart and Baker 2000 and Santos et al. (2017)). In contrast, convergence was
+unlikely or impossible for long-run correlates, and we do not time variation to test for it.
+Are these two changes since the late 1980s related: the trend towards convergence in income
+and the convergence of many of the correlates of growth? We are naturally unable to do a full
+causal analysis and causality can run both ways. On the one hand, an extensive empirical literature
+argues that such correlates are important for economic development (Glaeser et al. 2004;
+Acemoglu et al. 2005), and the convergence literature itself turned towards convergence conditional
+on correlates (determinants of the steady state). On the other hand, modernization theory suggests
+that causation may run the other way, with converging incomes causing policies, institutions,
+and culture to converge. While recent literature uses instrumental variables to provide evidence
+on both directions of causation (Acemoglu et al. 2001; Michalopoulos and Papaioannou 2013; Dell
+2010; Acemoglu et al. 2019, 2008), these studies build on earlier analysis which focused on stylized
+facts from empirical cross-country relationships (Barro 1996; Sala-i Martin 1997; Durlauf et al.
+2005; Rodrik 2012), facts which any theory of growth should fit and which we revisit and update.2
+	To link the trends in growth and its correlates, we develop a simple empirical framework,
+revisiting two central cross-country relationships and documenting how they have changed since the
+1980s. First, regressing correlates on income; a cross-sectional representation of the modernization
+hypothesis. Second, regressing growth on correlates, controlling for income; the basic specification
+for both growth regressions and for tests of conditional convergence. By the omitted variable
+bias formula, the gap between absolute convergence and conditional convergence is then given by
+the product of the slopes of these two relationships (correlate-income slopes and growth-correlate
+slopes), allowing us to break down the trend in absolute convergence into trends in these slopes,
+together with any trend in conditional convergence. In the main exercise, we do so comparing
+1985 to the present, as that is when we have the best data and can run a balanced panel exercise.
+In supplementary analysis we also present trends since 1960, which is important as we want to
+understand why there was a change in income convergence in the late 1980s.
+	While the cross-sectional relationships between income and the correlates have changed in
+levels, their slopes have mostly remained stable, despite large changes in both income and the
+short-run correlates. Among 32 Solow and short-run correlates, regressing the cross-sectional
+correlate-GDP slope of 2015 on that of 1985 gives coefficients of 0.90 and 0.89, respectively, and
+R-squareds of 0.90 and 0.70. Moreover, while there is substantial prediction error by individual
+correlate, on average Solow and short-run correlates themselves have changed as much as would
+have been predicted by the changes in income, given the baseline cross-country relationship between
+the two.
+In contrast, growth regression coefficients have shrunk substantially across the period and
+show relatively little autocorrelation. The coefficients of the Solow fundamentals have remained
+the most stable, with a slope of 0.86 and an R-squared of 0.95 when regressing coefficients in
+2005 on those in 1985. The coefficients of short-run correlates have shrunk the most, such that
+there is almost no correlation in coefficients between the periods (slope 0.18, R-squared 0.06). For
+example, in 1985, a one standard deviation higher Freedom House Political Rights score predicted
+0.6% higher annual GDP growth for the subsequent decade, yet the predictive power is negligible
+in the decade 2005-2015. Long-run correlates and culture fall somewhere between the two, with
+coefficients which are somewhat stable across the periods, although on average they also shrank.
+As a result of the flattening of the growth-correlate relationships, absolute convergence converged
+towards conditional convergence, by the omitted variable bias formula. This helps to explain
+the trend towards absolute convergence, but has conditional convergence itself also become faster?
+While conditional convergence regressions typically condition on multiple correlates, our baseline
+specification conditions on one variable at a time, because of the difficulty in forming a balanced
+panel with multiple correlates and to tie our hand in terms of specification search. In our multivariate
+analysis, while not our main focus, we find no obvious trend in conditional convergence
+itself, which held throughout the period.
+These results suggest an interpretation that is consistent with neoclassical growth models.
+Conditional convergence has held throughout the period. Absolute convergence did not hold
+initially, but, as human capital, policies, and institutions, have improved in poorer countries, the
+di↵erence in institutions across countries has shrunk, and their explanatory power with respect to
+growth and convergence has declined. As a result, the world has converged to absolute convergence
+because absolute convergence has converged to conditional convergence.
+However, this narrative leaves a key question unanswered: why did the growth regression
+coefficients shrink? One interpretation, consistent with a Fukiyama end of history view, is that
+policies and institutions used to matter, but now that they have converged, they matter less - their
+e↵ects are non-linear. For example, perhaps terrible institutions are bad for growth, but so long
+as institutions are not disastrous, they matter much less, and there is convergence. However, our
+results could also be viewed as demonstrating the limits of our collective understanding: many of
+the policies which were significant in growth regressions in the 1990s no longer significantly predict
+growth today, and basic patterns of divergence which held for centuries have not held for the past
+20 years. Consistent with this, perhaps earlier growth-regression specifications su↵ered from an
+overfitting problem and are now failing an out-of-sample test using subsequent data? Relatedly,
+it is natural to think that there a very large number of factors determine steady state income,
+some observable, many unobservable. The correlation between the observable and unobservable
+determinants may have shrunk. While these alternatives would also explain the shrinking of the
+gap between absolute and conditional convergence, they cannot explain the trend towards absolute
+convergence, although that could result from faster conditional convergence. The multitude of
+possible interpretations acts as a reminder of the difficulty of projecting the current trends we
+document forward, and the dangers of extrapolating from trends over the past quarter century,
+especially considering rising authoritarian populism, climate change, and pandemic threats, a
+theme we return to in the conclusion.
+This paper describes trends in major macro-economic variables and the relationships between
+them, some of which have changed substantially in the last twenty years. The goal is descriptive,
+not causal. The first literature we contribute to is that regarding convergence, which flowered
+in the 1990s. Despite absolute convergence being a central prediction of foundational growth
+models, multiple papers found no evidence for absolute convergence in incomes across countries
+(Barro 1991; Pritchett 1997), but evidence of convergence within countries and across countries
+conditional on similar institutions (Barro and Sala-i Martin 1992). While we identify o↵ crosscountry
+variation, Caselli et al. (1996) and Acemoglu and Molina (2021) argue that countries
+should have fixed e↵ects in convergence regressions, corresponding to their individual steadystate
+incomes. The tradeo↵s are discussed at length in Durlauf et al. (2005) and we discuss our
+specification choice in Section 2. In short, we think that the country fixed e↵ects absorb exactly
+the variation relevant for studying convergence. Consistent with this, if we allow country fixed
+e↵ects to vary by decade, then they themselves have converged since the 1990s, so that our results
+do still appear in that framework, just absorbed into the “nuisance” parameters. More recently
+there have been several important additions to the classic convergence findings. Rodrik (2012)
+looks specifically at manufacturing and shows that within manufacturing, there has been absolute
+convergence. Grier and Grier (2007), a paper closely related to ours, also considers convergence in
+both income and in policies and institutions from 1961-1999. They contrast convergence in policies
+and institutions with divergence in incomes, arguing that this di↵erence is hard to reconcile with
+neoclassical growth models. We agree with their conclusion for the period 1960-1990, but benefit
+from twenty years of additional data, and argue that convergence changed around 1990, and is
+since consistent with models of neoclassical growth and inconsistent with a class of endogenous
+growth theory models which predict divergence, such as AK models (Romer 1986) or some poverty
+trap models.
+This is not the only paper to revisit the question of convergence with updated data. Roy
+et al. (2016), in particular, make the point that there has been absolute convergence in the last 20
+years and, in concurrent work to ours, Patel et al. (2021) emphasize how this is in contrast to the
+previous stylized facts about convergence. Johnson and Papageorgiou (2020), in contrast, also uses
+the latest data and concludes that there is still no absolute convergence. The di↵erence results in
+part from Johnson and Papageorgiou (2020) considering convergence from a fixed base date (1960),
+while we consider the trend in convergence over a moving time interval, and in part because we are
+willing to speculate that the trend in the last twenty-five years represents a fundamental change.
+Indeed, while we find a sustained trend towards convergence, we only find actual convergence for a
+relatively short period, whilst historically divergence has been the norm for several hundred years
+Pritchett (1997).
+The paper also adds to the literature on the e↵ects of culture and institutions. Recent papers
+use historical variation to identify the e↵ect of institutions and culture on income, using either
+instruments (Acemoglu et al. 2001; Algan and Cahuc 2010) or spatial discontinuities (Dell 2010),
+and generally find that both play a central role. That empirical strategy requires focusing on longrun,
+persistent components of steady-state determinants, which can easily slide into a pessimistic
+view: the things that matter for growth can only change very slowly. However, while some, such
+as legal systems and trust, have deep historical roots and may change very slowly (Michalopoulos
+and Papaioannou 2013), many change rapidly, and there is no contradiction in culture both having
+a long-run e↵ect and being subject to recent change. For example, gender roles have deep and
+important historical determinants (Alesina et al. 2013), but they have also changed substantially in
+the last 50 years, di↵erentially across countries. While historical determinants continue to persist,
+we should also remain open to asking how recent changes in policies and institutions have a↵ected
+growth, especially when considering policy changes.
+Our growth regressions exercise also provides an out-of-sample test of sorts for the predictive
+power of policies and institutions: with a limited sample size and many potential covariates, the
+growth regressions literature is vulnerable to overfitting; events since the publication of earlier
+papers provides a (limited) out-of-sample dataset (Hastie et al. 2009).
+Finally, in studying changes to, and convergence in, policies, institutions, and culture, the paper
+adds to expansive literatures in political science, sociology, and psychology whereby the di↵usion
+and convergence of numerous policies, institutions and cultural traits have been documented and
+studied (Dobbin et al. 2007).3 Some of the changes in correlates have been gradual, possibly
+consistent with modernization theory (Acemoglu et al. 2008; Inglehart and Baker 2000), and
+indeed we do find that on average changes in correlates are consistent with predictions from income
+growth, based upon the cross-country relationship. However, many recent changes in policies and
+institutions are dramatic, such as global trends in the adoption of VATs, or marriage equality, or the
+Me Too movement, which may be better thought of as technology adoption through information
+di↵usion. This technology di↵usion may be passive or may, for example, result from the work
+of international organizations, who provide norms and information on perceived best practices
+(Clemens and Kremer 2016), and sometimes directly incentivize the adoption of di↵erent policies
+through conditionality. For example, the “Washington Consensus” encouraged lowers tari↵s, lower
+inflation, and (word) of state-owned firms, all of which have been broadly adopted since. The end
+of the cold war ushered in a period of growth in democracy. In a closely related paper, Easterly
+(2019) argues that such “Washington Consensus” reforms may have been better for growth than
+previously believed, as growth has been higher recently in countries which adopted them. Finally,
+convergence and di↵usion of culture are central topics in sociology and psychology. Two recent
+examples studying them using the World Value Surveys (among other data sources) as we do, are
+Inglehart and Baker (2000) and Santos et al. (2017).
+The paper proceeds as follows. In section 2, we present the results on absolute convergence
+in income per capita and document a trend towards convergence since the 1990s. In section 3,
+we consider global trends in the correlates of growth - policies, institutions, human capital, and
+culture - and document considerable convergence across multiple dimensions. In section 4, we
+relate the trend towards convergence in income to the convergence in the correlates of growth, first
+considering the cross-country relationships between income and correlates (modernization theory),
+which have remained stable, then turning to the cross-country relationships between correlates
+and growth (growth regressions), which have flattened, and finally turning to the gap between
+unconditional and conditional convergence, which has shrunk. Section 5 concludes.
+
+2 Convergence in income
+Neoclassical growth models predict convergence towards steady-state income: poor countries
+should catch up with rich countries, at least among countries with similar underlying determinants
+of steady-state income. Empirical tests in the 1990s of absolute convergence - convergence across
+countries without conditioning on determinants of steady state income - found little evidence for
+it: if anything, rich countries were growing faster than poor (Barro 1991). We begin by revisiting
+these tests of absolute convergence, with 25 additional years of data. We use the same data sources
+and focus mainly on !-convergence, defined below.4
+2.1 Empirical setup: measuring convergence
+The convergence literature in the 1990s used three di↵erent datasets. First, standard crosscountry
+sources such as the World Development Indicators and the Penn World Tables, which
+covered a sizeable span of countries from the 1960s onwards. Second, the Maddison dataset, which
+collected many sources of data to derive income per capita going back much further in time, for a
+smaller set of countries, which showed that divergence had been the norm for several hundred years
+(Pritchett 1997. Third, within-country panel datasets, to look at convergence within countries.
+For example, Barro and Sala-i Martin (1992) examined convergence within the US.
+	Our goal is to document what has happened to global cross-country convergence since the
+heyday of the literature in the 1990s. As such, we use the standard cross-country data sources,
+which cover 1960-present. In the main specification, we use the GDP per capita, adjusted for
+Purchasing Power Parity (PPP) from the Penn World Tables v10.0.5 It is an unbalanced panel,
+as for many countries GDP per capita data only becomes available part way through the period.
+Nevertheless, we use the unbalanced panel for our main specification so as not to drop many of
+the poorer countries which become available later in the period (we also show robustness to using
+balanced panels, which make little di↵erence to our results). We also drop very small countries and
+those which are extremely reliant on natural resource rents, as is common in studies of convergence.
+Specifically, we drop countries whose maximum population during the period was < 200, 000, and
+those for whom natural resources accounted for at least 75% of GDP (as reported in the World
+Development Indicators) at some time during the period. 6
+We examine both !-convergence and "-convergence. !-convergence is when poor countries
+grow faster on average than rich, while "-convergence is when the cross-sectional variance of (log)
+income per capita is falling over time. The relationship between the two notions of convergence is
+well documented (Barro and Sala-i Martin 1992; Young et al. 2008). We focus on !-convergence
+for most of the analysis, with equivalent results for "-convergence reported in the Appendix.
+!-convergence !-convergence is when poorer countries grow faster on average than richer countries.
+Specifically, at a given time period t, it is when the country-level regression
+equation
+has a negative ! coefficient, where log(GDPi,t) is Log GDP of country i at time t. To showhow!-
+convergence has changed over time, we plot !t vs. t, where !t comes for the following country-year
+level regression, clustered at the country level (μt is a year fixed e↵ect on growth):
+equation
+Much of the existing empirical convergence literature plots how ! varies when holding the
+starting point t fixed (often at 1960) and varying the end point, t+#t. Since we are interested in
+how the process of convergence may itself have changed over time, we instead hold #t fixed and
+vary t. In the main specification we use 10-year averages, i.e. #t = 10.7
+2.2 Results: converging to convergence
+Figure 1 shows the scatter plot and regression of equation 1 for each decade since 1960. Convergence
+corresponds to a negative slope, and the shift to convergence since 2000 can clearly be
+seen in the raw data. Figure A.2 presents summary boxplots of these basic scatter plots, plotting
+the average growth by income quintile for each decade.
+Figures 2a and 2b show the !- and "-convergence coefficients from these regressions over the
+whole period 1960-2007. The first striking result is that there has been absolute convergence since
+the late 1990s, precisely when the best-known empirical tests of convergence were published. The
+point estimate for !-convergence becomes negative in the early 1990s, becoming significant in the
+late 1990s and staying significant since. Table 1 shows a point estimate of -0.65 in the 2000s, and -
+0.76 in the ten years after 2007, the most recent period we can consider. "-convergence, represented
+by a negative slope in Figure 2, started slightly later, with the standard deviation in GDP per
+capita falling since the early 2000s. The di↵erence in timing is consistent with !-convergence being
+a function of subsequent 10-year average growth.
+The second result is that there has been a trend towards !-convergence - converging to convergence
+– since 1990. The coefficient started at around 0.5 in 1990 and has trended down towards
+-1 today. Looking further back to 1960, initially there is no clear trend, and then there is a
+trend towards divergence in the 1980s.8 Table 1, Column (2), reports the results of our basic
+absolute convergence regression, Equation 1, with the addition of a linear year variable interacted
+with log(GDPi,t). The interaction terms, representing the “convergence towards convergence”, is
+negative and significant, with a point estimate of -0.025. The trend towards convergence is also
+apparent in the "-convergence figure, where it is represented by a gradual decrease in slope, i.e.
+concavity of the plot.
+This trend towards convergence is consistent with models of growth in which capital is subject
+to diminishing marginal returns, or where catch-up growth is easier than growth at the frontier.
+It is inconsistent with models of growth which predict long-run divergence, such as AK models, or
+some poverty trap models.
+2.3 Econometric considerations and robustness to alternative specifications
+There is an extensive literature on the tradeo↵s of di↵erent econometric specifications to test
+for convergence, summarized in Durlauf et al. (2005). We follow the most standard approach,
+testing for ! convergence using OLS with fixed e↵ects for year, clustered at the country level. This
+approach is not without limitations, which we discuss below, but it is transparent and captures
+the cross-country variation which is our main focus.
+We begin by replying to the three main critiques of the specification noted in the comment
+of Acemoglu and Molina (2021): unobserved country fixed e↵ects, cross-country heterogeneity in
+convergence rates, and using annual growth rather than 10-year growth. We then discuss several
+additional considerations and robustness questions, such as whether measurement error may drive
+towards convergence through mean reversion, whether results are driven by panel imbalance, in
+particular the larger number of poor countries entering the panel over time, and whether results
+depend on the macroeconomic dataset used.
+Specification, country fixed e↵ects, and heterogeneity Our regression specification assumes
+homogeneous rates of convergence across countries and does not account for potential differences
+in steady state income, as discussed in Acemoglu and Molina (2021). We agree with the
+empirical finding of the authors and Caselli et al. (1996): the coefficients on current income change
+substantially when incorporating heterogeneity and country fixed e↵ects, with strong convergence
+towards countries individual steady state income levels throughout, at a rate of at least 10%.
+However, we disagree that their specification is more economically meaningful for the question of
+convergence (or, in particular, that the coefficient on income in these specifications can be interpreted
+as causal). It is a di↵erent exercise, and one which is not without its own econometric issues
+(Durlauf et al. 2005).
+We are interested in what has been happening across countries, over time; by definition, country
+fixed e↵ects absorb cross-country di↵erences and treat them as nuisance parameters. We agree
+that there are likely to be cross-country di↵erences in steady-state income, but we wish to know
+how these di↵erences have evolved. A priori, we do not know whether convergence to a fixed steady
+state, or evolution of country-level “steady state” income itself, is likely to be a more important
+determinant of growth, so we do not want to assume away the latter. Investigating the evolution
+of the potential determinants of the country-level steady states is precisely our exercise below,
+when we turn to conditional convergence, and to whether the potential determinants of steadystate
+income have converged. We view doing so with variation which we can explain – changes in
+correlates – as providing additional insights, but we can also do so with a fixed e↵ects approach,
+which can be interpreted as another form of conditional convergence. To do so, however, we need
+to allow for the possibility that country “fixed e↵ects” vary over time. Specifically, we modify the
+framework of Acemoglu and Molina (2021) to allow country fixed e↵ects to vary by decade:
+equation
+%i,d being a country-decade fixed e↵ect.
+Table A.1 reports the !d estimated with average decade growth in Panel A and annual growth
+in Panel B, confirming the results of Acemoglu and Molina (2021). The coefficient stays strongly
+negative since 1960. The magnitude is quite stable and does not exhibit any declining pattern over
+time. We also find that using annual growth gives stronger convergence and we speculate below
+that annual GDP measurement errors might bias upwards a short-term reversal pattern.
+In this paragraph in an earlier version of this paper, in analysis undertaken to respond to
+Acemoglu and Molina’s discussion at the NBER Annual Conference on Macroeconomics, we in-
+correctly claimed that the fixed e↵ects in this model show little stability over time. Our error
+was pointed out in Acemoglu and Molina (2021), their subsequent discussion paper. We thank
+the authors for this correction and have updated this paragraph accordingly (and removed the
+appendix figure which it referred to). As shown in Acemoglu and Molina (2021) the country fixed
+e↵ects in this model are stable over time and have a high F-test statistic. This persistence of the
+fixed e↵ects is primarily from the persistence of country income levels; country growth rates show
+little autocorrelation from decade to decade.
+In this specification, country-decade fixed e↵ects have converged across countries since 1990,
+suggesting that much of the action for studying the global income distribution may be being
+absorbed by these fixed e↵ects. Figure A.3 plots standard deviations of fixed e↵ects over time
+with a rolling time window of ten years. We see a fall in the standard deviation of the country
+fixed e↵ects since 1990, the period in which we see a trend towards unconditional convergence in
+our preferred specification. This encourages us to study whether unconditional convergence has
+converged towards conditional convergence, the question we turn to below.
+Moreover, the country fixed e↵ects approach has its own econometric limitations, discussed
+further in Durlauf et al. (2005). The convergence coefficient in the country fixed e↵ects model, !d
+in Equation 2, is identified from time-series variation for all years in decade d, while the convergence
+coefficient in our main specification, !t in Equation 1, is identified from cross-sectional variation
+in year t. Bernard and Durlauf (1996) shows that the two specifications may give very di↵erent
+answers and argues that the time-series !d is a good estimate of convergence only if the sample
+distribution is a good approximation of the true underlying growth process; if historical growth is
+not stable, then the time-series model can be substantially biased. Our analysis includes uses a
+large set of countries, most of which experienced substantial changes in growth correlates during
+the period, potentially perturbing them far away from their steady states.
+Averaging period Many of the original convergence studies used a fixed baseline year, considering
+how convergence in income per capita changed when varying the endline year. We argue
+that to consider trends in convergence itself, rather than use a fixed baseline year, it is better to
+consider convergence over a fixed interval of time, and how it changes when varying the baseline
+year. This raises a natural question of what the fixed interval of time should be and whether
+that interval matters. In the main results, we used a 10-year interval, considering 10 years a good
+trade-o↵ between allowing us to see medium-frequency trends, without overloading the trend with
+annual noise. Acemoglu and Molina (2021) suggest we should use annual data. We think that
+annual data gets at high frequency phenomenon (e.g. weather streaks, business cycles), while ten
+year data gets at lower frequency phenomenon, such as long-run growth. Annual data is likely to
+introduce substantial noise. If this noise is measurement error in GDP, then growth regressions
+will be biased towards convergence and this bias will be larger over shorter periods, via mean reversion.
+Figure A.4 shows how the convergence coefficient varies when using 1-, 2-, 5- and 10-year
+averages. 10-year averages show the clearest trend towards convergence. Once we get to 1-year
+averages, the year-to-year variation dominates, and the trend which is apparent in 5- and 10- year
+averages is much less apparent.
+Balanced panel Since the number of countries in the dataset is growing over time, our results
+could reflect the inclusion of the new countries over time, rather than global trends. To investigate
+this, we show, by decade, what convergence looks like from that decade until present day, among
+the balanced panel of countries whose data is available from the start of that decade. So, for
+example, for the 1970s, we plot the 10-year average convergence coefficient, from 1970 to present,
+for the set of countries who are in the dataset since 1970.
+Figure A.5 displays the results of these investigations which hold the set of countries fixed over
+time. It shows that the change in convergence has little to do with the expansion of the set of
+countries over the time period - results are remarkably robust to di↵erent balanced panels, showing
+that the original results do indeed reflect a trend towards convergence since 1990.
+While the trend towards convergence began around the time of the dissolution of the Soviet
+Union, the repercussions of which may have been an important driver of the change in convergence,
+the robustness of the trend to countries which existed before 1990 shows that the change was not
+mechanical from the addition of the former Soviet countries.
+Measure of income Figure A.6 shows that our finding of a trend towards convergence is not
+specific to looking at income per capita (as opposed to per worker), nor to using income per capita
+in Purchasing Power Parity (PPP) adjusted terms from the Penn World Tables v10.0. Namely, we
+find a broadly similar pattern using income per worker instead of income per capita, using di↵erent
+measures of income from the PWT, and using the World Development Indicators data with income
+measured in constant 2010 US dollars. Indeed, in the later, the trend is more apparent, and seems
+to start from 1960, again with a decade of regression in the 1980s.
+2.4 Which countries have driven the change?
+To provide more details on the trend to absolute convergence, and to take a first step towards
+understanding its causes, we consider which countries have driven the change. We do so mainly
+by showing how the trend in convergence changes when removing di↵erent groups of countries.
+Faster catch-up growth and a slow-down of the frontier Two very di↵erent and popular
+narratives could each lead to the observed trend to convergence: stagnation of the frontier – a
+drop in the growth rate of richer countries; or faster catch-up growth – a rise in the growth rate
+of poorer countries.
+Figure 3 shows average 10-year growth rate by income quartile, where income quartile is recalculated
+each year. The richest quartile of countries had the highest growth rate of all quartiles
+in the 1980s and then switched position entirely to have the lowest growth rate since 2000. The
+shift was driven both by a slow-down of growth at the frontier - the richest quartile of countries
+experienced flat growth in the 1990s and then a growth slowdown since 2000 – and faster catch-up
+growth - the other three quartiles experienced a substantial acceleration in growth in the 1990s.
+Removing one quartile at a time from our standard test for convergence, Figure A.7, it does appear
+that in the last decade the trend towards convergence is driven by the richest quartile versus the
+other quartiles, and that the poorest quartile has if anything been a drag on the trend towards
+convergence within the other quartiles.
+Fewer growth disasters and more growth miracles Figure A.8 presents the trend in coefficients
+from Equation 1 when excluding countries which experienced disasters or growth miracles.
+The trend towards convergence remains robust, whether we drop episodes of especially low or
+episodes of especially high growth. Interestingly, the reversion in the 1980s disappears when excluding
+countries which had a negative 10-year growth rate.
+Which regions are driving the change? Figure A.9 presents the trend in coefficients from
+Equation 1 when excluding countries from di↵erent regions. Again the trend remains robust,
+although the trend towards convergence in the last twenty years becomes stronger upon excluding
+Sub-Saharan Africa.
+2.5 Club convergence
+Convergence has been documented among OECD countries (or rich countries) as a group of
+relatively homogeneous countries (Barro and Sala-i Martin 1992), as evidence for club convergence
+– convergence among groups of countries which have similar institutions and culture. We revisit
+this result and show convergence among the rich countries has slowed and shifted towards the
+general global convergence pattern.
+Figure A.10 plots the convergence coefficients in the country sub-sample with income above
+the Xth percentile.9 Three decades from 1965 to 1995 yield a similar pattern - strong convergence
+among high-income countries (above the 60 percentile) while overall there was little absolute
+convergence. This pattern has changed in the period from 1995 to 2005, and in the most recent
+decade, convergence holds across a sample containing all countries, while convergence among the
+top 40% of countries by income has stopped.
+These results, together with the above finding that growth has increased across the bottom three
+quartiles, are inconsistent with certain poverty trap explanations for the trend towards absolute
+income convergence. Namely, we see no evidence of there being an income threshold above which
+there is convergence, with more countries crossing the threshold over time.
+
+3 Convergence in correlates of income and growth
+We next consider global trends in factors that might be determinants of growth - policies,
+institutions, human capital, and culture - using the same empirical approach as above. While
+much recent literature emphasizes the persistence of institutions over time (Acemoglu et al. 2001;
+Michalopoulos and Papaioannou 2013; Dell 2010), we find substantial change and convergence.
+Overall, 17 out of the 32 Solow fundamentals and short-run correlates for which we have temporal
+variation exhibit !-convergence from 1985 to 2015, and the correlates have generally converged in
+the direction of those of more advanced economies, towards what we term development-favored
+institutions. Moreover, culture has also convergence, with 8 out of 10 measures of culture we
+consider displaying !-convergence in the World Value Surveys data.
+3.1 Policies, institutions, measures of human capital, and cultural traits considered
+We divide such potential correlates of income and growth into four groups: enhanced Solow
+fundamentals – investment rate, population growth rate, and human capital – variables which are
+fundamental determinants of steady state income in the enhanced Solow model (Mankiw et al.
+1992); short-run correlates, other policy and institution variables considered by the 1990’s growth
+literature which may vary at relatively high frequency; long-run correlates, institutions and their
+historical determinants which do not change or which only change slowly, which have been the
+focus of the recent institutions literature, and geographic correlates of growth; and culture.
+To tie our hands, we started from a list of variables commonly used in growth regressions,
+from the Handbook of Economic Growth chapter on “Growth econometrics” (Durlauf et al. 2005),
+constraining ourselves to those variables which covered at least 40 countries from 1996. We then
+added to this list numerous cultural variables and historical determinants of institutions which
+have played a central role in the empirical growth literature since Durlauf et al. (2005). While we
+obviously cannot consider convergence for historical or geographic variables – they are however
+included in the empirical exercises in the next section – we are able to study convergence of multiple
+cultural variables, albeit with a smaller country sample than for the policy and institutional
+variables.
+Table 2 summarizes the data sources and sample period of the resulting correlates. There are 5
+enhanced Solow fundamentals and 27 short-run correlates divided into four broad categories: political
+institutions, governance, fiscal policy, financial institutions. Not all the short-term correlates
+are comparable over time, for example the World Governance Indicators and Heritage Freedom
+Scores are standardized each year. We obviously cannot study convergence nor average changes
+for such variables, but we include them in the table as we do use them for our analysis of the
+gap between unconditional and conditional convergence, in Section 4 of the paper. For certain
+figures in the paper, we pick one representative variable from each category, displayed in bold in
+the table: Polity 2 score, the WGI rule of law, government spending (% GDP), credit provided
+by the financial sector (% GDP). Equivalent figures with the other variables can be found in the
+Appendix.
+To help interpret the direction of change of correlates, Table 3 Column (3) shows which cor-
+relates were ”development-favored” in 1985 (or the earliest available year), defined by their correlation
+with log GDP in 1985. Correlates are defined as high (or low) development-favored if
+the coefficient from regressing the correlate on log GDP is positive (or negative), with statistical
+significance at a 10% level. A high-income country tends to have a higher Polity 2 score, higher
+rule of law score, higher government spending (as a % of GDP), more financial credit, and higher
+education attainment. Five correlates cannot be signed: taxes on goods and services, tax burden
+score, military expenditure, inflation, and central bank independence.
+We first supplement Solow fundamentals with two measures about the labor force: gender
+inequality in education (male minus female in educational attainment) and labor force participation
+rate. High-income countries enjoy more gender equality in education and lower labor force
+participation.
+Then, we use five variables to measure political institutions: the Polity 2 score from the Center
+of Systematic Peace (1960-2018), the Freedom House political rights score (1973-2018), the Freedom
+House civil liberty score (1973-2015), the Press Freedom score (1979-2018),10 and the political
+stability score (1996-2018) from Worldwide Governance Indicators (WGI).
+Governance variables - distinct from political institutions - measure whether the public system
+functions well. We use four variables (1996-2018) from the WGI Project: government e↵ectiveness,
+regulatory quality, the rule of law, control of corruption; and five variables (1995-2019) from
+the Index of Economic Freedom by the Heritage Foundation: Overall economic freedom index,
+government integrity, business freedom, investment freedom, and property rights. The sample size
+of countries in the Economic Freedom database rises from 97 in 1995 to 145 in 2005, and then
+159 in 2015. Variables under the governance and political institutions categories are all positively
+correlated with economic development.
+The fiscal policy category mainly captures the following three dimensions: taxation, tari↵s, and
+government interventions / expenditures. Taxation measurements include taxes on income and
+capital gains (percentage of total tax revenue), taxes on goods and services (percentage of total tax
+revenue), and a tax burden score. Equal-weighted and value-weighted tari↵s are measures of the
+policy-induced barriers to trade. A state with strong government interventions and expenditures
+tends to have a lower private investment (% total investment), more government spending (%
+spending), and higher military expenditure. In general, high-income countries are more likely to
+adopt free trade and low government intervention, but there is not clear pattern in our data on
+taxation.
+The financial institutions category includes six variables: a central bank independence index
+constructed by Garriga 2016; inflation, credit to the private sector (% GDP), and credit provided
+by the financial sector (% GDP), all from the WDI; and financial freedom and investment freedom
+scores from the Index of Economic Freedom. Higher financial development is positively associated
+with economic development, while central bank independence (CBI) and inflation are ambiguous
+according to our approach. The high inflation of 1990 was not constrained to developing countries,
+but a global issue. Central bank independence adoption rose over time and inflation was brought
+under control (Rogo↵ 1985; Alesina and Gatti 1995; Fischer 1995; Alesina and Summers 1993;
+Grilli et al. 1991; Alesina 1988).
+The following sections examine average changes in correlates from 1985 to 2015 as well as their
+rate of convergence, !Inst, estimated from the following equation:11
+#1985−!2015Insti = !InstInsti,1985 + ↵ + ✏i
+The country sample is time-varying (mostly increasing) as datasets add new countries into the
+sample. In the Appendix, we also plot the standard deviations of the correlate metrics as the
+"-convergence for correlates (Figures A.11 - A.13).
+Before presenting results for individual correlates, we test the convergence of all of our shortrun
+correlates jointly in table A.2, which presents the joint significance of each category using
+seemingly unrelated regressions. All variables are available since 1996. Thus we report results for
+1996-2006 in Panel A and 2006-2016 in Panel B. For both decades, we confidently the hypothesis
+that convergence in correlates does not exist.
+3.2 Enhanced Solow fundamentals
+Human capital Human capital is a robust predictor of income growth, as emphasized in the
+seminal literature Lucas Jr (1988), Barro (1991), Mankiw et al. (1992), Sala-I-Martin (1997), Barro
+and Lee (1994).12 Education augments labor productivity (Lucas Jr (1988)), facilitates technological
+progress (Romer (1990)), and can help promote structural transformation into industry
+(Squicciarini and Voigtl¨ander (2015)).13
+We measure time-varying human capital with the Barro-Lee average schooling years of population,
+age 20-60. Figure A.14 Panel C reports the !-convergence. The convergence in human capital
+starts from 1975. Since 1975, poor countries start to gain faster growth in educational attainment
+and gradually catch up with rich countries. In addition, education levels in some well-educated
+populations have stagnated, and the data implies that 13 average years of education appears to be
+a soft cap for many countries.14 We also observe a meaningful shrinking in education attainment
+inequality across gender. The education gender gap reduced by 8.1% per decade on average.
+Investment Investment is development-favored, according to our definition, and we observe
+a moderate growth from 22.07% in 1985 to 24.18% in 2015, which translates to 0.23 standard
+deviations in 1985. Figure A.14 Panel B indicates that convergence in investment has been stable
+(around -6) since 1985. Figure 4 Panel B exhibits strong mean-reversion, with one percent higher
+investment in 1985 corresponds to a negative growth of 2.98% per decade. With most countries
+slowly decreasing their investment, certain developing countries like Mozambique, Ethiopia, and
+Angola, increased investment.
+Population growth Developed economies feature lower population growth. Population growth
+slow down from 1.99% in 1985 to 1.42% in 2015, translating to -0.43 standard deviations in 1985.
+Figure A.14 Panel A reports the beta convergence which fluctuates between -4 and -2 before 2000,
+after which we witness a sharp decline towards -6. After 2000, population growth has fallen for
+poor countries, while it has stagnated for most of the rich countries. Figure 4 Panel A reports that
+most countries in our sample witnessed a decrease in population growth from 1985 to 2010.
+3.3 Short-run correlates
+Labor Force Education attainment became more gender-balanced from 1985 to 2015. Male
+education was 0.97 years more than women in 1985, and the number reduces to only a 0.33-
+year advantage. Not surprisingly, countries with larger gender di↵erences experienced more gap
+reduction. The labor force participation rates remain stable around 62.5% in the recent three
+decades, but !-convergence also holds — one percent higher labor participation rate correlates
+with a 0.66 percent reduction in 1985-2015.
+Political Institutions Political institutions exhibit pervasive !-convergence and "-convergence,
+with particularly strong convergence in the 1990s. We use the polity 2 score form the Polity IV
+project as our primary democracy measure, which ranges from -10 to 10. -10 represents dictatorship
+and 10 represents perfect democracy. Figure A.15 shows that the average polity 2 score hits its
+low point in 1978, at below -2, then the score gradually climbed back to zero in 1990. Then, the
+average democracy score jumped up to 2 after the dissolution of the Soviet Union, and persistently
+improved to above 4 in the next 25 years.
+Figure A.11 shows the plot of coefficients for !-convergence in political institutions. Polity 2
+score, political rights, and civil liberty yield similar results, including in the rate of convergence.
+The long-run average of coefficients is around -0.2. The deep institutional reforms in the 1990s
+lead the coefficients to drop below -0.3 in that decade and then gradually move back the historical
+average of -0.2. The institutional convergence is statistically significant in any single year’s crosssectional
+regression. !-convergence in media freedom and political stability also holds since 1995
+and the convergence pattern is very stable in the recent two decades.
+Panel B reports the standard derivation of the four political institutions.15 The "-convergence
+of democracy started in 1990. The standard deviation of polity 2 score fluctuates around 7.5
+before 1990, sharply declines to 6.5 in 2000, and persistently decreases to 6 in 2015. The four
+other variables show a similar pattern: the standard deviation after 2000 is lower than that prior
+to 1990.
+The broad adoption of democracy is a central aspect of the convergence of political institutions.
+Figure 4 plots the change in the democracy score from 1990 to 2010 against the democracy score
+in the baseline year 1990. The spread of democracy is a global phenomenon, not just constrained
+to Soviet Union countries. Many countries with Polity 2 score below 5 radically shift their political
+institutions towards democracy.
+Meanwhile, movements away from democracy are also relatively common. Table A.3 summarizes
+the proportion of countries with increases and downgrades in democracy scores. Even after
+1980, in each decade roughly 10% of countries experienced falls in their democracy scores. If we
+focus, admittedly somewhat arbitrarily, on countries with a Polity 2 score reduction of at least
+three in a decade, then most democracy degeneration events happen in countries with positive
+democracy scores — 6 out of 8 in the 1980s, 5 out of 5 in the 1990s, 7 out of 7 in the 2000s, 4 out
+of 5 in 2010-2015.
+Developing countries are much more likely to experience political reforms, both towards democracy
+and against democracy, while rich countries successfully maintain their democratic politics.
+Table A.4 shows logit regressions of increases or decreases in Polity 2 score on income level for the
+six decades. Panel A reveals that low-income countries are only more likely to gain democracy in
+the 1960s and 1990s, but not much in other periods. However, in Panel B, low-income countries
+are also more exposed to democracy setbacks, except in the 1990s.
+Fiscal Policy Despite a lack of consensus on optimal fiscal policy, global average government
+spending has stayed close to 16% of GDP throughout 1985 to 2015. Moreover, there has been
+sizeable and statistically significant beta convergence in government spending. Figure 4 Panel E
+shows that one percent higher government spending in 1996 predicts 1.61 percent reduction in the
+next two decades, where a high t-stat of 9.6 and the R-squared is as high as 41%.
+This pattern is not unique to government spending but is common to all fiscal policy variables.
+The convergence ! ranges from -3.46 (equal-weighted tari↵) to -1.60 (private investment),
+significant at the 1% level.
+A large empirical literature argues that lower policy-induced barriers to trade are associated
+with faster economic growth (Frankel and Romer 1999). We document a significant trade liberalization
+from 1990 to 2010 - equal-weighted tari↵s drop from 9.46% to 4.36%, and value-weighted
+tari↵s drop from 8.11% to 3.09% - more than a 50% cut on average. The !-convergence coefficient
+fluctuates around -6 but gradually moves to -4 in recent decades. The magnitude is notably large
+compared with other correlates, in both equal-weighted and value-weighted tari↵ data. Figure A.12
+Panel B3 shows that the variance of tari↵s sharply reduces in 1995, and that trade liberalization
+expands internationally. The standard deviation of tari↵s stays below 5 after 2010.
+Financial Institutions We see mixed evidence regarding financial credit convergence: there is
+modest convergence, while there is also substantial credit growth in a few large highly-leveraged
+developed economies.16 Credit is development-favored, according to our definition, and we do
+observe substantial credit expansion from 49.4% of GDP in 1990 to 69.15% of GDP in 2010, which
+translates into 0.47 standard deviations in 1990. One percent higher credit in 1990 corresponds
+to a -0.98% decrease per decade. However, the convergence pattern is less persistent over time —
+Figure A.14 Panel F shows the convergence is particularly concentrated in the 1980s and 1990s.
+Figure 4 Panel F implies that convergence happens in both directions. Under-leveraged
+economies, such as Denmark, Australia, and South Korea, expanded their financial sector. At
+the same time, many countries de-leveraged: out of 123 countries in our sample, 40 reduced the
+amount of credit. Highly-leveraged economies were more likely to contract credit, potentially to
+manage the risk of recessions. In total, twelve countries held credit-to-GDP ratio above 100% in
+1990; they reduced credit by 23% on average after two decades.17 At the other extreme, seventeen
+countries with credit below 15% of GDP in 1990 expanded their credit by 21% through 2010.
+Financial stability also increased significantly. For example, episodes of high inflation became
+much less frequent. Figure A.13 Panels A1 and B1 report the convergence pattern for inflation. We
+do not find robust convergence until 1980, when episodes of very high inflation were still widespread.
+The !-convergence coefficients have stayed significantly negative since 1980. "-convergence has
+happened since 1990: the standard deviation runs from the peak above 30 to the trough below
+5 in 2010. Modern monetary policy reduced the occurrence of hyper-inflation and contributed
+to the convergence in inflation. Figure A.16 plots the proportion of countries which experience
+a) inflation above 200%, b) inflation above 100%, c) inflation above 50%, d) inflation above 15%
+in a specific year. All the four lines start to decline since 1995. From 1972 to 1995, about 35%
+of countries had annual inflation above 15% and 10% countries experienced inflation over 100%.
+After 2000, almost no country had inflation above 50% while less than 10% countries had inflation
+above 15%.
+3.4 Culture
+We adopt two data sources to measure culture. The World Value Surveys allow us to study
+the evolution of culture. To best match the time horizon considered for other correlates, we pick
+countries surveyed in Waves 3 (1995-2009) and Wave 6 (2010-2014), leaving us with 33 countries
+in our sample to test cultural convergence. To expand the country sample, we turn to the Hofstede
+dimensions of national culture, which are available for 69 countries. Section 4 studies the culturegrowth
+relationships using the Hofstede data.
+Each cultural variable constructed from the World Value Survey aggregates responses from age
+groups 20 to 40, using population weights.18 For each country, we compare perceptions held by
+the young generation (age 20-40 in Wave 6) to the senior generation (age 20-40 in Wave 3). We
+compute the annualized cultural change between Waves 3 and Wave 6 and adjust for the survey
+year di↵erence in a given wave. We then regress the annualized cultural change on the Wave 3
+level to obtain the cultural convergence !.
+We report our results in Table A.6, which shows that !-convergence holds for eight out of
+ten cultural variables. In political views, the willingness to participate in boycotts converges by
+6.4% annually, interest in politics by 2.7%, opinions on the importance of politics by 1.8%, and the
+recognition of authority by 1.8%. In views on work-life balance, the importance of family and work
+converge by 4.4% and 3.3%, respectively. Also, the younger generation reaches more agreements
+on social issues than the older generation. Between the waves, perceptions on the importance of
+tradition and of reducing inequality also converged by 7.1% and 2.7% per year, finding them less
+and more important on average, respectively. Finally, on two deep cultural variables, the level of
+trust and the importance of religion, we find no convergence.
+
+4 Linking converging income with convergence of its correlates
+Are these two changes since the late 1980s related, the trend towards convergence in income
+and the convergence of many of the correlates of income and growth? We are naturally unable to
+do a full causal analysis and causality can run both ways. On the one hand, an extensive empirical
+literature argues that correlates such correlates are important for economic development (Glaeser
+et al. 2004; Acemoglu et al. 2005), and the convergence literature itself turned towards convergence
+conditional on correlates (determinants of the steady state). On the other hand, modernization
+theory suggests that causation may run the other way, with converging incomes causing policies,
+institutions, and culture to converge. Recent literature uses instrumental variables to provide
+evidence on both directions of causation, using historical determinants of institutions to establish
+their e↵ect on long-run growth (Acemoglu et al. 2001; Michalopoulos and Papaioannou 2013;
+Dell 2010; Acemoglu et al. 2019), and using instruments for income to test modernization theory
+(Acemoglu et al. 2008). These studies build on earlier analysis which focused on stylized facts
+which any theory of growth should fit, either from growth regressions (Barro 1996; Sala-i Martin
+1997; Durlauf et al. 2005; Rodrik 2012) or from the observation that rich countries often share a
+common set of policies and institutions: on average, they are more democratic, less corrupt; they
+have robust financial systems, more e↵ective governance, better social order, etc. It is these earlier
+analyses - of empirical cross-country relationships - which we return to in this section, updating
+their findings with twenty years more data.
+	We revisit the cross-sectional relationships between correlates and income levels and growth
+rates, detailing how the relationships have changed since 1985 and linking these changes to the
+emergence of absolute convergence in the past two decades. First, we consider the relationship between
+income levels and correlates, a simple cross-country representation of modernization theory.
+Then, we turn to the relationship between income growth and correlates, controlling for income
+levels – the classic growth regressions. Finally, we turn to conditional convergence - the prediction
+of neoclassical growth models. A simple decomposition, combining the two cross-country relationships
+via the omitted variable bias formula, of the gap between unconditional and conditional
+convergence provides a partial answer to the question of whether the trend to absolute convergence
+occurred because absolute convergence has converged to conditional convergence, or because
+conditional convergence itself has become faster?
+4.1 Simple empirical framework
+For our simple empirical investigation of the link between income, correlates, and growth, we
+consider two basic cross-country regressions. First, the cross-country relationship between income
+and correlates, a simple test of modernization theory:
+equation
+where 't is the slope of the relationship and ⌫t is a year-t fixed e↵ect.
+Second, the relationship between correlates and growth, controlling for income - the classic
+growth regression, and also the standard formulation of conditional convergence:
+equation
+where Ii,t can be an individual correlate or a set of correlates, (t is the growth regression coefficient(
+s) of the correlate(s), when controlling for baseline income, and !⇤t is the conditional
+convergence coefficient, controlling for the correlate(s).
+In this framework, when conditioning on a single correlate, the omitted variable bias formula
+allows us to decompose the di↵erence between absolute convergence (!) and conditional convergence
+(!⇤) as the product of the income-correlate slope, 't, and the growth regression coefficient,
+(t:
+equation
+In turn, we can decompose any change in absolute convergence (!t2 −!t1) into changes in four
+components: the underlying process of conditional convergence (!⇤t2 − !⇤t1), the income-institution
+relationship ((t1('t2 − 't1)), the income-growth relationship ('t1((t2 − (t1)), and the interaction
+term.19
+	Data availability varies substantially across di↵erent correlates, making it difficult to construct
+a balanced panel with many correlates. This has two implications for our analysis. First, we largely
+focus on univariate versions of the growth regression, i.e. equation 4 including one correlate at a
+time. This misses the e↵ect of changes in the relationships across correlates, so we also run several
+multivariate analyses trading o↵ the number of correlates with the size of the panel. Second, in
+the main analysis we focus on the time period 1985-2015, since that is the period over which the
+majority of our correlate variables are available for a large number of countries. We also present
+trends in results since 1960, for those correlates for which we have the data to do so.
+4.2 Correlate-Income relationship and modernization theory
+Prosperity is correlated with the rule of law, democracy, fiscal capacity, education, among
+others. We have shown above that income has started to convergence and that correlates have
+converged substantially. Are these changes related? Did countries simply shift along the lines
+in the cross-country relationship between income and correlates, in line with the predictions of
+modernization theory, or did the lines themselves change?
+Figure A.17 investigates this, plotting whether changes in correlates are as would be expected
+from changes in income, given the baseline cross-country relationship between the two. Overall,
+we see that actual changes are on average in line with those predicted from income growth: the
+fitted line is approximately on the 45-degree line. This can be viewed as modernization theory
+passing a (weak) out-of-sample test for the correlates specified in the 1990s, using new data. It
+also suggests that overall, levels of correlates conditional on income have remained constant.
+However, for individual correlates, the actual changes are generally quite far from those predicted
+by baseline relationships, pushing back on the explanatory power of a simple modernization
+theory explanation. Education and financial development have improved by much more than
+predicted by income growth. Education has increased, and the gender gap in education became
+significantly smaller. Many “best practices” of financial institutions have been broadly pursued
+as well: well-managed inflation, central bank independence, credit expansion as a crucial part of
+the economic stimulus package and lower tari↵s to embrace globalization. Political institutions
+improved almost as much as predicted. Meanwhile, from 1985 to 2015, measures of governance
+stagnated or even declined: property rights protection, investment freedom, business freedom, and
+political stability experienced sizable decline.
+We have shown correlates have changed as predicted by their cross-country relationship with
+income, on average, but what has happened to these cross-country relationships themselves? Figure
+5, which normalizes correlates by their in 1985 shows the slopes of these correlate-income
+regressions, the 'ts in Equation (3) , changed remarkably little. The slopes in 1985 is sufficient
+to explain the 69% of variation in slopes three decades later. The explanatory power (R-squared)
+rises to 87.5% if three outliers (financial credit, credit to private sector, and tertiary education)
+are excluded. The other 30 correlates scatter precisely along the 45-degree line. The results are
+also reported in Table 4.
+While the 1985 versus 2015 comparison is our main specification, in Figure A.18 we also report
+the trends in the correlate-income slopes since 1960, averaged within each group of correlates. To
+make the average meaningful, we first renormalize the correlates such that their correlate-income
+slope is positive in 1985 (i.e. we multiply the correlate by minus one, throughout, if the slope
+is negative in 1985). The signs of the correlate-income relationships are highly stable, so this
+normalization does not bias our results for the average slope in 1985 relative to other years. Also,
+as many correlates are not available before 1985, and the set of countries for which correlates is
+available is growing, we repeat the exercise for several di↵erent balanced panels. In particular, for
+each decade, we trace one plot holding constant the set of correlates and the set of countries for
+which they were available at the start of the decade. The exercise shows the robustness of the
+correlate-income slopes over time for each of the four correlate types.
+4.3 Growth-Correlate relationship and growth regressions
+Recent empirical growth papers use historical variation to identify the e↵ect of institutions
+and culture on income, using either instruments (Acemoglu et al. 2001; Algan and Cahuc 2010)
+or spatial discontinuities (Dell 2010), and generally find that both play a central role. Such
+an approach can only identify the e↵ect of persistent institutions and cultural traits, and while
+some, such as legal systems and trust, have deep historical roots and appear to change very
+slowly (Michalopoulos and Papaioannou 2013), many change rapidly as we have shown above, and
+there is no contradiction in institutions both having a long-run e↵ect and being subject to recent
+change. While historical determinants continue to persist, we should also remain open to asking
+how recent changes in policies and institutions have a↵ected growth, especially when considering
+policy changes.
+Here we return to the basic growth regression specification, cognizant of its limitations as a
+causal framework. For this question – the e↵ect of correlates on growth - we are more sympathetic
+to the view of Acemoglu and Molina (2021) and agree that including country fixed e↵ects may
+make sense, although our results in Section 2 point to shortcomings of that framework too. Our
+exercise, without country fixed e↵ects, has the advantage of providing an out-of-sample test of sorts
+for the predictive power of policies and institutions identified as important in the 1990s literature.
+With a limited sample size and many potential covariates, the growth regressions literature is
+vulnerable to overfitting; events after the publication of papers provide an out-of-sample dataset.
+In twenty years, we could run a similar exercise to test the correlates and identification strategies
+proposed more recently.
+Growth regression coefficients, the (ts in Equation (4), fell somewhat in magnitude over time
+for human capital and other Solow fundamentals (the investment rate and the population growth
+rate), but they were correlated. Education, for example, strongly predicts higher economic growth
+at a roughly similar magnitude in decades 1985-1995 and 2005-2015. A one s.d. increase in
+educational attainment predicts 0.96% annualized GDP growth in 1985-1995, and the number
+falls to 0.70% for 2005-2015. Countries in which females and males have more equal access to
+education resources have grown faster: a one s.d. reduction in the gender gap (in schooling years)
+predicts 0.55% higher GDP growth in 1985-1995, and 0.26% in 2005-2015.
+In contrast, coefficients on short-run correlates beyond the enhanced Solow fundamentals (those
+correlates which can change over relatively short horizons) fell more substantially from 1985-2005,
+with essentially zero correlation between the two periods. Table 4 Columns (4) and (5) report
+(1985 and (2005.20 Figure 6 plots (2005 re-estimated with the same country sample21 two decades
+later 2005-2015. The slope of the correlate-growth relationships have shrunk towards zero and the
+slope of fitted line in Figure 6 is only 0.206.
+Long-run correlates (those which can only change slowly, if at all) and culture fall in between
+Solow fundamentals and short-run correlates in the persistence of their correlation with growth.
+Figure 6 Panel B shows that the slope of the long-run correlate-growth relationship has shrunk
+towards zero with 0.408 as the slope of the fitted line. However, the correlate-growth relationship
+is more stable for culture with 0.739 as the slope of the fitted line.
+As we did for correlate-income slopes, while the 1985 versus 2005 comparison is our main
+specification, in figure A.19 we also report the trends in the growth-correlate slopes since 1960,
+averaged within each group of correlates. We apply the same normalization as for correlate-income
+slopes, namely we first renormalize the correlates such that their correlate-income slope is positive
+in 1985 (i.e. we multiply the correlate by minus one, throughout, if the slope is negative in
+1985). Again, as many correlates are not available before 1985, and the set of countries for which
+correlates is available is growing, we repeat the exercise for multiple balanced panels, one from the
+start of each decade. The figures support the results above, showing that the flattening of growth
+regression coefficients from 1985 to 2005 reflects a gradual trend over that period. It also appears
+that growth regression coefficients peaked around the 1980s, but we do not place too much weight
+on that result, as data availability is sparse prior to then, especially for short-run correlates.
+Why did growth regression coefficients shrink as correlates converged? We provide two hypotheses,
+for future work. First, many correlates, both observable and unobservable, are likely
+correlated with each other, so that the regression coefficient on any one will not just reflect its
+underlying causal impact, but also its correlation with others. The rapid convergence in correlates
+may have been associated with a reduction in the correlation between them, and hence a reduction
+in this omitted variable bias. Second, correlates may have non-linear e↵ects: perhaps policies and
+institutions used to matter when there were large di↵erences across countries, but now that they
+have converged, any remaining di↵erences matter less.
+4.4 Shrinking gap between conditional and unconditional convergence
+One response to the failure of unconditional convergence was to move to the idea of conditional
+convergence - convergence conditional upon possible determinants of steady-state income, such as
+policies and institutions (Barro and Sala-i Martin 1992) - which has been widely supported in the
+data (Durlauf et al. 2005). This suggests a natural question: does the shift towards unconditional
+convergence represent a shrinking of the gap between conditional and unconditional convergence,
+for example due to rapid convergence of correlates, or did conditional convergence itself became
+faster? Globalization could have resulted in either. For example, international institutions have
+promoted convergence across many policies, and higher capital mobility has increased capital
+inflows into some lower income countries, potentially reducing the e↵ect of conditioning on such
+correlates, while at the same time the spread of technology and of production processes through
+increased trade may have made convergence conditional on correlates faster.
+Univariate While conditional convergence regressions often condition on multiple correlates, our
+baseline specification conditions on one variable at a time, because of the difficulty in forming a
+balanced panel with multiple correlates, and to tie our hands in terms of specification search. When
+conditioning on a single correlate, according to the omitted variable bias formula, the gap between
+unconditional and conditional convergence can be written as the product of the correlate-income
+slope ' and the growth-correlate slope (.
+Figure 7 and Table 4 report the changes in this gap from 1985-2005. Correlate-by-correlate,
+qualitatively the trend in the e↵ect of conditioning is similar to that of the growth regression
+coefficients: Solow fundamentals have the most stable e↵ect, long-run correlates and culture are
+intermediate, and short-run institutions have the least stable e↵ect. However, what is harder to
+see from this figure, but can be seen clearly in A.20, is that the e↵ect on conditioning has on
+average shrunk to around zero for short-run and long-run correlates since 1980, while for Solow
+fundamentals and culture it has remained more steady. The same figure also shows that the e↵ect
+of conditioning on correlates increased substantially between 1960 and 1980, although for a much
+smaller set of countries and correlates.
+Multivariate Many of the classic conditional convergence regressions control for a large set of
+policies and institutions. In attempting to run such multivariate regressions, there is a harsh
+trade-o↵ in constructing the country-year sample, between the number of observations and the
+number of available correlates, which is why we consider the univariate results our main results
+in this section. However, to attempt to run a multivariate version, we (somewhat arbitrarily)
+selected a sample of 72 countries and include the following institutional variables: polity 2 score,
+Freedom House political rights, Freedom House civil liberty, private investment ratio, government
+spending, inflation, credit provided to the private sector, credit by the financial sector, Barro-Lee
+educational attainment, and gender gap in schooling years.
+Figure 8 plots both the conditional and unconditional convergence coefficients, from 1985 to
+2007. We see that, while the unconditional convergence coefficient has trended down, there has
+been no clear trend in the conditional convergence coefficient, and the gap between the two has
+closed substantially. Thus, in terms of what has driven the change in unconditional convergence,
+unconditional convergence has become closer to conditional convergence. We do not find clear
+trends in conditional convergence itself, although that is not our focus.
+Table 5 reports the coefficients for growth in three decades from 1985 to 2015. From 1985 to
+1995, correlates explain substantial variation in economic growth and convert absolute divergence
+to conditional convergence. The ten correlates jointly take down the coefficient from 0.42 (t=1.67)
+to -0.816 (t=-1.79). In 2005-2015, the unconditional economic growth rate is -0.79% (t=-5.16).
+Correlates still e↵ectively cut the convergence rate to -1.14% (t=-4.63), however, no sign indicates
+conditional convergence is faster than two decades ago.
+These results suggest an interpretation that is consistent with neoclassical growth models.
+Conditional convergence has held throughout the period. Absolute convergence did not hold
+initially, but, as policies, institutions, and human capital have improved in poorer countries, the
+di↵erence in institutions across countries has shrunk, and their explanatory power with respect to
+growth and convergence has declined. As a result, the world has converged to absolute convergence
+because absolute convergence has converged to conditional convergence.
+
+5 Conclusion
+We document a trend toward absolute convergence since the late-1980s, resulting in absolute
+convergence since 2000. This trend is consistent with neoclassical growth models and with models
+in which catch-up growth is easier than growth at the frontier, and inconsistent with the set of
+endogenous growth models which predict divergence. While incomes have diverged across countries
+for centuries (Pritchett 1997), the rapid trend to convergence over the last 20 years suggests
+something important has changed. Breaking down convergence by income quartiles shows both a
+growth slowdown at the frontier and a broad increase in the rate of catch-up growth away from
+the frontier, the breadth of which does not support an explanation in which countries catch up
+only above a certain income threshold, with more countries recently crossing the threshold, as
+might be suggested by certain poverty trap models. What could have driven this change: faster
+catch-up conditional on correlates, for example due to the globalization of production, improved
+communication, faster technology flows, greater access to (international) finance, and migration;
+or the convergence of correlates themselves, which could also have followed from globalization, but
+also from the end of the Cold War, trends in democratization, the reduction in conflict, and the
+adoption of the Washington Consensus, among other reasons?
+Most correlates of growth and income - policies, institutions, and culture - have converged
+during the same period, towards those of rich countries. Some of these changes have been gradual,
+such as changes in government spending and in fertility, consistent with modernization theory
+(Inglehart and Baker 2000), and on average the size of the changes has been as predicted by
+income growth, under the cross-country correlate-income relationship. However, other changes
+have happened remarkably quickly, such as the adoption of VATs, or marriage equality, or the
+spread of democracy after the fall of the Soviet Union, and these more rapid changes may be
+better explained with theories of contagion or technology adoption (Dobbin et al. 2007). While
+some aspects of convergence happened independently of external forces, international institutions
+played a role in other aspects of convergence, for example the IMF and the World Bank encouraged
+the adoption of the Washington Consensus (Easterly 2019), and the World Health Organization
+provides technical guidance and best practice for health policy.
+As correlates and growth have changed, so have the relationships between them: the coefficients
+of growth regressions. All types of correlates considered – Solow fundamentals, other short-run
+correlates, long-run correlate, and culture – have seen their growth coefficients shrink. Most robust
+are the Solow fundamentals, for which a regression of the coefficients in 2005 on those of 1985
+has a coefficient of 0.74. Long-run correlates and culture were somewhat stable, while short-run
+correlates’ coefficients in 2005 bore little relation to their coefficients in 1985.
+As a result of this shrinking in growth regression coefficients, the gap between unconditional
+and conditional convergence has also shrunk substantially. Absolute convergence has converged
+towards conditional convergence, a central prediction of neoclassical growth theory which has
+held throughout the period. In the parlance of club convergence, policies and institutions have
+(partially) converged, so that now more countries are “in the convergence club”.
+What drove these changes since the late 1980s? Why was there not also a trend towards
+convergence in the preceding two decades, when correlates were already converging? And why
+have growth regression coefficients shrunk since? While faster catch-up conditional on correlates
+may be part of the explanation for the trend in convergence (although, while not our focus, we
+do not find evidence of it), and the shrinkage in growth regression coefficients may in part be
+explained by earlier overfitting, we have focused on the convergence of correlates themselves, the
+potential determinants of steady-state income.
+Our preferred narrative in terms of parsimony, which is admittedly speculative, is as follows.
+Steady state incomes are determined by a very large number of factors, from the quality of transport
+infrastructure, to the quality of education systems, to the quality of bankruptcy law. Many
+of these determinants are correlated with each other, and while some are observable to us, many
+are not. As such, the regression coefficient on any observable determinant will not just reflect its
+underlying causal impact, but also patterns of correlation with unobservable determinants. Since
+the fall of the Soviet Union in 1991 and the adoption of the Washington consensus, there has been
+rapid convergence in observable policies and institutions (perhaps endogenously as policy makers
+reacted to the 1990s growth literature), explaining the shrinking gap between absolute and conditional
+convergence. If they have simultaneously become less correlated with the unobservable
+determinants, it would also explain the shrinking growth regression coefficients, although then it
+would also likely predict slower conditional convergence, counterfactually. However, unobserved
+factors might also be converging, pushing towards faster convergence conditional on observables:
+just as international institutions like the world bank and IMF are promoting convergence in economic
+policy, a host of other international bodies are promoting convergence on policies from civil
+aviation, to smoking (the World Health Organization), to standardized testing in schools (the
+Program for International Student Assessment); and the globalization of education and media
+exposure of elites is likely leading to convergence across many factors. An alternative narrative is
+that correlates have non-linear e↵ects: policies and institutions used to matter, but now that they
+have converged, any remaining di↵erences matter less. While we found little evidence for such
+non-linearities in our exploratory work, we were underpowered, and the hypothesis merits further
+investigation.
+Do these results give cause for optimism or pessimism regarding whether changes in policies and
+institutions can lead to catch-up up growth? Of course, our results are not causal, so care should
+be taken here, and further work is needed to assess the causal consequences of the convergence
+in correlates documented here. Even without taking a causal stance, the results push back on an
+interpretation of the persistence literature, as indicating that steady-state income is determined
+only by deep, persistent determinants, which are hard to change. We have shown evidence of
+convergence in culture, suggesting that even persistent determinants may change relatively rapidly.
+If we do entertain that our growth regressions at least partially reflect a causal relationship, then
+our results suggest that malleable policies and institutions did matter for growth in the 1990s,
+and that when they subsequently (partially) converged there was a shift to income convergence.
+Yet, malleable policies now seem to have less explanatory power, while long-run correlates (and
+especially Solow fundamentals) have continued to be correlated with growth.
+While we cannot predict whether absolute convergence will continue, we can discuss reasons
+to believe that it may or may not. On the one hand there are at least two reasons for pessimism.
+First, both Acemoglu and Molina (2021) and Pande and Enevoldsen (2021) understandably point
+to recent deteriorations in democracy. This is of concern in its own right, but if democracy is the
+key correlate, from which others follows, this may undermine the convergence of other correlates.
+Second, as discussed in Pande and Enevoldsen (2021), the economic costs of climate change are
+growing and faced disproportionately by developing countries. These costs - both the direct costs
+and, perhaps more importantly, the indirect costs of induced conflict and emigration - will be a
+force against convergence going forward. While these are reasons for pessimism, there are also
+substantial reasons for optimism. Conditional convergence is a robust phenomenon across many
+settings, and so if the convergence of correlates continues, absolute convergence is a reasonable
+hypothesis. In the 1960s there were the growing pains from post-colonial independence, in the
+1980s there was the breakup of the Soviet Union, both periods in which transitional forces may
+have eclipsed trends towards convergence. In the more stable, post-colonial world order since the
+1980s, we observe rapid convergence of correlates, a shrinking of the gap between unconditional
+convergence and conditional convergence, and ultimately, unconditional convergence.

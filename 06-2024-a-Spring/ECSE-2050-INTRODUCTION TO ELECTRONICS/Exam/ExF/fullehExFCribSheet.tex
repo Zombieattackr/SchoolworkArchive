@@ -1,0 +1,448 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Intro to Elctronics S 2024 Crib Sheet Exam 1+2 Hayden Fuller
+\begin{large}
+\\Basic:
+\\Voltage divider: $V_2=\frac{R_2}{R_1+R_2}$ \hfill Current divider: $I_2=I\frac{G_2}{G_1+G_2}$
+\\Capacitor: $Z_C=\frac{1}{jwC}$, $I=C\frac{dV}{dt}$, $E=\frac{1}{2}CV^2$ \hfill Inductor: $Z_L=jwC$, $V=C\frac{dI}{dt}$, $E=\frac{1}{2}LI^2$
+\\LCR: resonance: $w=\frac{1}{\sqrt{LC}}$
+\\Superposition: Short voltage, open current, analyze the thing, add.
+\\Voltage to current: $I_{IS}=V_{VS}$, $R_{CS}=\frac{1}{R{VS}}$
+\\OP AMP:      Inverting Amp: $A=\frac{V_{out}}{V_{in}}=-\frac{R_F}{R_in}$
+\\Summing Inverting Amp: $V_{out}=-R_F(\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3})$
+\\Subtraction: Inverting amp with voltage divider on plus: $V_{out}=V_{plus}\frac{R_G}{R_{in,plus}+R_G}\cdot\frac{R_{in,minus}+R_F}{R_{in,minus}}-V_{minux}\frac{R_F}{R_{in,minus}}$
+\\H response: $H(w)=\frac{V_{out}}{V_{in}}$
+\\Integrator: $R_F$ is a capacitor, $V_{out}=-\frac{1}{R_{in}C}\int_0^tV_{in}dt$
+\\Detailed amplification: op amp
+\\diff: $V_{out}=A_{diff}(V_+-V_-)$
+\\CM: $V_{out}=A_{CM}(V_++V_-)$
+\\total amplification: $V_{out}=A_{diff}(V_+-V_-)+A_{CM}(V_++V_-)$
+\\CMRR: common mode rejection ratio: $\frac{A_{diff}}{A_{CM}}$, $20\log(CMRR)dB$
+\\Gain Bandwidth Product: Gain$\cdot$Bandwidth, $A\cdot f$
+\\Constant gain at low frequency, decreases linearly because slew rate at high frequency
+\\knee frequency: $w=\frac{1}{RC}=\frac{1}{T}=\frac{1}{2\pi RC}$, $=>$ $H(w)=\frac{1}{\sqrt{2}}$, $-3dB$
+\\above knee frequncy: $H(w)=\frac{1}{wRC}$, $-20dB$ per decade
+\\high pass: $H(w)=wRC$, $20dB$ per decade, slope multiplied by N stages.
+\\Slew rate: $=dV_{out}/dt$
+\\ex: $SR=1V/us$, pulse $0-2V$, $T=2us$,  1V triangle wave
+\\good sine wave: $SR>=2\pi f V_0$
+\\DIODES:     forward bias, apply +V to holes, push holes(p) and electrons(n) together, get conduction
+\\IV: $I=I_0(e^{\frac{V}{V_t}}-1)$
+\\Thermal voltage: $V_t=\frac{kT}{e}=26mV$
+\\Threashold voltage: $V_{th}~=0.7V$
+\\Reverse saturation current: $I_0$ around $10^{-10}$
+\\For $V>>V_t$, $I~=I_0e^{\frac{V}{V_t}}$
+\\Differential resistance: $r_D=\frac{V_t}{I}$ (I from above equation)
+\\Basic DR circuit: $V_B=IR+V_D$, $I=I_D=I_0e^{\frac{V}{V_t}}$
+\\Graphically solve: $V_B=I_0e^{\frac{V}{V_t}}R+V_D$, $V_B-V_D=I_0e^{\frac{V}{V_t}}$
+\\Approximate analytic solution: $V_D=V_{th}=0.7V$, $I=\frac{V_B-0.7}{R}$
+\\Linearization: $r_D=\frac{V_t}{I_D}$, can treat as this resistor for an AC signal, just account for DC offset with superposition.
+\\find I with DC (probably $\frac{V-0.7}{R}$), and $r_D=\frac{.026}{I}$, then add AC signal with $r_D$
+\\Rectification: $P=V_{th}I$   AM: through diode and R and past C to filter out frequency, left with audio.Also LED and solar cell.
+\\ZENER DIODE:  width of depletion region changed with doping
+\\Breakdown: at $V=V_{breakdown}=V_Z$
+\\IV: turn on at $V_{th}=0.7$, reverse turn on at $-V_Z$, typically used backwards, so flip V, expect $+$   $|<$  $-$
+\\$V<V_Z$ $=>$ $r_Z=\frac{dV}{dI}=\infty$ OR $V>=V_Z$, $r_Z=\frac{dV}{dI}=0$
+\\$I~=I_0e^{\frac{V-V_Z}{V_t}}$
+\\Basic ZDR circuit:
+\\Graphical: $V_{Bat}-IR=V_Z(I)$
+\\Approx analytical assume $V_Z$=constant, $I=\frac{V_B-V_Z}{R}$
+\\Voltage stabalization: $V_{out}=V_Z=$constant, wastes power, must have significant $R_Load$
+\\Voltage clipper: two parallel to load, facing away, V clipped at $V_Z+V_{th}$
+\\Voltage shifter: one series, cuts $V_Z$ off of input
+\newpage\end{large}
+Intro to Elctronics S 2024 Crib Sheet Exam 2 Hayden Fuller\begin{large}
+\\pnp, E+ arrow in top, holes flow in E, most make it to C, need current E to B, $V_{BE}<0$
+\\npn, E+ arrow out bot, holes flow out E, most come from C, need current B to E, $V_{BE}>0$
+\\common base:, in in E, out out C, grounded out B
+\\common emitter: in out B, out out C, grounded in E
+\\common collector: in out B, out in E, grounded out C
+\\$I_C=\alpha I_E$
+\\$I_C=\beta I_B$
+\\$I_E=(\beta+1)I_B$
+\\$\beta = \alpha/(1-\alpha)$
+\\base $<<$ diffusion length
+\\Equivalent:
+\\Current from B, $\alpha 'I_C'$ to E, $\alpha I_E'$ to C
+\\Diode to B, $I_E '$ from E,  $I_C '$ from C  ($\alpha ' < \alpha$)
+\\simplifies to:
+\\diode E to B, current out B, current B to C $\alpha I_E=\beta I_B$
+\\npn is just flipped, $I_C=\alpha I_E$, diode B to E
+\\graph output characteristic $I_C$ vs $V_{CE}$, 
+\\steep start goes (nearlly) flat, $I_C=\beta I_B$, flat section goes up with $I_B$
+\\linear(small signal): output, current, effect $\propto$ input, voltage, cause: RCL, non: Diode, BJT, FET
+\\small signal can count VCC as GND
+\\C-B-E, equiv current $\alpha I_E$ - Diode $I_E$, near opp, $r_E+DC$, small signal $r_E$, $r_E=V_t/I_E=26mV/I_E$
+\\Common E: E grounded, B input, C output and RC to VCC, 
+\\$I_C=-V_{CE}/R_C + V_{CC}/R_C=V_{CC}/R_C-1/R_C$ ($I_C=0$ at $V_CC$)
+\\solve $I_C=\beta I_B=-V_{CE}/R_C + V_{CC}/R_C$
+\\saturation fully on at top left, $V_{CE}\approx 0.1 - 0.2V$
+\\forward activev linear in middle, $I_C=\beta I_B$, $V_{BE}\approx 0.7V$
+\\cutoff off at bottom, $V_{BE}<0.7V$, $I_B=I_C=0$, CE impedance =$\infty$
+\\Quiescent point around middle of forward active region/dynamic range, 
+\\frequently middle of $I_C=V_{CC}/R_C-1/R_C$, determined by DC bias network
+\\find B current, find C current, find CE voltage (output voltage)
+\\Primative common E
+\\Voltage amplification $A_{VOC}=V_{in}/V_{out}=-\beta i_B R_C / i_E r_E = -\beta i_B R_C / (\beta+1)i_B+r_E\approx -R_C/r_E$
+\\Current amplification $A_{ISC}=i_{out}/i_{in}$
+\\Input impedance $Z_{in}=V_{in}/I_{in}=r_Ei_E/i_B=r_E(\beta+1)i_B=\beta r_E$
+\\Output impedance $Z_{out}=V_{out}/I_{out}=R_CI_C/I_C=R_C$
+\\Emitter follower, RB to VCC, RE to GND, $V_{out}=V_{in}-V_{BE}$, 
+\\$Z_{in}\approx\beta R_E$(high), $Z_{out}\approx R_E$(low), $A_{VOC}\approx 1$(low), $A_{ISC}<=\beta$(high)
+\\Non-idealities of BJTs
+\\Finite output impedance (current source), $r_{CE}\neq\infty$
+\\output characteristic graph isnt flat, but sloped with $r_{CE}$$^{-1}$, 
+\\meets at Early Voltage $\approx$-10V to -100V
+\\$\beta=\Delta I_C/\Delta I_B$ increases with $V_{CE}$ due to base width modulation
+\\$I_C=\alpha I_0 e^{V_{BE}/V_t} (1+(V_{CE}/V_{Early}))$
+\\slope=$r_{CE}$$^{-1}=I_C/(V_{Early}+V_{CE})$
+\\Breakdown of CB at high VCE, reverse breakdown of neglected BC diode comes into play, out char slopes increase
+\\100V for Si, increasing order Ge, Si, GaAs, SiC, GaN, C
+\newpage\end{large}
+Intro to Elctronics S 2024 Crib Sheet Exam 2 Hayden Fuller\begin{large}
+\\DIFFERENTIAL AMPLIFIER, used in op amp and Emitter Coupled Logic
+\\C is outputs and $R_C$ to $+V_{CC}$,  B is inputs,  E connects and shares $R_E$ to GND
+\\if input 1 is the input, output 1 is inverting
+\\single input, single output, oposite sides, $A=R_C/(2 r_E)$, differential output gives $A=R_C/r_E$
+\\differential input and output $A=2R_C/r_E$; Q-point $V_{CE}\approx V_{CC}-\beta I_{B1} (R_C+2R_E)$
+\\$\Delta I_{C1} = -\Delta I_{C2}$, so total current is constant, $I_{RE}$ is constant, V is constant, Virtual Ground
+\\Input Output Gain   $r_E=V_t/I_E=26mV/I_E$
+\\single single $R_C/(2r_E)$
+\\single differential $R_C/(r_E)$
+\\differential differential $2R_C/(r_E)$
+\\FLIP FLOP, SRAM(fast, power hungry, small)
+\\C connects to $V_{CC}$ through $R_C$ and to other B through $R_B$.  $P\approx V_{CC}$$^2/R_C$
+\\$R_C$ limits current flow while on, $R_B$ stops other transistor from getting turned on.
+\\ASTABLE FLIP FLOP, Multivibrator $R_B>>R_C$
+\\same as above, but replace $R_B$ with capacitor $C$, and have resistor $R_B$ from the other side (B) of $C$ to $V_{CC}$
+\\Assume T1 on T2 off, $\tau=RC=R_{B1}C_1$, $T=2\tau=2R_BC$, change f with $R_B$ (could do C)
+\\C2 charged to VCC-0.7V, C1 charge slow RB1, T2 VBE hit 0.7 turn on, T2 VC=0, C2 charge brings VB1 negative
+\\CURRENT MIRROR
+\\T1 and T2 share E GND and B, T1 has CB shorted and $R_C$ above that, load on T2 C 
+\\shared $V_{BE}$ so turned on the same, $I_{RC}=(\beta+2)I_B$, $I_{Load}=\beta I_B$, $I_{Load}\approx I_{RC}$
+\\CLASS A AMPLIFIERS, basic, quality, high power draw
+\\E GND, B in, B $R_B$ to $V_{CC}$, C out, C $R_C$ to $V_{CC}$
+\\Q point power $P=I_C * V_{CE}$, constant power draw, good pre amp
+\\CLASS B AMPLIFIER, push pull, crossover distortion, low power, 
+\\signal split bwtween two, top is NPN (normal), bottom is PNP (inverting), stacked between VCC+ and VCC-
+\\less than 0.7V is lost, crossover distortion
+\\CLASS AB AMPLIFIER, better push pull, low distortion, med-low power,
+\\add caps to isolate each input and resistors + diodes to bias (1.4V between them), both have $V_{BE}=0.7V$
+\\CLASS C AMPLIFIER, pulse amplifier
+\\CLASS D AMPLIFIER, digital audio quality, low power
+\\triangle wave at 100kHz, gets compared to audio. Audio higher, high FET drives high, triangle higher, low fet drives low, gets smothed to 20kHz range by inductor
+\\DARLINGTON TRANSITOR
+\\C is shared, E connects to next B. $V_{BE}=1.4V$, $\beta=\beta^2$, $V_{CE}=V_{BE2}+V_{CE1}>=0.9V$
+\\T2 doesn't saturate, can be good for high speed, used for RF
+\newpage
+1 Intro to Elctronics S 2024 Crib Sheet Exam Final Hayden Fuller
+\\(power supply and LCD excluded)
+\\Gate charge induces oposite charge in semiconductor
+\\electrons Source to Drain, current Drain to Source
+\\$L_G$ is length between S and D, $W_G$ is how "deep" the whole thing is extruded
+\\$V_{GS}>0$ negative charge induced in channel, $V_{GS}<0$ positive charge induced in channel, 
+\\Threshold Voltage: Voltage needed to induce mobile charges in channel, allow current flow
+\\$V_{th}$ can be anything, above or below zero,
+\\$V_{GS}>V_{th}$ turns on
+\\
+\\$I_D$ vs $V_{DS}$:
+\\1) ohmic
+\\Increased $V_{GS}$ increases slope
+\\Slope $=dI_D/dV_{DS}=1/R_{ON/OFF}$
+\\$I_D=k (V_{GS}-V_{th})V_{DS}$; $k=k'W_G/L_G$
+\\
+\\2) Intermediate
+\\$I_D=k [(V_{GS}-V_{th})V_{DS}-\frac{1}{2}V_{DS}^2]$
+\\linear starts to saturate
+\\caused by pinch off on D side of channel when $V_{DS}$ too high
+\\$V_{DS}=V_{GS}-V_{th}$ has slope 0
+\\
+\\3) Saturation
+\\$V_{DS}\ge V_{GS}-V_{th}$
+\\$V_{DS}$ no longer contributes past $V_{GS}-V_{th}$, so replace in equations
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$
+\\
+\\$I_D$ VS $V_{GS}$
+\\parabola $I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$, bottom is zero at $V_{th}$
+\\
+\\Load Line of amp
+\\Common S (GND), $R_D$ from D to VCC
+\\$I_D=(V_{CC}-V_{DS})/R_D$
+\\hits $I_D$ at $V_{CC}/R_D$; hits $V_{DS}$ at VCC
+\\Dynamic region and Q point in middle, under top curve of constant $V_{GS}$
+\\Which regime to use? SATURATION! 
+\\linear is dependent on both $V_{GS}$ and $V_{GS}$, saturation current is only dependent on $V_{GS}$
+\\
+\\SYMBOLS
+\\4 terminal, basic FET symbol with arrow at bulk
+\\in from bulk to fet for N-channel
+\\out from fet to bulk for P-channel
+\\Bulk allows the tuning of $V_{th}$, usually connected to S for 3 terminals
+\\
+\\3 terminal
+\\N-channel: e from S to D, I from D to S
+\\Arrow out from G to S
+\\Enhancement Mode: normally OFF, $V_{th}>0$, has gap in channel of symbol
+\\Depletion Mode: normally ON , $V_{th}<0$, no gap in channel of symbol (default)
+\\
+\\P-channel: h from S to D, I from S to D
+\\Arrow in from S to G
+\\Enhancement Mode: normally OFF, $V_{th}<0$, has gap in channel of symbol
+\\Depletion Mode: normally ON , $V_{th}>0$, no gap in channel of symbol (default)
+\\
+\\2 DIGITAL SYMBOLS
+\\N-channel enhancement $V_{th}>0$ regular digital
+\\P-channel enhancement $V_{th}<0$ inverted digital
+\\Complementary MOS!
+\\
+\\DC-BIASING OF FET
+\\FIND Q POINT OF CIRCUIT ($I_D$ and $V_{DS}$)
+\\$I_G=0$; $I_D=I_S$
+\\EX 1:
+\\N-channel common S, RD to VCC, D out
+\\R1 R2 divider on G
+\\C on input and output
+\\$V_{GS}=V_G$
+\\$V_{GS}=R2/(R1+R2)$ (voltage divider)
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$ (saturation)
+\\2 equations 2 unknowns, solve
+\\verify we're in saturation with $V_{DS}=VCC-R_DI_D\ge V_{GS}-V_{th}$
+\\
+\\EX 2:
+\\N-channel common NONE, RD to VCC, RS to GND, D output
+\\R1 R2 divider on G
+\\C on input and output
+\\$V_{GS}=V_G-V(R_S)$
+\\$V_{GS}=R2/(R1+R2)-R_SI_D$ (voltage divider + KVL)
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$ (saturation)
+\\2 equations 2 unknowns, solve, system of equations, quadratic (Right solution, $V_{GS}>V_{th}$)
+\\verify we're in saturation with $V_{DS}=VCC-(R_D+R_S)I_D\ge V_{GS}-V_{th}$
+\\
+\\EX 3:
+\\N-channel common S, RD to VCC, D output
+\\FEEDBACK: RG from D to G
+\\C on input and output
+\\Current through RG is zero! no G current, assume no current from input source
+\\$V_{GS}=V_G$
+\\$V_{GS}=V_D=VCC-I_DR_D$ (no voltage difference)
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$ (saturation)
+\\2 equations 2 unknowns, solve, system of equations, quadratic (Right solution, $V_{GS}>V_{th}$)
+\\verify we're in saturation with $V_{DS}=VCC-R_DI_D\ge V_{GS}-V_{th}$
+\\
+\\EQUIVALENT CIRCUIT OF FET (n-channel)
+\\common S, left input $V_{GS}$
+\\D to S current source $I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$
+\\Small Signal Linearization:
+\\D to S current source $i_D=g_mV_{GS}$
+\\$g_m=\frac{dI_D}{dV_{GS}}$ (Siemens, Transconductance)
+\\$g_m=k(V_{GS}-V_{th})$; ($V_{GS}$ of Q-point)
+\\Capacitor like input, no input DC current, no power! Great for low power signals
+\\$i_D=g_mv_{GS}$
+\\
+\\Non Ideal Output Impedance
+\\Small signal adds $R_{DS}$ parallel to current source
+\\$I_D$ VS $V_{GS}$ adds slope $1/R_{DS}>0$
+\\non ideal current source, finite output impedance $R_{DS}$
+\\
+\\3 FET AMPLIFIERS
+\\Common SOURCE
+\\RD to VCC, D out
+\\Basic bias network voltage divider optional
+\\
+\\Common DRAIN
+\\RS to GND, S out
+\\Basic bias network voltage divider optional
+\\SOURCE FOLLOWER
+\\
+\\Common GATE
+\\S input (arrow), D output
+\\Current Amplification 1.0
+\\CURRENT FOLLOWER
+\\
+\\ANALYSIS
+\\R source and R load don't matter
+\\C$\rightarrow\infty$ so that $Z_C=1/(j\omega C)=0$
+\\realistically, let past all relevant frequencies
+\\Small Signal:
+\\Anything to VCC goes to GND instead
+\\basic common S with basic voltage divider input bias
+\\R1 and R2 G to S; current source and RD from D to S
+\\$z_{in}=R1||R2=1/(1/R1+1/R2)$
+\\$Z_{out}=R_D$ or $R_D||R_{DS}$ for non ideal
+\\$A_{ISC}=i_{out}/i_{in}=g_mv_{GS}/(v_{GS}/(R1||R2))=g_m(R1||R2)$; large R1 and R2 means large $A_{ISC}$
+\\$A_{VOC}=v_{out}/v_{in}=g_mV_{GS}R_D/V_{GS}=g_mR_D$
+\\
+\\Add source resistance
+\\goes in series with current source
+\\$z_{in}=R1||R2$
+\\$z_{out}=R_D$
+\\$A_{ISC}=g_mV_{GS}/((V_{GS}+R_Sg_mV_{GS})/(R1||R2))=g_m(R1||R2)/(1+g_mR_S)$; $R_S$ reduces amplification
+\\$A_{VOC}=g_mV_{GS}R_D/(V_{GS}+R_Sg_mV_{GS})=g_mR_D/(1+g_mR_S)$; $R_S$ reduces amplification
+\\
+\\Common Drain source follower (with basic voltage divider bias)
+\\R1 and R2  from G to GND
+\\Drain is grounded, so current source from GND to S (parallel to RS)
+\\$z_{in}=R1||R2$
+\\$z_{out}=R_S$
+\\$A_{ISC}=g_mV_{GS}/(V_{GS}/(R1||R2))=g_m(R1||R2)$; for high R1 and R2, $A_{ISC}>>1$ (large)
+\\$A_{VOC}=g_mV_{GS}R_S/(V_{GS}+g_mV_{GS}R_S)=g_mR_S/(1+g_mR_S)$; for large $R_S$, $A_{VOC}\approx 1$
+\\S voltage follows G voltage
+\\
+\\KEEP IN MIND
+\\inverting also exists, sometimes negative is left out of $A_{VOC}$, doesn't really matter for audio
+\\Smaller is better! $k=k'W_G/L_G$, shorter $L_G$ (length between S and D) is proportional to better amplification
+\\
+\\MILLER CAPACITASNCE
+\\$C_{GS}$, $C_{DG}$, $C_{GS}$
+\\$C_{DG}$ is most important
+\\Modification: we replace it with $C_M$ G to S and $C_{MO}$ D to S
+\\$C_M=(1+A_{VOC})C_{DG}$ for RL$=\infty$, $C_M=(1+A_V)C_{DG}$ otherwise
+\\4 $C_{MO}=((1+A_{VOC}^{-1})C_{DG}\approx C_{DG}$
+\\$\tau_{in}=R_{in}C_M$; $\tau_{out}=R_LC_{MO}$; (R is counting anything not parallel)
+\\$\tau_{out}$ is smaller, can neglect $C_{MO}$
+\\$\omega_{knee}=1/(RC_M)$, better response with reduced R, low output impedance pre amp (source follower)
+\\
+\\FET AS SWITCH
+\\dim with PWM, better because no resistive powewr loss
+\\perfect switch is $R_{ON}=0\Omega$ and $R_{OFF}=\infty\Omega$
+\\OFF is saturation
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$
+\\$V_{GS}<V_{th}\rightarrow I_D=0\rightarrow R_{OFF}=\infty$, perfect off state
+\\ON is ohmic
+\\$I_D=\frac{1}{2}k(V_{GS}-V_{th})^2$
+\\$R_{ON}=1/(k(V_{GS}-V_{th}))>0$, non perfect on state
+\\minimize $R_{ON}$: $V_{GS}>>V_{th}$; geometry of fet: wide $W_G$, short $L_G$, increase k, decrease $R_{ON}$
+\\transision from mechanical to FETs
+\\
+\\INTEGRATED CIRCUITS CMOS
+\\n-channel: arrow out, non inverting, $V_{th}>0$
+\\p-channel: arrow in, inverting, $V_{th}<0$
+\\both enhancement
+\\inverter: p to VCC, n to GND
+\\static power consumption is zero
+\\not quite because 1) caps charge and discharge with resistance and 2) $R_{ON}$ isn't quite zero
+\\
+\\ICONIC CIRCUITS
+\\Memory: 
+\\horizontal wrod lines enable access, point into above cells
+\\vertical bit line(s) read and write data to cells
+\\Flip FLop:
+\\4 FETS for bistable flip flop; p on top, n on bottom, middle of them is input to other side
+\\SRAM:
+\\Static Random Access Memory
+\\Each (or one) side output has an access transistor (n), who's input comes from the word line, 
+\\allowing the bit line to read or write when on
+\\6 transistors (4n 2p); fast; VOLATILE
+\\DRAM:
+\\Dynamic RAM, storage is a capacitor, same word line, bit line, and access n transistor, but now just a grounded cap to store.
+\\needs to be refreshed every 64ms or so, still VOLATILE
+\\SRAM is better, DRAM is cheaper
+\\FLASH:
+\\Gate M is completely surrounded by Oxide, stores that charge for 10-20 years, (+ on M for n-channel)
+\\need a "flash" of charge through the insulator to change it, high voltage pulse between S and D; NON VOLATILE
+\newpage
+5 BACK WORK
+\\Example 1: work backwards
+\\n-channel common NONE, RD and RS, output from D through R3, basic bias voltage divider R1 R2
+\\Caps on input, output, and S to GND (RE); RS is shorted at AC
+\\$k=20mA/V^2$, $V_{th}=2V$, $I_D=20mA$, $V_{DS}=5V$, $VCC=10V$
+\\a) assume $V_D=6V$, determine $R_D$ and $R_S$
+\\$V_S=V_D-V_{DS}=6V-5V=1V$
+\\$R_S=V(R_S)/I_D=1V/20mA=50\Omega$
+\\$R_D=V(R_D)/I_D=4V/20mA=200\Omega$
+\\b) assume $R1+R2=100k\Omega$, determine them
+\\solve for $V_{GS}=\sqrt{2I_D/k}+V_{th}$
+\\$V_{GS}=\sqrt{2*20mA/(20mA/V^2)}+2V=3.41V$
+\\Voltage divider: $V_G=VCC*R2/(R1+R2)$; $3.41V+1V=10V*R2/100k\Omega$; $R2=44.1k\Omega$; $R1=55.9k\Omega$
+\\c) what is the common name for this? what class amplifier?
+\\Common Source, Class A amplifier
+\\d) assume $R3=200\Omega$, draw small signal equivalent, give transconductance $g_m$
+\\G has R1 R2 to GND, $V_{gs}$ to S; D has current source $g_mV_{GS}$ to S, RD to GND, and R3 to output
+\\$g_m=k(V_{GS}-V_{th})=20mA/V^2 (3.41V-2V)=28.2$mSiemens
+\\e) $A_{VOC}$, expression and value
+\\$v_{in}=V_{GS}$; $v_{out}=g_mV_{GS}R_D$
+\\$A_{VOC}=g_mV_{GS}R_D/V_{GS}=g_mR_D$
+\\$A_{VOC}=28.2mS*200\Omega=5.64$
+\\f) $A_{ISC}$, expression and value
+\\$i_{in}=v_{in}/(R1||R2)=V_{GS}/(R1||R2)$
+\\$i_{out}=g_mV_{GS} R3^{-1}/(R_D^{-1}+R3^{-1})$; (current divider)
+\\$A_{ISC}=g_mV_{GS} R3^{-1}/(R_D^{-1}+R3^{-1})/(V_{GS}/(R1||R2))=g_m R3^{-1}/(R_D^{-1}+R3^{-1}) (R1||R2)$
+\\$A_{ISC}=28.2*1/2*24.7=348$
+\\g) draw small circuit equivalent, calculate $A_V=V_{Load}/V_{SS}$, expression and value
+\\same as before but add source $V_SS$ and input resistance (series with load) $R_{SS}$; and add $R_L$
+\\$V_{GS}=V_{SS}(R1||R2)/(R_{SS}+(R1||R2))$
+\\$V_{SS}=V_{GS} (R_{SS}+(R1||R2))/(R1||R2)$
+\\$V_{Load}=RL*i_D*(R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1})$ (resistance * current divider)
+\\$V_{Load}=RL*g_mV_{GS}*(R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1})$
+\\$A_V=V_{Load}/V_{SS}=[g_mV_{GS}RL((R3+RL)^{-1})/(R_D^{-1}+(R3+RL)^{-1})]/[V_{GS} (R_{SS}+(R1||R2))/(R1||R2)]$
+\\$A_V=g_m (R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1}) * R_L (R1||R2)/(R_{SS}+(R1||R2))$
+\\$A_V=1.56$
+\\h) calculate $A_I=i_{Load}/i_{SS}$, expression and value
+\\$i_{Load}=g_mV_{GS}(R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1})$
+\\$i_{SS}=V_{GS}/(R1||R2)$
+\\$A_I=[g_mV_{GS}(R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1})]/[V_{GS}/(R1||R2)]=(R1||R2)g_m(R3+RL)^{-1}/(R_D^{-1}+(R3+RL)^{-1})$
+\\$A_I=232$
+\\Example 2: True/False
+\\(a) An astable flip-flop circuit can be made by using BJTs but not by using FETs.
+\\False, can be made with BJTs or FETs
+\\(b) A CMOS dynamic random access memory (DRAM) 1-bit memory cell has two complementary MOS transistors and one capacitor.
+\\False, 1 bit of DRAM requires one transistor and one capacitor
+\\(c) The first integrated circuit was made with BJTs.
+\\True, though FETs are more popular now, they're newer than BJTs
+\\(d) At the present time, integrated circuits made with BJTs are relatively rare.
+\\True, BJTs are power hungry, not often a need for them when CMOS technology can do it with less
+\\(e) The following equation may be reasonable for some specific circumstances: $g_m = 1⁄3 k$, where gm is the transconductance of an FET, and k is the k-value of the FET.
+\\False, $g_m$ is in Siemens, while $k$ is in $mA/V^2$
+
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,182 @@
+DAY 1
+Engr prob
+Starting at 8 next week :(, cut short on Thursdays
+Text is recommended but not required, online quizes
+Exams: 25%x3, quizes 2.5%*10
+
+Sample specs and events
+Axioms of probability:
+Random experiment: Uncertain outcome, different outcomes
+Sample space: set of all possible outcomes, {1,2,3} or [1 5], must be distinguishably different or continuous
+Event: subset of sample space
+Relationship of events:
+Probability: likelihood of an outcome of a random experiment to occur
+
+N outcomes that are equally likely, p=1/N
+If E has p=1, E=S
+0<=P(E)<=1,  P(S)=1
+Union of two events: 
+Is a subset >u
+Union (or) u
+Intersection (and) n
+Complement (not) X’
+S=123456
+A=135
+B=1234
+AuB=12345 >u S
+AnB=13 >u S
+Empty set phi /O
+Mutually exclusive: odd and even
+AnB=/O
+P(AnB)=0
+P(AuB)=P(A)+P(B)
+deMorgan’s rules 
+P(A’uB’)=P((AnB)’)
+P(A’nB’)=P((AuB)’)
+Counting techniques 
+Permutation vs Combination
+Ways to put 4 books on a shelf, permutation, 4!
+Ways to put 2 of them on a shelf, permutation of subset, 4!/((4-2)!)
+Ways to throw away 2 books, combination of a subset, remove duplicates 4!/(2!(4-2)!)
+Permutations: order matters
+Combination: order doesn’t matter 
+
+DAY 2
+Ex 6:
+a)
+P(A')=1-P(A)
+AuA'=S
+P(S)=1=P(AuA')
+AnA'=/0
+P(AuA')=P(A)+P(A')=1
+P(A')=1-P(A)
+b)
+P(/0)=0
+Au/0=A
+P(Au/0)=P(A)
+An/0=/0
+P(A)+P(/0)=P(A)
+P(/0)=0
+c)
+A<u=B
+P(B)>=P(A)
+A+C=B
+AnC=/0
+P(AuC)=P(A)+P(C)=P(B)
+C\=/0
+P(C)>=0
+P(A)+P(C)=P(B)
+P(A)+(>=0)=P(B)
+P(B)>=P(A)
+
+two events A and B are mutually excusive iff AnB=/0
+P(AuB)=P(A)+P(B)
+
+in general with overlap
+P(AuB)=P(A)+P(B)-P(AnB)
+if mutuallt exclusive P(AnB)=0, P(AuB)=P(A)+P(B)
+for three:
+P(AuBuC)=P(A)+P(B)+P(C)-P(AnB)-P(AnC)-P(BnC)+P(AnBnC)
+
+Ex 7:
+already did on paper
+basic 2x2 intersection logic
+
+Ex 8:
+password hacker
+number of 6 char permutation with replacement
+36^6=2.17*10^9
+A:starts with vowel
+|A|=5*36^5
+P(A)=5*36^6/36^6=5/36
+B:ends with even
+|B|=36^5*5/36^6
+P(B)=5/36
+P(AnB)=5*36^4*5/36^6=5/36*5/36
+P(AuB)=P(A)+P(B)-P(AnB)=10/36-25/196
+
+Conditional probability
+P(A|B) what is the probability of A to happen given B happened
+     Glasses  Glasses'
+RPI     16       10
+RPI'    40       34
+P(G)=56/100
+P(G|RPI)=P(GnR)/P(R)=16/100 / 26/100=16/26
+
+Ex 9:
+a)
+weight loss, Successful loosers and Breakfast eaters
+       20  80
+       S   S'
+50  B  16  34
+50  B' 4   46
+invert the statement
+of people who eat breakfast every day, 80% are successful losers, this is all broken lol
+       20  80
+       S   S'
+50  B  40  10
+50  B'-20  70
+b) P(S|B')
+
+Indepencence of events
+A and B are events that 
+P(A|B)=P(A)
+B has no impact on the probability of A
+P(A|B)=P(AnB)/P(B)=P(A)
+P(AnB)=P(A)*P(B)
+P(B|A)=P(AnB)/P(A)=P(A)*P(B)/P(A)=P(B)
+
+Ex 13:
+sup  Conforms
+123   Y    Y'
+  O   
+  T
+  R
+
+A: O
+B: Y
+
+P(A)=.30
+P(B)=.77
+P(AnB)=.22
+P(AnB)/=P(A)*P(B) not independent (close tho)
+
+Ex 15:
+chance of hacker randomly finding your 16 digit credit card number
+number of permutations with replacement: 10^16
+number of users is 10^6
+P=10^6/10^16=10^-10
+Y: guess year of expiration, 25%
+M: guess month at random 1/12
+P(Y)=.25
+P(M)=1/12=.083333
+P(YnM)=P(Y)*P(M)=.25*1/12=1/48
+
+Total Probability Rule
+P(A)=P(AnB)+P(AnB')
+
+P(A)=P(AnE1)+P(AnE2)
+
+\mu=\Sum_{all x}x*f(x)=E(X), basic parameter to quantify the distribution
+variance \sigma^2=\Sum_{all x}(x-\mu)^2*f(x)=E{(X-\mu)^2}, another basic parameter
+can say h(x)=X^2-2uX+u^2, E{h(x)}=\Sum_{all x} h(x)*f(x)
+
+Cumulative distribution function, replace the probability mass function
+roll a die: f(x)=1/6 discrete uniform distribution
+cdf F(x)=P(X<=x), increasing steps
+F(x1)-F(x2)>0 if xx1>x2
+lim x to infinity, then F(x) must converge to 1, to -inf is 0
+f(x_{k+1})=F(x_{k+1})-F(x_k)
+
+Example 5: f(x)=.5  x\in{1,3}
+
+coin flips
+Beruoulli trial
+P(n)=p^n*(1-p)^{4-n}*(4 over x) binamial coefficient
+1
+11
+121
+1331
+14641
+
+4!/((4-x)!x!)

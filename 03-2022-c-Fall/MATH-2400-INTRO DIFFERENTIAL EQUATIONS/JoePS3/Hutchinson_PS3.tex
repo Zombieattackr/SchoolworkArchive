@@ -1,0 +1,281 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 3} \smallskip\\ Due: 5pm, Friday, September 23, 2022}\\
+\textbf{Submitted to LMS By:\\ Joseph Hutchinson\\ 662022852 \\ Section 17 }
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 2, page 38--40: 2(a,c,f), 3(a,c), 10(a,b), 12.
+\item
+Exercises from Chapter 3, page 44: 1, 2, 4.
+\item
+Exercises from Chapter 3, pages 50--51: 1, 2, 3(e,g), 4(c,g), 6(a,b).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) A population $y(t)$ satisfies the IVP $y'=y^2-4y+3$, $y(0)=y_0$.  Which of the following choices describes the behavior of the population?
+\begin{description}
+\item[A] $y(t)=3$ if $y_0=3$
+\item[B] $y(t)\rightarrow1$ as $t\rightarrow\infty$ if $y_0=2$		
+\item[C] $y(t)\rightarrow+\infty$ as $t\rightarrow\infty$ if $y_0=5$
+\item\textcolor{red}{\textbf{[D] All of these choices}}
+\end{description}
+
+\item (5 points) A population $y(t)$ solves $y\sp\prime=f(y)$, and has a semi-stable equilibrium at $y=0$, an unstable equilibrium at $y=1$, and an asymptotically stable equilibrium at $y=2$.  Which function $f(y)$ best describes the behavior of the population?
+\begin{description}
+\item[A] $f(y)=3y\sp2(y-1)(y-2)$
+\item\textcolor{red}{\textbf{[B] }$\bm{f(y)=2y(y\sp2-y)(2-y)}$}
+\item[C] $f(y)=4(y\sp2-y)(y\sp2-2y)$
+\item[D] $f(y)=5(y\sp2-1)(y\sp2-2)$
+\end{description}
+
+\newpage
+\item (5 points) Consider the linear equation $(\sin t)y\sp{\prime\prime}+(\ln(t-1))y\sp\prime-(\sqrt{5-t})y=0$ with initial conditions $y(4)=0$ and $y\sp\prime(4)=-1$.  For which interval does a unique solution of the IVP exist?
+\begin{description}
+\item[A] $1<t<5$
+\item[B] $1<t<\pi/2$		
+\item[C] $\pi<t<5$
+\item[D] None of these choices
+\end{description}
+
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points) A population $y(t)$ of fish in a lake satisfies the rate equation
+\[
+y'=f(y),\qquad f(y)=2y\left(1-{y\over5}\right)-H,
+\]
+where $H\ge0$ is a (constant) rate at which fish are removed from the lake due to an active group of fishermen.
+\begin{enumerate}
+\item
+Plot $f(y)$ versus $y$ for the case $H=0$ and let $y_0$ denote the stable equilibrium population of fish.  Determine $y_0$ from the phase plot.  This value corresponds to the stable population when there is no fishing.\\
+
+For the case where there is no hunting, and $H=0$, the stable equilibrium population of fish $y_0 = 5$ fish in the lake.\\
+
+\item
+At the beginning of a fishing season, the fishermen become energetic and begin catching fish at a rate $H=1$.  Plot $f(y)$ versus $y$ for $H=1$ and let $y_1$ denote the new stable equilibrium population of fish assuming $y(0)=y_0$.  Determine $y_1$.\\
+
+For the case where there is some hunting and $H=1$, the stable equilibrium population of fish $y_0$ approaches the value 4.5 fish in the lake.\\
+
+\item
+Note how the phase plots change from $H=0$ to $H=1$, and let $H_c$ denote a critical fishing rate such that for $H>H_c$ the fish population tends to zero for any initial state.  Determine $H_c$, which corresponds to the maximum allowable fishing rate that supports a nonzero fish population in the lake.\\
+
+Somewhere between Hc 2.4-2.5 there is a breakdown such that any initial condition leads to a population of zero fish in the lake.
+
+\end{enumerate}
+
+%\bigskip
+\newpage
+\item (15 points) Let $y_1(t)=\sqrt{t}$ and $y_2(t)=t\sp{-2}$, and consider the linear, homogeneous, second-order ODE
+\[
+y\sp{\prime\prime}+{5\over2t}\,y\sp\prime-{1\over t\sp2}\,y=0,\qquad t>0
+\]
+\begin{enumerate}
+\item
+Verify that $y_1(t)$ and $y_2(t)$ are solutions of the ODE, and compute the Wronskian of $y_1(t)$ and $y_2(t)$ to show that the solutions are independent (and thus form a fundamental set of solutions).\\
+
+For $y_1(t)$, find ${y_1}\sp\prime(t)$ and ${y_1}\sp{\prime\prime}(t)$, then substitute into the ODE to check if it solves for $t>0$:\\
+${y_1}\sp\prime(t) = \frac{d}{dt}[t\sp{(1/2)}] = \frac{1}{2}t\sp{(-1/2)}$\\
+${y_1}\sp{\prime\prime}(t) = \frac{d}{dt}[\frac{1}{2}t\sp{(-1/2)}] = -\frac{1}{4}t\sp{(-3/2)}$\\
+
+Substitute into the ODE to check:\\
+$y\sp{\prime\prime}+{5\over2t}\,y\sp\prime-{1\over t\sp2}\,y=0$\\
+$(-\frac{1}{4}t\sp{(-3/2)})+{5\over2t}\,(\frac{1}{2}t\sp{(-1/2)})-{1\over t\sp2}\,(t\sp{(1/2)})=0$\\
+$-\frac{1}{4}t\sp{(-3/2)}+{5\over4}t\sp{(-3/2)}-t\sp{(-3/2)}=0$\\
+
+This checks out! The terms all sum to 0, and it works for values of $t>0$, so $y_1(t)$ is a valid solution.\\
+
+For $y_2(t)$, find ${y_2}\sp\prime(t)$ and ${y_2}\sp{\prime\prime}(t)$, then substitute into the ODE to check if it solves for $t>0$:\\
+${y_2}\sp\prime(t) = \frac{d}{dt}[t\sp{-2}] = -2t\sp{-3}$\\
+${y_2}\sp{\prime\prime}(t) = \frac{d}{dt}[-2t\sp{-3}] = 6t\sp{-4}$\\
+
+Substitute into the ODE to check:\\
+$y\sp{\prime\prime}+{5\over2t}\,y\sp\prime-{1\over t\sp2}\,y=0$\\
+$(6t\sp{-4})+{5\over2t}\,(-2t\sp{-3})-{1\over t\sp2}\,(t\sp{-2})=0$\\
+$6t\sp{-4}-5t\sp{-4}-t\sp{-4}=0$\\
+
+This one also checks out! The terms all sum to 0, and it works for values of $t>0$, so $y_2(t)$ is a valid solution.\\
+
+\textcolor{red}{CHECK THE WRONSKIAN}\\
+
+\item
+The general solution of the ODE has the form $y(t)=C_1y_1(t)+C_2y_2(t)$, where $C_1$ and $C_2$ are constants.  Find the constants satisfying the initial conditions $y(1)=2$ and $y\sp\prime(1)=-1$.\\
+
+$y(t)=C_1(t\sp{(1/2)})+C_2(t\sp{-2})$\\
+Plug in the IC $y(1)=2$:\\
+$2=C_1(1)\sp{(1/2)}+C_2(1)\sp{-2}$\\
+$C_1 + C_2 = 2$\\
+$C_1 = 2 - C_2$\\
+
+
+Find $y\sp\prime(t)$ and then apply the second IC:\\
+$y(t)=C_1(t\sp{(1/2)})+C_2(t\sp{-2})$\\
+$y\sp\prime(t)=\frac{1}{2}C_1(t\sp{(-1/2)}) - 2C_2(t\sp{-3})$\\
+Plug in the IC $y\sp\prime(1)=-1$:\\
+$-1=\frac{1}{2}C_1(1)\sp{(-1/2)} - 2C_2(1)\sp{-3}$\\
+$\frac{1}{2}C_1 - 2C_2 = -1$\\
+Plug in $C_1 = 2 - C_2$, found above:\\
+$\frac{1}{2}(2 - C_2) - 2C_2 = -1$\\
+$1 - \frac{1}{2}C_2 - 2C_2 = -1$\\
+$- \frac{5}{2}C_2 = -2$\\
+$C_2 = -2(-\frac{2}{5})$\\
+$\bm{C_2 = \frac{4}{5}}$\\
+
+Now, solve for $C_1$:\\
+$C_1 = 2 - C_2$\\
+$C_1 = 2 - (\frac{4}{5})$\\
+$\bm{C_1 = \frac{6}{5}}$\\
+
+\textbf{So, the general solution of the ODE is:}\\
+$\bm{y(t)=\frac{6}{5}t\sp{(1/2)}+\frac{4}{5}t\sp{-2}}$\\
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) Consider the two constant-coefficient, second-order ODEs:
+\[
+\hbox{(DE 1)}\quad y\sp{\prime\prime}+2y\sp\prime-8y=0\qquad\qquad\hbox{(DE 2)}\quad 3y\sp{\prime\prime}+4y\sp\prime-4y=0
+\]
+\begin{enumerate}
+\item Find all solutions of the form $y(t)=e\sp{rt}$, where $r$ is a constant, for both ODEs.\\
+
+For this subset of special ODEs, the solutions are of a predictable form: $y(t)=e\sp{rt}$\\
+Since we know this is the case, we can substitute in this general form for any $y(t)$ in the ODEs.\\
+
+\textbf{For (DE 1):}\\
+$y\sp{\prime\prime}+2y\sp\prime-8y=0$\\
+$(e\sp{rt})\sp{\prime\prime}+2(e\sp{rt})\sp\prime-8(e\sp{rt})=0$\\
+Evaluate each derivative (in prime notation above) with respect to $t$:\\
+$r\sp{2}(e\sp{rt})+2r(e\sp{rt})-8(e\sp{rt})=0$\\
+Since $e\sp{rt}$ is a leftover common term, factor it out:\\
+$(e\sp{rt})(r\sp{2}+2r-8)=0$\\
+In order to find solutions, we're looking for zeroes/roots. Since the term $e\sp{rt}$ can never $=0$ for values of $t$, the roots must be due to the quadratic.\\
+Take $(r\sp{2}+2r-8)=0$ and factor:\\
+$(r+4)(r-2)=0$\\
+
+\textbf{Roots are $\bm{r=-4}$ and $\bm{r=2}$, so there are two valid solutions for (DE 1):}\\
+\textbf{$\bm{y_{1}(t) = e\sp{-4t}}$ and $\bm{y_{2}(t) = e\sp{2t}}$}\\
+
+\textbf{For (DE 2):}\\
+$3y\sp{\prime\prime}+4y\sp\prime-4y=0$\\
+$3(e\sp{rt})\sp{\prime\prime}+4(e\sp{rt})\sp\prime-4(e\sp{rt})=0$\\
+Evaluate each derivative (in prime notation above) with respect to $t$:\\
+$3r\sp{2}(e\sp{rt})+4r(e\sp{rt})-4(e\sp{rt})=0$\\
+Since $e\sp{rt}$ is a leftover common term, factor it out:\\
+$(e\sp{rt})(3r\sp{2}+4r-4)=0$\\
+In order to find solutions, we're looking for zeroes/roots. Since the term $e\sp{rt}$ can never $=0$ for values of $t$, the roots must be due to the quadratic.\\
+Take $(3r\sp{2}+4r-4)=0$ and apply the quadratic formula:\\
+Where $a=3$, $b=4$, $c=-4$\\
+$r=\frac{-b\pm\sqrt{b^2-4ac}}{2a}=\frac{-(4)\pm\sqrt{(4)^2-4(3)(-4)}}{2(3)}=\frac{-4\pm\sqrt{16+48}}{6}=\frac{-4\pm8}{6}$\\
+$r=\frac{4}{6}$ or $r=\frac{-12}{6}$\\\\
+$r=\frac{2}{3}$ or $r=-2$\\
+
+\textbf{Roots are $\bm{r=\frac{2}{3}}$ and $\bm{r=-2}$, so there are two valid solutions for (DE 2):}\\
+\textbf{$\bm{y_{3}(t) = e\sp{(2/3)t}}$ and $\bm{y_{4}(t) = e\sp{-2t}}$}\\
+
+\item Find the solution satisfying the initial conditions $y(0)=0$ and $y\sp\prime(0)=1$ for both ODEs.\\
+
+Since the term $e\sp{rt}\neq0$, an individual solution of an ODE cannot satisfy the initial conditions here. Each ODE must then have one \textit{overall} solution given these ICs, which will be based on the combination (sum) of its previously found 2 solutions. By adding the individual solutions like $y_1(t)$ and $y_2(t)$ for (DE 1), and assuming they have constant coefficients, the coefficients could feasibly sum to $=0$, as is necessary.\\
+
+\textbf{For (DE 1), this looks like:}\\
+$y(t) = C_{1}e\sp{-4t} + C_{2}e\sp{2t}$\\
+Substitute $y(0)=0$ into $y(t)$:\\
+$0 = C_{1}e\sp{0} + C_{2}e\sp{0}$\\
+$C_{1} + C_{2}=0$\\
+Cannot solve for both constants with only one equation, so determine $y\prime(t)$ and substitute in the second IC, $y\prime(0)=1$:\\
+$y\prime(t) = (-4)C_{1}e\sp{-4t} + (2)C_{2}e\sp{2t}$\\
+$1 = (-4)C_{1}e\sp{0} + (2)C_{2}e\sp{0}$\\
+$-4C_{1} + 2C_{2} = 1$\\
+
+So $C_{2}=\frac{1+4C_{1}}{2}$\\
+Plug this into $C_{1} + C_{2}=0$:\\
+$C_{1} + \frac{1+4C_{1}}{2}=0$\\
+$C_{1} + \frac{1}{2}+2C_{1}=0$\\
+$3C_{1}=-\frac{1}{2}$\\
+$\bm{C_{1}=-\frac{1}{2}*\frac{1}{3} = -\frac{1}{6}}$\\
+Now, solve for $C_{2}$ as well\\
+$C_{1} + C_{2}=0$\\
+$-\frac{1}{6} + C_{2}=0$\\
+$\bm{C_{2}=\frac{1}{6}}$\\
+
+\textbf{So the final solution for (DE 1) is:}\\
+$\bm{y(t) = -\frac{1}{6}e\sp{-4t} + \frac{1}{6}e\sp{2t}}$\\
+
+%%%%%%%%% DE %$$$$$$$$$$$$$$$$$$
+\rule{15cm}{2pt}\\
+\textbf{For (DE 2), the general solution looks like:}\\
+$y(t) = C_{3}e\sp{(2/3)t} + C_{4}e\sp{-2t}$\\
+Substitute $y(0)=0$ into $y(t)$:\\
+$0 = C_{3}e\sp{0} + C_{4}e\sp{0}$\\
+$C_{3} + C_{4}=0$\\
+$C_{3}= -C_{4}$\\
+
+Cannot solve for both constants with only one equation, so determine $y\prime(t)$ and substitute in the second IC, $y\sp\prime(0)=1$:\\
+$y\sp\prime(t) = (2/3)C_{3}e\sp{(2/3)t} + (-2)C_{4}e\sp{-2t}$\\
+$1 = (2/3)C_{3}e\sp{0} + (-2)C_{4}e\sp{0}$\\
+$\frac{2}{3}C_{3} - 2C_{4} = 1$\\
+
+Plug in $C_{3}= -C_{4}$:\\
+$-\frac{2}{3}C_{4} - 2C_{4} = 1$\\\\
+$-\frac{2}{3}C_{4} - \frac{6}{3}C_{4} = 1$\\\\
+$-\frac{8}{3}C_{4}= 1$\\
+$\bm{C_{4}= -\frac{8}{3}}$\\
+
+Now, solve for $C_{3}$ as well\\
+$C_{3}= -C_{4}$\\
+$\bm{C_{3}= \frac{8}{3}}$\\
+
+\textbf{So the final solution for (DE 2) is:}\\
+$\bm{y(t) = \frac{8}{3}e\sp{(2/3)t} - \frac{8}{3}e\sp{-2t}}$\\
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+\end{document}
+

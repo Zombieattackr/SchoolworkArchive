@@ -1,0 +1,423 @@
+Room CARNEG_101
+Dept  Coursenum  Class Title                    Day       Start Time  End Time
+----  ---------  -----------------------------  --------  ----------  --------
+interdisc  1971-01    PHIL,_TECH_&_THE_HUMAN_FUTURE  Monday    02:00PM     03:50PM 
+interdisc  1971-01    PHIL,_TECH_&_THE_HUMAN_FUTURE  Thursday  02:00PM     03:50PM 
+2 entries
+
+Room CARNEG_106
+Dept  Coursenum  Class Title          Day      Start Time  End Time
+----  ---------  -------------------  -------  ----------  --------
+interdisc  1410-01    CENTURY_OF_THE_GENE  Tuesday  12:00PM     01:50PM 
+interdisc  1410-01    CENTURY_OF_THE_GENE  Friday   12:00PM     01:50PM 
+2 entries
+
+Room CARNEG_206
+Dept  Coursenum  Class Title                   Day      Start Time  End Time
+----  ---------  ----------------------------  -------  ----------  --------
+interdisc  1974-01    DESIGN_AS_A_GLOBAL_CHALLENGE  Tuesday  10:00AM     11:50AM 
+interdisc  1974-01    DESIGN_AS_A_GLOBAL_CHALLENGE  Friday   10:00AM     11:50AM 
+2 entries
+
+Room CARNEG_210
+Dept  Coursenum  Class Title         Day       Start Time  End Time
+----  ---------  ------------------  --------  ----------  --------
+interdisc  1976-02    THE_GENOME_AND_YOU  Monday    02:00PM     03:50PM 
+interdisc  1976-02    THE_GENOME_AND_YOU  Thursday  02:00PM     03:50PM 
+2 entries
+
+Room DARRIN_235
+Dept  Coursenum  Class Title                 Day       Start Time  End Time
+----  ---------  --------------------------  --------  ----------  --------
+interdisc  1967-01    RELIGION_IN_A_GLOBAL_WORLD  Monday    04:00PM     05:50PM 
+interdisc  1967-01    RELIGION_IN_A_GLOBAL_WORLD  Thursday  04:00PM     05:50PM 
+2 entries
+
+Room DARRIN_308
+Dept  Coursenum  Class Title                    Day        Start Time  End Time
+----  ---------  -----------------------------  ---------  ----------  --------
+chemistry  1100-06    CHEMISTRY_I                    Tuesday    08:00AM     09:20AM 
+chemistry  1100-10    CHEMISTRY_I                    Tuesday    08:00AM     09:20AM 
+chemistry  1100-12    CHEMISTRY_I                    Tuesday    08:00AM     09:20AM 
+chemistry  1100-13    CHEMISTRY_I                    Tuesday    08:00AM     09:20AM 
+chemistry  1100-16    CHEMISTRY_I                    Tuesday    08:00AM     09:20AM 
+chemistry  1110-02    CHEMISTRY_I_WITH_ADVANCED_LAB  Tuesday    08:00AM     09:20AM 
+chemistry  1100-04    CHEMISTRY_I                    Tuesday    10:00AM     11:20AM 
+chemistry  1100-09    CHEMISTRY_I                    Tuesday    10:00AM     11:20AM 
+chemistry  1100-11    CHEMISTRY_I                    Tuesday    10:00AM     11:20AM 
+chemistry  1100-14    CHEMISTRY_I                    Tuesday    10:00AM     11:20AM 
+chemistry  1100-17    CHEMISTRY_I                    Tuesday    10:00AM     11:20AM 
+chemistry  1110-01    CHEMISTRY_I_WITH_ADVANCED_LAB  Tuesday    10:00AM     11:20AM 
+chemistry  1100-05    CHEMISTRY_I                    Tuesday    12:00PM     01:20PM 
+chemistry  1100-07    CHEMISTRY_I                    Tuesday    12:00PM     01:20PM 
+chemistry  1100-08    CHEMISTRY_I                    Tuesday    12:00PM     01:20PM 
+chemistry  1100-15    CHEMISTRY_I                    Tuesday    12:00PM     01:20PM 
+chemistry  1100-18    CHEMISTRY_I                    Tuesday    12:00PM     01:20PM 
+chemistry  1110-03    CHEMISTRY_I_WITH_ADVANCED_LAB  Tuesday    12:00PM     01:20PM 
+1337  1200-01    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-02    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-03    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-04    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-05    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-06    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-07    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-08    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-09    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+1337  1200-10    DATA_STRUCTURES                Tuesday    02:00PM     03:50PM 
+chemistry  1100-04    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-05    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-07    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-08    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-09    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-11    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-12    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-14    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-15    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-17    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-18    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1110-01    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  08:00AM     08:50AM 
+chemistry  1110-02    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  08:00AM     08:50AM 
+chemistry  1100-06    CHEMISTRY_I                    Friday     08:00AM     09:20AM 
+chemistry  1100-10    CHEMISTRY_I                    Friday     08:00AM     09:20AM 
+chemistry  1100-12    CHEMISTRY_I                    Friday     08:00AM     09:20AM 
+chemistry  1100-13    CHEMISTRY_I                    Friday     08:00AM     09:20AM 
+chemistry  1100-16    CHEMISTRY_I                    Friday     08:00AM     09:20AM 
+chemistry  1110-02    CHEMISTRY_I_WITH_ADVANCED_LAB  Friday     08:00AM     09:20AM 
+chemistry  1100-04    CHEMISTRY_I                    Friday     10:00AM     11:20AM 
+chemistry  1100-09    CHEMISTRY_I                    Friday     10:00AM     11:20AM 
+chemistry  1100-11    CHEMISTRY_I                    Friday     10:00AM     11:20AM 
+chemistry  1100-14    CHEMISTRY_I                    Friday     10:00AM     11:20AM 
+chemistry  1100-17    CHEMISTRY_I                    Friday     10:00AM     11:20AM 
+chemistry  1110-01    CHEMISTRY_I_WITH_ADVANCED_LAB  Friday     10:00AM     11:20AM 
+chemistry  1100-05    CHEMISTRY_I                    Friday     12:00PM     01:20PM 
+chemistry  1100-07    CHEMISTRY_I                    Friday     12:00PM     01:20PM 
+chemistry  1100-08    CHEMISTRY_I                    Friday     12:00PM     01:20PM 
+chemistry  1100-15    CHEMISTRY_I                    Friday     12:00PM     01:20PM 
+chemistry  1100-18    CHEMISTRY_I                    Friday     12:00PM     01:20PM 
+chemistry  1110-03    CHEMISTRY_I_WITH_ADVANCED_LAB  Friday     12:00PM     01:20PM 
+1337  1200-01    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-02    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-03    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-04    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-05    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-06    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-07    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-08    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-09    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+1337  1200-10    DATA_STRUCTURES                Friday     02:00PM     03:50PM 
+69 entries
+
+Room DARRIN_318
+Dept  Coursenum  Class Title      Day       Start Time  End Time
+----  ---------  ---------------  --------  ----------  --------
+1337  1200-01    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-02    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-03    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-04    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-05    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-06    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-07    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-08    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-09    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+1337  1200-10    DATA_STRUCTURES  Thursday  06:00PM     07:50PM 
+10 entries
+
+Room DARRIN_330
+Dept  Coursenum  Class Title        Day        Start Time  End Time
+----  ---------  -----------------  ---------  ----------  --------
+chemistry  1600-01    MATERIALS_SCIENCE  Wednesday  01:00PM     01:50PM 
+1 entries
+
+Room DARRIN_337
+Dept  Coursenum  Class Title           Day        Start Time  End Time
+----  ---------  --------------------  ---------  ----------  --------
+interdisc  1964-01    ARE_HUMANS_RATIONAL?  Monday     04:00PM     05:50PM 
+chemistry  1600-02    MATERIALS_SCIENCE     Wednesday  01:00PM     01:50PM 
+interdisc  1964-01    ARE_HUMANS_RATIONAL?  Thursday   04:00PM     05:50PM 
+3 entries
+
+Room J-ROWL_2C25
+Dept  Coursenum  Class Title    Day        Start Time  End Time
+----  ---------  -------------  ---------  ----------  --------
+earth_science  2210-01    FIELD_METHODS  Wednesday  10:00AM     11:50AM 
+earth_science  2210-01    FIELD_METHODS  Wednesday  12:00PM     03:50PM 
+2 entries
+
+Room J-ROWL_3W13
+Dept  Coursenum  Class Title                    Day       Start Time  End Time
+----  ---------  -----------------------------  --------  ----------  --------
+earth_science  4200-01    APPLIED_MICROPALEONTOLOGY      Monday    10:00AM     11:50AM 
+earth_science  6200-01    ADV_APPLIED_MICROPALEONTOLOGY  Monday    10:00AM     11:50AM 
+earth_science  4200-01    APPLIED_MICROPALEONTOLOGY      Monday    12:00PM     01:50PM 
+earth_science  6200-01    ADV_APPLIED_MICROPALEONTOLOGY  Monday    12:00PM     01:50PM 
+earth_science  2120-01    STRUCTURAL_GEOLOGY             Monday    02:00PM     03:50PM 
+earth_science  2960-01    INTRO_TO_GEOBIOLOGY            Tuesday   10:00AM     11:50AM 
+earth_science  4200-01    APPLIED_MICROPALEONTOLOGY      Thursday  10:00AM     11:50AM 
+earth_science  6200-01    ADV_APPLIED_MICROPALEONTOLOGY  Thursday  10:00AM     11:50AM 
+earth_science  2120-01    STRUCTURAL_GEOLOGY             Thursday  02:00PM     03:50PM 
+earth_science  2120-01    STRUCTURAL_GEOLOGY             Thursday  04:00PM     05:50PM 
+earth_science  2960-01    INTRO_TO_GEOBIOLOGY            Friday    10:00AM     11:50AM 
+11 entries
+
+Room LALLY_02
+Dept  Coursenum  Class Title                  Day       Start Time  End Time
+----  ---------  ---------------------------  --------  ----------  --------
+interdisc  1968-01    BLENDED_REALITY_&__INTERNET  Monday    02:00PM     03:50PM 
+interdisc  1968-01    BLENDED_REALITY_&__INTERNET  Thursday  02:00PM     03:50PM 
+2 entries
+
+Room LALLY_102
+Dept  Coursenum  Class Title      Day        Start Time  End Time
+----  ---------  ---------------  ---------  ----------  --------
+1337  1200-02    DATA_STRUCTURES  Wednesday  10:00AM     11:50AM 
+1337  1200-04    DATA_STRUCTURES  Wednesday  12:00PM     01:50PM 
+1337  1200-05    DATA_STRUCTURES  Wednesday  02:00PM     03:50PM 
+1337  1200-07    DATA_STRUCTURES  Wednesday  04:00PM     05:50PM 
+1337  1200-08    DATA_STRUCTURES  Wednesday  06:00PM     07:50PM 
+5 entries
+
+Room LALLY_104
+Dept  Coursenum  Class Title      Day        Start Time  End Time
+----  ---------  ---------------  ---------  ----------  --------
+earth_science  4350-01    DATA_SCIENCE     Monday     09:00AM     11:50AM 
+earth_science  6350-01    DATA_SCIENCE     Monday     09:00AM     11:50AM 
+1337  1200-01    DATA_STRUCTURES  Wednesday  10:00AM     11:50AM 
+1337  1200-03    DATA_STRUCTURES  Wednesday  12:00PM     01:50PM 
+1337  1200-06    DATA_STRUCTURES  Wednesday  02:00PM     03:50PM 
+1337  1200-09    DATA_STRUCTURES  Wednesday  04:00PM     05:50PM 
+1337  1200-10    DATA_STRUCTURES  Wednesday  06:00PM     07:50PM 
+7 entries
+
+Room LOW_3045
+Dept  Coursenum  Class Title            Day      Start Time  End Time
+----  ---------  ---------------------  -------  ----------  --------
+earth_science  4710-01    GROUNDWATER_HYDROLOGY  Tuesday  12:00PM     01:50PM 
+earth_science  4710-01    GROUNDWATER_HYDROLOGY  Friday   12:00PM     01:50PM 
+2 entries
+
+Room LOW_4050
+Dept  Coursenum  Class Title                  Day        Start Time  End Time
+----  ---------  ---------------------------  ---------  ----------  --------
+1337  2200-01    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  10:00AM     10:50AM 
+1337  2200-04    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  11:00AM     11:50AM 
+1337  2200-03    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  04:00PM     04:50PM 
+3 entries
+
+Room PITTS_4206
+Dept  Coursenum  Class Title                     Day      Start Time  End Time
+----  ---------  ------------------------------  -------  ----------  --------
+interdisc  1980-01    SOCIOLGY_OF_INEQUAL_IN_U.S.SOC  Tuesday  02:00PM     03:50PM 
+interdisc  1980-01    SOCIOLGY_OF_INEQUAL_IN_U.S.SOC  Friday   02:00PM     03:50PM 
+2 entries
+
+Room RCKTTS_203
+Dept  Coursenum  Class Title                  Day        Start Time  End Time
+----  ---------  ---------------------------  ---------  ----------  --------
+1337  2200-02    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  12:00PM     12:50PM 
+1 entries
+
+Room RCKTTS_211
+Dept  Coursenum  Class Title        Day        Start Time  End Time
+----  ---------  -----------------  ---------  ----------  --------
+chemistry  1600-03    MATERIALS_SCIENCE  Wednesday  01:00PM     01:50PM 
+1 entries
+
+Room SAGE_2211
+Dept  Coursenum  Class Title   Day       Start Time  End Time
+----  ---------  ------------  --------  ----------  --------
+interdisc  1610-01    PDI_STUDIO_I  Monday    02:00PM     04:50PM 
+interdisc  1610-01    PDI_STUDIO_I  Thursday  02:00PM     04:50PM 
+2 entries
+
+Room SAGE_2411
+Dept  Coursenum  Class Title                    Day       Start Time  End Time
+----  ---------  -----------------------------  --------  ----------  --------
+interdisc  1960-01    MAKING_GAMES_TO_CHG_THE_WORLD  Monday    04:00PM     05:50PM 
+interdisc  1960-02    MAKING_GAMES_TO_CHG_THE_WORLD  Monday    06:00PM     07:50PM 
+interdisc  1960-01    MAKING_GAMES_TO_CHG_THE_WORLD  Thursday  04:00PM     05:50PM 
+interdisc  1960-02    MAKING_GAMES_TO_CHG_THE_WORLD  Thursday  06:00PM     07:50PM 
+4 entries
+
+Room SAGE_2704
+Dept  Coursenum  Class Title         Day      Start Time  End Time
+----  ---------  ------------------  -------  ----------  --------
+interdisc  1976-01    THE_GENOME_AND_YOU  Tuesday  10:00AM     11:50AM 
+interdisc  1976-01    THE_GENOME_AND_YOU  Friday   10:00AM     11:50AM 
+2 entries
+
+Room SAGE_2707
+Dept  Coursenum  Class Title              Day      Start Time  End Time
+----  ---------  -----------------------  -------  ----------  --------
+interdisc  1973-01    HUMAN_RIGHTS_IN_HISTORY  Tuesday  08:00AM     09:50AM 
+interdisc  1973-01    HUMAN_RIGHTS_IN_HISTORY  Friday   08:00AM     09:50AM 
+2 entries
+
+Room SAGE_3205
+Dept  Coursenum  Class Title                Day      Start Time  End Time
+----  ---------  -------------------------  -------  ----------  --------
+interdisc  1963-01    TECH_&_SOCIAL_INTER_IN_US  Tuesday  10:00AM     11:50AM 
+interdisc  1963-01    TECH_&_SOCIAL_INTER_IN_US  Friday   10:00AM     11:50AM 
+2 entries
+
+Room SAGE_3303
+Dept  Coursenum  Class Title                  Day        Start Time  End Time
+----  ---------  ---------------------------  ---------  ----------  --------
+1337  2200-01    FOUNDATIONS_OF_COMPUTER_SCI  Monday     10:00AM     11:50AM 
+1337  2200-02    FOUNDATIONS_OF_COMPUTER_SCI  Monday     10:00AM     11:50AM 
+1337  2200-03    FOUNDATIONS_OF_COMPUTER_SCI  Monday     10:00AM     11:50AM 
+1337  2200-04    FOUNDATIONS_OF_COMPUTER_SCI  Monday     10:00AM     11:50AM 
+1337  2200-01    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  08:00AM     09:50AM 
+1337  2200-02    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  08:00AM     09:50AM 
+1337  2200-03    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  08:00AM     09:50AM 
+1337  2200-04    FOUNDATIONS_OF_COMPUTER_SCI  Wednesday  08:00AM     09:50AM 
+1337  2200-01    FOUNDATIONS_OF_COMPUTER_SCI  Thursday   10:00AM     11:50AM 
+1337  2200-02    FOUNDATIONS_OF_COMPUTER_SCI  Thursday   10:00AM     11:50AM 
+1337  2200-03    FOUNDATIONS_OF_COMPUTER_SCI  Thursday   10:00AM     11:50AM 
+1337  2200-04    FOUNDATIONS_OF_COMPUTER_SCI  Thursday   10:00AM     11:50AM 
+12 entries
+
+Room SAGE_4112
+Dept  Coursenum  Class Title                     Day       Start Time  End Time
+----  ---------  ------------------------------  --------  ----------  --------
+interdisc  1350-01    LAW,_VALUES,_AND_PUBLIC_POLICY  Monday    08:00AM     09:50AM 
+interdisc  1350-01    LAW,_VALUES,_AND_PUBLIC_POLICY  Thursday  08:00AM     09:50AM 
+2 entries
+
+Room SAGE_5510
+Dept  Coursenum  Class Title        Day        Start Time  End Time
+----  ---------  -----------------  ---------  ----------  --------
+chemistry  1600-04    MATERIALS_SCIENCE  Wednesday  01:00PM     01:50PM 
+1 entries
+
+Room SAGE_5711
+Dept  Coursenum  Class Title                   Day       Start Time  End Time
+----  ---------  ----------------------------  --------  ----------  --------
+interdisc  1290-01    AMERICAN_POLITICS_IN_CRISIS   Monday    10:00AM     11:50AM 
+interdisc  1979-01    RACE,_CLASS,_GENDER_AND_TECH  Tuesday   12:00PM     01:50PM 
+interdisc  1290-01    AMERICAN_POLITICS_IN_CRISIS   Thursday  10:00AM     11:50AM 
+interdisc  1979-01    RACE,_CLASS,_GENDER_AND_TECH  Friday    12:00PM     01:50PM 
+4 entries
+
+Room TBA
+Dept  Coursenum  Class Title                    Day        Start Time  End Time
+----  ---------  -----------------------------  ---------  ----------  --------
+chemistry  1100-08    CHEMISTRY_I                    Monday     11:00AM     11:50AM 
+chemistry  1100-06    CHEMISTRY_I                    Tuesday    10:00AM     10:50AM 
+chemistry  1100-05    CHEMISTRY_I                    Tuesday    11:00AM     11:50AM 
+chemistry  1100-07    CHEMISTRY_I                    Tuesday    05:00PM     05:50PM 
+chemistry  1110-01    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  12:00PM     12:50PM 
+chemistry  1110-03    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  02:00PM     02:50PM 
+chemistry  1110-02    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  03:00PM     03:50PM 
+chemistry  1100-13    CHEMISTRY_I                    Wednesday  05:00PM     05:50PM 
+chemistry  1100-14    CHEMISTRY_I                    Wednesday  05:00PM     05:50PM 
+chemistry  1100-15    CHEMISTRY_I                    Wednesday  05:00PM     05:50PM 
+chemistry  1100-04    CHEMISTRY_I                    Thursday   10:00AM     10:50AM 
+chemistry  1100-12    CHEMISTRY_I                    Thursday   11:00AM     11:50AM 
+chemistry  1100-16    CHEMISTRY_I                    Thursday   04:00PM     04:50PM 
+chemistry  1100-17    CHEMISTRY_I                    Thursday   04:00PM     04:50PM 
+chemistry  1100-11    CHEMISTRY_I                    Thursday   05:00PM     05:50PM 
+chemistry  1100-10    CHEMISTRY_I                    Friday     10:00AM     10:50AM 
+chemistry  1100-18    CHEMISTRY_I                    Friday     11:00AM     11:50AM 
+chemistry  1100-09    CHEMISTRY_I                    Friday     01:00PM     01:50PM 
+18 entries
+
+Room TROY_2018
+Dept  Coursenum  Class Title                Day      Start Time  End Time
+----  ---------  -------------------------  -------  ----------  --------
+interdisc  1972-01    GREAT_IDEAS_IN_PHILOSOPHY  Tuesday  10:00AM     11:50AM 
+interdisc  1972-01    GREAT_IDEAS_IN_PHILOSOPHY  Friday   10:00AM     11:50AM 
+2 entries
+
+Room WALKER_5113
+Dept  Coursenum  Class Title                    Day        Start Time  End Time
+----  ---------  -----------------------------  ---------  ----------  --------
+chemistry  1100-08    CHEMISTRY_I                    Monday     08:00AM     10:50AM 
+chemistry  1100-10    CHEMISTRY_I                    Monday     11:00AM     01:50PM 
+chemistry  1100-09    CHEMISTRY_I                    Monday     02:00PM     04:50PM 
+chemistry  1100-05    CHEMISTRY_I                    Tuesday    08:00AM     10:50AM 
+chemistry  1100-06    CHEMISTRY_I                    Tuesday    11:00AM     01:50PM 
+chemistry  1100-07    CHEMISTRY_I                    Tuesday    02:00PM     04:50PM 
+chemistry  1100-18    CHEMISTRY_I                    Tuesday    05:00PM     07:50PM 
+chemistry  1110-01    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  09:00AM     11:50AM 
+chemistry  1110-02    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  12:00PM     02:50PM 
+chemistry  1110-03    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  03:00PM     05:50PM 
+chemistry  1100-13    CHEMISTRY_I                    Wednesday  06:00PM     08:50PM 
+chemistry  1100-14    CHEMISTRY_I                    Wednesday  06:00PM     08:50PM 
+chemistry  1100-15    CHEMISTRY_I                    Wednesday  06:00PM     08:50PM 
+chemistry  1100-12    CHEMISTRY_I                    Thursday   08:00AM     10:50AM 
+chemistry  1100-04    CHEMISTRY_I                    Thursday   11:00AM     01:50PM 
+chemistry  1100-11    CHEMISTRY_I                    Thursday   02:00PM     04:50PM 
+chemistry  1100-16    CHEMISTRY_I                    Thursday   05:00PM     07:50PM 
+chemistry  1100-17    CHEMISTRY_I                    Thursday   05:00PM     07:50PM 
+18 entries
+
+Room WALKER_6113
+Dept  Coursenum  Class Title        Day       Start Time  End Time
+----  ---------  -----------------  --------  ----------  --------
+chemistry  1600-01    MATERIALS_SCIENCE  Monday    08:00AM     09:50AM 
+chemistry  1600-02    MATERIALS_SCIENCE  Monday    10:00AM     11:50AM 
+chemistry  1600-03    MATERIALS_SCIENCE  Monday    12:00PM     01:50PM 
+chemistry  1600-04    MATERIALS_SCIENCE  Monday    02:00PM     03:50PM 
+chemistry  1600-01    MATERIALS_SCIENCE  Thursday  08:00AM     09:50AM 
+chemistry  1600-02    MATERIALS_SCIENCE  Thursday  10:00AM     11:50AM 
+chemistry  1600-03    MATERIALS_SCIENCE  Thursday  12:00PM     01:50PM 
+chemistry  1600-04    MATERIALS_SCIENCE  Thursday  02:00PM     03:50PM 
+8 entries
+
+Room WEST_112
+Dept  Coursenum  Class Title                    Day       Start Time  End Time
+----  ---------  -----------------------------  --------  ----------  --------
+interdisc  1977-01    WAR_&_TECH_PAST,PRES,FUTURE    Monday    10:00AM     11:50AM 
+interdisc  1300-01    RACE_&_FILM_IN_US_CULT_&_HIST  Monday    04:00PM     05:50PM 
+interdisc  1966-01    MUSIC_AND_PROTEST              Tuesday   08:00AM     09:50AM 
+interdisc  1977-01    WAR_&_TECH_PAST,PRES,FUTURE    Thursday  10:00AM     11:50AM 
+interdisc  1300-01    RACE_&_FILM_IN_US_CULT_&_HIST  Thursday  04:00PM     05:50PM 
+interdisc  1966-01    MUSIC_AND_PROTEST              Friday    08:00AM     09:50AM 
+6 entries
+
+Room WEST_118
+Dept  Coursenum  Class Title       Day       Start Time  End Time
+----  ---------  ----------------  --------  ----------  --------
+interdisc  1962-01    MUSIC_AND_NATURE  Monday    04:00PM     05:50PM 
+interdisc  1962-01    MUSIC_AND_NATURE  Thursday  04:00PM     05:50PM 
+2 entries
+
+Room WEST_211
+Dept  Coursenum  Class Title        Day       Start Time  End Time
+----  ---------  -----------------  --------  ----------  --------
+interdisc  1969-02    HISTORY_OF_DESIGN  Monday    02:00PM     03:50PM 
+interdisc  1969-02    HISTORY_OF_DESIGN  Thursday  02:00PM     03:50PM 
+2 entries
+
+Room WEST_214
+Dept  Coursenum  Class Title                    Day        Start Time  End Time
+----  ---------  -----------------------------  ---------  ----------  --------
+interdisc  1965-01    OPEN_SOURCE_ART,MUSIC,CULTURE  Monday     04:00PM     05:50PM 
+interdisc  1965-02    OPEN_SOURCE_ART,MUSIC,CULTURE  Monday     04:00PM     05:50PM 
+interdisc  1965-01    OPEN_SOURCE_ART,MUSIC,CULTURE  Wednesday  12:00PM     01:50PM 
+interdisc  1965-02    OPEN_SOURCE_ART,MUSIC,CULTURE  Wednesday  02:00PM     03:50PM 
+4 entries
+
+Room WEST_326
+Dept  Coursenum  Class Title                    Day       Start Time  End Time
+----  ---------  -----------------------------  --------  ----------  --------
+interdisc  1970-01    DEEP_LISTENING                 Monday    08:00AM     09:50AM 
+interdisc  1961-01    CULTIV_CURIOSITY_ARTS_&_NEURO  Monday    12:00PM     01:50PM 
+interdisc  1961-02    CULTIV_CURIOSITY_ARTS_&_NEURO  Monday    12:00PM     01:50PM 
+interdisc  1970-02    DEEP_LISTENING                 Monday    08:00PM     09:50PM 
+interdisc  1970-01    DEEP_LISTENING                 Thursday  08:00AM     09:50AM 
+interdisc  1961-01    CULTIV_CURIOSITY_ARTS_&_NEURO  Thursday  12:00PM     01:50PM 
+interdisc  1961-02    CULTIV_CURIOSITY_ARTS_&_NEURO  Thursday  12:00PM     01:50PM 
+interdisc  1970-02    DEEP_LISTENING                 Thursday  08:00PM     09:50PM 
+8 entries
+
+Room WEST_AUD
+Dept  Coursenum  Class Title                    Day        Start Time  End Time
+----  ---------  -----------------------------  ---------  ----------  --------
+chemistry  1100-06    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-10    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-13    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1100-16    CHEMISTRY_I                    Wednesday  08:00AM     08:50AM 
+chemistry  1110-03    CHEMISTRY_I_WITH_ADVANCED_LAB  Wednesday  08:00AM     08:50AM 
+5 entries
+

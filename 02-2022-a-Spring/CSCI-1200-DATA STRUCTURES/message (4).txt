@@ -1,0 +1,61 @@
+//determining player
+    std::string token;
+    if (player==true) {//player 1
+        token=p1_token;
+    }
+    else if (player==false) { //player 2
+        token=p2_token;
+    }
+    //adding tokens
+    int current_row;
+    if (col<total_cols) { //adds token to a currently existing column
+        if (m_data[col]==NULL) { //if null
+            //std::cout << " HELLO " <<std::endl;
+            m_data[col] = new std::string[1]; //creates an array for the col
+            m_data[col][0]=token;
+            current_row=0;
+            col_data[col]=1;
+        }
+        else if (m_data[col]!=NULL) { //if total rows increases by 1 OR board does not increase
+            //std::cout << " HELLO2 " << std::endl;
+            if ( ((*this).numTokensInColumn(col)+1)>total_rows) {
+                total_rows=total_rows+1;
+            }
+            std::string *temp;
+            temp = new std::string[(*this).numTokensInColumn(col)+1];
+            for (int i=0; i<(*this).numTokensInColumn(col); i++) { //copies contents to temp
+                temp[i]=m_data[col][i];
+            }
+            temp[(*this).numTokensInColumn(col)]=token;//adds new token
+            current_row=(*this).numTokensInColumn(col);
+            delete [] m_data[col]; //removes old col
+            m_data[col] = temp;
+            col_data[col]=col_data[col]+1;
+        }
+    }
+    else if (col>=total_cols) { //adds a column to the right
+        //std::cout << " HELLO3 " << std::endl;
+        std::string** temp = new std::string* [col+1];
+        int* temp_col_data=new int [col+1];
+        for (int i=0; i<(col+1); i++) { //copies contents to temp
+            if (i<total_cols) {
+                temp[i]=m_data[i];
+                temp_col_data[i]=col_data[i];
+            }
+            else if (i==col) {
+                temp[i] = new std::string[1]; //creates an array for the col
+                temp[i][0]=token; //adds new token
+                current_row=0;
+                temp_col_data[i]=1;
+            }
+            else if (i<col) {
+                temp[i]=NULL;
+                temp_col_data[i]=0;
+            }
+        }
+        delete [] m_data; //removes old board
+        m_data=temp;
+        delete [] col_data;
+        col_data=temp_col_data;
+        total_cols=col+1;
+    }

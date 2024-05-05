@@ -1,0 +1,58 @@
+1 page crib double sided
+CALCULATOR :)
+topics:
+	Time Complexity:
+		\Theta upper, \theta exact, \Omega lower
+		bit complexity with n bits, n=log_2 N
+		to show something is \theta, 0 <= c1*f() < g() <= c2*f()
+			ex: 2^2n in O(2^n)?
+			0 <= 2^2n <= c2^n, not possible, no.
+		proof by induction, base case, assume it's true for n, show it's true for n+1
+			show (n+a)^b=\theta(n^b)
+			0 <= c1 n^b <= (n+a)^b <= c2 n^b
+			n+a <= 2n  assuming |a| <= n
+			n+a >= n-|a|
+			n+a >= 1/2 n  when |a| <= 1/2 n
+			when n>= 2*|a|
+			0<= 1/2 n <= n+a <= 2n
+			c1= (1/2)^b, c2=2^b n_0=2*|a|
+		N! where N is k bits, how many bits is N!
+		N^2*k^2=N^2(log_2 N)^2
+		\Theta(N*k) = \Theta(N log_2 N) bits
+	Modular arithmetic:
+		is 4^1536 _= 9^6822 mod(35)
+		x^86 _= 6 mod 29
+			35 = 5*7
+			fermats theorem
+			x^4 _= 1 mod 5    x^6 _= 1 mod 7
+			x^4^6 _= 1 mod 5
+			x^6^4 _= 1 mod 7
+			5 and 7 both divides x^24 -1
+			since 35=5*7
+			x^24 -1 is also divided by 35
+			x^24 -1 = 0 mod 35
+			x^24 = 1 mod 35
+			check:
+			4^1536=2^24^64=1=1 mod 35
+			6^4824=9^24^201 = 1 mod 35
+			yes
+	Recursion, Master's theorem
+		T(n)=8T(n/4)+O(n)
+			for a=8 b=4 d=1 O(n^1.5)
+		T(n)=a T(n/b) +...
+
+	Finding a particular element in a list
+		sorting
+		chose the median
+		chose the kth smallest
+		randomly chosen, quick sort with pivot and stuff
+		average case analysis
+
+	Graph theory
+	shortest path? 
+	undirected unweighted: Breadth First Search
+	undirected weighted: Dijkstra's algorithm
+	negative weights?: Balford's algorithm - runs from each node in the graph- Dijkstra's from each node.
+	net negative loop: infinite loop.
+	directed: break into strongly connected components
+	

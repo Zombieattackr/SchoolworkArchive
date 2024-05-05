@@ -1,0 +1,200 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 9} \smallskip\\ Due: 11pm, Tuesday, November 22, 2022}\\
+\textbf{Submitted by:}\\
+\begin{tabular}{ c c c }
+\textbf{Joseph Hutchinson} & \textbf{662022852} & \textbf{Section 17}\\
+\end{tabular}
+
+\end{center}
+\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 7, pages 198--199: 1(a,c), 2(a), 3(c,d), 4(a,d), 5(a,e), 6(a,e).
+\item
+Exercises from Chapter 7, page 204: 1(c,f), 2(a), 3.
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+\item (5 points)  Let
+\[
+f(x)=\left\{
+\begin{array}{cl}
+e\sp{x} & \hbox{for $0\le x<1$}\smallskip\\
+e\sp{-x} & \hbox{for $1\le x\le 2$}
+\end{array}
+\right.
+\]
+If $C(x)$ is the Fourier cosine series of $f(x)$ with $L=2$, then $C(-1)$ equals
+\begin{description}
+\item[A] $e$
+\item[B] $\bm{-1/e}$
+\item\textbf{\textcolor{red}{[C] $(e+1/e)/2$}}
+\item[D] $C(-1)$ is not defined
+\end{description}
+
+\bigskip
+\item (5 points) Let $u(x,t)=\cos(x-2t)$ and $v(x,t)=(x/2+t)\sp3$, and let $w(x,t)$ solve the PDE $w_{tt}=4w_{xx}$.  Which of the following is true:
+\begin{description}
+% B and D are INCORRECT answers, because u(x,t) DOES satisfy the PDE
+\item[A] $w=u(x,t)$ is a solution of the PDE, but $v(x,t)$ is not
+\item[B] $w=v(x,t)$ is a solution of the PDE, but $u(x,t)$ is not
+\item\textbf{\textcolor{red}{[C] $w=u(x,t)$ and $w=v(x,t)$ are both solutions of the PDE}}
+\item[D] Neither $u(x,t)$ nor $v(x,t)$ are solutions of the PDE
+\end{description}
+\end{enumerate}
+
+\newpage\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  Let $S(x)$ be the Fourier sine series of $f(x)$, where
+\[
+f(x)=\left\{
+\begin{array}{cl}
+x & \hbox{for $0\le x<1$}\smallskip\\
+-1 & \hbox{for $1\le x\le 2$}
+\end{array}
+\right.
+\]
+\begin{enumerate}
+\item Determine the Fourier sine coefficients of $S(x)$ assuming $L=2$.\\
+\[
+b_n = {2\over L}\int_{0}^{L}f(x)\sin({n\pi x \over L})dx
+\]
+$b_n = \textcolor{teal}{\int_{0}^{1}x\sin({n\pi x \over 2})dx}+ \textcolor{purple}{\int_{1}^{2}-\sin({n\pi x \over 2})dx}$\\
+
+The \textcolor{teal}{teal} part of the expression evaluates as follows, using integration by parts.\\
+Let $\int_{0}^{1}x\sin({n\pi x \over 2})dx = \int vdu$, so that:\\\\
+\begin{tabular}{ l l }
+$u=x$ & $dv = \sin({n\pi x \over 2})dx$  \\  
+$du=dx$ & $v = {-2 \over n\pi}\cos({n\pi x \over 2})$
+\end{tabular}\\\\
+$=uv - \int vdu$\\
+$=[{-2x\over n\pi}\cos({n\pi x\over 2})]_0^1 + {2\over n\pi}\int_0^1\cos({n\pi x\over 2})dx$\\\\
+$={-2\over n\pi}\cos({n\pi \over 2})+ {4\over (n\pi)^2}[\sin({n\pi x\over 2})]_0^1$\\\\
+\textcolor{teal}{$={-2\over n\pi}\cos({n\pi \over 2})+ {4\over (n\pi)^2}\sin({n\pi\over 2})$}\\
+
+The \textcolor{purple}{purple} part of the expression evaluates as follows:\\
+$\int_{1}^{2}-\sin({n\pi x \over 2})dx$\\
+${2 \over n\pi}[\cos({n\pi x \over 2})]_1^2$\\\\
+\textcolor{purple}{$={2 \over n\pi}[\cos({n\pi}) - \cos({n\pi \over 2})]$}\\
+
+$b_n = \textcolor{teal}{part 1} + \textcolor{purple}{part 2}$\\
+$b_n = {-2\over n\pi}\cos({n\pi \over 2})+ {4\over (n\pi)^2}\sin({n\pi\over 2}) + {2 \over n\pi}[\cos({n\pi}) - \cos({n\pi \over 2})]$\\
+$b_n = {-4\over n\pi}\cos({n\pi \over 2})+ {4\over (n\pi)^2}\sin({n\pi\over 2}) + {2 \over n\pi}\cos({n\pi})$\\
+\[
+\bm{b_n = {1\over n\pi}\left[{4\over n\pi}\sin\left({n\pi\over 2}\right) - 4\cos\left({n\pi \over 2}\right) + 2\cos\left({n\pi}\right) \right]}
+\]
+\item Sketch a graph of $S(x)$ for the interval $-6\le x\le6$.  Be sure to mark points of convergence of $S(x)$ at jump discontinuities.\\
+
+
+\end{enumerate}
+
+
+
+\newpage
+\item (15 points)  The vertical displacement $u(x,t)$ of a string of length $L=2$ satisfies
+\[
+u_{tt}=4u_{xx},\qquad 0<x<2,\quad t>0
+\]
+with boundary conditions $u(0,t)=u(2,t)=0$.  The initial conditions are
+\[
+u(x,0)=0,\qquad u_t(x,0)=f(x)
+\]
+where $f(x)$ is the function in Problem 1.  Find the solution $u(x,t)$ using the method of separation of variables.\\
+
+\textcolor{teal}{\textbf{Step 1 - Separate variables to find equations in terms of F(x) and G(t)}}\\
+Let $u(x,t) = F(x)G(t)$.\\\\
+$u_{tt} = FG\sp{\prime\prime}$ and $u_{xx} = F\sp{\prime\prime}G$, so that:\\
+$FG\sp{\prime\prime} = 4F\sp{\prime\prime}G$\\\\
+$\frac{G\sp{\prime\prime}}{4G} = \frac{F\sp{\prime\prime}}{F}$\\\\
+The ratio of these terms should be constant, so set them equal to $-\lambda$:\\
+$\frac{G\sp{\prime\prime}}{4G} = \frac{F\sp{\prime\prime}}{F} = -\lambda$\\\\
+$F\sp{\prime\prime} + \lambda F = 0$ and $G\sp{\prime\prime} + \lambda 4G = 0$\\\\
+\textcolor{teal}{\textbf{Step 2 - Solve eigenvalue problem for F(x) after finding BCs}}\\
+Apply the Boundary Conditions $u(0,t)=u(2,t)=0$:\\
+Let $u(x,t)=F(x)G(t)$ so that, by the BCs, $F(0)=0$ and $F(2)=0$\\
+Solving the eigenvalue problem with $F\sp{\prime\prime} + \lambda F = 0$ and the above BCs. First, let $F=e^{rt}$:\\
+$r^2 + \lambda =0$\\
+$r = \pm\,i\sqrt{\lambda}$\\\\
+General solution of F(x) follows from this:\\
+$F(x)=C_1\cos(x\sqrt{\lambda}) + C_2\sin(x\sqrt{\lambda})$\\
+Apply the BC $F(0)=0$:\\
+$F(0)=C_1\cos(0) + C_2\sin(0) = 0$\\
+$\bm{C_1 = 0}$\\\\
+Apply the BC $F(2)=0$:\\
+$F(2)=C_2\sin(2\sqrt{\lambda}) = 0$\\
+$C_2\sin(2\sqrt{\lambda}) = 0$\\
+
+Assuming that $C_2 \neq 0$, because that would lead to the trivial solution, the other term must equal 0:\\
+$\sin(2\sqrt{\lambda}) = 0$\\
+$2\sqrt{\lambda} = \pi, 2\pi, 3\pi...$\\
+$2\sqrt{\lambda} = n\pi$\\
+$\bm{\sqrt{\lambda} = \frac{n\pi}{2}}$ where ($n=1,2,3...$) and ($n\neq0$)\\\\
+$\bm{\lambda = (\frac{n\pi}{2})^2}$ where ($n=1,2,3...$) and ($n\neq0$)\\\\
+Pick $C_2 = 1$. So the solution of $F(x)$ is:\\
+$\bm{F(x)= \sin(\frac{n\pi x}{2})}$ with $\bm{\lambda = (\frac{n\pi}{2})^2}$ where ($n=1,2,3...$) and ($n\neq0$)\\\\
+\textcolor{teal}{\textbf{Step 3 - Find general solution, from first determining G(t)}}\\
+Plug in $\lambda$, simplify, and let $G=e^{rt}$:\\
+$G\sp{\prime\prime} + \lambda 4G = 0$\\
+$G\sp{\prime\prime} + (n\pi)^2G = 0$\\
+$r^2 + (n\pi)^2 = 0$\\
+$r = \pm\,i \,(n\pi)$\\\\
+Solution of G(t) is:\\
+$G(t) = A\cos(n\pi t) + B\sin(n\pi t)$\\\\
+General solution is the combination of $F(x)$ and $G(t)$:\\
+$u(x,t) = \left(\;A\cos(n\pi t) + B\sin(n\pi t)\;\right)\sin\left(\frac{n\pi x}{2}\right)$\\\\
+Sum it over all possible values of n:\\
+$u(x,t) = \sum_{n=1}^{\infty} \left(\;A_n\cos(n\pi t) + B_n\sin(n\pi t)\;\right)\sin\left(\frac{n\pi x}{2}\right)$\\\\
+Find the first derivative with respect to $t$, in order to apply one of the ICs in the next step:\\
+$u_t(x,t) = \sum_{n=1}^{\infty} \left(\;-n\pi A_n\sin(n\pi t) + n\pi B_n\cos(n\pi t)\;\right)\sin\left(\frac{n\pi x}{2}\right)$\\\\
+\textcolor{teal}{\textbf{Step 4 - Apply ICs}}\\
+$u(x,0) = \sum_{n=1}^{\infty} \left(\;A_n\cos(0) + B_n\sin(0)\;\right)\sin\left(\frac{n\pi x}{2}\right) = 0$\\
+$\sum_{n=1}^{\infty} A_n\sin\left(\frac{n\pi x}{2}\right) = 0$\\\\
+$u_t(x,0) = \sum_{n=1}^{\infty} \left(\;-n\pi A_n\sin(0) + n\pi B_n\cos(0)\;\right)\sin\left(\frac{n\pi x}{2}\right) = f(x)$\\
+$\sum_{n=1}^{\infty} n\pi B_n\sin\left(\frac{n\pi x}{2}\right) = f(x)$\\
+
+
+\end{enumerate}
+
+
+\end{document}
+

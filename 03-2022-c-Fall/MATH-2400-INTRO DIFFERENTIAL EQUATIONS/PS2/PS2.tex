@@ -1,0 +1,268 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 2} \smallskip\\ Due: 5pm, Friday, September 16, 2022}
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 2, pages 19--20: 2(e), 3(c), 6(a,b).
+\item
+Exercises from Chapter 2, pages 28--31: 2, 5, 6, 8, 10.
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Suppose $y(t)$ solves the linear ODE given by $(1-t^2)y' + e\sp ty= \cot(t)$ and the initial condition $y(t_0)=y_0$.  The largest interval of $t$ for which the solution exists for $t_0=-2$ and any value for $y_0$ is 
+\begin{description}
+\item[A] $-\infty<t<-1$
+\item[B] $-1<t<1$
+\item[C] $-\pi<t<-1$
+\item[D] XNone of these choicesX
+\end{description}
+
+\item (5 points) Suppose $y(t)$ solves the linear ODE given by $(1+t^2)y' = 3t\sp2(1+t\sp2)-ty$.  The integrating factor $\mu(t)$ for the DE is
+\\$y'+ty/(1+t^2) = 3t\sp2$
+%\\$\mu=\exp(\int \frac{t}{(1+t^2)})=\exp((1+t^2)\sp{-1}+2t^2)$
+\begin{description}
+\item[A] $\mu(t)=(1+t^2)$
+\item[B] $\mu(t)=\exp(-t^3)$
+\item[C] $\mu(t)=(1+t^2)\sp{-1/2}$
+\item[D] XNone of these choicesX
+\end{description}
+
+\newpage
+\item (5 points) A student receives a gift of $P$ dollars from a rich uncle.  He puts the gift in a savings account at a bank earning a fixed yearly interest rate of $r$ (compounded continuously) but decides to withdraw money from the account at a continuous rate of $Q$ dollars per year to support his carefree lifestyle.  The formula for the time $T$ in years when the money in the account is zero is given by
+%\\$P(T)=Pe\sp{rT}-QT$
+%\\$0=Pe\sp{rT}-QT$
+%\\$\int0dT=\int Pe\sp{rT}dT-\int QTdT$
+%\\$T=\frac{Pe\sp{rT}}{r}-\frac{QT^2}{2}$
+\begin{description}
+\item[A] $\displaystyle{T={1\over r}\ln\left(1-{rP\over Q}\right)}$
+\item[B] X$\displaystyle{T={1\over r}\ln\left({Q\over Q-rP}\right)}$X
+\item[C] $\displaystyle{T={1\over r}\ln\left({rP\over Q-rP}\right)}$
+\item[D] None of these choices
+\end{description}
+
+
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  Find the solution $y(t)$, in explicit form, for each of the following initial-value problems
+\begin{enumerate}
+\item
+\[
+ty\sp\prime=-(y+1)\sp3\;,\qquad y(1)=-3
+\]
+\item
+\[
+ty\sp\prime=(1+t)y+t\sp2\;,\qquad y(-1)=2
+\]
+\\$ty'-(1+t)y=t^2$
+\\$y'-\frac{1+t}{t}y=t$
+\\$\mu=\exp(\int-(t+1)t\sp{-1}dt)=\mu=\exp(-\ln|t|-t)+C=|t|\sp{-1}e\sp{-1}$
+\\$y=\frac{1}{|t|\sp{-1}e\sp{-1}}\int |t|\sp{-1}e\sp{-1}+y dt+\frac{C}{|t|\sp{-1}e\sp{-1}}$
+\\$y=et\ln|t|e\sp{-1}+y+Cet$
+\\$y=t\ln |t|+y+Cet$
+\\$2=-\ln(1)+2-Ce$
+\\$2=2+Ce$
+\\$C=0$
+\\$y=t\ln |t|+yt$
+
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) A tank at a chemical company initially contains 50 gallons of pure water.  A toxic solution of 2 pounds of salt per gallon of water enters the tank at 3 gallons per hour, while the well-mixed solution leaks out of the tank at 2 gallons per hour.  A worker at the company discovers the problem when the volume in the tank becomes 60 gallons, and immediately stops the flow of the toxic solution entering the tank.
+\begin{enumerate}
+\item Determine the concentration of the toxic salt in the tank (in pounds per gallon) at the time when the worker discovers the problem.
+\\t=time(h), Q=salt mass(lb), V=vol(gal), concentration=Q/V=lb/gal
+\\Q'=Rin-Rout, Rin=6 lb/h, Rout=2Q/V lb/h, Q'=6-2Q/V, Q(0)=0, Q(t)=(6-Q/V)t, 
+\\V(0)=50, V'=3-2=1, V=50+t, 60=50+10, t=10 when noticed
+
+\item Suppose the amount of salt in the tank at the time the worker discovers the problem is given by~$Q_0$.  Pure water is then pumped into the tank at 3 gallons per hour, and the well-mixed solution continues to leak out of the tank at the same rate.  How long will it take (in hours) for the amount of salt in the tank to reduce by half?
+\end{enumerate}
+
+\bigskip
+\item (15 points)  A mass of $6\;{\rm kg}$ is shot upward from the surface of the Earth with an initial velocity of $50\;{\rm m}/{\rm s}$.  In addition to gravity, assume that there is a drag force given by $F_{{\rm drag}}=-cv$, where $c=3\;{\rm kg}/{\rm s}$ and $v(t)$ is the upward velocity of the mass.  Assume that the acceleration due to gravity is $g=10\;{\rm m}/{\rm s}^2$.
+\begin{enumerate}
+\item Determine an IVP for $v(t)$ assuming Newton's second law, and then find its solution.
+\\m=6, v(0)=50, 
+\item Find the upward position $x(t)$ of the mass from the surface of the Earth and determine how high the mass gets.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\iffalse
+y=f(y)
+t=time
+y(t)=pop
+f(y)=given funtion determined by model/observations
+if y0 solves f(y0), then y(t)=y0 is an equilibrium solution
+phase plot f vs y
+\ is stable / is unstable
+if y(t) solves y'=f(y), y(0)=y0+S, where f(y0)=0, and if the lim t->infinity y(t)=y(0) for |S| sufficently small, then y0 is stable
+if df/dy <0 then y0 is stable, if >0 then unstable, =0 is weird, always increasing or deceasing, semi stable, one direction will return, the other will og of.
+
+logistic equation
+y'=f(y)=y(1-y)
+a)f=0 when y=0,1, downward opening parabola, 0 unstable, 1 stable, recourse limitation
+if y about 0, y' about y, y about Ce^t
+b)y'=y(q-y)
+y'/(y(1-y)=1
+y'=F(y)G(t)
+y'/F(y)=G(t)
+integrate
+int(y' dt/(y(1-y)))=int dt
+int(dy/(y(1-y)))=t+C
+partial fraction
+1/(y(1-y))=A/y+B/(1-y)
+*y(1-y)
+1=A(1-y)+By
+1=A-Ay+By=A+(B-A)y=1
+A=1, B-A=0
+B-1=0, B=1
+
+int(dy/(y(1-y)))=int(dy/y)+int(dy/1-y)=ln|y|-ln|1-y|=ln(y/|1-y|)
+so ln(y/|1-y|)=t+C
+y/|1-y|=Ce^t
+y/(1-y)=Ce^t
+y(0)=a
+a/(1-a)=C
+
+solve for y
+y=Ce^t(1-y)
+y+yce^t=Ce^t
+(a+Ce^t)y=Ce^t
+y(t)=Ce^t/(1+Ce^t)=C/(e^-t+C)
+lim t-> infinity y(t)=, e^-t approaches 0, C/C=1
+
+
+
+linear second order ODE chapter 3
+
+y''=F(t,y,y')
+if it has or can be manipulated into the form y''=-p(t)y'-q(t)y+G(t) 
+p,q are coefficient functions
+g forceing funtion
+then the ODE is linear
+
+y''+[(t)y'+q(t)y=g(t) standard form
+initial conditions y(t0)=a y'(t0)=b
+A<t<B t within I
+if functions y(t) gq(t), g(t0 are continuous for t within I
+and if t0 within I, then wht initial value problem has one unique solution y(t) for values of t within I and for any values of a and b
+
+
+ex: consider linear second order ODE with initial condition
+t(t-4)y''+3ty'+4y=tan(t)
+y''+3/(t-4)y'+4/((t(t-4))y=tan/(t(t-4))
+     p(t)        q(t)             g(t)
+p(t)=3/t-4 continuous everywhere but t=4
+q(t)=4/(t(t-4)) continuous everywhere except t=0,4
+g(t)=tan(t)/(t(t-4))=sin(t)/(t(t-4)cos(t)) continuous everywhere except t=0, 4, +/-pi/2, +/-3pi/2, etc
+initial condition at 3
+---0---1---2---3---4---
+          pi/2     t     4   3pi/2
+interval pi/2<t<4
+
+
+consider the homogenious problem y''+p(t)y'+q(t)y=0
+notation
+define L[y] as L[y]=y''+p(t)y'+q(t)y
+L is a linear differentiation oporator
+L=d^2/dt^2+p(t)d/dt+q(t)
+fancy derivative
+
+superposition
+if y1(t) and y2(t) are homogeniosu solutions, Ly1=0, Ly2=0, then y(t) = C1y1(t)+C2y2(t)
+is also a homogenious solution for any constant C1, C2
+verify: Ly=L(C1y1+C2y2)=L(c1y1)+L(C2y2)=CLy1+CLy2
+Ly1 = Ly2=0
+so =0
+form
+y(t)=C1y1(t)+C2y2(t)   general form of the solutiohn
+where y1, y2 are independent homogenious solutions
+
+
+
+
+
+
+\fi
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

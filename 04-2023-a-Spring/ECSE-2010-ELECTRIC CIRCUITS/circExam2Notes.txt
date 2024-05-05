@@ -1,0 +1,19 @@
+circ exam 2 notes
+
+next tuesday
+
+1.1: forst order diffeq
+2.1: second order diffeq
+2.2: second order laplace
+
+
+in class
+convert V1 into a laplace thing--- V1(t)=10-2u(t), V1(s)=8/s
+initial Vc(0+)=10 and I(0+)=0
+resistor stays as a resistor 200ohm
+inductor becomes positive voltage and a resistor
+
+Vc(s)=10/s+V1(s)((1/(s*e-8))/(200+s*e-4+1/(s*e-8)))
+V1(s)
+
+Vc(s)=10/s+(-2/s)((1/(s*e-8))/(200+s*e-4+1/(s*e-8)))

@@ -1,0 +1,252 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 5} \smallskip\\ Due: 11pm, Tuesday, October 18, 2022}
+\\Hayden Fuller
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 3, pages 58--59: 1(d,f,h,p), 2(c,d,g), 3(c,j).
+\item
+Exercises from Chapter 3, page 63: 1(c,d,e), 3(b).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}-2y\sp{\prime}+5y=\cos t - \sin 2t
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+\item[A] $y_p(t)=A\cos t+B\sin 2t$		
+\item[B] X$y_p(t)=A\cos t+B\sin t+C\cos 2t+D\sin 2t$X
+\item[C] $y_p(t)=A\cos t+B\sin t+(C\cos 2t+D\sin 2t)t$
+\item[D] None of these choices
+\end{description}
+
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}+y\sp{\prime}=5te\sp{-t}-t\sp2\cos t
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+\item[A] $y_p(t)=(A+Bt)e^{-t} + (C_0+C_1t+C_2t\sp2)(D\cos t+E\sin t)$ 
+\item[B] $y_p(t)=(At+Bt\sp2)e^{-t} + (C_0+C_1t+C_2t\sp2)(D\cos t+E\sin t)$
+\item[C] X$y_p(t)=(At+Bt\sp2)e^{-t} + (C_0+C_1t+C_2t\sp2)\cos t+(D_0+D_1t+D_2t\sp2)\sin t$X
+\item[D] None of these choices
+\end{description}
+
+\item (5 points) Consider the linear nonhomogeneous differential equation
+\[
+y\sp{\prime\prime}+4y=te^{2t}\sin 2t + \cos 2t
+\]
+Select the correct form of a particular solution $y_p(t)$ for the DE
+\begin{description}
+\item[A] $y(t)=te^{2t} (A\cos 2t + B \sin 2t) + t(C\cos 2t + D \sin 2t)$ 	
+\item[B] $y(t)=te^{2t} [(At+B) \cos 2t +(Ct+D) \sin 2t] + (P\cos 2t + Q \sin 2t)$
+\item[C] X$y(t)=e^{2t} [(At+B) \cos 2t +(Ct+D) \sin 2t] + t(P\cos 2t + Q \sin 2t)$X
+\item[D] None of these choices
+\end{description}
+
+
+\end{enumerate}
+
+\bigskip\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  Solve the initial-value problem
+\[
+y''+3y' = e^{3t} + 4t, \qquad y(0)=0, \quad y'(0)=0
+\]
+\\$y_h$
+\\$y''+3y'=0$; $r^2+3r=0$; $(r)(r+3)=0$
+\\$r_1=0$; $r_2=-3$
+\\$y_h=C_1e^{0t}+C_2e^{-3t}$
+\\$y_h=C_1+C_2e^{-3t}$
+\\$y_p$
+\\$y_p=A_0+A_1t+Be^{3t}$ resonates
+\\$y_p=(A_0+A_1t)t+Be^{3t}$
+\\$y_p=A_0t+A_1t^2+Be^{3t}$
+\\$y'_p=A_0+2A_1t+3Be^{3t}$
+\\$y''_p=2A_1+9Be^{3t}$
+\\$L[y_p]=(2A_1+9Be^{3t})+3(A_0+2A_1t+3Be^{3t})=e^{3t}+4t$
+\\$2A_1+9Be^{3t}+3A_0+6A_1t+9e^{3t}=e^{3t}+4t$
+\\$18Be^{3t}=e^{3t}$; $B=\frac{1}{18}$
+\\$6A_1t=4t$; $A_1=\frac{2}{3}$
+\\$2A_1+3A_0=0$; $\frac{4}{3}+3A_0=0$; $3A_0=\frac{-4}{3}$; $A_0=\frac{-4}{9}$
+\\$y_p=\frac{-4}{9}t+\frac{2}{3}t^2+\frac{1}{18}e^{3t}$
+\\$y(t)=C_1+C_2e^{-3t}+\frac{-4}{9}t+\frac{2}{3}t^2+\frac{1}{18}e^{3t}$
+\\$y'(t)=-3C_2e^{-3t}+\frac{-4}{9}+\frac{4}{3}t+\frac{1}{6}e^{3t}$
+\\$y'(0)=0=-3C_2+\frac{-4}{9}+\frac{1}{6}$
+\\$3C_2=\frac{-8}{9}+\frac{3}{18}=\frac{-5}{18}$
+\\$C_2=\frac{-5}{54}$
+\\$y(0)=0=C_1+\frac{-5}{54}+\frac{1}{18}=\frac{-2}{54}=\frac{-1}{27}$
+\\$C_1=\frac{1}{27}$
+\\$y(t)=\frac{1}{27}+\frac{-5}{54}e^{-3t}+\frac{-4}{9}t+\frac{2}{3}t^2+\frac{1}{18}e^{3t}$
+
+
+\bigskip\newpage
+\item (15 points) Solve the initial-value problem
+\[
+y\sp{\prime\prime}+4y\sp{\prime}+5y=2e\sp{-2t}\sin t\qquad y(0)=0,\quad y\sp\prime(0)=0
+\]
+\\$y_h$
+\\$y''+4y'+5y=0$; $r^2+4r+5=0$; $r=\frac{-4\pm\sqrt{16-4*1*5}}{2*1}$; $r=\frac{-4\pm\sqrt{-4}}{2}$; $r=-2\pm i$; $\lambda=-2$; $\omega=1$
+\\$y_h=C_1e^{-2t}\cos(t)+C_2e^{-2t}\sin(t)$
+\\$y_p$
+\\$y_p=Ae^{-2t}\cos(t)+Be^{-2t}\sin(t)$ resonates
+\\$y_p=Ate^{-2t}\cos(t)+Bte^{-2t}\sin(t)$
+\\Let $s=\sin(t)$ and $c=\cos(t)$
+\\$y_p=Ate^{-2t}c+Bte^{-2t}s$
+\\$y_p=A(te^{-2t})c+B(te^{-2t})s$
+\\dl*r+dr*l
+\\(dll*lr+dlr*ll)*r+dr*l
+\\$y'_p=A((1*e^{-2t}+-2e^{-2t}*t)*c+-s*te^{-2t})+B((1*e^{-2t}+-2e^{-2t}*t)*s+c*te^{-2t})$
+\\$y'_p=A(e^{-2t}c-2te^{-2t}c-te^{-2t}s)+B(e^{-2t}s-2te^{-2t}s+te^{-2t}c)$
+\\$y''_p=A((-2e^{-2t}c-e^{-2t}s)-2(e^{-2t}c-2te^{-2t}c-te^{-2t}s)-(e^{-2t}s-2te^{-2t}s+te^{-2t}c))+$
+\\$+B((-2e^{-2t}s+e^{-2}c)-2(e^{-2t}s-2te^{-2t}s+te^{-2t}c)+(e^{-2t}c-2te^{-2t}c-te^{-2t}s))$
+\\$y''_p=A(-4e^{-2t}c-2e^{-2t}s+3te^{-2t}c+4te^{-2t}s)+B(-4e^{-2t}s+2e^{-2t}c+3te^{-2t}s-4te^{-2t}c)$
+\\$L[y_p]=-A4e^{-2t}c-A2e^{-2t}s+A3te^{-2t}c+A4te^{-2t}s-B4e^{-2t}s+B2e^{-2t}c+B3te^{-2t}s-B4te^{-2t}c+$
+\\$+A4e^{-2t}c-A8te^{-2t}c-A4te^{-2t}s+B4e^{-2t}s-B8te^{-2t}s+B4te^{-2t}c+A5te^{-2t}c+B5te^{-2t}s=2e^{-2t}s$
+\\$L[y_p]=e^{-2t}c(-4A+2B+4A)+e^{-2t}s(-2A-4B+4B)+te^{-2t}c(3A-4B-8A+4B+5A)+te^{-2t}s(4A+3B-4A-8B+5B)=2e^{-2t}s$
+\\$L[y_p]=e^{-2t}c(2B)+e^{-2t}s(-2A)+te^{-2t}c(0)+te^{-2t}s(0)=2e^{-2t}s$
+\\$L[y_p]=e^{-2t}c(2B)+e^{-2t}s(-2A)=2e^{-2t}s$
+\\$B=0$; $A=-1$
+\\$y_p=-te^{-2t}\cos(t)$
+\\$y(t)=C_1e^{-2t}\cos(t)+C_2e^{-2t}\sin(t)-te^{-2t}\cos(t)$
+\\$y(0)=0=C_1$
+\\$C_1=0$
+\\$y(t)=C_2e^{-2t}\sin(t)-te^{-2t}\cos(t)$
+\\$y'(t)=C_2(-2e^{-2t}\sin(t)+\cos(t)e^{-2t})-e^{-2t}\cos(t)+2te^{-2t}\cos(t)+te^{-2t}\sin(t)$
+\\$y'(0)=0=C_2-1$
+\\$C_2=1$
+\\$y(t)=e^{-2t}\sin(t)-te^{-2t}\cos(t)$
+
+
+
+\bigskip
+\item (15 points) Consider the linear, nonhomogeneous DE
+\[
+ty'' + (t-1) y' - y = t^2 e^{-2t}, \qquad t>0
+\]
+\begin{enumerate}
+\item Verify that $y_1(t) = e\sp{-t}$ and $y_2(t) = t-1$ are homogeneous solutions of the differential equation and compute the Wronskian.
+\\$y'_1=-e^{-t}$; $y''_1=e^{-t}$
+\\$L[y_1]=te^{-t}+(t-1)(-e^{-t})-e^{-t}$
+\\$L[y_1]=te^{-t}+e^{-t}-te^{-t}-e^{-t}$
+\\$L[y_1]=0$
+\\$y'_2=1$; $y''_2=0$
+\\$L[y_2]=(t-1)-(t-1)$
+\\$L[y_2]=0$
+\\$W=e^{-t}*1-(t-1)(-e^{-t})$
+\\$W=e^{-t}+te^{-t}-e^{-t}$
+\\$W=te^{-t}\ne0$
+\item Use Variation of Parameters to find the general solution of the DE.
+\\$y''+\frac{(t-1)}{t}y'-\frac{1}{t}y=te^{-2t}$
+\\$y_h$
+\\$y_h=C_1e^{-t}+C_2(t-1)$
+\\$y_p$
+\\$y_p=u_1y_1+u_2y_2$
+\\$u'_1=-\frac{(t-1)*te^{-2t}}{te^{-t}}$
+\\$u'_1=-\frac{t^3e^{-2t}-te^{-2t}}{te^{-t}}$
+\\$u'_1=-(te^{-t}-e^{-t})$
+\\$u'_1=-te^{-t}+e^{-t}$
+\\$u_1=te^{-t}+C_3$
+\\$u'_2=\frac{e^{-t}*te^{-2t}}{te^{-t}}$
+\\$u'_2=\frac{e^{0}*te^{-t}}{t}$
+\\$u'_2=e^{-t}$
+\\$u_2=-\frac{1}{2}e^{-2t}+C_4$
+\\$y_p=(te^{-t}+C_3)e^{-t}+(-\frac{1}{2}e^{-2t}+C_4)(t-1)$
+\\$y_p=te^{-2t}+C_3e^{-t}-\frac{1}{2}te^{-2t}+\frac{1}{2}e^{-2t}+C_4(t-1)$
+\\choose $C_3=0$; $C_4=0$
+\\$y_p=te^{-2t}-\frac{1}{2}te^{-2t}+\frac{1}{2}e^{-2t}$
+\\$y_p=\frac{1}{2}te^{-2t}+\frac{1}{2}e^{-2t}$
+\\$y_p=\frac{1}{2}(t+1)e^{-2t}$
+\\$y(t)=C_1e^{-t}+C_2(t-1)+\frac{1}{2}(t+1)e^{-2t}$
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

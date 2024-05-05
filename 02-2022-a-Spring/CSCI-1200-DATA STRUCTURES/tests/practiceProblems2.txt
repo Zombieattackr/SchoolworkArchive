@@ -1,0 +1,81 @@
+connect all the ? and make the new node connect to the four sides
+height of one making the only way of accessing the other side to be looping ll away around the curcumfrence
+template class <T>
+void Tube<T>::repair(Node<T>* lptr, <T> v) {
+	Node<T>* n = new Node<T>;
+	n->T = v;
+	lptr->right = n;
+	n->left = lptr
+	if(lptr->down != NULL) {
+		lptr->down->right->up = n;
+		n->down = lptr->down->right;
+		lptr->down->right->right->up->left = n;
+		n->right = lptr->down->right->right->up;
+	}
+	if(lptr->up != NULL) {
+		lptr->up->right->down = n;
+		n->up = lptr->up->right;
+		lptr->up->right->right->down->left = n;
+		n->right = lptr->up->right->right->down;
+	}
+	if(lptr->up == NULL && lptr->down == NULL) {
+		Node<T>* rs = lptr;
+		while(rs->left!=NULL) {
+			rs = rs->left;
+		}
+		rs->left = n;
+		n->left = rs;
+	}
+}
+
+void Tube<T>::destroy_tube(Node<T>* n)) {
+	if(n->down != NULL) {
+		destroy_tube(n->down);
+	} else {
+		Node<T>* next;
+		if(n->right == NULL || n->right == n) {
+			if(n->up != NULL) {
+				next = n->up;
+			} else {
+				delete n;
+				return;
+			}
+		} else {
+			next = n->right;
+		}
+		delete n;
+		destroy_tube(next);
+	}
+}
+
+delete
+	[] m_data;
+m_size = 
+	v.size();
+m_alloc = 
+	v.capacity();
+m_data = 
+	new T[m_alloc];
+for (int i=0; i <
+	m_size
+; ++i) {
+m_data[i] =
+	v[i];
+}
+
+Vec<double> c; c = v; 
+assert(c.size() == v.size());
+assert(c.capacity() == v.capacity());
+for(int i = 0; i < v.size() || i < c.size(); i++) {
+	assert(c[i] == v[i]);
+}
+
+yes because it expects a return value;
+
+Vec<double> d; 
+Vec<double> e;
+
+d = e = v;
+
+//it checks if they're the same thing
+v = v;

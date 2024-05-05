@@ -1,0 +1,171 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+%\a \b \g \d \e \o \l \m \pi \r \s \ta \p \psi \o \w %\pi and \psi left out because pi is readable and there are three p's
+
+\begin{center}
+\large
+\textbf{CSCI 2300 --- Algo \\
+Homework 9}
+\\Hayden Fuller 
+\end{center}
+
+Textbook questions:
+
+\begin{itemize}
+\item \textbf{1) 7.3}
+A cargo plane can carry a maximum weight of 100 tons and a maximum volume of 60 cubic meters. There are three materials to be transported, and the cargo company may choose to carry any amount of each, up to the maximum available limits given below.
+\begin{itemize}
+\item Material 1 has density 2 tons/cubic meter, maximum available amount 40 cubic meters, and revenue \$1,000 per cubic meter.
+\item Material 2 has density 1 ton/cubic meter, maximum available amount 30 cubic meters, and revenue \$1,200 per cubic meter.
+\item Material 3 has density 3 tons/cubic meter, maximum available amount 20 cubic meters, and revenue \$12,000 per cubic meter.
+\end{itemize}
+Write a linear program that optimizes revenue within the constraints.
+\\weight, 2*m1+1*m2+3*m3<=100
+\\volume, m1+m2+m3<=60
+\\ammount, m1<=40, m2<=30, m3<=20
+\\realistic, m1>=0, m2>=0, m3>=0
+\\max p=1000*m1+1200*m2+12000*m3
+\\Simplex algorithm, n=3 dimensions, 5 constraints + 3 >=0 constraints
+\begin{verbatim}
+import numpy as np
+
+def simplex(c, A, b):
+    m, n = A.shape
+    tableau = np.zeros((m+1, n+m+1))
+    tableau[:m, :n] = A
+    tableau[:m, n:n+m] = np.eye(m)
+    tableau[:m, -1] = b
+    tableau[-1, :n] = -c
+    while any(tableau[-1, :-1] < 0):
+        pivot_col = np.argmin(tableau[-1, :-1])
+        ratios = np.divide(tableau[:-1, -1], tableau[:-1, pivot_col])
+        pivot_row = np.argmin(ratios)
+        tableau[pivot_row, :] /= tableau[pivot_row, pivot_col]
+        for i in range(m+1):
+            if i != pivot_row:
+                tableau[i, :] -= tableau[i, pivot_col]*tableau[pivot_row, :]
+    return tableau[-1, -1], tableau[:-1, -1]
+
+#driver code
+c=np.array([1000,1200,12000]) #revenue of each
+A=np.array([[2,1,3], #weight
+   [1,1,1], #volume
+   [1,0,0], #ammount of each
+   [0,1,0], #
+   [0,0,1]]) #
+b=np.array([100,60,40,30,20]) #actaul constrainst relating to those above
+
+max_val,solution=simplex(c,A,b)
+print('solution with max of ',max_val,' is: ', solution)
+\end{verbatim}
+gives solution: \$281000 with 5 m1, 30 m2, 20 m3. 
+\item \textbf{2) 7.7}
+Find necessary and sufficient conditions on the reals a and b under which the linear program
+\\max x+y
+\\ax+by<=1
+\\x,y>=0
+\begin{enumerate}
+\item Is infreasible
+\\impossible, 0,0>=0 and 0+0<=1
+\item Is unboundable
+\\a=b=-1
+\item Has a finite and unique optimal solution
+\\a=1, b=2
+\end{enumerate}
+\item \textbf{3) 7.12}
+\\For the linear program
+\\max x1-2*x3
+\\x1-x2<=1
+\\2*x2-x3<=1
+\\x1,x2,x3>=0
+\\prove that solution (x1,x2,x3)=(3/2,1/2,0) is optimal
+\\(3/2,1/2,0) is valid and at the vertex of the two constraints and a zero constraint because 3/2-1/2=1<=1, 1-0=1<=1, and 3/2,1/2,0>=0
+\\swapping one constraint for another one at a time, and see that they're all lower values
+\\Name the constraints C1, C2, Z1, Z2, and Z3 (constraints 1 and 2, zeros 1, 2, and 3)
+\\Our max is where C1, C2, and Z3 meet
+\\Move along the C1 C2 edge away from Z3. This is unbounded, but by going to x3=1, we have x2=1 from C2 and x1=2 from C1, giving us a result value of 0, which is less than our max of 3/2, and since the system is linear, we know the value only decreases in this direction.
+\\Move along the C2 Z3 edge away from C1 and to Z1. We have x1=0, x2=1/2, and x3=0, giving us a result value of 0, again, less than our max of 3/2.
+\\Finally, move along the Z3 C1 edge towards Z2. We have x1=1, x2=0, and x3=0, giving us a result value of 1, which is again less than our max of 3/2. 
+\\Therefore, since following all edges get us to lower values, we know this must be our max.
+\item \textbf{4) 7.13}
+\\Matching pennies. In this simple two-player game, the players (call them R and C ) each choose an outcome, heads or tails. If both outcomes are equal, C gives a dollar to R; if the outcomes are different, R gives a dollar to C .
+\begin{enumerate}[(a)]
+\item Represent the payoffs by a 2 × 2 matrix.
+\begin{verbatim}
+      C
+      H  T
+R  H  1 -1
+   T -1  1
+\end{verbatim}
+\item What is the value of this game, and what are the optimal strategies for the two players?
+\\V=0, x=(1/2,1/2), y=(1/2,1/2)
+\end{enumerate}
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

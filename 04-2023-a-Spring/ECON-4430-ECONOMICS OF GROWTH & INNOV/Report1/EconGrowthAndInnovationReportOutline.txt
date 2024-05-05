@@ -1,0 +1,266 @@
+Overview:
+	2022 Converging to convergence. NBER Macroeconomics Annual
+	there isn't convergence, but we're approaching convergence. growth rate of poor countries is still lower, but it's growing and rich countries high rates are stabalizing
+	intro
+	convergence in income
+		empirical setup: measuring convergence
+		results: converging to convergence
+		econometric considerations and robustness to alternative specifications
+		which countries have driven the change
+		club convergence
+	convergence in correlates of income and growth
+		policies, institutions, measures of human capital, and cultural traits considered
+		enhanced Solow fundamentals
+		short run correlates
+		culture
+	linking converging income with convergence of its correlates
+		simple empirical framework
+		correlate income relationship and modernization theory
+		growth correlate relationship and growth regressions
+		shrinking gap between conditional and unconditional convergence
+	conclusion
+
+Notes:
+	2022 Converging to convergence. NBER Macroeconomics Annual
+	Abstract: there isn't convergence, but we're approaching convergence. growth rate of poor countries is still lower, but it's growing and rich countries high rates are stabalizing
+		60's-90's, divergence. created AK models, poverty trap models, conditional convergence.
+		revisit and use past 25 years as out of sample test
+		document converging towards unconditional convergence since 90 and convergence since 00
+		faster catch up and slower frontier
+		correlates converged: human capital, policies, institutions, cultures: converged in the direction of higher income
+
+	intro:
+		 weak divergence shown 1960-1990, stronger divergence as early as 16th century.
+		 Growth is based on diminishing returns and ease of copying technology, which leads to convergence
+		 rejection of neoclassical growth, replaced with poverty trap, AK(no diminishing returns for capital)
+		 looking closer at underlying human capital, policies, institutions, and new idea of conditional convergence
+		revisited after 25 years of data
+		global trends in growth and their correlates
+		substantial changes since 80's in correlates and growth cross country
+		 plot 10 year growth in income per capita vs income per capita
+		 positive correlation means divergence, negative means convergence
+		 correlation is approaching negative since the late 80's
+		 became negative in 2000
+		 85-95 divergence of .5%, 05-15 convergence of .7%, 60 was nothing-constant growth, 70-80 trended towards divergence
+		faster catch-up and slower frontier growth
+		rich quartile had the fastest growth in 80's, but the slowest since. flat acceleration in 90's and declining in 00's
+		other 3 quartiles have had accelerated growth since the 80's
+		convergence is stronger when poorest quartile and Sub-Saharan Africa are removed
+		 just a blip? possibly, but it's been 25 years
+		two causes: faster convergence from correlates, and convergence of correlates themselves
+		 enhances Solow fundamentals - I, n, K
+		 short run correlates - policies
+		 long run correlates - institutions, geography
+		 culture - generally towards the culture of rich countries
+		85-15, 20 short run variables, 17 converged.
+		18 were correlated with income, 15 improved towards high income (on average)
+		some of these trends existed, but slower, in 60-85
+		 culture is converging.
+		 it persists quite well over time, but 8/10 have been converging since 90
+		correlates of growth converge and so does income, related?
+		can't determine cause and cause can go either way
+		usual conditional theory points to correlates causing growth
+		modernization theory points to growth pushing correlates
+		 regress correlates on income
+		 regress growth on correlates, controlled for income
+		 absolute-conditional=slope1 * slope2
+		 mainly looks at 85-present since it's the best data
+		 also trends since 60, important since we're looking for the change in convergence in the 80's
+		income vs correlates slope has remained stable between 85 and 15
+		 ?growth regression coefficients have shrunk and show little auto-correlation
+		 Solow fundamentals are stable
+		 short run correlates have no correlation over time
+		 long run correlates and culture are in between. Somewhat stable, but also lost their correlation?
+		as a result of flattening growth correlate relationships, absolute convergence converged towards conditional convergence?
+		explains trend towards absolute convergence. Is conditional convergence also faster now? no, there's no obvious trend in conditional convergence
+		 aligns with neoclassical- conditional held, absolute did not hold, but correlates improved in poor countries, difference in institutions has shrunk, and countries have become more similar.
+		 "As a result, the world has converged to absolute convergence because absolute convergence has converged to conditional convergence."
+		why did growth regression coefficients shrink? non linear relationship? A terrible institution will hold a country back, but as long as it's good enough, it's similar to the better ones, and therefore we have conditional convergence
+		could just be limits of our understanding
+		patterns that held for centuries have fallen apart over the past 20 years. Were previous models just overfitted?
+		not all factors are observable, could the correlation between observable and unobservable shrunk?
+		these don't explain absolute convergence, but absolute could really just be much faster conditional convergence
+		complicated problem, hard to determine reasoning
+		 left off at "This paper describes trends in major macro-economic variables and the relationships between them, some of which have changed substantially in the last twenty years"
+
+
+
+	convergence in income:
+	 testing up to the 90's, there was absolute divergence. Revisit this with +25 years of data.
+		empirical setup: measuring convergence:
+		 90's literature used world data since 60, limited data showing divergence for hundreds of years, and within country data (US states)
+		  GDP per capita, adjusted for Purchasing Power Parity.
+		  included countries that only have new data, dropped very small countries and those extremely reliant on natural resources (oil?)
+		   \beta is when poor grow faster than rich.
+		   \sigma is when 
+		results: converging to convergence:
+		 comparing growth rate of gdp per capita vs gdp per capita, upward slope means rich countries grow faster than poor, divergence. negative means convergence since poor grow faster than rich
+		 decades of 60's to 07 show a decreasing slope
+		  convergence has been increasing since the 60's, and has been absolute since the early 90's, becoming significant in the late 90's
+		   from the 60's through 90 it went up and down but was generally positive and downward sloping, but since 90 it's been much more strongly and consistently negative and downward sloping
+		   consistent with models with diminishing returns of capital and models where catch up growth is easier than frontier growth
+		   inconsistent with divergence models and poverty traps
+
+
+		econometric considerations and robustness to alternative specifications:
+		 model has limitations
+		 backs up why this all makes sense, doesn't really need to be included
+		which countries have driven the change:
+		 could be driven by either fast growth of poor countries or slow growth of rich countries
+		 richest quartile has gone from highest growth rate to the lowest by a significant margin, was flat in the 90's and fell off in the 00's, while the other 3 quartiles grew into the early 00's before they started to drop off (still remaining significantly higher than the rich quartile)
+		 this is *the* significant one, the poor quartile, if anything, holds the convergence back
+		  relatively small effect from removing disasters and miracles
+		   grows stronger when Sub-Saharan African countries are removed
+		club convergence:
+		 rich countries now converge slower and have shifted towards global convergence
+
+
+
+	convergence in correlates of income and growth:
+	 global trends in factors of growth, policies, institutions, human capital, and culture
+	 17/32 short run correlates and 8/10 culture have converged in the direction of growth
+		policies, institutions, measures of human capital, and cultural traits considered:
+		 all converged from 85-15
+		 enhanced Solow fundamentals, short run correlates, long run correlates, culture
+		  looks at individual variables and how they correlate with growth
+		  left off at "We first supplement Solow fundamentals with two measures about the labor force"
+		enhanced Solow fundamentals:
+			human capital: favors development
+			 average schooling years
+			 poor countries have converges since 75
+			 rich have hit a soft cap of 13 years
+			 shrinking gender gap
+			Investment: favors development
+			 convergence of investment has been stable since 85
+			 most countries have slowly decreased
+			population growth: correlates with slow development
+			 has generally decreased
+			 has decreased in poor countries while rich have stagnated
+		short run correlates:
+			labor force: participation correlates with slow development
+			 more gender balanced, converged
+			 correlation of participation and worse growth has held steady
+			political institutions: democracy is good
+			 strong convergence, especially since the 90's
+			 democracy increased from -2 in 78 to 0 in 90, jumped to 2 after the fall of the USSR, and has since grown to 4
+			 standard deviation has dropped from 7.5 to 6
+			  there are decreases, but almost always in countries that already have high scores
+			  poor countries are more prone to change
+			fiscal policy: 
+			 average stayed constant, but significant convergence in government spending
+			  tariffs converged and decreased, helped growth
+		culture:
+		 8/10 variables converge
+
+
+
+	linking converging income with convergence of its correlates:
+	 are these correlates actually linked to growth?
+	 that's what we've been thinking at least, that's the whole idea of conditional convergence
+	 modernization implies the causation may be the other way around, better economy leads to better correlates
+	  first, income levels vs correlates
+	  second, income growth vs correlates
+	  third, conditional convergence
+	  partially answers: absolute convergence has converged to conditional convergence, or has conditional convergence just become faster?
+		simple empirical framework:
+		 data stuff
+		correlate income relationship and modernization theory:
+		 prosperity is correlated with rule of law and stuff. Did countries shift along the lines, or did the lines shift?
+		  moved along the lines, shows modernization passing a weak out of sample test. levels of correlates are conditional on income are constant
+		   individual correlates are far from those predicted by growth, implies causation is correlates -> growth
+		    correlation of individual correlates has remained constant
+		growth correlate relationship and growth regressions:
+		 data stuff
+		shrinking gap between conditional and unconditional convergence:
+		 unconditional convergence failed, so we moved to the idea of conditional convergence
+		 we seems to be shifting towards unconditional convergence, is it because
+		 1) correlates are converging, therefore conditional and unconditional are becoming the same thing
+		 2) conditional convergence has become faster, (?and through a feedback loop of modernization, that brings us unconditional convergence?)
+		 some boring data stuff?
+	conclusion:
+	 trend toward absolute convergence since late 80's
+	 had absolute convergence since 00
+	 countries have diverged for centuries, but in the last 20 years there's been a rapid trend towards convergence- something has changed
+	 frontier has slowed down dramatically and everyone else has had an increased catch up speed
+	 not like poverty traps
+	  most correlates have converged towards rich
+	  some changes align with modernization and are easily predicted from growth
+	  others happened quickly and align better with fast adoption of new tech style models
+	   absolute convergence has converged towards conditional convergence
+	   countries have converged to be similar, and therefore converge conditionally
+	   absolute convergence to similar conditions and conditional convergence to similar economies creates absolute convergence to similar economies
+	    preferred narrative, speculative, but here it is:
+	    steady state income determined by many factors, some observable and some not, and they're all related.
+	    since the fall of the USSR in 91 and adoption of the Washington consensus, there's been rapid convergence in observable factors
+	    this means absolute and conditional convergence have become the same thing
+	     pushes back on the idea that steady state factors are "constant" or hard to change
+	     these factors have converged and some have lost their explanatory power
+	      will this continue into the future?
+	      no, because this was largely correlated with growth of democracy, and we're starting to now see the downfall of it
+	      no, because climate change is disproportionately hurting poor countries
+	      yes because robust across many settings. If correlates continue to converge, we'll very likely see absolute convergence in economies
+	      yes because while we had previous shocks of things like the USSR collapse, now that we've been stable for some time, this is what we see, and this should be the norm in the future
+
+
+
+
+
+Rubric:
+Summary, doesn't know economics:
+	what question?
+	 is convergence of factors related to convergence of economies?
+	 is convergence in the last 20 years a blip or a turning point in world history?
+	 is the trend toward convergence in income related to the convergence of many of the correlates of growth?
+	 has conditional convergence itself become faster?
+	 which countries have driven the change?
+	 which regions are driving the change?
+	 is convergence in income related to convergence in correlates
+	 does the shift towards unconditional convergence represent a shrinking of the gap between conditional and unconditional convergence, or did conditional convergence itself become faster?
+	 what could have driven this slow down at the frontier? 
+	   faster catch up *conditional on* correlates, such as globalization, communication, faster tech flows, access to international finance, and migration?
+	   or the convergence of the correlates themselves? comes from world changes like the end of the cold war, trends in democratization, reduction in conflict, adoption of the Washington Consensus?
+	 should this cause optimism or pessimism about the future?
+	why important?
+	 gives us a better understanding of what's been happening around the world's economy and offers insight as to why
+	 can allow us to predict what will happen in the future and as a result of large scale changes in countries and in the world
+	 allows us to make more informed decisions about what to focus on. What changes will have what impacts.
+	contribution? question? data? methodology?
+	 shows what's been happening and what the correlations are
+	 presents the question and give insight about what could be causing these, comparing multiple existing explanations alongside other alternatives
+	 revisits what was done decades ago with new data, allowing us to comment on and change our beliefs to be more informed
+	 uses both methodologies that are less robust but have the most data, as well as more robust versions of the same experiments to back it up
+	methodology:
+		theoretical model, data, both?
+		 mostly analyzing data and comparing it to theory to see how well different theories hold up
+		relate to class?
+		 these are based on the Solow model that we used in class
+		 compares to some models we looked at such as the poverty trap
+		 looks at factors that are fundamental to the Solow model as well as many others to see what affects they have
+	results:
+		found? matters why?
+		 they found that there has been much more and much stronger convergence across a broader range of countries in the past few decades
+		 disproved the idea that fundamental things like culture don't change over time, showed that they converge towards the values of rich countries
+		 matters because this is very different from how the world economy has acted for centuries
+		 could signify a turning point in world history
+		 can allow for more informed decision making about what to focus the worlds resources on to solve issues like poverty
+		 can give insight into future trends
+		unclear/inconclusive?
+		 they offer and compare ideas, but do not conclude on why any of this happens. There are several theories and explanations for this convergence, and they compare them to the data.
+		different from previous literature?
+		 the extra decades of data lead to them coming across some different conclusions. 
+		 previous literature found conditional convergence and absolute divergence, but this paper found that these are changing. Correlates of conditional convergence are converging and causing absolute convergence.
+
+		 
+thoughts, questions, comments, evaluation:
+	interesting/insightful/surprising? why?
+	 the paper was very interesting and insightful
+	 it seems that we've seen a turning point in the world economies, and this paper offers numerous possibilities as to how and why.
+	application of results, policy or daily life
+	 It's difficult to find application of this in daily life as these changes happen across the world across decades
+	 can offer insight and solutions about world equality
+	 allows informed decisions to be made about correlates to promote growth across the world and solve issues like poverty
+	do not apply?
+	 it's unknown as to where the results of this paper may or may not apply, as it's looking at how trends are changing over past decades, and as this is likely influenced by several world scale events, unless you can see future events, it's hard to predict where these trends will continue towards in the future
+	how could improve?
+	would do different?
+	how could future work build on?

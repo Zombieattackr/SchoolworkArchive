@@ -1,0 +1,107 @@
+
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{CSCI 2300 --- Algo \\
+Homework 2}
+\\Hayden Fuller
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{Q1} 
+\\Is $4^{1536}\equiv9^{4824}\mod35$
+\\$4^4\mod35=256\mod35=11$
+\\$9^2\mod35=81\mod35=11$
+\\$4^{1536}\equiv4^{4*384}\equiv11^384\mod35$
+\\$9^{4824}\equiv=9^{2*2412}\equiv11^{2412}\equiv11^{6*384+108}\equiv11^{6*384}*11^{108}\mod35$
+\\$11^{108}\equiv121^{54}\equiv6^{54}\equiv36^{27}\equiv1^27\mod35=1$
+\\$11^{6*384}\equiv11^{384}\mod35$
+\\
+\\Yes, $4^{1536}\equiv9^{4824}\mod35$
+
+\vspace{0.1in}
+
+\item \textbf{Q2} 
+\\$x^{86}\equiv6\mod29$
+\\$x^{28}\equiv1\mod29$
+\\$x^{86}\equiv x^2\mod29$
+\\$x^2\equiv6\mod29$
+\\$x^2\equiv64\mod29$
+\\$x=8$
+\vspace{0.1in}
+
+\item \textbf{Q3} 
+\\Prove that GCD$(F_{n+1},F_n)=1$, for $n\ge1$, where $F_n$ is the n-th Fibonacci element.
+\\We prove this with induction
+\\Base: $n=1$, $F_2=1$, $F_1=1$, GCD$(F_2,F_1)=$GCD$(1,1)=1$.
+\\Induction: Assume GCD$(F_{n+1},F_n)=1$
+\\$F_{n+2}=F_{n+1}+F_n$, $F_n=F_{n+2}-F_{n+1}$
+\\GCD$(F_{n+1},F_{n})=$GCD$(F_{n+1},F_{n+2}-F_{n+1})=$GCD$(F_{n+1},F_{n+2})=$GCD$(F_{n+2},F_{n+1})=1$
+\\GCD$(F_{n+1},F_n)=1\imp$GCD$(F_{n+2},F_{n+1})=1$
+\\therefore, GCD$(F_{n+1},F_n)=1$, for $n\ge1$ $\hfill{\blacksquare}$
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

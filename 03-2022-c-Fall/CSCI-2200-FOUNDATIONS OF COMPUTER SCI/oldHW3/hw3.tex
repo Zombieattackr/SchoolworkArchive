@@ -1,0 +1,440 @@
+\documentclass[11pt]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage[pdftex, colorlinks, linkcolor=red,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage{ulem}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{0.3cm plus4mm minus3mm}
+
+\textwidth  6.5in
+\oddsidemargin +0.0in
+\evensidemargin +0.0in
+\textheight 9.0in
+\topmargin -0.5in
+
+\usepackage{upquote,textcomp}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+\begin{document}
+\thispagestyle{empty}   %% skips page number on the first page
+
+\begin{center}
+\large
+\textbf{CSCI 2200 --- Foundations of Computer Science (FoCS) \\
+Homework 3 (document version 1.2)}
+\end{center}
+
+\section*{Overview}
+\begin{itemize}
+\item This homework is due by 11:59PM on Thursday, October~20
+\item You may work on this homework in a group of no more than four students;
+  unlike recitation problem sets,
+  \textbf{your teammates may be in any section}
+\item You may use at most \textbf{three} late days on this assignment
+\item Please start this homework early and ask questions during
+  office hours; % and at your September~14 recitation section;
+  also ask (and answer) questions on the Discussion Forum 
+\item Please be concise in your answers;
+  even if your solution is correct, if it is not well-presented,
+  you may still lose points
+\item You can type or hand-write (or both) your solutions
+  to the required graded problems below;
+  \textbf{all work must be organized in one PDF that lists
+  all teammate names}
+\item You are strongly encouraged to use LaTeX, in particular for
+  mathematical symbols;
+  see references in Course Materials
+\item \textbf{EARNING LATE DAYS:}
+  for each homework that you complete using LaTeX
+  (including any tables, graphs, etc., i.e.,~no hand-written anything),
+  you earn one additional late day;
+  you can draw graphs and other diagrams
+  in another application and include them as image files
+\item To earn a late day, you must submit your LaTeX files
+  (i.e.,~\verb+*.tex+) along with your one required PDF file---please name
+  the PDF file \verb+hw3.pdf+
+\item Also note that the earned late day can be used
+  retroactively, even back to the first homework assignment!
+\end{itemize}
+
+\vspace{0.2in}
+
+%\begin{center}
+%\includegraphics[scale=0.5]{math-bitmoji.png}
+%\end{center}
+
+\newpage
+\section*{Warm-up exercises}
+The problems below are good practice problems to work on.
+Do not submit these as part of your homework submission.
+\textbf{These are ungraded problems.}
+
+\begin{multicols}{2}
+\begin{itemize}
+
+% 10+
+\item \textbf{Problem 7.11.}
+\item \textbf{Problem 7.12(a-b).}\\(See Problem 7.28 for hints.)
+\item \textbf{Problem 7.21.}
+\item \textbf{Problem 7.41.}
+\item \textbf{Problem 7.44.}
+\item \textbf{Problem 7.45(a-b,d-f).}
+\item \textbf{Problem 7.46.}
+\item \textbf{Problem 7.47.}
+\item \textbf{Problem 8.12(a-c).}
+\item \textbf{Problem 8.13.}
+\item \textbf{Problem 8.18.}
+
+\end{itemize}
+\end{multicols}
+
+\section*{Graded problems}
+The problems below are required and will be graded.
+\begin{itemize}
+
+% 8+
+\item \textbf{*Problem 7.9.}
+\item \textbf{*Problem 7.12(c).} (See Problem 7.28 for hints.)
+\item \textbf{*Problem 7.13(a).}
+\item \textbf{*Problem 7.19(d).}
+%\item \textbf{*Problem 7.19(k).}
+\item \textbf{*Problem 7.42.}
+\item \textbf{*Problem 7.45(c).}
+\item \textbf{*Problem 7.49.}
+\item \textbf{*Problem 8.12(d).}
+\item \textbf{*Problem 8.14.}
+
+\end{itemize}
+
+\textbf{(v1.1)}~Some of the above problems (graded an ungraded)
+are transcribed in the pages that follow.
+
+Graded problems are noted with an asterisk~(*).
+
+If any typos exist below, please use the textbook description.
+
+\newpage
+\begin{itemize}
+
+\item \textbf{*Problem 7.9.}
+$G_0=0$, $G_1=1$, and $G_n=7G_{n-1}-12G_{n-2}$ for $n>1$.
+Compute $G_5$.
+\\$G_5=7G_4-12G_3$
+\\$G_4=7G_3-12G_2$
+\\$G_3=7G_2-12G_1$
+\\$G_2=7G_1-12G_0$
+\\$G_2=7=7$
+\\$G_3=7*7-12=37$
+\\$G_4=7*(7*7-12)-12*7=175$
+\\$G_5=7*(7*(7*7-12)-12*7)-12(7*7-12)=781$
+\\
+Show $G_n=4^n-3^n$ for $n\ge 0$.
+\\We prove the statement with induction.
+\\Base case: $G_0=4^0-3^0=0$
+\\Base case: $G_1=4^1-3^1=1$
+\\Induction: assume $G_n=4^n-3^n$
+\\$7G_{n-1}-12G_{n-2}=4^n-3^n$
+\\$7G_{n}-12G_{n-1}=4^{n+1}-3^{n+1}$
+\\$7(4^n-3^n)-12(4^{n-1}-3^{n-1})=4^{n+1}-3^{n+1}$
+\\$(7*4^n-7*3^n)-(3*4^{n}-4*3^{n})=4^{n+1}-3^{n+1}$
+\\$7*4^n-7*3^n-3*4^{n}+4*3^{n}=4^{n+1}-3^{n+1}$
+\\$4*4^n-3*3^n=4^{n+1}-3^{n+1}$
+\\$4^{n+1}-3^{n+1}=4^{n+1}-3^{n+1}$
+\\therefore $G_n=4^n-3^n$ for $n\ge 0$.$\hfill\blacksquare$
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.11.}
+In each case tinker.
+Then, guess a formula that solves the recurrence, and prove it.
+\begin{enumerate}[(a)]
+\item $P_0=0$, $P_1=a$, and $P_n=2P_{n-1}-P_{n-2}$, for $n>1$.
+\item $G_1=1$; $G_n=(1-1/n)\cdot G_{n-1}$, for $n>1$.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.12(a-b).} (See Problem 7.28 for hints.)
+Tinker to guess a formula for each recurrence and prove it.
+In each case, $A_1=1$ and for $n>1$:
+\begin{enumerate}[(a)]
+\item $A_n=10A_{n-1}+1$.
+\item $A_n=nA_{n-1}/(n-1)+n$.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.12(c).} (See Problem 7.28 for hints.)
+Tinker to guess a formula for each recurrence and prove it.
+In each case, $A_1=1$ and for $n>1$:
+\begin{enumerate}[(a)]
+\setcounter{enumi}{2}
+\item $A_n=10nA_{n-1}/(n-1)+n=\frac{10nA_{n-1}}{n-1}+n$.
+\\$A_n=\frac{n(10^n-1)}{9}$
+\\We prove this with induction.
+\\Base case: $A_1=\frac{1(10^1-1)}{9}=1$
+\\Incuction: assume $A_n=\frac{n(10^n-1)}{9}$
+\\$\frac{10nA_{n-1}}{n-1}+n=\frac{n(10^n-1)}{9}$
+\\$\frac{10(n+1)A_{n}}{n}+(n+1)=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{10(n+1)\frac{n(10^n-1)}{9}}{n}+(n+1)=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{10(n+1)n(10^n-1)}{9n}+(n+1)=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{10(n+1)(10^n-1)}{9}+(n+1)=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{10(n+1)(10^n-1)+9(n+1)}{9}=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{(n+1)(10^{n+1}-10)+9(n+1)}{9}=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$(n+1)\frac{(10^{n+1}-10)+9}{9}=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$(n+1)\frac{10^{n+1}-1}{9}=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\$\frac{(n+1)(10^{n+1}-1)}{9}=\frac{(n+1)(10^{n+1}-1)}{9}$
+\\therefore $A_n=\frac{n(10^n-1)}{9}$ for $\hfill\blacksquare$
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.13(a).}
+Analyze these very fast-growing recursions.
+[Hint: Take logarithms.]
+\begin{enumerate}[(a)]
+\item $M_1=2$ and $M_n=aM_{n-1}^2$ for $n>1$.
+Guess and prove a formula for $M_n$.
+Tinker, tinker.
+\\$2^{2^{n-1}}*a^{2^n-1}$
+\\$M_1=2$
+\\$M_2=aM_1^2$
+\\$M_3=aM_2^2$
+\\$M_4=aM_3^2$
+\\$M_5=aM_4^2$
+\\$M_2=a(2^1a^0)^2=a(2^2a^0)=2^2a^1$
+\\$M_3=a(2^2a^1)^2=a(2^4a^2)=2^4a^3$
+\\$M_4=a(2^4a^3)^2=a(2^8a^6)=2^8a^7$
+\\$M_5=a(2^8a^7)^2=a(2^16a^14)=2^16a^15$
+
+\\We prove this with induction.
+\\Base: 
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.19(d).}
+Recall the Fibonacci numbers: $F_1,F_2=1$; and, $F_n=F_{n-1}+F_{n-2}$ for $n>2$.
+\begin{enumerate}[(a)]
+\setcounter{enumi}{3}
+\item Prove that every third Fibonacci number, $F_{3n}$, is even.
+\\We prove this with induction.
+\\let $j,k\in\N_0$ so $2k$ is even and $2k+1$ is odd.
+\\Base: $F_3=F_2+F_1=1+1=2=2k$ is even.
+\\Induction: assume every third $F_n$ is even so $F_{3n}=2k$
+\\$F_{3n}=F_{3n-1}+F_{3n-2}$
+\\$F_{3(n+1)}=F_{3(n+1)-1}+F_{3(n+1)-2}$
+\\$F_{3k}=F_{3n+2}+F_{3n+1}$
+\\$2k=F_{3n+2}+F_{3n+1}$
+\\$2k=F_{3n+1}+F_{3n}+F_{3n+1}$
+\\$2k=2F_{3n+1}+2j$
+\\$2k=2(F_{3n+1}+j)$
+\\therefore $F_{3n}$ is even $\hfill\blacksquare$
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.21.}
+Show that every $n\ge 1$ is a sum of distinct Fibonacci numbers,
+e.g.,~$11=F_4+F_6$; $20=F_3=F_5+F_7$.
+(There can be many ways to do it, e.g.,~$6=F_1+F_5=F_2+F_3+F_4$.)
+[Hints: Greedy algorithm; strong induction.]
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.41.}
+Refer to the pseudocode on the right.
+\begin{verbatim}
+out=S([arr],i,j)
+ if(j<i) out=0;
+ else
+  out=arr[j]+S([arr],i,j-1);
+\end{verbatim}
+\begin{enumerate}[(a)]
+\item What is the function being implemented?
+\item Prove that the output is correct for every valid input.
+\item Give a recurrence for the runtime $T_n$, where $n=j-i$.
+\item Guess and prove a formula for $T_n$.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.42.}
+Give pseudocode for a recursive function that computes $3^{2^n}$ on input $n$.
+\begin{enumerate}[(a)]
+\item Prove that your function correctly computes $3^{2^n}$ for every $n\ge 0$.
+\item Obtain a recurrence for the runtime $T_n$.
+  Guess and prove a formula for $T_n$.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.44.}
+We give two implementations of \verb+Big(n)+ from page~90
+(\verb+iseven(n)+ tests if $n$ is even).
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+\begin{verbatim}
+out=Big(n)
+ if(n==0) out=1;
+ elseif(iseven(n))
+    out=Big(n/2)*Big(n/2);
+ else out=2*Big(n-1)
+\end{verbatim}
+\item
+\begin{verbatim}
+out=Big(n)
+ if(n==0) out=1;
+ elseif(iseven(n))
+    tmp=Big(n/2); out=tmp*tmp;
+ else out=2*Big(n-1)
+\end{verbatim}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}[(i)]
+\item For each, prove that the output is $2^n$ and give a recurrence for the runtime $T_n$.
+  (\verb+iseven(n)+ is two operations.)
+\item For each, compute runtimes $T_n$ for $n=1,\ldots,10$.
+  Compare runtimes with Exercise~7.10 on page~90.
+\end{enumerate}
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.45(c).}
+Give recursive definitions for the set $\mathcal{S}$ in each of the following cases.
+\begin{enumerate}[(a)]
+\setcounter{enumi}{2}
+\item $\mathcal{S}=\{$\ all strings with the same number of 0's and 1's\ $\}$
+  (e.g.,~0011, 0101, 100101).
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.45(a-b,d-f).}
+Give recursive definitions for the set $\mathcal{S}$ in each of the following cases.
+\begin{enumerate}[(a)]
+\item $\mathcal{S}=\{0,3,6,9,12,\dots\}$, the multiples of~3.
+\item $\mathcal{S}=\{1,2,3,4,6,7,8,9,11,\dots\}$, the numbers which are not multiples of~5.
+\setcounter{enumi}{3}
+\item The set of odd multiples of~3.
+\item The set of binary strings with an even number of 0's.
+\item The set of binary strings of even length.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.46.}
+What is the set $\mathcal{A}$ defined recursively as shown?
+(By default, nothing else is in $\mathcal{A}$---minimality.)
+\begin{enumerate}[(1)]
+\item $1\in\mathcal{A}$
+\item $x,y\in\mathcal{A}\imp x+y\in\mathcal{A}$ \\
+  $x,y\in\mathcal{A}\imp x-y\in\mathcal{A}$
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 7.47.}
+What is the set $\mathcal{A}$ defined recursively as shown?
+(By default, nothing else is in $\mathcal{A}$---minimality.)
+\begin{enumerate}[(1)]
+\item $3\in\mathcal{A}$
+\item $x,y\in\mathcal{A}\imp x+y\in\mathcal{A}$ \\
+  $x,y\in\mathcal{A}\imp x-y\in\mathcal{A}$
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 7.49.}
+There are 5 rooted binary trees (RBTs) with 3 nodes.
+How many have 4~nodes?
+\\$12$
+
+\vspace{0.1in}
+
+\item \textbf{Problem 8.12(a-c).}
+A set $\mathcal{P}$ of parenthesis strings has a recursive definition (right).
+\begin{enumerate}[(1)]
+\item $\varepsilon\in\mathcal{P}$
+\item $x\in\mathcal{P}\imp [x]\in\mathcal{P}$ \\
+  $x,y\in\mathcal{P}\imp xy\in\mathcal{P}$
+\end{enumerate}
+\begin{enumerate}[(a)]
+\item Determine if each string is in $\mathcal{P}$ and
+  give a derivation if it is in $\mathcal{P}$. \\
+  (i)~$[[[]]]][$\ \ \ \ (ii)~$[][[]][[]]$\ \ \ \ (iii)~$[[][][]$
+\item Give two derivations of $[][][[]]$ whose steps are not a simple reordering of each other.
+\item Prove by structural induction that every string in $\mathcal{P}$ has even length.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 8.12(d).}
+A set $\mathcal{P}$ of parenthesis strings has a recursive definition (right).
+\begin{enumerate}[(1)]
+\item $\varepsilon\in\mathcal{P}$
+\item $x\in\mathcal{P}\imp [x]\in\mathcal{P}$ \\
+  $x,y\in\mathcal{P}\imp xy\in\mathcal{P}$
+\end{enumerate}
+\begin{enumerate}[(a)]
+\setcounter{enumi}{3}
+\item Prove by structural induction that every string in $\mathcal{P}$ is balanced.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 8.13.}
+Recursively define the binary strings that contain more 0's than 1's.
+Prove:
+\begin{enumerate}[(a)]
+\item Every string in your set has more 0's than 1's.
+\item Every string which has more 0's than 1's is in your set.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{*Problem 8.14.}
+A set $\mathcal{A}$ is defined recursively as shown.
+\begin{enumerate}[(1)]
+\item $3\in\mathcal{A}$
+\item $x,y\in\mathcal{A}\imp x+y\in\mathcal{A}$ \\
+  $x,y\in\mathcal{A}\imp x-y\in\mathcal{A}$
+\end{enumerate}
+\begin{enumerate}[(a)]
+\item Prove that every element of $\mathcal{A}$ is a multiple of~3.
+
+\item Prove that every multiple of 3 is in $\mathcal{A}$.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\item \textbf{Problem 8.18.}
+Recursively define rooted binary trees (RBTs) and rooted full binary trees (RFBTs).
+\begin{enumerate}[(a)]
+\item Give examples, with derivations, of RBTs and RFBTs with 5, 6, and 7 vertices.
+\item Prove by structural induction that every RFBT has an odd number of vertices.
+\end{enumerate}
+
+\end{itemize}
+
+\end{document}

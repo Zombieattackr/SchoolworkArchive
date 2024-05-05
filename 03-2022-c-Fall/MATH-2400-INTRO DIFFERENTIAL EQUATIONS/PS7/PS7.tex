@@ -1,0 +1,250 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+\mathsurround=2pt
+\parskip=2pt
+
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.27in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.27in}FALL 2022\bigskip\\ {\bf Problem Set 7} \smallskip\\ Due: 11pm, Tuesday, November 1, 2022}
+\\Hayden Fuller
+\end{center}
+
+\bigskip\noindent
+\underline{NOTES}
+\begin{enumerate}
+\item Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item There are two parts of the Problem Set, an objective part consisting of multiple choice questions (with no partial credit available) and a subjective part (with partial credit possible).  Please complete all questions.
+\item Writing your solutions in {\LaTeX} is preferred but not required.
+\item Show all work for problems in the subjective part.  Illegible or undecipherable solutions will not be graded. 
+\item Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item Your completed work is to be submitted electronically to LMS  as a \textcolor{red}{single pdf file}. Be sure that the pages are properly oriented and well lighted.  (\textcolor{blue}{Please do not e-mail your work to Muhammad or me.})
+\end{enumerate}
+
+\bigskip\noindent
+{\bf Practice Problems from the textbook} (Not to be turned in)
+\begin{itemize}
+\item
+Exercises from Chapter 6, pages 149--150: 1(c,d,f,i), 2(a,d), 4(a,d).
+\item
+Exercises from Chapter 6, pages 155--157: 1(b,d), 2(a,d,g,k).
+\item
+Exercises from Chapter 6, page 163: 1(c,h), 2(b,c,e).
+\end{itemize}
+
+\bigskip\noindent
+{\bf Objective part} (Choose A, B, C or D; no work need be shown, no partial credit available)
+
+\begin{enumerate}
+\item (5 points)  Let $f(t)=e\sp{t}$, $g(t)=e\sp{2t}\sin{3t}$ and $H(t)$ be the Heaviside step function.  Identify the correct statement, or select \lq\lq All of these choices'' if all of the statements are correct.
+\begin{description}
+\item[A] If $\displaystyle{\hat{F}=\int_0\sp{T} f(t)e\sp{-st}\,dt}$, then $\displaystyle{\lim_{T\rightarrow\infty}\hat{F}}$ exists for $s>1$.
+\item[B] If $G(s)=\displaystyle{\int_0\sp\infty g(t)e\sp{-st}\,dt}$, then $G(s)=\displaystyle{{3\over(s-2)\sp2+9}}$ assuming $s>2$.
+\item[C] If $h(t)=\cos t+tH(t-1)$, then $h(t)$ is piecewise continuous for $t\in[0,3]$.
+\item[D] XAll of these choicesX
+\end{description}
+
+\item (5 points) Which of the following is correct, or select \lq\lq None of these choices'' if none are correct.
+\begin{description}
+\item[A] $\displaystyle{{\cal L}\bigl(\sin\sp2t\bigr)={1\over(s\sp2+1)\sp2}}$
+\item[B] ${\cal L}\bigl(u\sp{\prime\prime}(t)\bigr)=s{\cal L}\bigl(u\sp{\prime}(t)\bigr)$ 
+\item[C] X$\displaystyle{{\cal L}\bigl(t\sp2e\sp{-t}\bigr)={2\over(s+1)\sp3}}$X
+\item[D] None of these choices
+\end{description}
+
+\newpage
+\item (5 points) Let $f(t) = [1-H(t-\pi)]\sin t + H(t-\pi) \cos t$, where $H(t)$ is the Heaviside step function.  Which of the following is correct, or select \lq\lq None of these choices'' if none are correct.
+\begin{description}
+\item[A]  $f(0)=f(3\pi)$
+\item[B]  X$f(\pi/2)=f(2\pi)$X
+\item[C]  $f(2\pi)=f(3\pi)$
+\item[D] None of these choices
+\end{description}
+
+
+\end{enumerate}
+
+\bigskip\bigskip\noindent
+{\bf Subjective part} (Show work, partial credit available)
+
+\begin{enumerate}
+
+\item (15 points)  Use the properties of the Laplace transform and the table of Laplace transforms discussed in class (or the one given in the text) to find the following:
+\begin{enumerate}
+\item
+Find $F(s)$ and $G(s)$ if
+\[
+f(t)=2te\sp{-2t}\sin3t,\qquad g(t)=\left\{\begin{array}{cl} 0 & \hbox{if $t<3$}\smallskip\\ e\sp{t}\cos(t-3) & \hbox{if $t\ge3$}\end{array}\right.
+\]
+\\$f_1=e^{-2t}\sin(3t)$
+\\$f=2tf_1$
+\\T7,a=-2,b=3,$F_1=\frac{3}{(s+2)^2+9}=\frac{3}{s^2+4s+13}$
+\\T9,n=1,$F=2(-1)\frac{(s^2+4s+13)(0)-(3)(2s+4)}{(s^2+4s+13)^2}=-2\frac{-6s+12}{(s^2+4s+13)^2}$
+\\$F=-2\frac{-6s+12}{(s^2+4s+13)^2}$
+\\
+\\$g_1=e^{t+3}\cos(t)=e^3e^t\cos(t)$
+\\$g=H(t-3)g_1(t-3)$
+\\T12,c=3,$G=G_1e^{-3s}$
+\\$g_2=\cos(t)$
+\\T4,b=1,$G_2=\frac{s}{s^2+1}$
+\\T8,a=1,$G_1=e^3G_2(s-1)=e^3\frac{s-1}{(s-1)^2+1}=e^3\frac{s-1}{s^2-2s+2}$
+\\$G=e^3\frac{s-1}{s^2-2s+2}e^{-3s}$
+\item
+Find $u(t)$ and $v(t)$ if
+\[
+U(s)={2s+7\over s\sp2+4s+5},\qquad V(s)={e\sp{-s}\over s(s-2)}
+\]
+\\$U=\frac{2(s+2)+3}{(s+2)^2+1}=3\frac{1}{(s+2)^2+1}+2\frac{s+2}{(s+2)^2+1}$
+\\T7,T6,b=1,a=-2,$u=3e^{-2t}\sin(t)+2e^{-2t}\cos(t)$
+\\$u=3e^{-2t}\sin(t)+2e^{-2t}\cos(t)$
+\\
+\\$V=e^{-s}V_1$
+\\$V_1=\frac{1}{s(s-2)}$
+\\$\frac{1}{s(s-2)}=\frac{A}{s}+\frac{B}{s-2}$
+\\$1=A(s-2)+B(s)=(A+B)s-2A$
+\\$A+B=0$; $-2A=1$
+\\$A=\frac{-1}{2}$; $B=\frac{1}{2}$
+\\$V_1=\frac{\frac{-1}{2}}{s}+\frac{\frac{1}{2}}{s-2}$
+\\$V_1=\frac{-1}{2}\frac{1}{s}+\frac{1}{2}\frac{1}{s-2}$
+\\$V_2=\frac{1}{s}$
+\\T1,$v_2=1$
+\\$V_3=\frac{1}{s-2}$
+\\T3,a=2$v_3=e^{2t}$
+\\$v_1=\frac{-1}{2}+\frac{1}{2}e^{2t}$
+\\T12,c=1,$v=(\frac{-1}{2}+\frac{1}{2}e^{2(t-1)})H(t-1)$
+$v=\frac{1}{2}(-1+e^{2t-2)})H(t-1)$
+
+\end{enumerate}
+
+
+\bigskip
+\item (15 points)  Consider the initial-value problem
+\[
+y\sp{\prime\prime}+2y\sp\prime=4t,\qquad y(0)=-1, \quad y\sp\prime(0)=3
+\]
+\begin{enumerate}
+\item
+Use $y(t)=e\sp{rt}$ to determine the homogeneous solution $y_h(t)$, and use the method of undetermined coefficients to determine the particular solution $y_p(t)$.  Apply the initial conditions to determine the solution $y(t)$ of the IVP.
+\\$r^2+2r=0$; $r=0,-2$
+\\$y_h=C_1+C_2e^{-2t}$
+\\$y_p=A+Bt$; A is homo sol
+\\$y_p=At+Bt^2$
+\\$y'_p=A+2Bt$
+\\$y''_p=2B$
+\\$2B+2(A+2Bt)=4t$
+\\$2B+2A+4Bt=4t$
+\\$2B+2A=0$
+\\$4B=4$
+\\$B=1$; $A=-1$
+\\$y_p=-t+t^2$
+\\$y(t)=C_1+C_2e^{-2t}+t^2-t$
+\\$y(0)=-1=C_1+C_2e^{0}+0^2-0$
+\\$C_1+C_2=-1$
+\\$y'(t)=-2C_2e^{-2t}+2t-1$
+\\$y'(0)=3=-2C_2e^{0}+0-1$
+\\$4=-2C_2$; $C_2=-2$; $C_1=1$
+\\$y(t)=1-2e^{-2t}+t^2-t$
+\\$y(t)=-2e^{-2t}+t^2-t+1$
+\item
+Take a Laplace transform of the DE and use the ICs to determine $Y(s)$, the Laplace transform of $y(t)$.  Use the properties of Laplace transforms and the table of Laplace transforms discussed in class (or the one given in the text) to find $y(t)$.  Confirm that the solution found here agrees with the one found in part~(a).
+\\${\cal L}y''+2{\cal L}y'=4{\cal L}t$
+\\$(s^2Y-sy(0)-y'(0))+2(sY-y(0))=4(\frac{1}{s^2})$
+\\$s^2Y+s-3+2sY+2=4\frac{1}{s^2}$
+\\$s^2Y+2sY+s-1=4\frac{1}{s^2}$
+\\$Y(s^2+2s)=4\frac{1}{s^2}-s+1$
+\\$Y=\frac{4\frac{1}{s^2}-s+1}{s^2+2s}$
+\\$Y=\frac{-s^3+s^2+4}{s^3(s+2)}=\frac{A_1}{s}+\frac{A_2}{s^2}+\frac{A_3}{s^3}+\frac{A_4}{s+2}$
+\\$-s^3+s^2+4=A_1(s+2)s^2+A_2(s+2)s+A_3(s+2)+A_4s^3$
+\\$-s^3+s^2+4=A_1(s^3+2s^2)+A_2(s^2+2s)+A_3(s+2)+A_4s^3$
+\\$4=2A_3$; $A_3=2$
+\\$0=2A_2+A_3$; $0=2A_2+2$; $A_2=-1$
+\\$1=2A_1+A_2$; $1=2A_1-1$; $A_1=1$
+\\$-1=A_4+A_1$; $-1=A_4+1$; $A_4=-2$
+\\$Y=\frac{-s^3+s^2+4}{s^3(s+2)}=\frac{1}{s}+\frac{-1}{s^2}+\frac{2}{s^3}+\frac{-2}{s+2}$
+\\T1; T2,n=1; T2,n=2; T3,a=-2; 
+\\$y=1-t+t^2-2e^{-2t}$
+\\$y(t)=-2e^{-2t}+t^2-t+1$
+\end{enumerate}
+
+
+\bigskip
+\item (15 points) The displacement $u(t)$ of a forced mass-spring-damper system is governed by
+\[
+u\sp{\prime\prime}+2u\sp\prime+10u=f(t),\qquad u(0)=0,\quad u\sp\prime(0)=1
+\]
+where the external forcing is given by
+\[
+f(t)=\left\{\begin{array}{cl} 0 & \hbox{if $t<1$}\smallskip\\ 10e\sp{-2(t-1)} & \hbox{if $t\ge1$}\end{array}\right.
+\]
+\begin{enumerate}
+\item Take a Laplace transform of the DE and use the ICs to determine $U(s)$, the Laplace transform of $u(t)$.
+\\$f(t)=10e^{-2(t-1)}H(t-1)$
+\\T12,c=1,$F(t)=F_1e^{-s}$
+\\$f_1=10e^{-2t}$
+\\T3,a=-2,$F_1=10\frac{1}{s+2}$
+\\$F(t)=\frac{10e^{-s}}{s+2}$
+\\${\cal L}u''+2{\cal L}u'+10{\cal L}u={\cal L}f(t)$
+\\$(s^2U-su(0)-u'(0))+2(sU-u(0))+10(\frac{1}{s^2})=F$
+\\$(s^2U-1)+2(sU)+\frac{10}{s^2}=\frac{10e^{-s}}{s+2}$
+\\$s^2U+2sU+\frac{10}{s^2}=\frac{10e^{-s}}{s+2}+1$
+\\$s^2U+2sU=\frac{10e^{-s}}{s+2}+1-\frac{10}{s^2}$
+\\$U(s^2+2s)=\frac{10e^{-s}}{s+2}+1-\frac{10}{s^2}$
+\\$U=\frac{10e^{-s}}{(s+2)(s^2+2s)}+\frac{1}{(s^2+2s)}-\frac{10}{s^2(s^2+2s)}$
+\\$U=\frac{10}{s(s+2)^2}e^{-s}-\frac{10}{s^3(s+2)}+\frac{1}{s(s+2)}=U_1-U_2+U_3$
+\\$U_1=\frac{10}{s(s+2)^2}e^{-s}$
+\\$\frac{10}{s(s+2)^2}=\frac{A_1}{s}+\frac{A_2}{(s+2)}+\frac{A_3}{(s+2)^2}$
+\\$\frac{10}{s}=\frac{A_1(s+2)^2}{s}+A_2(s+2)+A_3$
+\\$10=A_1(s+2)^2+A_2s(s+2)+A_3s$
+\\$10=A_1(s^2+4s+4)+A_2(s^2+2s)+A_3s$
+\\$10=4A_1$; $A_1=\frac{5}{2}$
+\\$0=A_1+A_2$; $0=\frac{5}{2}+A_2$; $A_2=-\frac{5}{2}$
+\\$0=4A_1+2A_2+A_3$; $0=4\frac{5}{2}-2\frac{5}{2}+A_3$; $0=10-5+A_3$; $A_3=-5$
+\\$\frac{10}{s(s+2)^2}=\frac{5}{2}\frac{1}{s}-\frac{5}{2}\frac{1}{(s+2)}-5\frac{1}{(s+2)^2}$
+\\$U_1=(\frac{5}{2}\frac{1}{s}-\frac{5}{2}\frac{1}{(s+2)}-5\frac{1}{(s+2)^2})e^{-s}$
+\\$U_2=\frac{10}{s^3(s+2)}=\frac{A_1}{s}+\frac{A_2}{s^2}+\frac{A_3}{s^3}+\frac{A_4}{s+2}$
+\\$\frac{10}{(s+2)}=A_1s^2+A_2s+A_3+\frac{A_4s^3}{s+2}$
+\\$10=A_1s^2(s+2)+A_2s(s+2)+A_3(s+2)+A_4s^3$
+\\$10=A_1(s^3+2s^2)+A_2(s^2+2s)+A_3(s+2)+A_4s^3$
+\\$10=2A_3$; $A_3=5$
+\\$0=2A_2+A_3$; $0=2A_2+5$; $A_2=-\frac{5}{2}$
+\\$0=2A_1+A_2$; $0=2A_1-\frac{5}{2}$; $A_1=\frac{5}{4}$
+\\$0=A_1+A_4$; $0=\frac{5}{4}+A_4$; $A_4=-\frac{5}{4}$
+\\$U_2=\frac{5}{4}\frac{1}{s}-\frac{5}{2}\frac{1}{s^2}+5\frac{1}{s^3}-\frac{5}{4}\frac{1}{s+2}$
+\\$U_3=\frac{1}{s(s+2)}=\frac{A_1}{s}+\frac{A_2}{s+2}$
+\\$\frac{1}{(s+2)}=A_1+\frac{A_2s}{s+2}$
+\\$1=A_1(s+2)+A_2s$
+\\$1=2A_1$; $A_1=\frac{1}{2}$
+\\$0=A_1+A_2$; $0=\frac{1}{2}+A_2$; $A_2=-\frac{1}{2}$
+\\$U_3=\frac{1}{2}\frac{1}{s}-\frac{1}{2}\frac{1}{s+2}$
+\\
+\\$U=((\frac{5}{2}\frac{1}{s}-\frac{5}{2}\frac{1}{(s+2)}-5\frac{1}{(s+2)^2})e^{-s})-(\frac{5}{4}\frac{1}{s}-\frac{5}{2}\frac{1}{s^2}+5\frac{1}{s^3}-\frac{5}{4}\frac{1}{s+2})+(\frac{1}{2}\frac{1}{s}-\frac{1}{2}\frac{1}{s+2})$
+\item Use the properties of Laplace transforms and the table of Laplace transforms discussed in class (or the one given in the text) to find $u(t)$.
+\\$u_1=(\frac{5}{2}-\frac{5}{2}e^{-2(t-1)}-5e^{-2(t-1)}(t-1))H(t-1)$
+\\$u_2=\frac{5}{4}-\frac{5}{2}t+5\frac{t^2}{2}-\frac{5}{4}e^{-2t}$
+\\$u_3=\frac{1}{2}-\frac{1}{2}e^{-2t}$
+\\$u(t)=u_1-u_2+u_3$
+\\$u(t)=(\frac{5}{2}-\frac{5}{2}e^{-2(t-1)}-5e^{-2(t-1)}(t-1))H(t-1)-(\frac{5}{4}-\frac{5}{2}t+5\frac{t^2}{2}-\frac{5}{4}e^{-2t})+(\frac{1}{2}-\frac{1}{2}e^{-2t})$
+\\$u(t)=(\frac{5}{2}-\frac{5}{2}e^{-2(t-1)}-5e^{-2(t-1)}(t-1))H(t-1)-\frac{5}{4}+\frac{5}{2}t-5\frac{t^2}{2}+\frac{5}{4}e^{-2t}+\frac{1}{2}-\frac{1}{2}e^{-2t}$
+\\$u(t)=(\frac{5}{2}-\frac{5}{2}e^{-2(t-1)}-5e^{-2(t-1)}(t-1))H(t-1)-\frac{3}{4}+\frac{5}{2}t-\frac{5}{2}t^2+\frac{3}{4}e^{-2t}$
+\\$u(t)=(\frac{5}{2}-\frac{5}{2}e^{-2(t-1)}-5e^{-2(t-1)}(t-1))H(t-1)+\frac{3}{4}e^{-2t}-\frac{5}{2}t^2+\frac{5}{2}t-\frac{3}{4}$
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}

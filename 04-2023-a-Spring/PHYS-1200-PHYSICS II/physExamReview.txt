@@ -1,0 +1,45 @@
+DOUBLE SIDED crib sheet
+classes 11-16, AC, no EM
+70-80% MC and numerical short answer, rest is free response
+WEST HALL
+WED 6-7:25
+class 11-16, 
+sources of magnetic fields, law of bidot savart for moving charges and current elements
+magnetic fields of current carrying wires and loops
+magnetic forces between conductors
+\vec B = u_0/4pi * q*\vec vx\vec r/r^3 = q*\vec vx\hat r/r^2
+d\becV = u_0/4pi * I d\vec l x\vec r/r^3
+magnetic field is right hand rule, thumb is current, movement of charge, electrons are negative
+two wires: same attract, oposite repel. magnetic fields that agree repel, oppose attract
+\oint d\vec l = u_0 I_{enc}, I_enc=\int \vecJ_{net} * d\vec A
+\vec u=I \vec A, \tao_{B,net}=\vec u x \vec B
+
+magnetic flux
+...
+\phi_B=\int\vec B*d\vec A= \int B dA \cos\theta
+\epsilon=\oint \vec E * d\vec l= -d\phi_B/dt
+\epsilon_{tot}=-N d\phi_B/dt
+
+displacement current
+maxwell's equations
+I_d = \epsilon_0 d\phi_E/dt
+\oint \vec B * d\vec l=u_0(I_c+I_d)_enc = u_0*I_{c,enc}+u_0\epsilon_0 d\phi{E,enc}/dt
+4 maxwell equations
+\oint \vec E*d\vec A=Q_enc/\epsilon_0
+\oint \vec B*d\vec A=0
+\oint \vec E*d\vec l=-d\phi_B/dt
+...
+
+self and mutual inductancec
+EMF and currents
+magnetic field, energy, and energy density
+self inductance \phi_B=Li, L=\phi_B/i
+mutual inductance M_{21}=M{12}=M=N_2\phi_{B2}/i_1
+\epsilon_L=-L*di/dt
+\epsilon_1=-M di_2/dt
+U_B=.5 Li^2
+u_B=U_B/v=B^2/2\mu_0
+
+RC
+q(t)=C\epsilon(1-e^{-t/RC})
+i(t)...
