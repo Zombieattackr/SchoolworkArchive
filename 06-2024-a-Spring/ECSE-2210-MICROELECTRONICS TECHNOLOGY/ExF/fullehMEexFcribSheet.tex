@@ -1,0 +1,337 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+1.1 Microelectronics Technology S 2024 Crib Sheet Exam 1+2+F Hayden Fuller PN
+\begin{large}
+\\Basic:
+\\n-type, majority e minority h, donors, 5 electron, P, As, Sb,    p-type, majority h minority e, acceptors, 3 electron, B, Al, Ga, In
+\\$p_n$ holes in n side, minority
+\\$1eV=1.6\times10^{-19}J$
+\\$k=1.38\times10^{-23}J/K=8.6\times10^{-5}eV/K$, $kT=0.025eV$
+\\$E_{G,Si}=1.12eV$
+\\$n_i=10^{10}$, $n_i^2=np$, $n=n_ie^{(E_F-E_i)/kT}$, $p=n_ie^{(E_i-E_F)/kT}$
+\\$p-n+N_D-N_A=0$, $n^2-n(N_D-N_A)-n_i^2=0$
+\\$N_D>N_A$ $= >$ $n=N_D-N_A$ ; $p=n_i^2/n$     $N_D\approx N_A$ $= >$ $n=p=n_i$
+\\Band diagrams: n-type: $E_C, E_F, E_i, E_v$,   p-type: $E_C, E_i, E_F, E_v$
+\\Point defect: one atom missing. Electron generation: one electron missing
+\\Electron moving: breaks off and moves. Hole moving: electron line rotates into hole.
+\\effective mass: 
+\\Fermi function $f(E)=\frac{1}{1+e^{(E-E_F)/kT}}$, Steps from 1 to 0 at $E_F$ at 0K, smoothe at temp.
+\\$E_F=1-e^{\frac{E-E_F}{kT}}=\frac{E_C+E_V}{2}$ in intrinsic
+\\Distribution of carriers = distribution of states * probability of occupancy = $g(E) f(E)$
+\\Conduction band electrons: $n_0=\int_{E_C}^{E_top} g_C(E)f(E)dE$, holes in VB: $p_0=\int_{E_bottom}^{E_v} g_V(E)(1-f(E))dE$
+\\total free electron concentration $3kT$ away from edges (non-degenerate): $n=N_ce^{-\frac{E_C-E_F}{kT}}$ , hole: $p=N_ve^{-\frac{E_F-E_V}{kT}}$
+\\where effective density of states $N_ C=2.8\times10^{19}cm^{-3}$ and $N_ C=1\times10^{19}cm^{-3}$, $3kT$ around $N_{A or D}=2\times10^{17}$
+\\Drift:  caused by electric field, drift velocity $v_d=\mu_p E$  $cm/sec=cm^2/Vs * V/cm$
+\\$I=Q/T$, $J_{P|drift}=I/A=qp\mu_pE=\frac{E}{\rho}$
+\\resistivity: $\rho=1/(1p\mu_p+qn\mu_n)$
+\\resistivity measurement: 4 point probe, eddy current apparatus
+\\Diffusion: random thermal mothion, high to low concentration, must be a concentration gradient
+\\Flux $F=-D\frac{d\eta}{dx}$, $\eta=$particle concentration, $D=$diffusion coefficient
+\\holes/electrons go high to low,that's flux, but diffusion current is negative for electrons
+\\$J_{p|diff}=-qD_p\frac{dp}{dx}$, $J_{n|diff}=qD_n\frac{dn}{dx}$
+\\$J_p=J_{p|drift}+J_{p|diff}=q\mu_ppE+-qD_p\frac{dp}{dx}$, $J_n=J_{n|drift}+J_{n|diff}=q\mu_nnE+qD_n\frac{dn}{dx}$, $J=J_n+J_p$
+\\Band bending: electric field bends the band diagram
+\\$KE=E-E_C$, $PE=E_C-E_{ref}=-qV$ (for electrons), $V=-(E_C-E_{ref})/q$, $E=-\frac{dV}{dx}=\frac{dE_{C,V,i}}{dx}/q$
+\\Hot point measurement: Hot end makes particles move away. 
+\\p-type: holes move away, current goes out hot probe. n-type: electrons move away, current goes into hot probe
+\\in thermal equilibrium: $E_F$ is constant, net current $J_{p|drift}+J_{p|diff}=0$, recombination and generation cancel
+\\Einstein: $J_{n|drift}+J_{n|diff}=q\mu_nnE+qD_n\frac{dn}{dx}=0$, $E=\frac{dE_i}{dx}/q$, $n=n_ie^{(E_F-E_i)/kT}$
+\\electrons: $\frac{D_n}{\mu_n}=\frac{kT}{q}$, holes: $\frac{D_p}{\mu_p}=\frac{kT}{q}$
+\\recombination:
+\\band to band recombination gives off light, band to band generation through thermal and light absorption, RG center is indirect-middle step
+\\auger recombination, electron drops, and gives another electron KE. Impact ionization, on a slope, electron moves and falls
+\\SI is mostly RG recombination due to impurities
+\\direct semiconductors: k is matched so with less energy there's a photon. With a difference in k, more energy, phonon.
+\\RG statistics:
+\\if photon energy $hv$ is greater than band gap $E_G$, iti's absorbed and an electron is moved up.
+\\absorption: $I=I_0e^{-\alpha x}$, each photon creates an e-h pair. $\frac{dn}{dt}|_{light}=\frac{dp}{dt}|_{light}=G_L(x,\lambda)=G_{L0}e^{-\alpha x}$
+\\$\alpha$ drops off with wavelength. Higher wavelength, lower frequency, lower energy, doesn't get absorbed
+\\indirect thermal recombination-generation, $n_0, p_0$ under thermal equilibrium, $n, p$ as functions of t.
+\\$\Delta n=n-n_0$, $\Delta p=p-p_0$, $\Delta$'s are deviations from equilibrium. $N_t$ is number of RG centers/cm$^3$
+\\low level injection condition assumed, change in majority carrier concentration negligable, $\Delta p<<n_0$, $n\approx n_0$
+\\$\frac{dp}{dt}=\frac{dp}{dt}|_R+\frac{dp}{dt}|_G+G_L(x,\lambda)$, hole build up = recomb loss + gen gain + external light
+\\$\frac{dp}{dt}|_R=-C_pN_tp$
+\\thermal equilibrium: $\frac{dp}{dt}|_G=-\frac{dp}{dt}|R=C_pN_tp_0$
+\\generally when $G_L=0$, $\frac{dp}{dt}=-\frac{\Delta p}{\tau_p}$, minority carrier lifetime$\tau_p=\frac{1}{C_pN_t}$
+\\1.2 $\frac{\delta\Delta p}{\delta p}=-\frac{\Delta p}{\tau_p}$
+\\perturbation removed at $t=0$: $\Delta p=\Delta p(0)e^{-t/\tau_p}$
+\\$\frac{dp}{dt}=frac{dp}{dt}|_{drift}+\frac{dp}{dt}|_{diff}+\frac{dp}{dt}|_{thermal RG}+\frac{dp}{dt}|_{light/other}$
+\\current input: holes: $\frac{dp}{dt}=\frac{1}{q}\frac{d J_p}{dx}+\frac{dp}{dt}|_{thermal RG}+\frac{dp}{dt}|_{light/other}$ , electrons: first term is positive
+\\Minority carrier diffusion equiations:  electrons for p type, simplifications
+\\$J_n=q\mu_nnE+qD_n\frac{dn}{dx}\approx qD_n\frac{dn}{dx}$
+\\$\frac{dn}{dx}=\frac{d}{dx}(n_0+\Delta n)=\frac{d\Delta n}{dx}$
+\\$\frac{dn}{dt}|_{thermal RG} = -\frac{\Delta n}{\tau_n}$,   $\frac{dn}{dt}|_{light}=G_L$
+\\$\frac{dn}{dt}=\frac{d}{dt}(n_0+\Delta n)=\frac{d\Delta n}{dt}$
+\\$\frac{d\Delta n_p}{dt}=D_n\frac{d^2\Delta n_p}{dx^2}-\frac{\Delta n_p}{\tau_n}+G_L$
+\\$\frac{d\Delta p_n}{dt}=D_p\frac{d^2\Delta p_n}{dx^2}-\frac{\Delta p_n}{\tau_p}+G_L$
+\\Minority carrier diffusion length: $L_p=(D_p\tau_p)^{1/2}$, average distance minority carriers can diffuse
+\\misc
+\\low level injection assumption, majority carriers don't change significantly
+\\p+ n- is forward biased
+\\$L_p$ is minority p, so n side
+\end{large}
+Microelectronics Technology S 2024 Crib Sheet Exam 2+F Hayden Fuller BJT
+\begin{large}
+\\Equilibrium energy band diagram for pn junction $kT/q=.0256V$
+\\$n=n_i e^{(E_F-E_i)/kT}$, $p=n_i e^{(E_i-E_F)/kT}$, $E_F$ low for $p$, high for $n$
+\\$V=(E_{ref}-E_C)/q$, $E_{ref}-E_C=qV$, $E=1/q dE_C/dx=1/q dE_i/dx$, $\rho/\epsilon=dE/dx$, $\epsilon=K_s\epsilon_0$
+\\conceptual pn junction formation
+\\p gives some positive to n and n gives some electrons to p, creating negative region in p and positive region in n
+\\Built in voltage $V_{bi}$, after formation net drift and diffusion currents sum to zero
+\\E field from $n N_D$ to $p N_A$, $V_{bi}=1/q [(E_i-E_F)_p + (E_F-E_i)_n]=kT/q\ln(p_pn_n/n_i^2)$
+\\$(E_i-E_F)_p=kT\ln(p/n_i)$, $(E_F-E_i)_n=kT\ln(n/n_i)$, $p_p/p_n=n_n/n_p=e^{V_{bi} q/kT}$
+\\Depletion approximation 
+\\Poisson $dE/dx=\rho/(K_s\epsilon_0)=q/(K_s\epsilon_0) (N_D-N_A)$ for $-x_p<x<x_n$, $0$ elsewhere
+\\Quantitative analysis: E field
+\\$dE/dx=\rho/\epsilon=-qN_A/\epsilon=qN_D/\epsilon$
+\\$E(x)=\{-qN_A(x_p+x)/\epsilon\} -x_p<x<0, \{-qN_D(x_n-x)/\epsilon\} 0<x<x_n, {0} x<--x_p, x>x_n$
+\\Relationship between $x_n$ and $x_p$
+\\$E_{max}=-qN_Ax_p/\epsilon=-qN_Dx_n/\epsilon$, $N_Ax_p=N_Dx_n$ (equal net charge)
+\\$W=x_n+x_p$, $x_n=W N_A/(N_A+N_D)$, $x_p=W N_D/(N_A+N_D)$, if $N_A>>N_D$ then $W\approx x_n$, viceversa
+\\$E=-dV/dx$, $V_{bi}=-\int_{-xp}^{xn} E(x) dx=N_Dx_nWq/(2\epsilon)=W^2qN_AN_D/(2\epsilon (N_A+N_D))$
+\\$W=\sqrt{V_{bi}2\epsilon(N_A+N_D)/(qN_AN_D)}=\sqrt{2\epsilon(N_A+N_D)(V_{bi}-V_A)/(qN_AN_D)}$
+\\$dV/dx=\{qN_A(x_p+x)/\epsilon\}$, $-x_p<x<0$, $\{qN_D(x_n-x)/\epsilon\}$, $0<x<x_n$
+\\$V(x)=\{qN_A(x_p+x)^2/2\epsilon\}$, $-x_p<x<0$, $\{V_{bi}-qN_D(x_n-x)^2/2\epsilon\}$, $0<x<x_n$
+\\Drift due to E field n to p, holes to p, constant. Diffusion due to added minority carriers, holes to n. E
+\\$V_A=0$, med E field, med diffusion currents. $V_A>0$, small E, large diff. $V_A<0$, large E, small diff
+\\$V_A$ breaks $E_F$, + to p, smaller gap, p side lowers, n side raises
+\\$V_A$ up linear, $E_i$ gap down linear, carrier concentration exp dec, diffusion current incr exp with $V_A$
+\\drift constant because limited by how often, not how fast
+\\net$=I_{diff}-I_{drift}$. $V_A=0$ $I_{diff}=I_{drift}=I_0$. $I=I_0e^{V_A/V_{ref}}-I_{drift}=I_0(e^{V_A/V_{ref}}-1)$
+\\carrier concentrations under equilibrium, $carrier_{side}$. p side minority electron $n_p$
+\\$p_p/p_n=e^{(V_{bi}-V_A) q/kT}$, low level injection $p_n=p_{n0}e^{V_A q/kT}$, $n_p=n_{p0}e^{V_A q/kT}$
+\\minority carrier concentration under bias graph
+\\p side has $n_{p0}$, slopes up into $n_p=n_{p0}+\Delta n_p(x'')$ for total $\Delta n_p(0)$, $\Delta n_p(x'')=\Delta n_p(0)e^{-x''/L_n}$
+\\$\Delta p_n(x_n)=p_n(x_n-p_{n0}=p_{n0}(e^{V_A q/kT}-1)$, $\Delta n_p(-x_p)=n_{p0}(e^{V_A q/kT}-1)$
+\\carrier injection under forward bias
+\\x'' axis $\Delta n_p(0)=n_{p0}(e^{V_A q/kT}-1)$, $\Delta n_p(x'')=\Delta n_p(0) e^{-x''/L_n}$
+\\x' axis $\Delta p_n(0)=p_{n0}(e^{V_A q/kT}-1)$, $\Delta p_n(x')=\Delta p_n(0) e^{-x'/L_p}$
+\\Current and minority carrier diffusion
+\\$J_p(x)=qp\mu_pE-qD_p dp/dx$, $J_n(x)=qn\mu_nE-qD_n dn/dx$, simplified $J_p(x)=-qD_p dp/dx$
+\\$\delta\Delta p/\delta t=D_p \delta^2\Delta p/\delta x^2 - \Delta p/\tau_p+G_L$, $\delta\Delta n/\delta t=D_n \delta^2\Delta n/\delta x^2 - \Delta n/\tau_n+G_L$, simplified $0=D_p \delta^2\Delta p/\delta x^2 - \Delta p/\tau_p$
+\\diode: $J_p(x'=0)=\Delta p_n(0) q D_p/L_p=p_{n0} q D_p/L_p (e^{V_A q/kT}-1)$ and $J_n(x''=0)=-n_{p0} q D_n/L_n (e^{V_A q/kT}-1)$
+\\for total current $J=J_0 (e^{V_A q/kT}-1) = (p_{n0} q D_p/L_p+n_{p0} q D_n/L_n)(e^{V_A q/kT}-1)$
+\\2.1 large forward $V_A>>kT/q$, $J=J_0 e^{V_A q/kT}$. Large reverse $V_A<<-kT/q$, $J=-J_0$
+\\Avalanching, Zener, RG current, if $V_A$ approaches $V_bi$, high current. Series current, high level injection
+\\IV Reverse- Breakdown to G-R part
+\\IV Forward- G-R part(1/2kT) to Ideal(q/kT) to High Level Injection to Series Resistance Effect
+\\reverse breakdown: $V_{BR}\propto 1/N_B$, $V_{BR}$ is breakdown voltage, $N_B$ is bulk doping on lightly doped side
+\\Avalanching: lightly doped diodes, diff current flips direction, impact ionization, one e from p to n creates more
+\\Electric field must hit critical $E_{CR}$. steep fall, multiplication factor $M=1/[1-(|V_A|/V_{BR})^m]$, m 3 to 6
+\\$E(x=0)=-q N_D x_n/\epsilon_{Si}=-\sqrt{(V_{bi}-V_A) 2q N_AN_D/[\epsilon_{Si}(N_A+N_D)]}$
+\\Breakdown when $E(0)=E_{CR}$, $\sqrt{V_{BR} 2q N_AN_D/[\epsilon_{Si}(N_A+N_D)]}$
+\\Zener: tunneling, wall becomes thin when tall, 
+\\$I_{R-G}$ increases with depletion layer volume $W$ increases with reverse voltage.
+\\$I_{R-G}=-q A n_i W / 2\tau_0$ where $\tau=(\tau_p+\tau_n)/2$
+\\in forward bias: $I_{R-G}=I_0'(e^{V_A q/2kT}-1)$, total forward current $= I_{diff}+I_{R-G}$, $I_{diff}=I_0(e^{V_A q/kt}-1)$ where $I_0=qA(D_n+n_i^2/L_nN_A + D_pn_i^2/L_pN_D)$
+\\since $I_{diff}\propto n_i^2$ grows faster than $I_{R-G}\propto n_i$, RG is negligable in forward bias, more ideal in Ge and high temp
+\\$V_A$ approaches $V_{bi}$ , $I\approx I_0e^{(V_A-IR_s)q/kt}$ 
+\\$log(I)$ vs $V_A$ is slope $q/kT$ but veers right by $\Delta V$. $\Delta V$ vs $I$ gives linear slope $R_s$
+\\High level injection: when $V_A$ within $0.2V$ish of $V_{bi}$, $I=e^{V_A q/2kT}$, minority hits majority and they increase linearly together
+\\$log(I)$ vs $V_A$ shikanes with Avalanch/Zener breakdown, thermal gen in depletion, origin, thermal recombonation in depletion, ideal q/kT in middle, high level injection q/2kT above, serries resistance above
+\\Small signal admittance $Y=i/v_a=G+j\omega C$, res RS to cap CD+ cap DJ + res GD
+\\$C_j=\epsilon_{Si}A/W=A\sqrt{\epsilon_{Si}qN_B/2(V_{bi}-V_A)}$, up with $\sqrt{N_B}$, down with reverse bias
+\\$W=\sqrt{2\epsilon_{Si}(N_A+N_D)(V_{bi}-V_A)/(qN_AN_D)}=\sqrt{2\epsilon_{Si}(V_{bi}-V_A)/(qN_B)}$
+\\$1/C_J^2=2(V_{bi}-V_A)/(A^2qN_B\epsilon_{Si})$, vs $V_A$, slope first part, $=0$ at $V_{bi}$
+\\$C_D$ charge storage cap dominant in forward bias. $p+n$ has $I=Q_p/\tau_p$ where $Q_p$ total excess charge n side
+\\$Q_p=I\tau_p=qAD_p\tau_pp_{n0}/L_p * [e^{V_A q/kT}-1]\approx qAL_pp_{n0}e^{V_A q/kT}$
+\\$C_D=dQ_p/dV=I\tau_pq/kT$, $G_D=Iq/kT$
+\\Transient response, charge $Q_p$ goes zero when turned off from current flow and recomb, $dQ_p/dt=i(t)-Q_p/\tau_p$
+\\$Q_p=qAL_p\Delta p_n(0)$, to maintain charge, current $I=qAL_p\Delta p_n(0)/\tau_p$ must be supplied at $x'=0$
+\\$Q_p(t)=I\tau_pe^{-t/\tau_p}$, $I_F=V_F-V_{on}/R_F\approx V_F/R_F$, $I_R=V_R+v_A(t)/R_R\approx V_R/R_R$
+\\charge between reverse and forward curves needs to be moved, drop over time is pulled from axis
+\\storage delay time: $dQ_p/dt=i-Q_p/\tau_p=-I_R-Q_p/\tau_p$ for $0<t<t_s$, $t_s=\tau_p\ln(1+I_F/I_R)$
+\\applications: rectifiers, low R in forward, p+ n n+ prefered, reduce parasitic resistance, low $I_0$ in reverse, High voltage breakdown, p+nn+high band gap materials
+\\switching, fast, dope with gold to reduce lifetimes, narrow base for small stored charge
+\\Zener, heavy dope p+ and n+ for low breakdown, reference voltage
+\\Varactor, variable resistance, V controlled C for tuning radio or TV, $C_J\propto V_A^-1/2$ (abrupt, dope to linear)
+\\Opto-elect, photodetect, solar cells, LED, laser diodes. PhotoD: $I_L=-qAG_L(L_N+W+L_P)$, $I=I_{dark}+I_L$
+\\BJT: pnp: IE in IB+IC out. npn: IB+IC in, IE out
+\\biasing modes: B is expected to be - for pnp, Mode, EB polarity, CB polarity. Saturation, F, F. ACTIVE, F, R. Inverted, R, F. Cutoff, R, R. A S \\n C I. Vert+ VEB pnp VBE npn. Horiz+ VCB pnp VBC npn
+\\electrostatic equilibrium p+ n p EBC, 
+\\$V=-1/q(E_C-E_{ref})$, up and flatens in B, drops to flat in C
+\\$E=1/q dE_C/dx=1/q dE_i/dx$, sharp negative triangle left B, smaller positive left C
+\\$dE/dx=\rho/\epsilon$
+\\forward, p+ thinB n, small E to p+, big h/e and small e/h, same thinB small E, minority e lower than minority h, both going up
+\\reverse, n wideB p, large E to p, e/h and h/e, minorities drop off to 0
+\\combine for p+ n p, curve up to thin, curve down and drop to wide, up to e
+\\make B very thin, curve up to thin, drop to zero for rev bias, back up a bit, D and CS$I=\alpha I_E$, B has $I=(1-\alpha)I_E$
+\\emitter efficiency $\gamma=I_{EP}/(I_{EP}+I_{EN})=I_{EP}/I_E$
+\\base transport factor $\alpha_T=I_C/I_{Ep}$
+\\$I_C=\alpha_TI_{EP}=\alpha_T\gamma I_E=\alpha_{dc}I_E$, $\alpha_{dc}=\alpha_T\gamma$
+\\$I_C=\beta_{dc}I_B$, $\beta_{dc}=\alpha_{dc}/(1-\alpha_{dc})=\alpha_T\gamma/(1-\alpha_T\gamma)$
+\\detailed quantitative analysis, assume pnp, steady state, low level, only drift and diff, no gen, one dimension, etc.
+\\solve minority carrier diffusion equations for each of the three regions
+\\$\delta\Delta p/\delta t=D_p \delta^2\Delta p/\delta x^2-\Delta p/\tau_p+G_L$, $\delta\Delta n/\delta t=D_n \delta^2\Delta n/\delta x^2-\Delta n/\tau_n+G_L$
+\\2.2 under steady state $G_L=0$, $0=D_p \delta^2\Delta p/\delta x^2-\Delta p/\tau_p$, $0=D_n \delta^2\Delta n/\delta x^2-\Delta n/\tau_n$
+\\for pnp base, only interested in holes (current in E and split)
+\\$\Delta n=n-n_0$ excess carriers above equilibrium, area of excess carriers$=Q_n$. 
+\\$X_B$ and $X_E$ flow awayfrom BE junction, $I_E=I_P-I_N\approx (qAp_{B0}D_B/L_B*e^{V_{EB} q/kT})+(qAn_{E0}D_E/L_E*e^{V_{EB} q/kT})$
+\\$I_P=Q_p/\tau_B$, $I_P=Q_n/\tau_E$. $n_E$ curve up, $p_B$ linear down, $n_C$ collecter curve up
+\\$I_E$ broken down into $I_n=qaD_n dn/dx$ and $I_p=-qAD_p dp/dx$
+\\$I_C=qAD_B p_B(0)/W_B=qAp_{B0}D_B/W_B*e^{V_{EB} q/kT}$
+\\$I_E$ made up of $I_{EP}$ and $I_{EN}$
+\\$I_{EP}=I_c+qAW_B\Delta p_B(0)/2\tau_B\approx qAp_{B0}D_B/W_B e^{V_{EB} q/kT}+qAp_{B0}W_B/2\tau_B e^{V_{EB} q/kT}$
+\\$I_B=qAp_{B0}W_B/2\tau_B e^{V_{EB} q/kT}+qAn_{E0}D_E/L_Ee^{V_{EB}q/kT}$ (recombination + e injection to E)
+\\$\alpha_T=1/[1+(W_B/L_B)^2/2]$, $\gamma=1/[1+D_En_{E0}W_B/D_Bp_{B0}L_E]=1/[1+D_EW_BN_B/D_BL_EN_E]$
+\\BJT in cutoff, minority carriers drop off on E and C, zero in B.  
+\\BJT in saturation, E and C curve up, $p_{B0}$ is linear down but still high, above E below C.
+\\Base width modulation $I_C\approx qAD_B \Delta p_B(0)/W_B e^{V_{EB}q/kT}$, B drops to 0 at C
+\\Early effect, CB reverse bias up, depletion width up, W down, $I_C$ up
+\\punch through, $W$ approaches $0$. for high reverse CB, EB barrier lowers, and large $I_C$ at high $V_{CE0}$ due to either punchthrough or avalanch
+\end{large}
+\newpage
+3.1 Microelectronics Technology S 2024 Crib Sheet Exam F Hayden Fuller MOS
+\begin{large}
+\\workfunction $\Phi$, difference between Fermi and vacuum, energy to free e's from metal, $\Phi_s=X+(E_C-E_F)_{FB}$
+\\$X=(E_0-E_C)_{SURFACE}$, $X_{Si}=4.03$eV
+\\Contact is sticky, but Si side is dragged until Fermi matches. Curves up if $\Phi_M>\Phi_S$, down if $\Phi_M<\Phi_S$
+\\barrier height $\Phi_B$ is the barrier for flow from M to S, $\Phi_B=\Phi_M-X$ in ideam MS n-type 
+\\barrier of $\Phi_M-\Phi_S$ when flowing S to M
+\\applied voltage brings M down (lowers S to M barrier), nagative brings M up, drags S with it
+\\-------------- n-type  p-type
+\\$\Phi_M>\Phi_S$ rectifying ohmic
+\\$\Phi_M<\Phi_S$ ohmic rectifying
+\\Schottky diode $V_{bi}=1/q [\Phi_B-(E_C-E_F)_{FB}]$, $\rho\approx qN_D$ for $0<x<W$, $\approx0$ for $x>W$
+\\$dE/dx=\rho/\epsilon_{Si}=qN_D/\epsilon_{Si}$ for $0<x<W$, $E(x=0)=qN_DW/\epsilon_{Si}$, $W=\sqrt{(V_{bi}-V_A)2\epsilon_{Si}/qN_D}$
+\\$p^+n$ vs MS: $p^+n$ dom current from recomb in depletion under small forward bias and hole injection from $p^+$ under larger forward (holes from p to n); MS dom current from electron injection from S to M (e from S to M)
+\\$I=I_S(e^{V_A q/kT}-1)$ where $I_S=A A^* T^2 e^{-\Phi_B/kT}$
+\\more reverse leakage for Schottky than $p^+n$, but majority carrier allows to be faster
+\\MOS
+\\current D to S, electrons S to D, from N+ to N+ through p, past $SiO_2$
+\\larger VG forms a larger channel for e flow, increasing saturation of ID from VD
+\\ideal Cap: $\Phi_M=\Phi_S=X+(E_C-E_F)_{FB}$, EF's match, just a barrier in between
+\\$E_0-E_F=\Phi_M$, barrier to $E_0=X_i$, $\Phi_M'=\Phi_M-X_i$, same forr X and X'
+\\$E_{FM}-E_{FS}=-qV_G$
+\\$dE_{oxide}/dx=\rho/\epsilon=0$, E field is constant in the oxide
+\\Accumulation: negative $V_G<0$
+\\neg app V to M brings M up, holes accum on Si side sloping up, O sloped up towards M to match, F moves flat
+\\$\rho$ vs x, tall thin sheet of electrons below M side of MO, slightly shorter thicker sheet of holes on p side of OS
+\\E vs x, E=0 in M, jumps to negative constant in O, drops quickly and curvs off quickly to zero in S
+\\Depletion: $V_G>0$, brings M down, O sloped down to M, p sloped the same, 
+\\$\rho$ vs x, tall sheet holes left, short finite depletion layer width wide block of electrons under right
+\\E vs x, sharp slopee up in M to O, constant positive O, drop off and 45 linear to zero S
+\\$E_{ox}=\epsilon_{Si}/\epsilon_{ox}*E_{Si}$
+\\Inversion: large positive gate voltage, $E_i$ goes below $E_F$ (at boundary/curve, still C i F V at FB for p)
+\\$\rho$ vs x, taller sheet h left, short very wide block of immobile acept under right, short thin sheet of mobile e under
+\\E vs x, sharp slopee up in M to O, constant positive O, large drop off and slight linear to zero S
+\\$E_i$(sruface)$-E_i$(bulk)$=2[E_F-E_i$(bulk)$]$, $\phi_S=2\phi_F$, onset inversion, that $V_G$ is threshhold voltage $V_T$
+\\Quantitative analysis:
+\\$\phi(x)$ is potential (Voltage) at any point in the semiconductor
+\\$\phi(x)=1/q[E_{i,bulk}-E_i(x)]$ potential at any point x; $\phi_S=1/q[E_{i,bulk}-E_{i,surface}]$ Surface potential
+\\$\phi_F=1/q[E_{i,bulk}-E_F]$ for doping concentration; $\phi_F>0$ means p type
+\\$\phi$ bends up from S to O meets at positive $\phi_S$; $E_i-E_F=q\phi_F$
+\\$\phi_S=2\phi_F$ at depletion-inversion point
+\\Delta-depletion solution, consider p type, accumulation
+\\mobile holes in S near O, assume it's a pulse, Q on M $= -Q_M$, Q on S = -Q on M = $Q_M$, $|Q_{accumulation}|=|Q_M|$
+\\assume depletion, apply $V_G$ such $\phi_S<2\phi_F$, immobile ions in Si, $|q N_A A W|=|Q_M|$
+\\$W=\sqrt{\phi_S 2 \epsilon_{Si}/qN_A}$ and $E_{Si}=W|qN_A/\epsilon|$
+\\at start of inversion, $\phi_S=2\phi_F$, $W=W_T=\sqrt{4\phi_F\epsilon_{Si}/qN_A}$
+\\for both $p^+n$ and MS (n-Si), $W=\sqrt{2V_{bi}/qN_D}$, $V_{bi}$ in V is the numerical same as the band bending in eV
+\\pn and MS $E_{max}-qN_DW/\epsilon_{Si}=-\sqrt{2V_{bi}qN_D/\epsilon_{Si}}$
+\\for MOS, same but replace $V_{bi}=\phi_S$, $E_{max}=-\sqrt{|\phi_S|2qN_D/\epsilon_{Si}}(n)=\sqrt{|\phi_S|2qN_A/\epsilon_{Si}}(p)$
+\\as we get stronger inversion, W stays the same, extra charges are in delta function (thin pulse), max $W=W_T$
+\\Gate Voltage relationship:
+\\$V_G=\Delta\phi_{ox}+\Delta\phi_{Semi}$ (full potential differnce across the region)
+\\$\Delta\phi_{Semi}=\phi(x=0)-\phi(bulk)=\phi_S$; $\Delta\phi_{ox}=x_{ox}E_{ox}$
+\\since no interface charges up to inversion, $\epsilon_{ox}E_{ox}=\epsilon_{Si}E_{Si}$, $E_{ox}=E_{Si} \epsilon_{Si}/\epsilon_{ox}$
+\\3.2 $E_{Si}=|qN_A/\epsilon_{Si}|W=|qN_A/\epsilon_{Si}|\sqrt{\phi_S2\epsilon_{Si}/qN_A}=\sqrt{\phi_S2qN_A/\epsilon_{Si}}$
+\\$V_G=\phi_S+x_{ox}E_{ox}=\phi_S+x_{ox}E_{Si}\epsilon_{Si}/\epsilon_{ox}=\phi_S+x_{ox}\epsilon_{Si}/\epsilon_{ox}\sqrt{\phi_S2qN_A/\epsilon_{Si}}$
+\\alternative gate voltage: consider p-type: $\Delta\phi_{ox}=Q_M/C_{ox}=-Q_S/C_{ox}$, $Q_S=-q A N_A W$, $C_{ox}=\epsilon_{ox} A / x_{ox}$
+\\MOS C-V charicteristics
+\\Gate cap varies with gate V, useful for diagnosing deviations from ideal in O and S during fab
+\\Measure: apply DC bias+small AC (high 1MHz or 1k-1Meg), vary bias to get quasi-continuous C-V characteristics
+\\$V_G$ vs $C_G$; p-type: flat, shicane starts high before zero, drops low after 0V, low frequency goes back up sharper. n-type: flip over vertical axix. $V_T$ at near bottom split point
+\\accumulation: assume p $V_G<0$, h in S, e in M, $C_G=C_{ox}=\epsilon_{ox} A / x_{ox}$
+\\depletion: assume p $V_G>0$, h in M, W width depletion of holes, gives both $C_O$ and $C_S$.  
+\\$C_{ox}=\epsilon_{ox} A / x_{ox}$; $C_S=\epsilon_{Si} A / W$; $C_G=C_{ox}C_S/(C_{ox}+C_S)$; $W=\sqrt{\phi_S2\epsilon_{Si}/qN_A}$
+\\inversion: $V_G>=V_T$, $\phi_S=2\phi_F$, $W=W_T=\sqrt{\phi_F4\epsilon_{Si}/qN_A}$, at high frequncy, electrons in delta function aren't able to respond, so W varries with AC, $C_{ox}=\epsilon_{ox} A / x_{ox}$; $C_S=\epsilon_{Si} A / W$; $C_G(\omega\rightarrow\infty)=C_{ox}C_S/(C_{ox}+C_S)$
+\\at low frequency, electrons can respond, and ; $C_G(\omega\rightarrow0)=C_{ox}$
+\\Deep Depletion: fast ramp rate, inversion layer doesn't form, no equilibrium, $W$ will go past $W_T$ and $C_G$ will decrase
+\\$V_T$ + for p, - for n. $V_T=2\phi_F+(\pm x_{ox}\epsilon_{Si}/\epsilon_{ox} * \sqrt{|\phi_F|4qN_A/\epsilon_{Si}})$
+\\Higher doping higher $|V_T|$, $C_{max}=C_{ox}$, $C_{min}=C_{ox}C_S/(C_{ox}+C_S)$
+\\$C/C_O$ vs $V_G$, n-type: starts mid for heavy doping and low ramp rate, low for low doping and high ramp total deep depletion, both go high and right 
+\\under deep depletion: $V_G=\phi_S+x_{ox}\epsilon_{Si}/\epsilon_{ox}\sqrt{\phi_S2qN_A/\epsilon_{Si}}$, $W=\sqrt{\phi2\epsilon_{Si}/qN_A}$
+\\MOSFET:nmos example:
+\\$0<V_G<V_T$, open, $V_{DS}$ doen't matter, no channel, no current
+\\$V_G>V_T$, $V_{DS}\approx0$, $I_D$ increases with $V_{DS}$, full channel of electrons
+\\$V_G>V_T$, $V_{DS}$ small, $I_D$ increases slowly with $V_{DS}$, channel getting pinched
+\\$V_G>V_T$, $V_{DS}\approx$ pinch off, $I_D$ reches saturation of $I_{D,sat}$ at $V_{DS,sat}$, channel just barely pinched off
+\\$V_G>V_T$, $V_{DS}>V_{DS,sat}$, $I_{D,sat}$ already saturated, channel totally pinched off with horizontal gap $\Delta L$
+\\$I_D$ vs $V_D$, log curve start line, curve off (still "linear"), sat at $V_{D,sat}$ slope if $\Delta L\approx L$, flat if $\Delta L << L$
+\\increasing $V_G$, $I_D=0$ for $V_G<V_T$, lineas start at $V_G>V_T$
+\\$V_G=V_T$ means $\phi_S=2\phi_F$ (note: $\epsilon_{Si}/\epsilon_{ox}=11.9/3.9=3.05$
+\\n channel (p silicon)$V_T=2\phi_F+x_{ox}\epsilon_{Si}/\epsilon_{ox} * \sqrt{\phi_F4qN_A/\epsilon_{Si}}$
+\\p channel (n silicon)$V_T=2\phi_F-x_{ox}\epsilon_{Si}/\epsilon_{ox} * \sqrt{|\phi_F|4qN_D/\epsilon_{Si}}$
+\\ground S and D=$V_{DS}$, $\phi$ along channel is $0$-$V_{DS}$; For $V_G<V_T$ inversion layer change is zero
+\\For $V_G>V_T$, $Q_n(y)=-Q_G=-C_{ox}(V_G-\phi-V_T)$. $J_n=q\mu_nnE=-q\mu_nnd\phi/dy$ when diff current is neglected
+\\$I_D$ is same everywhere, but $J_n$ can vary. $I_D=-Z/L*\mu_n\int_0^{V_{DS}}Q_n(y)d\phi=Z\mu_n/L *C_{ox}[(V_G-V_T)V_{DS}-V_{DS}^2/2]$
+\\$I_{D,sat}=(V_G-V_T)^2Z\mu C_{ox}/2L$ 
+\\ac response: $I_D=f(V_G,V_{DS})$; $i_d=g_mv_g+g_dv_d$, transcond $g_m=\frac{\delta I_D}{\delta V_G}|_{V_{DS}}$, drain/channel cond $g_d=\frac{\delta I_D}{\delta V_{DS}}|_{V_G}$
+\\low freqency equiv: shared S, D to S current source of $g_mv_g$ and D to S resistor $g_d$
+\\high frequency: add G to S cap $C_{gs}$ and G to D cap $C_{gd}$
+\\when $V_{DS}<V_{DS,sat}$, $g_d=Z\mu_nC_{ox}/L*(V_G-V_T-V_{DS})$ and $g_m=Z\mu_nC_{ox}V_{DS}/L$
+\\when $V_{DS}>V_{DS,sat}$, $g_d=0$ and $g_m=Z\mu_nC_{ox}/L*(V_G-V_T)$
+\\cut off frequency when current gain is 1. input=$j\omega C_Gv_G$, output=$g_mv_G$, $f_T=g_m/(2\pi C_{GS})$; $C_{GS}\approx ZLC_{ox}$
+\\these are all enhancement mode so far: NMOS: $V_T$ is positive, zero is off. PMOS: $V_T$ is negative, zero is off
+\\REAL MOS:
+\\ideally Fermi levels lign up when made, irl, $\phi_M$ and $\phi_S$ rely on the metal and doping, need to apply $V_G=\phi_{MS}/q$ to get flat band. (Assume $E_{F,M}=E_V$)
+\\we use heavily doped polysilicon for gate, p: $E_{FM}=E_V$, n: $E_{FM}=E_C$
+\\interface charges: loose charges in the metal $Q_i$ will induce $-Q_i$ in S. acts as a positive gate voltage, negative S charges bend bands. apply $-Q_i/C_{ox}$ to get flat band
+\\these all mean a correction needs to be made to $V_T$. $V_{FB}=1/q *\phi_{MS}-Q_i/C_{ox}$, $V_T=V_T'+V_{FB}$
+\\shifts horizontally $C_G$ vs $V_G$ curve so zero is at low rather than high C
+\\Enhancement VS Depletion:
+\\enhancement: $V_G=0$ is off. all $I_D$ is from positive $V_D$
+\\depletion: $V_G=0$ is on. more $I_D$ from positive $V_D$, but you get some as long as $V_G$ isn't too negative
+\\$V_T$ adjustment with ion implantation: Boron (+), Phosphorus (-)
+\\$\Delta V_T=Q_{ion}/C_{ox}=qB_{dose}/C_{ox}$(positive for B), $=-qP_{dose}/C_{ox}$(negative for P)
+\\Frequently used
+\\$(E_i-E_F)_p=kT\ln(p/n_i)$, $(E_F-E_i)_n=kT\ln(n/n_i)$, $p_p/p_n=n_n/n_p=e^{V_{bi} q/kT}$
+\\$C_{ox}=\epsilon_{ox} A / x_{ox}$
+\\$V_T=2\phi_F+(\pm x_{ox}\epsilon_{Si}/\epsilon_{ox} * \sqrt{|\phi_F|4qN_A/\epsilon_{Si}})+V_{FB}$
+\end{large}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

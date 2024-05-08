@@ -1,0 +1,121 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+\textheight 10.5 true in
+\textwidth 8 true in
+\hoffset -1.5 true in
+\voffset -1.5 true in
+\mathsurround=2pt
+\parskip=2pt
+
+
+\begin{document}
+
+Microelectronics Technology S 2024 Crib Sheet Exam 1 Hayden Fuller
+\begin{large}
+\\Basic:
+\\n-type, donors, 5 electron, P, As, Sb,    p-type, acceptors, 3 electron, B, Al, Ga, In
+\\$1eV=1.6\times10^{-19}J$
+\\$k=1.38\times10^{-23}J/K=8.6\times10^{-5}eV/K$, $kT=0.025eV$
+\\$E_{G,Si}=1.12eV$
+\\$n_i=10^{10}$, $n_i^2=np$, $n=n_ie^{(E_F-E_i)/kT}$, $p=n_ie^{(E_i-E_F)/kT}$
+\\$p-n+N_D-N_A=0$, $n^2-n(N_D-N_A)-n_i^2=0$
+\\$N_D>N_A$ $= >$ $n=N_D-N_A$ ; $p=n_i^2/n$     $N_D\approx N_A$ $= >$ $n=p=n_i$
+\\Band diagrams: n-type: $E_C, E_F, E_i, E_v$,   p-type: $E_C, E_i, E_F, E_v$
+\\Point defect: one atom missing. Electron generation: one electron missing
+\\Electron moving: breaks off and moves. Hole moving: electron line rotates into hole.
+\\effective mass: 
+\\Fermi function $f(E)=\frac{1}{1+e^{(E-E_F)/kT}}$, Steps from 1 to 0 at $E_F$ at 0K, smoothe at temp.
+\\$E_F=1-e^{\frac{E-E_F}{kT}}=\frac{E_C+E_V}{2}$ in intrinsic
+\\Distribution of carriers = distribution of states * probability of occupancy = $g(E) f(E)$
+\\Conduction band electrons: $n_0=\int_{E_C}^{E_top} g_C(E)f(E)dE$, holes in VB: $p_0=\int_{E_bottom}^{E_v} g_V(E)(1-f(E))dE$
+\\total free electron concentration $3kT$ away from edges (non-degenerate): $n=N_ce^{-\frac{E_C-E_F}{kT}}$ , hole: $p=N_ve^{-\frac{E_F-E_V}{kT}}$
+\\where effective density of states $N_ C=2.8\times10^{19}cm^{-3}$ and $N_ C=1\times10^{19}cm^{-3}$, $3kT$ around $N_{A or D}=2\times10^{17}$
+\\Drift:  caused by electric field, drift velocity $v_d=\mu_p E$  $cm/sec=cm^2/Vs * V/cm$
+\\$I=Q/T$, $J_{P|drift}=I/A=qp\mu_pE=\frac{E}{\rho}$
+\\resistivity: $\rho=1/(1p\mu_p+qn\mu_n)$
+\\resistivity measurement: 4 point probe, eddy current apparatus
+\\Diffusion: random thermal mothion, high to low concentration, must be a concentration gradient
+\\Flux $F=-D\frac{d\eta}{dx}$, $\eta=$particle concentration, $D=$diffusion coefficient
+\\holes/electrons go high to low,that's flux, but diffusion current is negative for electrons
+\\$J_{p|diff}=-qD_p\frac{dp}{dx}$, $J_{n|diff}=qD_n\frac{dn}{dx}$
+\\$J_p=J_{p|drift}+J_{p|diff}=q\mu_ppE+-qD_p\frac{dp}{dx}$, $J_n=J_{n|drift}+J_{n|diff}=q\mu_nnE+qD_n\frac{dn}{dx}$, $J=J_n+J_p$
+\\Band bending: electric field bends the band diagram
+\\$KE=E-E_C$, $PE=E_C-E_{ref}=-qV$ (for electrons), $V=-(E_C-E_{ref})/q$, $E=-\frac{dV}{dx}=\frac{dE_{C,V,i}}{dx}/q$
+\\Hot point measurement: Hot end makes particles move away. 
+\\p-type: holes move away, current goes out hot probe. n-type: electrons move away, current goes into hot probe
+\\in thermal equilibrium: $E_F$ is constant, net current $J_{p|drift}+J_{p|diff}=0$, recombination and generation cancel
+\\Einstein: $J_{n|drift}+J_{n|diff}=q\mu_nnE+qD_n\frac{dn}{dx}=0$, $E=\frac{dE_i}{dx}/q$, $n=n_ie^{(E_F-E_i)/kT}$
+\\electrons: $\frac{D_n}{\mu_n}=\frac{kT}{q}$, holes: $\frac{D_p}{\mu_p}=\frac{kT}{q}$
+\\recombination:
+\\band to band recombination gives off light, band to band generation through thermal and light absorption, RG center is indirect-middle step
+\\auger recombination, electron drops, and gives another electron KE. Impact ionization, on a slope, electron moves and falls
+\\SI is mostly RG recombination due to impurities
+\\direct semiconductors: k is matched so with less energy there's a photon. With a difference in k, more energy, phonon.
+\\RG statistics:
+\\if photon energy $hv$ is greater than band gap $E_G$, iti's absorbed and an electron is moved up.
+\\absorption: $I=I_0e^{-\alpha x}$, each photon creates an e-h pair. $\frac{dn}{dt}|_{light}=\frac{dp}{dt}|_{light}=G_L(x,\lambda)=G_{L0}e^{-\alpha x}$
+\\$\alpha$ drops off with wavelength. Higher wavelength, lower frequency, lower energy, doesn't get absorbed
+\\indirect thermal recombination-generation, $n_0, p_0$ under thermal equilibrium, $n, p$ as functions of t.
+\\$\Delta n=n-n_0$, $\Delta p=p-p_0$, $\Delta$'s are deviations from equilibrium. $N_t$ is number of RG centers/cm$^3$
+\\low level injection condition assumed, change in majority carrier concentration negligable, $\Delta p<<n_0$, $n\approx n_0$
+\\$\frac{dp}{dt}=\frac{dp}{dt}|_R+\frac{dp}{dt}|_G+G_L(x,\lambda)$, hole build up = recomb loss + gen gain + external light
+\\$\frac{dp}{dt}|_R=-C_pN_tp$
+\\thermal equilibrium: $\frac{dp}{dt}|_G=-\frac{dp}{dt}|R=C_pN_tp_0$
+\\generally when $G_L=0$, $\frac{dp}{dt}=-\frac{\Delta p}{\tau_p}$, minority carrier lifetime$\tau_p=\frac{1}{C_pN_t}$
+\\$\frac{\delta\Delta p}{\delta p}=-\frac{\Delta p}{\tau_p}$
+\\perturbation removed at $t=0$: $\Delta p=\Delta p(0)e^{-t/\tau_p}$
+\\$\frac{dp}{dt}=frac{dp}{dt}|_{drift}+\frac{dp}{dt}|_{diff}+\frac{dp}{dt}|_{thermal RG}+\frac{dp}{dt}|_{light/other}$
+\\current input: holes: $\frac{dp}{dt}=\frac{1}{q}\frac{d J_p}{dx}+\frac{dp}{dt}|_{thermal RG}+\frac{dp}{dt}|_{light/other}$ , electrons: first term is positive
+\\Minority carrier diffusion equiations:  electrons for p type, simplifications
+\\$J_n=q\mu_nnE+qD_n\frac{dn}{dx}\approx qD_n\frac{dn}{dx}$
+\\$\frac{dn}{dx}=\frac{d}{dx}(n_0+\Delta n)=\frac{d\Delta n}{dx}$
+\\$\frac{dn}{dt}|_{thermal RG} = -\frac{\Delta n}{\tau_n}$,   $\frac{dn}{dt}|_{light}=G_L$
+\\$\frac{dn}{dt}=\frac{d}{dt}(n_0+\Delta n)=\frac{d\Delta n}{dt}$
+\\$\frac{d\Delta n_p}{dt}=D_n\frac{d^2\Delta n_p}{dx^2}-\frac{\Delta n_p}{\tau_n}+G_L$
+\\$\frac{d\Delta p_n}{dt}=D_p\frac{d^2\Delta p_n}{dx^2}-\frac{\Delta p_n}{\tau_p}+G_L$
+\\Minority carrier diffusion length: $L_p=(D_p\tau_p)^{1/2}$, average distance minority carriers can diffuse
+
+
+
+
+\end{large}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
