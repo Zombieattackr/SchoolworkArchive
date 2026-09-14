@@ -1,0 +1,10 @@
+configurable voltage/current source (part of source measurement unit)
+SMU all in one pin: PSU/function gen, DMM/oscope, voltage/current, RCL load
+volt meter parallel, ammeter series, volt/current source selectable
++I+V -I-V supply, +I-V -I+V load
+
+
+
+spice models and test bench through simulation
+frequency and time domain output in both modes with RCL loads
+find alternative ICs

@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{bm}
+\pagestyle{empty}
+\usepackage{graphicx}
+\graphicspath{{C:\Users\steve\Pictures}}
+\begin{document}
+
+\noindent{{\Large \bf Fall 2025, 4100 Problem Set 2, Hayden Fuller}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\bigskip
+
+\begin{enumerate}
+
+\item Given $A=\left[
+\begin{array}{cc}
+3 & -1\\
+0 & 2
+\end{array}\right]$ show that the set $C=\{B\in\mathbb{R}^{2\times 2}:AB=BA\}$ is a subspaces of $\mathbb{R}^{2\times 2}$ and find a basis.
+\\
+\\assume $B=\left[\begin{array}{cc}a & b\\c & d\end{array}\right]$
+\\$AB=\left[\begin{array}{cc}3 & -1\\0 & 2\end{array}\right]\left[\begin{array}{cc}a & b\\c & d\end{array}\right]=\left[\begin{array}{cc}3a-c & 3b-d\\2c & 2d\end{array}\right]$
+\\$AB=\left[\begin{array}{cc}a & b\\c & d\end{array}\right]\left[\begin{array}{cc}3 & -1\\0 & 2\end{array}\right]=\left[\begin{array}{cc}3a & -a+2b\\3c & -c+2d\end{array}\right]$
+\\assuming $AB=BA$, we have 
+\\$3a-c=3a$, 
+\\$3b-d=-a+2b$, 
+\\$2c=3c$, 
+\\$2d=-c+2d$
+\\so $c=0$ and $d=a+b$
+\\so $B=\left[\begin{array}{cc}a & b\\c & d\end{array}\right]=\left[\begin{array}{cc}a & b\\0 & a+b\end{array}\right]$
+\\this shows that $C$ is a subspace since it contains zero and is closed under addition and scalar multiplication since $a$ and $b$ vary freely.
+\\it is 2 dimensional, so a convenient basis is $\{\left[\begin{array}{cc}1 & 0\\0 & 1\end{array}\right],\left[\begin{array}{cc}0 & 1\\0 & 1\end{array}\right]\}$
+
+\newpage\item Let $V$ be a vector space such that $dimV=n$. Show that any set of $n$ (non-zero) vectors, $\{{\bm v}_1,\dots,{\bm v}_n\}$, satisfying ${\bm v}_i^T{\bm v}_j=0$ for $i\neq j$ is a basis for $V$.
+\\
+\\any set of $n$ linearly independent vectors in an $n$-dimensional space is a basis
+\\suppose $a_1v_1+a_2v_2+...+a_nv_n=0$
+\\multiply both sides by $v_k$
+\\$(a_1v_1+a_2v_2+...+a_nv_n=0)^Tv_k=a_1(v_1^Tv_k)+...+a_n(v_n^Tv_k)=0$
+\\all terms are orthogonal and dissappear except $a_k(v_k^Tv_k)=0$
+\\since $v_k$ is non zero, $a_k$ must be zero. This holds for each $k=1...n$, so all $a_k$ are zero
+\\therefore all vectors are linearly independent, and since there are $n$ linearly independent vectors in $n$-dimensional space, they form a basis.
+
+\newpage\item  Let $\mathbb{P}_n$ be the space of all polynomials over $\mathbb{R}$ of degree at most $n$. Use the Rank-Nullity theorem to show that the subset $S=\{g\in \mathbb{P}_n: f'+4f=g~\textrm{for some}~f\in \mathbb{P}_n\}$ is a subspace of $\mathbb{P}_n$ of dimension $n+1$.
+\\
+\\define function $T(f)=f'+4f$
+\\$T$ is linear because $(af+bg)'+4(af+bg)=a(f'+4f)+b(g'+4g)$
+\\the set $S=\{g\in\mathbb{P}_n:g=f'+4f for some f\in\mathbb{P}_n\}$ is the image of T, so $S=$im$T$
+\\if $f\in$ker$T$ then $f'+4f=0$, so ker$T=\{0\}$
+\\by rank nullity $\mathbb{P}_n=$dim ker$T+$dim im$T=(0)+$dim$S$
+\\ so dim$S$=dim$\mathbb{P}_n=n+1$
+\\thus $S$ is a subspace of $\mathbb{P}_n$ and dim$S=n+1$
+
+\newpage\item Let $A\in\mathbb{R}^{m\times n}$ and $B\in\mathbb{R}^{n\times l}$ such that $AB{\bm x}=\textbf{0}$ for all ${\bm x}\in \mathbb{R}^l$. Prove that ${\rm rank}(A)+{\rm rank}(B)\leq n$ using the Rank-Nullity theorem.
+\\
+\\consider $A:\mathbb{R}^n\rightarrow \mathbb{R}^m$ and$B:\mathbb{R}^l\rightarrow\mathbb{R}^n$
+\\$ABx=0$ for all $x\in\mathbb{R}^l$ means the composition $A\circ B$ is the zero map, so every vector in image of B is sent to zero by A
+\\im$(B)\subseteq$ker$(A)$
+\\rank$(B)=$dim im$(B) \leq$dim ker$(A)=$nullity$(A)$
+\\$n=$rank$(A)+$nullity$(A)\geq$rank$(A)+$rank$(B)$
+\\rank$(A)+$rank$(B)\leq n$
+
+
+\newpage\item Let $V$ be a vector space with basis $\{{\bm v}_1,\cdots,{\bm v}_{n-1}\}$ and let $T\in\mathcal{L}(V,V)$ be defined by $T{\bm v}_i={\bm v}_{n-i}$. Show that $T^{-1}=T$ and that $T-I$ is not invetible. (Here $(T-I){\bm x}=T{\bm x}-{\bm x}$)
+\\
+\\$T^2v_i=T(T(v_i))=Tv_{n-i}=v_{n-(n-i)}=v_i$
+\\since $T^2$ acts as the identity on every basis vector, $T^2=I$, so $T^{-1}=T$
+\\
+\\$(T-I)(v_i+v_{n-i})=Tv_i+Tv_{n-i}-(v_i+v_{n-i})=v_{n-i}+v_i-(v_i+v_{n-i})=0$
+\\thus every nonzero  vector of form $v_i+v_{n-i}$ lies in ker$(T-I)$, so ker$(T-I)\neq0$
+\\a linear map is invertable iff its kernel is $\{0\}$, so $T-I$ is not invertable
+
+\newpage\item Consider the block-diagonal matrix $A=\left[
+\begin{array}{cc}
+B & 0\\
+0 & C
+\end{array}
+\right]$. Show that ${\rm nullity}(A)={\rm nullity}(B)+{\rm nullity}(C)$.
+\\
+\\suppose $B\in\mathbb{R}^{m\times n}$ and $C\in\mathbb{R}^{p\times q}$
+\\then $A$ is a block matrix of size $(m+p)\times(n+q)$
+\\a vector in the domain of $A$ has the form $\left[\begin{array}{cc}x\\y\end{array}\right]$, $x\in\mathbb{R}^n$, $y\in\mathbb{R}^q$
+\\$A\left[\begin{array}{cc}x\\y\end{array}\right]=\left[\begin{array}{cc}B & 0\\0 & C\end{array}\right]\left[\begin{array}{cc}x\\y\end{array}\right]=\left[\begin{array}{cc}Bx\\Cy\end{array}\right]$
+\\so ker$(A)=\{\left[\begin{array}{cc}x\\y\end{array}\right]:Bx=0,Cy=0\}=$ker$(B)\oplus$ker$(C)$
+\\dim ker$(A)=$dim ker$(B)+$dim ker$(C)$
+\\nullity$(A)=$nullity$(B)+$nullity$(C)$
+
+\end{enumerate}
+
+\end{document}

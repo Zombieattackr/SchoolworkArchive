@@ -1,0 +1,5 @@
+2. Note that is A is self-adjoint, then so is A minus lambda I
+
+5. Preform a change of variable to the eigenspace or use Lagrange multipliers
+
+6. Take A B and multiply by A to the power of negative 1 divided by 2 end exponent on the left and A to the power of 1 divided by 2 end exponent on the right. A result from another problem in the HW may be usefull!

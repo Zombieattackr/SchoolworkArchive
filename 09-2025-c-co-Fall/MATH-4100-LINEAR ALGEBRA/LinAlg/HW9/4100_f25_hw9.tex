@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{bm}
+\pagestyle{empty}
+\usepackage{graphicx}
+\graphicspath{{C:\Users\steve\Pictures}}
+\begin{document}
+
+\noindent{{\Large \bf Fall 25, 4100 Problem Set 9}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\begin{enumerate}
+
+\item Sketch the conic section $x_1^2+8x_1x_2+7x_2^2=1$ by finding the spectral decomposition of the matrix $A=\left[\begin{array}{cc}
+1 & 4\\
+4 & 7
+\end{array}\right]$
+
+
+\vfill
+
+\item Let $A$ be any real matrix and prove that
+\begin{enumerate}[a.]
+\item If $\bm{v}$ is an eigenvector of $AA^T$, then $\bm{v}\in{\rm range}(A)\cup{\rm null}(A^T)$ (look at the cases where the corresponding e-value is 0 or nonzero)
+\item If $\lambda$ is a nonzero eigenvalue of $AA^T$, then it is also an eigenvalue of $A^TA$
+
+\end{enumerate}
+
+\vfill
+
+\item Let $$A=\left[
+\begin{array}{cc}
+1 & 1\\
+-1 & 1\\
+1 & 2
+\end{array}\right]$$
+
+\begin{enumerate}[a.]
+\item Find the singular value decomposition of $A$
+\item Find the psuedo-inverse, $A^+$ and use it to find the vector in ${\rm range}~A$ that is closest to $\left[
+\begin{array}{c}
+1\\
+2\\
+3
+\end{array}\right]$
+
+\end{enumerate}
+
+\vfill
+
+\item Find and sketch the image of the unit circle under the linear transformation $T:\mathbb{R}^2\rightarrow\mathbb{R}^2$ where
+\begin{eqnarray*}
+T\bm{e}_1&=&2\bm{e}_1+\bm{e}_2
+\\ T\bm{e}_2&=&-3\bm{e}_1+6\bm{e}_2
+\end{eqnarray*}
+using the method from lecture 11-20
+
+\item Given $n\times n$ matrix $A$, define the trace of $A$ as
+$${\rm tr(A)}=\sum_{i=1}^n A_{i,i}=\langle {\bm e}_1,A{\bm e}_1\rangle+\cdots +\langle {\bm e}_n,A{\bm e}_n\rangle$$
+
+Now letting $A\in\mathbb{C}^{n\times n}$ have singular values of $\sigma_1,\cdots,\sigma_r$, show that  
+
+$${\rm tr}(A^*A)=\sigma_1^2+\cdots+\sigma_r^2$$
+
+
+
+
+\end{enumerate}
+
+\end{document}
+

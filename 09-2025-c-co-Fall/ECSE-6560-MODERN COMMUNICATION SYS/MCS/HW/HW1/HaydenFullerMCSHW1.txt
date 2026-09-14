@@ -1,0 +1,159 @@
+%% Hayden Fuller MCS HW1
+clear
+close all
+fc = 256;
+fs = 8192;
+Nfft = 32;
+A = 1;
+Ts = 1/fs;
+n = 0:Nfft-1;
+x = A*cos(2*pi*fc*n*Ts);
+
+%% a
+X = fft(x, Nfft);
+
+%% b
+P = abs(X).^2;
+
+%% c
+freqs_Hz_unshifted = (0:Nfft-1)*(fs/Nfft);
+figure;
+stem(freqs_Hz_unshifted, P)
+title('Power Spectrum (Unshifted)')
+xlabel('Frequency (Hz)')
+ylabel('Power |X[k]|^2')
+grid on
+
+%% d
+P_shifted = fftshift(P);
+f_norm_shifted = (-Nfft/2:Nfft/2-1)/Nfft * 2*pi;
+figure;
+stem(f_norm_shifted, P_shifted)
+title('Power Spectrum (Shifted, Normalized)')
+xlabel('Normalized Frequency (rad/sample)')
+ylabel('Power |X[k]|^2')
+grid on;
+
+%% e
+freqs_Hz_shifted = (-Nfft/2:Nfft/2-1)*(fs/Nfft);
+figure;
+stem(freqs_Hz_shifted, P_shifted)
+title('Power Spectrum (Shifted, Frequency in Hz)')
+xlabel('Frequency (Hz)')
+ylabel('Power |X[k]|^2')
+xlim([-fs/2 fs/2])
+grid on;
+
+%% f
+figure;
+stem(freqs_Hz_shifted, db(P_shifted))
+title('Power Spectrum (dB scale)')
+xlabel('Frequency (Hz)')
+ylabel('Power (dB)')
+xlim([-fs/2 fs/2])
+grid on;
+
+
+fc = 256;
+fs = 8192;
+Nfft = 1024;
+A = 1;
+Ts = 1/fs;
+n = 0:Nfft-1;
+x = A*cos(2*pi*fc*n*Ts);
+
+%% a
+X = fft(x, Nfft);
+
+%% b
+P = abs(X).^2;
+
+%% c
+freqs_Hz_unshifted = (0:Nfft-1)*(fs/Nfft);
+figure;
+plot(freqs_Hz_unshifted, P)
+title('Power Spectrum (Unshifted)')
+xlabel('Frequency (Hz)')
+ylabel('Power |X[k]|^2')
+grid on
+;
+%% d
+P_shifted = fftshift(P);
+f_norm_shifted = (-Nfft/2:Nfft/2-1)/Nfft * 2*pi;
+figure;
+plot(f_norm_shifted, P_shifted)
+title('Power Spectrum (Shifted, Normalized)')
+xlabel('Normalized Frequency (rad/sample)')
+ylabel('Power |X[k]|^2')
+grid on;
+
+%% e
+freqs_Hz_shifted = (-Nfft/2:Nfft/2-1)*(fs/Nfft);
+figure;
+plot(freqs_Hz_shifted, P_shifted)
+title('Power Spectrum (Shifted, Frequency in Hz)')
+xlabel('Frequency (Hz)')
+ylabel('Power |X[k]|^2')
+xlim([-fs/2 fs/2])
+grid on;
+
+%% f
+figure;
+plot(freqs_Hz_shifted, db(P_shifted))
+title('Power Spectrum (dB scale)')
+xlabel('Frequency (Hz)')
+ylabel('Power (dB)')
+xlim([-fs/2 fs/2])
+grid on;
+
+
+
+%% Part 2
+Nfft = 1024;
+%%fs = 1;
+freqs = (0:Nfft-1)*(fs/Nfft);
+fc = 256;
+fs = 8192;
+%% Nfft = 32;
+A = 1;
+Ts = 1/fs;
+
+%% a BPSK
+x_bpsk = randsrc(1, 128);
+x_bpsk = kron(x_bpsk, ones(1, 8));
+X_bpsk = fft(x_bpsk, Nfft);
+P_bpsk = abs(X_bpsk).^2;
+P_bpsk_dB = db(P_bpsk);
+
+figure;
+plot(freqs, P_bpsk_dB)
+title('BPSK Power Spectrum')
+xlabel('Frequency (Hz)')
+ylabel('Power (dB)')
+grid on;
+
+%% b ASK
+x_ask = (x_bpsk + 1) / 2;
+X_ask = fft(x_ask, Nfft);
+P_ask = abs(X_ask).^2;
+P_ask_dB = db(P_ask);
+
+figure;
+plot(freqs, P_ask_dB)
+title('ASK Power Spectrum')
+xlabel('Frequency (Hz)')
+ylabel('Power (dB)')
+grid on;
+
+%% c AWGN
+x_awgn = randn(1, Nfft);
+X_awgn = fft(x_awgn, Nfft);
+P_awgn = abs(X_awgn).^2;
+P_awgn_dB = db(P_awgn);
+
+figure;
+plot(freqs, P_awgn_dB)
+title('AWGN Power Spectrum')
+xlabel('Frequency (Hz)')
+ylabel('Power (dB)')
+grid on;

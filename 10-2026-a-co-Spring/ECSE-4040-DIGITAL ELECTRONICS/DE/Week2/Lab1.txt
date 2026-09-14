@@ -1,0 +1,225 @@
+LAB NOTES: 
+NMOS
+VT0 = VFB + 2phiF - QB0/QoX
+VFB = phim/phiGC - Qox/Cox
+
+Cox = epsilonox/tox (F/cm^2)
+epsilonox = epsilonr * epsilon0  =  3.9 * 8.8x10^-14=3.6^-13 F/cm
+
+100nm gets 34.5nF/cm^2
+(inverted) so 2.2nm gets 1568 nFcm^2 = 1.568 uF/cm^2
+
+Qox = q * Nf C/cm^2
+Nf = 6x10^11 cm^-2
+q= 1.6x10^-19 C
+Qox = 9.6x10^-8 C/cm^2 = 96 nC/cm^2
+
+phim 
+
+EF close to EV, 
+phiF=kT/q ln ni/p
+p=NA = 3x10^17
+phiF=0.44V
+
+phiGC=phii=phiG - phiC
+phiG=-0.55V = -(EC-Ei)
+phiC=-0.44V
+phiGC=-0.99V
+phim=4.05V-(4.05+Eq/q?)????
+
+QB = sqrt(2q NA epsilonsi |2phiF|)
+=-3x10^-7
+
+PROBLEMS:
+HJS P2.1
+a) VFB Vt0
+NMOS VFB = -1.05
+PMOS VFB = 0.93
+NMOS Vt0 = -0.0185
+PMOS Vt0 = -0.138
+
+NMOS Vt0 = VFB + |2phiF| - QB0/Cox = -0.0185
+PMOS Vt0 = VFB - |2phiF| - QB0/Cox = -0.138
+
+	NMOS VFB = phiGC - Qox/Cox = -1.05
+	PMOS VFB = phiGC - Qox/Cox = 0.93
+		NMOS phiGC = phiG - phiC = -0.99V
+		PMOS phiGC = phiG - phiC = 0.99V
+			NMOS phiG = half bandgap = -.55V
+			NMOS phiC = phiF = 0.44V
+			PMOS phiG = half bandgap other way = .55V
+			PMOS phiC = -phiF? = -0.44V
+
+		Qox/Cox = 0.0611 C/F = 0.061V
+			Qox = qNf C/cm^2 = 9.6x10^-8 C/cm^2
+				q = 1.6x10^-19 C
+				Nf = 6x10^11 cm^-2 Process Parameters
+			Cox = epsilonox/tox = 1.57 uF/cm^2
+				epsilonox = 4e0 = 3.5x10^-13 F/cm
+				tox = 22Angstroms = 220nm = 2.2x10^-7 cm Process Parameters
+				100nm >> 34.50 nF/cm^2
+				2.2nm >> 34.5/2.2*100 = 1.57 uF/cm^2
+
+	phiF = kT/q ln(ni/p) = 0.44V
+		kT/q = 26 mV
+		p = NA = 3x10^17 cm^-3
+
+	NMOS QB0/Cox = -0.189
+	PMOS QB0/Cox = 0.189
+		NMOS QB0 = -sqrt(2q epsilonSi NA |2 phiF|) = -2.96x10^-7 C/cm^2
+		PMOS QB0 = sqrt(2q epsilonSi NA |2 phiF|) = 2.96x10^-7 C/cm^2
+			q = 1.6x10^-19 C
+			epsilonSi 1.04x10^-10 F/m = 1.04x10^-12 F/cm
+			NA = 3x10^17 cm^-3
+			phiF = 0.44V
+		Cox = 1.57 uF/cm^2
+
+b)
+phiG flips sign
+phiG = half bandgap other other way = -.55V (down 1.1V from before)
+phiGC = phiG - phiC = = -0.55 - (-0.44) = -0.11V (down 1.1V from before)
+VFB = phiGC - Qox/Cox = -.11 - .06 = -0.17 (down 1.1V from before)
+Vt0 = VFB - |2phiF| - QB0/Cox = -1.238 (down 1.1V from before)
+It drops by double phiG since it's sign is flipped
+
+
+c)
+phiG becomes 0
+NMOS Vt0 = VFB + |2phiF| - QB0/Cox = 0.5315 (up .55)
+NMOS VFB = phiGC - Qox/Cox = -0.50
+NMOS phiGC = phiG - phiC = -0.44V
+NMOS phiG = 0 (up .55)
+NMOS phiC = phiF = 0.44V
+
+PMOS Vt0 = VFB - |2phiF| - QB0/Cox = -0.688 (down .55)
+PMOS VFB = phiGC - Qox/Cox = 0.38
+PMOS phiGC = phiG - phiC = 0.44V
+PMOS phiG = 0 (down .55)
+PMOS phiC = -phiF? = -0.44V
+
+
+d)
+Qimp = q Nimp ximp
+DeltaVT = -Qimp/Cox
+NMOS Nimp = - DeltaVT Cox /(q ximp) = -1.25x10^18 cm^-3
+PMOS Nimp = - DeltaVT Cox /(q ximp) = 6.3585x10^17 cm^-3
+n+PMOS Nimp = - DeltaVT Cox /(q ximp) = -3.68165x10^18 cm^-3
+	Cox = 1.57 uF/cm^2
+	q = q = 1.6x10^-19 C
+	ximp = 25 nm = 2.5x10^-6 cm
+	NMOS DeltaVT = 0.3 - (-0.0185) = 0.3185
+	PMOS DeltaVT = -0.3 - (-0.138) = -0.162
+	n+PMOS DeltaVT = -0.3 - (-1.238) = 0.938
+
+e)
+because this gate choice minimizes the threshold voltage without requiring large, unrealistic channel implants.
+
+
+270 70
+
+HJS P2.3
+i) long or short?
+W=L=100nm
+1.2V
+epsilony = 1.2V/100nm = 1.2x10^5 V/cm = 120kV/cm
+short because it reaches carrier velocity saturation: 
+	epsilony > Ec = 6x10^4
+
+ii)
+NMOS VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.36V
+PMOS VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.65V
+	VGS = 1.2
+	VT = not in Process Parameters, assume it's 0.3? (the VDsat .36 and .6 from class are derived from .3 and .4 respectively, I'll stick with VT=.3)
+	NMOS Ec L = 0.6 (from text book example?)
+	PMOS Ec L = 2.4 ^^^
+
+Plot IDS vs VDS for VGS=0V,0.4V,0.8V,1.2V
+NMOS VGS=0.0
+VGS<VT
+subthreshold conduction region
+IDS = IS * e^((VGS-VT-Voffset)*q/(nkT)) * (1-e^(-VDS*q/kt))
+IDS = 24uA * e^(-0.3V/26mV) * (1-e^(-VDS/(26mV)))
+	kT/q = 26mV
+	IS = current coefficient mu Cox W/L (n VT)^2 = 24uA
+		Cox= 1.57 uF/cm^2
+		W/L = 100nm/100nm = 1
+		n=1
+		VT=.3
+		mu and vsat not given, cant find them in the textbook, based on research, I'll use 1x10^7 cm/s
+		mu= 167 cm^2/V*s
+	Voffset sum of other voltage terms -0.1 to 0.1
+	n subthreshold swing parameter 1 to 2, 1 is ideal so we'll use that
+IDS~=0
+
+NMOS VGS=0.4
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.086V
+VGS > VT = 0.3
+if VDS < 0.086V
+	linear region
+	IDS=W/L mue Cox / (1 + (VDS/(Ec L))) * (VGS - VT - VDS/2)VDS
+	IDS=167 1.57x10^-6 / (1 + (VDS/0.6)) * (.1 - VDS/2)VDS
+		W/L=1
+		Cox = 1.57 uF/cm^2
+		Ec L = 0.6
+		mu = vsat/Ec = 167 cm^2/Vs
+if VDS > 0.086V
+	saturation region
+	IDS=W vsat Cox (VGS-VT)^2/((VGS-VT) + Ec L)
+	IDS=1x10^-5 10^7 1.57x10^-6 (0.4-0.3)^2)/((0.4-0.3) + 0.6)
+		W = 100nm = 1x10^-5 cm
+		vsat
+		Cox = 1.57 uF/cm^2
+		Ec L = 0.6
+
+
+NMOS VGS=0.8
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.27V
+if VDS < 0.27V
+IDS=167 1.57x10^-6 / (1 + (VDS/0.6)) * (.5 - VDS/2)VDS
+if VDS > 0.27V
+IDS=1x10^-5 10^7 1.57x10^-6 (0.8-0.3)^2)/((0.8-0.3) + 0.6)
+
+NMOS VGS=1.2
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.36V
+if VDS < 0.36V
+IDS=167 1.57x10^-6 / (1 + (VDS/0.6)) * (.9 - VDS/2)VDS
+if VDS > 0.36V
+IDS=1x10^-5 10^7 1.57x10^-6 (1.2-0.3)^2)/((1.2-0.3) + 0.6)
+
+PMOS VGS=0.0
+
+PMOS VGS=0.4
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.65V
+
+PMOS VGS=0.8
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.65V
+PMOS VGS=1.2
+VDsat = ((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = 0.65V
+
+
+iii)
+VDS always in saturation region
+IDS=W vsat Cox (VGS-VT)^2/((VGS-VT) + Ec L)
+IDS=1x10^-5 10^7 1.57x10^-6 (VGS-0.3)^2)/((VGS-0.3) + 0.6)
+
+
+iv)
+LTSPICE use model 3
+
+
+
+
+
+HJS P2.5
+VDsat at VGS=1.2V is .36V
+((VGS-VT) Ec L) / ((VGS-VT) + Ec L) = ((1.2-.3) .6) / ((1.2-.3) + .6)
+VDS=1.2 is in saturation region
+Vx rises, VGS drops until VT0 = .4
+VGS = 1.2 - Vx = .4
+Vx = 0.8V
+
+VDS=0.6 is still in saturation region
+Vx still maxes at 0.8V, but only 0.6V is supplied
+Vx = 0.6V
+
+SPICE SIMULATION

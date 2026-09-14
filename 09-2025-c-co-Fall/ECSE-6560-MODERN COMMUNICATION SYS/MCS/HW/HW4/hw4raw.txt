@@ -1,0 +1,262 @@
+Matlab Simulations: OFDM Decoding
+Learning goals. In this exercise you will (i) simulate packet detection in OFDM, (ii) add channel
+estimation and equalization, (iii) add CFO correction, (iv) add SFO and phase error correction, and
+(v) Plot constellation diagram, EVM diagram, Channel estimation, and SNR vs BER, with/without
+CFO correction/SFO and phase error correction.
+Starter code
+You are given a starter MATLAB script ‘hw4.m’ (On Piazza) with a library folder ‘lib’ of functions,
+which simulates the OFDM transmission. The default parameter settings in ‘hw4.m’ are as follows.
+1 %% Channel Fl a g s and Parameters
+2 SIM_FLAG = 1 ; % f l a g t o run sim ul a ti o n , 0 t o run SDR
+3 CFO_FLAG = 0 ; % f l a g t o add CFO i n sim ul a ti o n
+4 SFO_FLAG = 0 ; % f l a g t o add SFO i n sim ul a ti o n
+5 CHANNEL_FLAG = 0 ; % f l a g t o apply ch annel i n sim ul a ti o n
+6
+7 f s = 1 e6 ; % s amplin g r a t e
+8 f c = 2. 4 5 e9 ; % c a r r i e r f re quenc y , r o u g hl y middle o f ISM band
+9 CFO = 0 ; % CFO i n Hz
+10 SFO = 0 ; % SFO i n Hz
+11 SNRdB = I n f ; % awgn SNR (dB) i n ch annel ; s e t i n f f o r no n oi s e
+12 ofdm_params .MOD_ORDER = 2 ; % Modulation o r d e r ( 2 / 4 / 1 6 / 6 4 = BPSK/QPSK
+/16−QAM/64−QAM)
+13 ofdm_params .N_OFDM_SYMS = 5 0; % Number o f OFDM symbols pe r p ac ke t
+14
+15 %% Decoder Fl a g s and Parameters
+16 ofdm_params .DO_DECODE = 1 ;
+17 ofdm_params .DO_APPLY_CFO_CORRECTION = 0 ;
+18 ofdm_params .DO_APPLY_SFO_CORRECTION = 0 ;
+19 ofdm_params .DO_APPLY_PHASE_ERR_CORRECTION = 0 ;
+20 ofdm_params . pl o t _ fl a g = 1 ; % Pl o t a l l f i g u r e s
+21 ofdm_params . num_packets = 1 0; % Number o f p a c k e t s t o decode
+22 ofdm_params . p a c k e t_ s t e p_ si z e = 1 ; % keep i t 1 i n hw4
+What you need to implement
+There are six functions outside ‘lib’ given as ‘.p’ P-code files, which are content-obscured, executeonly MATLAB codes. You need to complete the Matlab scripts (following the comments inside)
+in the folder ‘decoding functions’ to replace these P-code functions. Every time you complete
+a function, drag it out from the ‘decoding functions’ folder, and drag the corresponding P-code
+function into the ‘decoding functions’ folder, so the completed function script instead of the P-code
+can be run by ‘hw4.m’. Please follow the steps below.
+1. Complete and replace functions ‘rx_pack_detect.m’ and ‘rx_demodulation.m’. Run ‘hw4.m’
+with default parameter settings to ensure it generates plots equal to the P-code files.
+2. Complete and replace functions ‘rx_channel_estimation.m’ and ‘rx_equalize_signal’. Test
+them by running ‘hw4.m’ with parameter
+CHANNEL_FLAG = 1;
+3. Complete and replace function ‘rx_cfo_correction.m’. Set parameters
+CFO_FLAG = 1;
+CFO=100;
+CHANNEL_FLAG = 0;
+Then test the function by toggling the CFO correction flag
+ofdm_params.DO_APPLY_CFO_CORRECTION
+4. Complete and replace function ‘rx_sfo_and_phase_error_correction.m’.
+Set parameters
+CFO_FLAG = 0;
+SFO_FLAG = 1;
+SFO=100;
+Then test the function by toggling the SFO and residual phase error correction flags
+ofdm_params.DO_APPLY_SFO_CORRECTION
+ofdm_params.DO_APPLY_PHASE_ERROR_CORRECTION
+Deliverables (plots & explanations)
+Please follow the steps below.
+1. Set the parameters back to the default settings, and turn on the Channel and CFO without
+CFO correction
+CFO_FLAG = 1;
+CHANNEL_FLAG = 1;
+ofdm_params.DO_APPLY_CFO_CORRECTION=0;
+What do you observe in the constellation diagram, EVM diagram, and channel estimate plots?
+How does CFO cause these? Submit the plots with your answer.
+2. Now turn on CFO correction, and turn on SFO without correction
+ofdm_params.DO_APPLY_CFO_CORRECTION=1;
+SFO_FLAG = 1;
+What do you observe in the constellation diagram, EVM diagram, and channel estimate plots?
+How does SFO cause these? Submit the plots with your answer.
+3. Now turn on the SFO and phase error corrections, and increase the number of OFDM symbols
+per packet
+ofdm_params.DO_APPLY_SFO_CORRECTION=1;
+ofdm_params.DO_APPLY_PHASE_ERR_CORRECTION=1;
+params.N_OFDM_SYMS = 1000;
+What do you observe in the constellation diagram, EVM diagram, and channel estimate plots?
+How does a larger packet size cause these? Submit the plots with your answer.
+4. Now, set back to 50 OFDM symbols per packet
+params.N_OFDM_SYMS = 50;
+and keep other parameters the same (which means all errors and corrections are ON), plot
+BER under SNR(dB) = 0:2:30. Note that you need to turn off the plotting
+ofdm_params.plot_flag = 0;
+and generate a FOR loop to traverse the settings of the SNR parameter
+SNRdB
+In each iteration, you can obtain an array of the BER for each decoded packet from the
+variable
+op_struct.berratio
+Take the mean of this array to get the average BER for each SNR value. Plot BER for BPSK
+ofdm_params.MOD_ORDER = 2;
+and QPSK
+ofdm_params.MOD_ORDER = 4;
+Are their BER values similar? Submit your answer with the BER plots.
+
+
+For now, lets start off with problem one, rx_pack_detect.m and rx_demodulation.m
+I've already made a working rx_demodulation.m that gives identical results.
+
+
+
+Here is hw4.m:
+
+%% Initialization
+clear; clc % initialize MATLAB
+path(path,genpath("./lib")); % initilize functions
+ofdm_params = ofdm_param_gen(64); % initialize parameters with 64 sub-carriers
+
+%% Channel Flags and Parameters
+SIM_FLAG = 1;     % flag to run simulation, 0 to run SDR
+CFO_FLAG = 0;     % flag to add CFO in simulation
+SFO_FLAG = 0;     % flag to add SFO in simulation
+CHANNEL_FLAG = 0; % flag to apply channel in simulation
+
+fs = 1e6; % sampling rate
+fc = 2.45e9; % carrier frequency, roughly middle of ISM band
+CFO = 0; % CFO in Hz
+SFO = 0; % SFO in Hz
+SNRdB = Inf; % awgn SNR (dB) in channel; set inf for no noise
+ofdm_params.MOD_ORDER = 2; % Modulation order (2/4/16/64 = BPSK/QPSK/16-QAM/64-QAM)
+params.N_OFDM_SYMS = 50; % Number of OFDM symbols per packet
+
+%% Generate Data
+rng(1)
+[tx_samples,ofdm_params] = ofdm_tx(ofdm_params); % take tx packets from ofdm_tx.m
+tx_samples_rep = repmat(tx_samples,1000,1); % repeat packets
+tx_samples_rep = 0.5*tx_samples_rep./max(real(tx_samples_rep)); % normalize
+
+%% Run Simulation / Run SDR
+if(SIM_FLAG) % run simulation
+    
+    rx_samples = tx_samples_rep; % initialize received samples
+
+    % apply channel
+    if(CHANNEL_FLAG)
+        h=set_channel(); % generate impulse response
+        rx_samples = conv(tx_samples_rep,h); % apply impulse response
+    end
+
+    rx_samples = awgn(rx_samples, SNRdB, 'measured'); % add awgn
+
+    % add CFO
+    if(CFO_FLAG)
+        rx_samples = rx_samples .* exp(1j*2*pi*(1:length(rx_samples)).'* CFO/fs);
+    end
+    % add SFO
+    if(SFO_FLAG)
+        rx_samples = resample(rx_samples, fs+SFO, fs);
+    end
+else % run SDR
+
+    rx_samples = []; % initialize received samples
+
+    % set SDR
+    tx = sdrtx('Pluto', ...
+        'CenterFrequency', fc, ...
+        'BasebandSampleRate', fs, ...
+        'Gain', -30);
+    rx = sdrrx('Pluto', ...
+        'CenterFrequency', fc+CFO_FLAG*CFO, ...
+        'BasebandSampleRate', fs+SFO_FLAG*SFO, ...
+        'SamplesPerFrame', length(tx_samples_rep), ...
+        'OutputDataType', 'double',...
+        'GainSource', 'Manual',...
+        'Gain', 0);
+    
+    transmitRepeat(tx, [zeros(fs,1);tx_samples_rep]); % transmit data
+    
+    % receive data
+    while length(rx_samples)<1.1*length(tx_samples_rep)
+        rx_samples = [rx_samples;rx()];
+    end
+
+    % end transmission
+    release(tx);
+    release(rx);
+end
+
+%% Decoder Flags and Parameters
+ofdm_params.DO_DECODE = 1;
+ofdm_params.DO_APPLY_CFO_CORRECTION = 0;
+ofdm_params.DO_APPLY_SFO_CORRECTION = 0;
+ofdm_params.DO_APPLY_PHASE_ERR_CORRECTION = 0;
+ofdm_params.plot_flag = 1; % Plot all figures
+ofdm_params.num_packets = 10; % Number of packets to decode
+ofdm_params.packet_step_size = 1; % keep it 1 in hw4
+
+%% Decoding
+tic
+[op_struct, ofdm_params_out] = ofdm_decoder(rx_samples(1:end), ofdm_params);
+toc
+
+
+
+Here is rx_pack_detect.m:
+
+function [lts_ind,params] = rx_pack_detect(raw_rx_dec,params)
+
+if(~isfield(params,'max_len_to_check'))
+    params.max_len_to_check = min(40000,length(raw_rx_dec));
+else
+    params.max_len_to_check = min(params.max_len_to_check, length(raw_rx_dec));
+end
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     Complete this section        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Complex cross correlation of Rx waveform with time-domain LTS
+    % use conv() function to compute the running cross correlation between 
+    % LTS in time domain, params.lts_t, and the received samples, raw_rx_dec
+lts_corr = % this should be an array of running cross correlation
+
+% Skip early and late params.N_SC/2 samples - avoids occasional false positives from pre-AGC samples
+lts_corr = 
+
+% Shorten the sampled array to avoid exceeding params.max_len_to_check 
+lts_corr = 
+
+% Find all correlation peaks, given the threshold params.LTS_CORR_THRESH*max(lts_corr)
+lts_peaks = % use find() function, which returns a Boolean array indicating the peaks
+
+% Select best candidate correlation peak as LTS-payload boundary, 
+    % i.e., there should be exactly a LTS length between the selected 2 peaks
+lts_second_peak_index = % this is the index of the latter selected peak
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set a random value if no valid correlation peak was found
+if(isempty(lts_second_peak_index))
+    fprintf('No LTS Correlation Peaks Found!\n');
+    lts_ind = -1;
+    return;
+end
+
+
+% Set the sample indices of the payload symbols and preamble
+payload_ind = lts_peaks(min(lts_second_peak_index)) + params.N_SC/2;
+lts_ind = payload_ind-2.5*params.N_SC;
+
+cur_sec_peak_ind = 2;
+while(lts_ind<=0)
+    payload_ind = lts_peaks(lts_second_peak_index(cur_sec_peak_ind)) + params.N_SC/2;
+    lts_ind = payload_ind-2.5*params.N_SC;
+    cur_sec_peak_ind = cur_sec_peak_ind+1;
+end
+% Rx LTS correlation
+if(isfield(params,'force_lts_ind'))
+    lts_ind = params.force_lts_ind;    
+end
+params.lts_ind = lts_ind;
+
+if(params.plot_flag)
+    figure(params.cf);clf;
+    params.cf = params.cf+1;
+    lts_to_plot = lts_corr(1:params.max_len_to_check);
+    plot(lts_to_plot, '.-b', 'LineWidth', 1);
+    hold on;
+    grid on;
+    line([1 length(lts_to_plot)], params.LTS_CORR_THRESH*max(lts_to_plot)*[1 1], 'LineStyle', '--', 'Color', 'r', 'LineWidth', 2);
+    title('LTS Correlation and Threshold')
+    xlabel('Sample Index')
+    myAxis = axis();
+    axis([1, params.max_len_to_check, myAxis(3), myAxis(4)]);
+end
+end

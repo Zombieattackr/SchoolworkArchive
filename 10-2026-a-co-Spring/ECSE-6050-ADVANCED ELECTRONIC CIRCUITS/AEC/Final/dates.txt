@@ -1,0 +1,15 @@
+3/20: Design Contest Checkpoint #1 Due. Submit documentation showing that you are able to simulate the test-bench-1.asc circuit in the following ways:
+
+In transient mode, V-V configuration: Show the relationship between the input voltage and output voltage.
+
+In transient mode, V-I configuration: Show the relationship between the input voltage and output current.
+
+In frequency response mode (AC Analysis), V-V configuration. Show the relationship between the input voltage and output voltage.
+
+In frequency response mode (AC Analysis), V-I configuration. Show the relationship between the input voltage and output current.
+
+3/27: Design Contest Checkpoint #2 Due. Submit documentation or demonstrate in class to instructor (3/26) ability to successfully evaluate the Middlebrook injection method for both voltage- and current-controlled modes. Documentation must show full method, not just voltage or current injection. Final report may use just one or the other, with justification as to acceptability from this checkpoint.
+
+4/17: Design Contest Report Due. See slides for report requirements. Reports are accepted late but (1) will be subject to a 10 % penalty per class and (2) will not be considered for an award.
+
+4/27: Design Contest Presentations. These presentations are not graded and are only towards (1) sharing different solutions and approaches to the class, and (2) deciding upon award winners. Only a select number of submissions will be asked to present. These selections will be shared near the end of the previous week. If selected, prepare to provide a short and succinct presentation of your approach to the solution, thought process, verification, and achieved boundary conditions. You have a right to decline presenting, though doing so will remove you from consideration of an award.

@@ -1,0 +1,116 @@
+clear; close all; clc;
+
+% Packet and data size:
+% Assume 1M PHY
+% pakcet = 1byte preamble, 4byte access address, 2-258byte(assume 22) PDU, 3byte cyclic redundancy check, no CTE
+% PDU = 2byte header, 0-251byte(23 without DLE) payload, no CTEinfo
+% payload = 20bytes
+% total 30bytes per packet, 2/3 is data
+
+% Interference:
+% microwave
+
+nbytes = 2500;
+hop = 7;
+badPER=.3;
+
+gfskMod = comm.CPMModulator('ModulationOrder',2,'FrequencyPulse','Gaussian','BandwidthTimeProduct',0.5,'ModulationIndex',.5,'BitInput',true,'SamplesPerSymbol',64);
+gfskDemod = comm.CPMDemodulator('ModulationOrder',2,'FrequencyPulse','Gaussian','BandwidthTimeProduct',0.5,'ModulationIndex',.5,'BitOutput',true,'SamplesPerSymbol',64);
+
+channels = ones(1,40);
+channels(37+1) = 0;
+channels(38+1) = 0;
+channels(39+1) = 0;
+channelTotal = zeros(1,40);
+channelErrors = zeros(1,40);
+timeouts = zeros(1,40);
+
+Ngood = 37;
+logical = 0;
+timeout = 20;
+
+%noise params (simple for now)
+SNR=1000;
+
+
+% generate random series of bits to send
+sentMessage = [];
+receivedMessage = [];
+totalPackets=0;
+goodPackets=0;
+badPackets=0;
+goodBits=0;%
+badBits=0;%
+
+convertChannel = [2404:2:2424, 2428:2:2478, 2402, 2426, 2480];
+
+
+% for each packet
+i=1;
+%for i = 1:ceilDiv(nbytes,20)
+    packet = randi([0 1], 1, 30*8); % generate random packet
+    % sentMessage = [sentMessage, packet]; % Append the generated packet to the sentMessage
+    % find what channel to use
+    logical=mod(logical+hop,Ngood);
+    goodChannels=find(channels);
+    idx=mod(logical,numel(goodChannels))+1;
+    channel=goodChannels(idx);
+
+    % Modulate the packet using GFSK
+    modulatedPacket = gfskMod(packet.').';
+
+    % convert to frequency
+    fc=convertChannel(channel);
+    t=(0:(numel(modulatedPacket))-1).';
+    txpacket=modulatedPacket .* exp(1j*2*pi*fc.*t);
+
+    % add noise to the modulated packet
+    pSignal=mean(abs(txpacket).^2);
+    noiseVar=pSignal/SNR;
+    noise=sqrt(noiseVar/2)*(randn(size(txpacket)) + 1j*randn(size(txpacket)));
+    %rxpacket=txpacket+noise;
+    rxpacket=txpacket;
+
+    % drop frequency
+    rxpacket=rxpacket*exp(-1j*2*pi*fc.*t);
+
+    % Demodulate the packet
+    demodulatedPacket = gfskDemod(real(rxpacket)).';
+
+    %track success rates in total and per channel
+    totalPackets = totalPackets+1;
+    channelTotal(channel)=channelTotal(channel)+1;
+    if isequal(demodulatedPacket,packet)
+        goodPackets = goodPackets+1;
+    else
+        badPackets = badPackets+1;
+        channelErrors(channel)=channelErrors(channel)+1;
+    end
+
+    % tick timeouts, if timeout is over, add back into the pool
+    for k = 1:40
+        if timeouts(k)
+            timeouts(k)=timeouts(k)-1;
+            if timeouts(k)==0
+                channels(k) = 1;
+                Ngood=Ngood+1;
+            end
+        end
+    end
+    
+    % determine if channel is bad. If so, remove and add timeout
+    if channelTotal(channel) >= 10
+        PER=channelErrors(channel)/channelTotal(channel);
+        if PER>=badPER
+            timeouts(channel) = timeout*Ngood;
+            channels(channel) = 0;
+            Ngood=Ngood-1;
+        end
+        channelTotal(channel)=0;
+        channelErrors(channel)=0;
+    end
+
+
+    
+%end
+

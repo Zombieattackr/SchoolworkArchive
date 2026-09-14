@@ -1,0 +1,119 @@
+[Imp] Final Project Presentation, Report, Slides, and Code Instructions
+Updated 4 days ago by Ish Kumar Jain
+Hi all,
+
+The final project presentation is in class on Friday 12/12. Each Project will have around 5 min slot (plus 1-2 min Q/A). The presentation order will be updated here MCS_Fall25_project.xlsx
+
+The final project report, slides, and code is due on Monday 12/15 midnight. You will submit the report and code at the following GitHub organization: https://github.com/rpi-mcs-projects
+
+Please share your Github ID, so we can add you to this organization (comment below to this post).
+
+
+Project cross-evaluation is due Friday 12/19 (More details later).
+
+
+Here are some helpful links on writing systems paper with top-down approach. And why code artifacts are important in a research community.
+
+Instructions to understand the grading rubrics better:
+
+
+--------------------------------
+
+Presentation and Slides Instructions
+--------------------------------
+
+
+These rubrics will help you understand how your presentations will be evaluated and what you need to focus in your presentation.
+
+
+Innovation:
+Highlight the motivation and novelty of your work; how creative and original your ideas are, and whether they bring something new to the table. Be sure to highlight the unique aspects of your work and how they differ from what has been done before.
+
+
+Methodology:
+What process you used to implement and design your system/ideas; how well thought out and well-researched your methodology is, and whether it is appropriate for your research question. Be sure to explain the steps you took to arrive at your results and how you arrived at your conclusion.
+
+Initial results:
+How well you implemented (simulation, emulation or experiments) and evaluated your results and the depth of your analysis. Be sure to explain your findings and what they mean through appropriate figures (plots, 2D images, bar charts, histograms) and adding a demo video can further help explain your results. Negative results are okay - explanation is important.
+
+Presentation:
+How well you present your ideas with clarity; how well you articulate your ideas, whether you are confident and engaging, and whether you make eye contact with your audience. Be sure to practice your presentation beforehand and make sure your slides are clear and concise.
+
+
+Q/A:
+How well you answer any questions, whether you can provide thoughtful answers, and whether you engage with your audience. Be sure to listen carefully to the questions and answer them to the best of your ability.
+
+--------------------------------
+
+Report Instructions
+--------------------------------
+
+We recommend a typical workshop paper format: 5-6 pages long, excluding references and appendices, in two-column 10pt ACM format (or two-column IEEE format). 
+
+Abstract
+
+Problem Statement - What is the problem
+Method - How you solve the problem
+Result - Quantitative results
+Implication - What does the result imply with regard to the problem you're solving
+Introduction
+
+Motivation - Broad area of project research
+Problem Statement - Explicitly mention the underlying problem of interest
+Prior work - Why is it a hard problem and any loopholes in prior works.
+Key ideas - high level insight on how you solve the problem and highlight specific challenges that you addressed.
+Summary of results and contributions
+Background and related work
+
+Search as many related papers on Google scholar and cite them with bib format. The Google Scholar extension on the Chromium browser is very helpful.
+Combine multiple similar papers as a group and address them together
+Create multiple categories of related work under different headings
+Design
+
+Your overall approach, architecture, principles and algorithms.
+Include figures such as block diagrams to explain the techniques better.
+Implementation
+
+Discuss how you evaluate the work - details of hardware/software platforms, key parameters used for evaluation etc
+Keep enough details so anyone can replicate the implementation
+Are there any baselines that you used to compare your results? Discuss them here
+Evaluation
+
+Discuss different results in different sub-sections
+For each result, describe what was the expectation and motivation for that evaluation and whether the results/figures support that claim.
+Share negative results too and acknowledge the limitations
+Provide the necessary information for the reproducibility of results
+Conclusion
+
+What is the best learning experience and what can be further improved as future work
+Acknowledgement
+
+Acknowledge if you received any help from your previous class, or fellow students. Mention any usage of AI tools to refine your writing. You may use AI to refine your writing, but don't use it to create new content.
+Team contribution (optional)
+
+If you worked in a team of two, what is the individual contribution
+References and Appendices (if any).
+
+--------------------------------
+
+Code Artifacts
+--------------------------------
+
+Source code
+
+Add your code to your Github Repo under https://github.com/rpi-mcs-projects (You will be provided access)
+
+Organize your code into functions and modules and provide one (or more) main code that runs with a single click (in most cases)
+Expose all hyper parameters in the main code that can be changed to get different results/plots etc.
+Verify the code runs without errors.
+Documentation (README.md)
+
+Provide documentation with your code to explain
+
+How to run the code
+Any special software required, software version, toolbox etc
+Run time of the code
+If there are multiple results, how to run the code to get each results.
+If your code requires a dataset, share a link to download the data.
+If your code requires hardware, mention it. Provide your data you collected with the hardware.
+#pin

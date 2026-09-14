@@ -1,0 +1,43 @@
+Linear Algebra Defs
+Span: dimensions of space spanned by the given vectors, 
+Basis: set of linearly independent vectors that span the full R^n space
+linear transformation L(v) function of v, takes a vector and gives a vector
+linear transformatrion keeps all lines straight and keeps origin in place
+only need to trace basis vectors i^ and j^, can multiply anyt vector by 2d matrix [i j]
+determinant: how the area scales (think of what the unit square scales to)
+det: if a transformation squishes the area into a line, the determinant is zero
+det: if the determanint is zero, the basis vectors are parallel
+det: if det is zero, area is zero, columns are linearly dependant
+det: if det is negative, space has been flipped 
+system of equations since Ax=v, x=A^-1 v
+det=0 can still have solution as long as it falls on whatever that line is
+Rank: transformation of rank N results in a space R^N
+Rank: number of dimensions of output
+Nullity: number of free variables
+rank+nullity = cols
+Range Image Column space (same thing): set of all possible outputs of A, can be found from cols of A span of cols is col space
+if full rank, only 0 falls on 0, otherwise, a whole line of vectors falls on 0
+this line that falls on the 0 when condensed is the null space / kernel
+null space gives all possible solutions to Ax=0?
+non square: each col is where basis vectors land, can transform between spaces
+3x2 means 3 row 2 col, 2d plane in 3d space, still full rank since output column space is 2, same as input
+2x3 maps 3d basis vectors onto 2d, but must end up linearly dependent
+dot product: project one vector down onto the other and multiply their magnitudes. Perp gives 0, obtuse gives neg
+cross product: area of parallelogram, axb positive if b ccw of a
+corss: det([v w]). same as taking unit square and scaling it
+cross: larger when perpendicular, scaling one vector scales the cross fine
+Dual vector: multiply by dual same as taking dot product and putting on the number line
+Orthonormal Transformation: dot products remain the same, nothing is stretched and no angles are squished (can be flipped/rotated)
+
+
+
+
+
+
+
+plane u plane = 2 planes
+plane n plane = line
+line + line = plane
+if unique (not parallel?), they're direct sum O+
+
+basis is 1) minimal spanning set (you need at least 1 per dimension) 2) max independent set (you've run out of dimensions to cover)

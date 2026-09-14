@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{bm}
+\pagestyle{empty}
+\usepackage{graphicx}
+\graphicspath{{C:\Users\steve\Pictures}}
+\begin{document}
+
+\noindent{{\Large \bf Summer 2025, 4100 Problem Set 1, Hayden Fuller}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\bigskip
+
+\begin{enumerate}
+
+\item Let ${\bm x},{\bm y}\in\mathbb{R}^n$. Show that ${\bm x}^T{\bm y}=0$ if and only if $||{\bm x}||\leq||{\bm x}+a{\bm y}||$ for all $a\in\mathbb{R}$.
+\\
+\\if two vectors are orthogonal, the magnitude of one will always be less than the magnitude of it plus the other, the hypotinuse is always larger than the base or height of a right triangle. If not orthogonal, some scaled y could make the "hypotinuse" shorter
+\\
+\\$||{\bm x}+a{\bm y}||^2 = ||\bm x||^2 + 2a\bm x^T\bm y + a^2||\bm y||^2$
+\\assume ${\bm x}^T{\bm y}=0$
+\\then $||\bm x||^2 + 2a\bm x^T\bm y + a^2||\bm y||^2 = ||\bm x||^2 + a^2||\bm y||^2$
+\\$||\bm x||^2 + a^2||\bm y||^2 \geq ||\bm x||^2$
+\\$a^2||\bm y||^2\geq 0$
+\\therefore $||\bm x|| \leq ||\bm x+a\bm y||$ for all $a\in\mathbb{R}$
+\\
+\\conversely, assume $||\bm x|| \leq ||\bm x+a\bm y||$ for all $a\in\mathbb{R}$
+\\if $\bm y = 0$, $\bm x^T\bm y = \bm x^T \bm 0 = 0$ trivially
+\\if $\bm y \neq 0$
+\\$0\leq||\bm x+a\bm y||^2-||\bm x||^2=||\bm x||^2+2a\bm x^T\bm y+a^2||\bm y||^2-||\bm x||^2$
+\\$0\leq2a\bm x^T\bm y+a^2||\bm y||^2$
+\\we prove by contradiction, assume $\bm x^T\bm y \neq 0$
+\\with a sufficiently small $a$ with sign opposite to $\bm x^T\bm y$, $a^2$ is dominated by $a$, and $2a\bm x^T\bm y$ becomes negative, and since it dominates, makes the whole expression negative, 
+\\contradicting our assumed $0\leq 2a\bm x^T\bm y+a^2||\bm y||^2$, 
+\\therefore it $\bm x^T\bm y\neq0$ is a contradiction, and $\bm x^T\bm y$ must be zero
+\\since we've proven both directions, we've proven the desired iff statement
+\\QED
+\newpage\item Let $\{\bm{x}_1,\cdots,\bm{x}_n\}$ be a set of vectors in $\mathbb{R}^n$ such that $\bm{x}_i^T\bm{x}_j=
+\begin{cases}
+0 & i\neq j\\
+1 & i=j
+\end{cases}
+$. Show that if $\bm{v}=\sum c_i\bm{x}_i$ then $c_i=\bm{x}_i^T\bm{v}$. (Note that the vectors $\bm{x}_i$ are said to be orthonormal)
+\\
+\\each $x$ is orthogonal, sort of representing one of the $n$ dimensions of $\mathbb{R}^n$ (even if all the $x$'s are "tilted" from the origin). $v$ goes in each $x_i$ dimension a distance of $c_i$. By multiplying $x_i^Tv$ we remove all other dimensions besides $x_i$, leaving us with just that one magnitude $c_i$.
+\\
+\\let $\delta_{ij}$ be defined as $\delta_{ij}=\begin{cases}
+0 & i\neq j\\
+1 & i=j
+\end{cases}
+$
+\\$\bm{v}=\sum c_i\bm{x}_i$
+\\ multiply by $\bm x_j^T$
+\\$\bm x_j^Tv=\bm x_j^T\sum c_i\bm x_i=\sum c_i\bm x_j^T\bm x_i=\sum c_i\delta_{ij}=c_j$
+\\$\bm x_j^T v = c_j$
+\\$c_i = \bm x_i^T v$
+\\QED
+
+\newpage\item Let $a$, $b$, and $c$ be lenghts of the sides of a triangle and let $d$ be the length of the line segment from the midpoint of the side of length $c$ to the opposite vertex. Use inner products to prove that
+$$a^2+b^2=\frac{1}{2}c^2+2d^2$$
+(See figure on next page)
+\\
+\\let vectors $\bm x$, $\bm y$, and $\bm z$ be the points of the triangle, 
+\\then $a=||\bm x-\bm y||$, $b=||\bm y-\bm z||$, $c=||\bm z-\bm x||$, midpoint $\bm m=\frac{1}{2}(\bm x+\bm z)$, and 
+\\$d=||\bm y-\bm m||=||\bm y-\frac{1}{2}(\bm x+\bm z)||$
+\\$a^2+b^2 = ||\bm x-\bm y||^2+||\bm y-\bm z||^2$
+\\$a^2+b^2 = ||\bm x||^2-2\bm x^T\bm y +||\bm y||^2+||\bm y||^2-2\bm y^T\bm z +||\bm z||^2$
+\\$a^2+b^2 = ||\bm x||^2+2||\bm y||^2+||\bm z||^2-2\bm x^T\bm y -2\bm y^T\bm z$
+\\
+\\$\frac{1}{2}c^2+2d^2=\frac{1}{2}||\bm z - \bm x||^2 +2 ||\bm y - \frac{1}{2}(\bm x+\bm z)||^2$
+\\$\frac{1}{2}c^2+2d^2=\frac{1}{2}(||\bm z||^2 -2\bm z^T\bm x + ||\bm x||^2) +2( ||\bm y||^2 -2\frac{1}{2}\bm y^T(\bm x+\bm z) + \frac{1}{4}(\bm x+\bm z)^2)$
+\\$\frac{1}{2}c^2+2d^2=\frac{1}{2}||\bm z||^2 -\bm z^T\bm x + \frac{1}{2}||\bm x||^2 +2||\bm y||^2 -2\bm y^T(\bm x+\bm z) + \frac{1}{2}(\bm x+\bm z)^2$
+\\$\frac{1}{2}c^2+2d^2=\frac{1}{2}||\bm z||^2 -\bm z^T\bm x + \frac{1}{2}||\bm x||^2 +2||\bm y||^2 -2\bm x^T\bm y -2\bm y^T\bm z + \frac{1}{2}||\bm x||^2 +\frac{1}{2}2\bm x^T\bm z+ \frac{1}{2}||\bm z||^2$
+\\$\frac{1}{2}c^2+2d^2=||\bm x||^2 + 2||\bm y||^2 + ||\bm z||^2 - 2\bm x^T\bm y -2\bm y^T\bm z$
+\\
+\\$a^2+b^2 = ||\bm x||^2+2||\bm y||^2+||\bm z||^2-2\bm x^T\bm y -2\bm y^T\bm z=\frac{1}{2}c^2+2d^2$
+\\$a^2+b^2 = \frac{1}{2}c^2+2d^2$
+\\QED
+
+\newpage\item Let $V$ be a vector space over $F$ and let $S$ and $T$ be subspaces such that $S\cap T=\emptyset$. Show that for any $x\in S+T$, there exists unique $s\in S$ and $t\in T$ such that $x=s+t$. (Note that $\emptyset$ means just containing the zero vector)
+\\
+\\By definition, if $x\in S+T$, then $x=s+t$ for some $s\in S$ and $t\in T$
+\\Suppose $x=s_1+t_1=s_2+t_2$
+\\$s_1+t_1=s_2+t_2$
+\\$s_1-s_2=t_2-t_1$
+\\Since the left side is in S and the right side is in T, and $S\cap T= \{\bm 0\}$, 
+we have $s_1-s_2=0$
+\\$s_1=s_2$
+\\Therefore the representation is unique
+\\QED
+
+\newpage\item For each of the following subsets of $\mathbb{R}^3$, either prove that they are a subspaces or show by counterexample that they are not a subspace.
+
+\begin{enumerate}[a.]
+\item $\{(x_1,x_2,x_3)\in\mathbb{R}^3:x_1=4x_3\}$
+\\yes
+\\zero vector satisfies $x_1=4x_3$
+\\if $u=(x_1,x_2,x_3)$ and $v=(y_1,y_2,y_3)$
+\\and $x_1=4x_3$ and $y_1=4y_3$
+\\then $u+v=(x_1+y_1,x_2+y_2,x_3+y_3)$
+\\$x_1+y_1=4x_3+4y_3=4(x_3+y_3)$
+\\and for any scalar $a$, $au=(ax_1ax_2,ax_3)$ satisfies $ax_1=4(ax_3)$
+\\
+\item $\{(x_1,x_2,x_3)\in\mathbb{R}^3:x_1x_2x_3\leq 0\}$
+\\no
+\\ex: $v=(-1,1,1)$, $x_1x_2x_3=-1*1*1=-1\leq 0$, 
+\\but multiply by $-1$, $v*-1=(1,-1,-1)$, and it fails $x_1x_2x_3=1*-1*-1=1\nleq 0$
+\\
+\item $\{(x_1,x_2,x_3)\in\mathbb{R}^3:2x_1-x_2+3x_3=0\}$
+\\yes
+\\zero vector satisfies $2x_1-x_2+3x_3=0$
+\\if $u=(x_1,x_2,x_3)$ and $v=(y_1,y_2,y_3)$
+\\and $2x_1-x_2+3x_3=0$ and $2y_1-y_2+3y_3=0$
+\\then $u+v=(x_1+y_1,x_2+y_2,x_3+y_3)$
+\\$2(x_1+y_1)-(x_2+y_2)+3(x_3+y_3)=0$
+\\and for any scalar $a$, $au=(ax_1ax_2,ax_3)$ satisfies $2ax_1-ax_2+3ax_3=0$
+\\
+\item $\{(x_1,x_2,x_3)\in\mathbb{R}^3:x_1^2-x_2^2=0\}$
+\\no
+\\this can be satisffied by either $x_1=x_2$ or $x_1=-x_2$
+\\couterexample: $u=(1,1,0)$ and $v=(1,-1,0)$, both satisfy the condition, but $u+v=(2,0,0)$, leading to $2^2-0^2\neq0$ which does not meet the condition
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
+

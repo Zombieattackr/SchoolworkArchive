@@ -1,0 +1,13 @@
+https://docs.google.com/document/d/11YEe0JgnPOXwA16h_IV9kAUGc_7aagJTrsrMOYCX8Kc/edit?tab=t.0
+https://docs.google.com/spreadsheets/d/1-di5w9kPFPgYJf8HgVL8_YI9zmUcv5n0M-JQBB7RbuY/edit?gid=0#gid=0
+https://docs.google.com/document/d/1IsrUft9tQ9VxvDEKvbrbmynlaCS4mzqfqouzMNHeO1U/edit?tab=t.0
+https://docs.google.com/document/d/1Pg7hd6nE40bpJb4DkAWu3Nxpn-rSdkGVAvqZq9fbqz8/edit?tab=t.0#heading=h.z1yh8ejc0o3j
+https://drive.google.com/drive/u/0/folders/1dhBdjwg4wIVNUaxoDs6-QcLSAGnLJpdX
+https://docs.google.com/document/d/1jV-mkNGlPxXd0DOSdRPgdft8ntzH-zN051ATSu3gJpg/edit?tab=t.0
+https://en.wikipedia.org/wiki/Igor_Vamos
+https://docs.google.com/document/d/1G5hiusdAWZSqd7OGk_oxHM-D242k-eSUSz2mOpAfN1M/edit?tab=t.0
+https://docs.google.com/spreadsheets/d/1Q3Fx3f86SMZDNmOP-VmkrzgsvOuPskayI6XmT6iG8Wo/edit?gid=0#gid=0
+https://github.com/kylemcdonald/
+https://x.com/kcimc
+https://kylemcdonald.net/
+https://icespy.org/

@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{bm}
+\pagestyle{empty}
+\usepackage{graphicx}
+\graphicspath{{C:\Users\steve\Pictures}}
+\usepackage[normalem]{ulem}
+\begin{document}
+\renewcommand{\ULthickness}{2.4pt}
+\noindent{{\Large \bf Fall 23, 4100 Problem Set \sout{ 9 } 8, Hayden Fuller}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\begin{enumerate}
+
+\item Find the spectral decomposition of the self-adjoint matrix
+
+$$A=\left[\begin{array}{cc}
+4 & 1+i\\
+1-i & 3
+\end{array}\right]$$
+\\
+\\$\textrm{det}(A-\lambda I)=0$
+\\$\textrm{det}\left[\begin{array}{cc}4-\lambda & 1+i\\1-i & 3-\lambda\end{array}\right]=(4-\lambda)(3-\lambda)-(1+i)(1-i)=(12-4\lambda-3\lambda+\lambda^2)-(2)=\lambda^2-7\lambda+10=(\lambda-5)(\lambda-2)$
+\\$\lambda=5,2$
+\\$u_1=\frac{\sqrt{3}}{3}\left[\begin{array}{c} 1+i \\ 1 \end{array}\right]$
+\\$u_2=\frac{\sqrt{6}}{6}\left[\begin{array}{c} -1-i \\ 2 \end{array}\right]$
+\\$P_1=u_1u^*_1=\left[\begin{array}{cc} 2/3 & (1+i)/3 \\ (1-i)/3 & 1/3 \end{array}\right]$
+\\$P_2=u_2u^*_2=\left[\begin{array}{cc} 1/3 & -(1+i)/3 \\ -(1-i)/3 & 2/3 \end{array}\right]$
+\\$A=5P_1+2P_2=5u_1u^*_1+2u_2u^*_2$
+
+\newpage\item Let $A$ be hermitian and let $\lambda$ be a (real) eigenvalue of $A$. Prove that \\${\rm null}((A-\lambda I)^2)={\rm null}(A-\lambda I)$. 
+\\
+\\let $B:=A-\lambda I$, then $B$ is Hermitian so $B^*=B$
+\\$\textrm{ker}(B)\subseteq\textrm{ker}(B^2)$ since if $Bx=0$ then $B^2x=B(Bx)=B(0)=0$
+\\for the reverse, $\langle B^2x,x\rangle=\langle Bx,B^*x\rangle=\langle Bx,Bx\rangle=||Bx||^2$
+\\since $B^2x=0$, the left size is zero, $||Bx||^2=0$, $Bx=0$, so $x\in\textrm{ker}(B)$
+\\combining gives $\textrm{ker}(B^2)=\textrm{ker}(B)$, so $\textrm{null}((A-\lambda I)^2)=\textrm{null}(A-\lambda I)$
+
+\newpage\item Let $A$ be a symmetric, positive definite, $n\times n$ matrix and let $B$ be an $n\times m$ matrix. Prove that $B^TAB$ is positive definite if and only if ${\rm rank}(B)=m$. 
+\\
+\\let $y:=Bx\in\mathbb{R}^n$
+\\$x^T(B^TAB)x=(Bx)^TA(Bx)=y^TAy$
+\\assume $B^TAB$ is positive definite.
+\\if $Bx=0$ then the left hand side is $x^T(B^TAB)x=0$.
+\\since $B^TAB$ is positive definite, this can only happen when $x=0$
+\\thus $\textrm{ker}B=\{0\}$, so $B$ is injective and $\textrm{rank}B=m$
+\\conversely, assume $\textrm{rank}B=m$, then $\textrm{ker}B=\{0\}$
+\\for any nonzero $x\in\mathbb{R}^m$ we have $y=Bx\neq0$
+\\because $A$ is positive definite, $y^TAy>0$
+\\hence $x^T(B^TAB)x=y^TAy>0$ for every nonzero x, so $B^TAB$ is positive definite
+\\combining, QED
+
+\newpage\item Use linear algebra to find the minimum value of the paraboloid, $f(x_1,x_2)=2x_1^2+4x_1x_2+3x_2^2-4x_1+5x_2+8$. Be sure to justify why the value you obtain is indeed a minimum.
+\\
+\\$x=\left[\begin{array}{c} x_1 \\ x_2 \end{array}\right]$
+\\let $Q=\left[\begin{array}{cc} 2 & 2 \\ 2 & 3 \end{array}\right]$,
+\\$b=\left[\begin{array}{c} -4 \\ 5 \end{array}\right]$,
+\\$c=8$
+\\so $f(x)=x^TQx+b^Tx+c$
+\\$\nabla f(x)=(Q+Q^T)x+b=2Qx+b$
+\\setting $\nabla f=0$ we get $2Qx+b=0$, $Qx=-b/2$
+\\$x^*=\left[\begin{array}{c} 11/2 \\ -9/2 \end{array}\right]$
+\\test $H=\nabla^2f(x)=2Q$ check $Q$ is positive definite, $\textrm{det}Q=2*3-2*2=2>0$, so $f$ is strictly convex and $x^*$ is the unique global minimizer
+\\min value evaluate $f(x^*)=-57/4=-14.25$
+
+\newpage\item Consider the Rayleigh quotient, $\displaystyle{R(x_1,x_2)=\frac{5x_1^2+6x_1x_2+13x_2^2}{x_1^2+x_2^2}}$ where $\bm{x}\neq\bm{0}$. Find a symmetric matrix $A$ such that $\displaystyle{R=\frac{\bm{x}^TA\bm{x}}{\bm{x}^T\bm{x}}}$ and then find the minimum and maximum values of $R$. Be sure justify why these values are indeed the extreme values of $R$.
+\\
+\\$A=\left[\begin{array}{cc} 5 & 3 \\ 3 & 13 \end{array}\right]$
+\\$x^TAx=5x_1^2+3x_1x_2+3x_1x_2+13x_2^2$ so indeed $R(x)=\frac{x^TAx}{x^Tx}$
+\\$\textrm{det}(A-\lambda I)=(5-\lambda)(13-\lambda)-3^2=\lambda^2-18\lambda+56$
+\\$\lambda=14,4$
+\\because A is symetric it's orthogonally diagonalizable, $A=Q\textrm{diag}(14,4)Q^T$
+\\$x=Qy$ gives $R(x)=\frac{y^T\textrm{diag}(14,4)y}{y^Ty}=\frac{14y_1^2+4y_2^2}{y_1^2+y_2^2}=14\frac{y_1^2}{y_1^2+y_2^2}+4\frac{y_2^2}{y_1^2+y_2^2}$
+\\the two fractions are non negative and sum to 1, so $R(x)$ is a convex combination of 14 and 4, 
+\\so for all $x\neq0$, $4\leq R(x)\leq14$ with $R(x)=14$ when $y_2=0$ and $R(x)=4$ when $y_1=0$
+\\therefore the minimum is 4 and maximum is 14.
+\\these are extreme values because for a symmetric matrix the Rayleigh quotient ranges exactly between the smallest and largest eigenvalues.
+
+\newpage\item Let $A$ and $B$ be self-adjoint, positive definite matrices. Prove that the eigenvalues of $AB$ are also real and postive.
+\\
+\\Let $A$, $B$ be self-adjoint and positive definite.
+\\Since $A$ is positive definite it has unique Hermitian positive definite square root invertible $A^{1/2}$
+\\$C:=A^{1/2}BA^{1/2}$
+\\because $A^{1/2}$ and $B$ are Hermitian, $C$ is Hermitian
+\\$C^*=(A^{1/2}BA^{1/2})^*=A^{1/2}BA^{1/2}=C$
+\\$C$ is positive definite for any nonzero x $x^*Cx=(A^{1/2}x)^*B(A^{1/2}x)>0$, 
+\\since $A^{1/2}x\neq0$ and $B$ is positive definite
+\\all eigenvalues of $C$ are real and positive
+\\$AB$ is similar to $C$, with $S:=A^{1/2}$,
+\\$S^{-1}(AB)S=A^{1/2}ABA^{1/2}=A^{1/2}BA^{1/2}=C$
+\\$\sigma(AB)=\sigma(C)$
+\\therefore every eigenvalue of $AB$ is an eigenvalue of $C$ so it real and positive
+\\thus the eigenvalues of $AB$ are real and positive 
+\\QED
+
+
+
+\end{enumerate}
+
+\end{document}

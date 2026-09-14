@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{bm}
+\graphicspath{{C:\Users\steve\Pictures}}
+\begin{document}
+
+\noindent{{\Large \bf Summer 2025, 4100 Problem Set 4, Hayden Fuller}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\bigskip
+
+\begin{enumerate}
+
+\item Use an orthogonal projection to find the point on the plane $S=\{{\bm x}\in\mathbb{R}^3: 3x_1-x_2+4x_3=0\}$ that is closest to the point $(-1,4,2)$.
+\\
+\\normal $n=(3, -1, 4)$
+\\point $p=(-1, 4, 2)$
+\\result point $r=p-\frac{p\cdot n}{n\cdot n}n$
+\\$p\cdot n=-1*3+4*-1+2*4=1$
+\\$n\cdot n=3^2+(-1)^2+4^2=26$
+\\$r=(-1, 4, 2)-\frac{1}{26}(3, -1, 4)=(-\frac{29}{26}, \frac{105}{26}, \frac{48}{26})$
+
+\newpage\item Given vectors,
+$\bm{v}_1=\left[
+\begin{array}{ccc}
+1 \\
+0 \\
+1
+\end{array} \right], \,\,
+\bm{v}_2=\left[
+\begin{array}{ccc}
+2\\
+1 \\
+0
+\end{array} \right], \,\,
+\bm{v}_3=\left[
+\begin{array}{ccc}
+0 \\
+1 \\
+-1
+\end{array} \right]$, use Gram-Schmidt to find a corresponsding orthonormal set $\{\bm{q}_1,\bm{q}_2,\bm{q}_3\}$
+and show that $\textrm{Span}\{\bm{v}_1,\bm{v}_2\}= \textrm{Span}\{\bm{q}_1,\bm{q}_2\}$.
+\\
+\\$||v_1||=\sqrt{1^2+0^2+1^2}=\sqrt{2}$
+\\$q_1=\frac{1}{\sqrt{2}}\left[\begin{array}{ccc}1 \\0 \\1\end{array} \right]=\left[\begin{array}{ccc}\frac{1}{\sqrt{2}} \\0 \\\frac{1}{\sqrt{2}}\end{array} \right]$
+\\$v_2\cdot q_1=\left[\begin{array}{ccc}2 \\1 \\0\end{array} \right]\frac{1}{\sqrt{2}}\left[\begin{array}{ccc}1 \\0 \\1\end{array} \right]=\frac{2}{\sqrt{2}}=\sqrt{2}$
+\\$u_2=v_2-(v_2\cdot q_1)q_1=v_2-\sqrt{2}q_1=\left[\begin{array}{ccc}2 \\1 \\0\end{array} \right]-\sqrt{2}\frac{1}{\sqrt{2}}\left[\begin{array}{ccc}1 \\0 \\1\end{array} \right]=\left[\begin{array}{ccc}2 \\1 \\0\end{array} \right]-\left[\begin{array}{ccc}1 \\0 \\1\end{array} \right]=\left[\begin{array}{ccc}1 \\1 \\-1\end{array} \right]$
+\\$||u_2||=\sqrt{1^2+1^2+(-1)^2}=\sqrt{3}$
+\\$q_2=\frac{u_2}{||u_2||}=\frac{1}{\sqrt{3}}\left[\begin{array}{ccc}1 \\1 \\-1\end{array} \right]=\left[\begin{array}{ccc}\frac{\sqrt{3}}{3} \\\frac{\sqrt{3}}{3} \\-\frac{\sqrt{3}}{3}\end{array} \right]$
+\\$v_3\cdot q_1=\left[\begin{array}{ccc}0 \\1 \\-1\end{array} \right]\cdot \frac{1}{\sqrt{2}}\left[\begin{array}{ccc}1 \\0 \\1\end{array} \right]=-\frac{1}{\sqrt{2}}$
+\\$v_3\cdot q_2=\left[\begin{array}{ccc}0 \\1 \\-1\end{array} \right]\cdot \frac{1}{\sqrt{2}}\left[\begin{array}{ccc}1 \\1 \\-1\end{array} \right]=-\frac{2}{\sqrt{3}}$
+\\$u_3=v_3-(v_3\cdot q_1)q_1-(v_3\cdot q_2)q_2$
+\\$u_3=\left[\begin{array}{ccc}-1 \\2 \\1\end{array} \right]$
+\\$||u_3||=\sqrt{6}$
+\\$q_3=\left[\begin{array}{ccc}-\frac{\sqrt{6}}{6} \\\frac{2\sqrt{6}}{6} \\\frac{\sqrt{6}}{6}\end{array} \right]$
+\\$q_1=\left[\begin{array}{ccc}\frac{1}{\sqrt{2}} \\0 \\\frac{1}{\sqrt{2}}\end{array} \right]$, $q_2=\left[\begin{array}{ccc}\frac{\sqrt{3}}{3} \\\frac{\sqrt{3}}{3} \\-\frac{\sqrt{3}}{3}\end{array} \right]$, $q_3=\left[\begin{array}{ccc}-\frac{\sqrt{6}}{6} \\\frac{2\sqrt{6}}{6} \\\frac{\sqrt{6}}{6}\end{array} \right]$
+\\$q_1=\frac{v_1}{\sqrt{2}}\in\textrm{Span}\{v_1\}$, $q_2=\frac{v_2-v_1}{\sqrt{3}}\in\textrm{Span}\{v_1,v_2\}$
+\\$v_1=\sqrt{2}q_1$, $v_2=v_1+(v_2-v_1)=\sqrt{2}q_1+\sqrt{3}q_2$
+\\so $v_1, v_2\in\textrm{Span}\{q_1,q_2\}$
+\\$\textrm{Span}\{\bm{v}_1,\bm{v}_2\}= \textrm{Span}\{\bm{q}_1,\bm{q}_2\}$
+
+\newpage\item Consider the Hilbert space $L^2(\mathbb{R},\,w(x))$ where $w(x)=e^{-x^2}$, equipped with the inner product
+$$\langle f,g \rangle=\displaystyle{\int^{\infty}_{-\infty}{f(x)g(x)e^{-x^2}}}$$
+and norm
+$$||f||=\sqrt{\langle f,f \rangle}=\left(\displaystyle{\int^{\infty}_{-\infty}{|f(x)|^2e^{-x^2}}}\right)^{1/2}.$$
+Let $e_n=x^n$ denote the standard basis.
+
+\begin{enumerate}[a.]
+
+\item Using the fact that $\displaystyle{\int^{\infty}_{-\infty}{e^{-x^2}}}=\sqrt{\pi}$, and using either integration by parts or parameter differentiation, show that $\langle e_i,e_j \rangle =\displaystyle{\int^{\infty}_{-\infty}{x^{i+j}e^{-x^2}}}=\begin{cases}\frac{(2n)!\sqrt{\pi}}{2^{2n}n!} &{\rm if}~~ i+j=2n\\ 
+0 &{\rm if}~~ i+j=2n+1
+\end{cases}$
+\\
+\\$I_m=\int^{\infty}_{-\infty}x^me^{-x^2}dx$
+\\if $m$ is odd then the integrand is odd, so $I_m=0$
+\\for $m$ even, integrate by parts
+\\$I_{2n}=\int^{\infty}_{-\infty}x^{2n}e^{-x^2}dx=[-\frac{1}{2}x^{2n-1}e^{-x^2}]^{\infty}_{-\infty}+\frac{2n-1}{2}\int^{\infty}_{-\infty}x^{2n-2}e^{-x^2}dx=\frac{2n-1}{2}I_{2n-2}$
+\\Since $I_0=\int^{\infty}_{-\infty}e^{-x^2}dx=\sqrt{\pi}$, the recursion gives
+\\$I_{2n}=\frac{(2n-1)(2n-2)\cdots1}{2^n}I_0=\frac{(2n)!}{2^{2n}n!}\sqrt{\pi}$
+\\QED
+\\
+\item Use the Graham-Schmidt and the result above to construct an orthonormal set of polynomials from the set $\{1,x,x^2\}$ and use it to find $g\in\mathbb{P}_2$ such that $f(1)=\displaystyle{\int^{\infty}_{-\infty}{f(x)g(x)e^{-x^2}}}$ for all $f\in\mathbb{P}_2$.
+\\
+\\$\langle1, 1\rangle=\sqrt{\pi}$, $\langle1, x\rangle=0$, $\langle1, x^2\rangle=\frac{\sqrt{\pi}}{2}$
+\\$\langle x, x\rangle=\frac{\sqrt{\pi}}{2}$, $\langle x, x^2\rangle=0$, $\langle x^2, x^2\rangle=\frac{3\sqrt{\pi}}{4}$
+\\$u_0=1$
+\\$q_0=\frac{1}{||1||}=\frac{1}{\sqrt{\sqrt{\pi}}}=\pi^{-1/4}$
+\\since we have $\langle x,1\rangle=0$ we have $u_1=x$
+\\$||x||=\sqrt{\langle x,x\rangle}=\sqrt{\frac{\sqrt{\pi}}{2}}=\frac{\pi^{1/4}}{\sqrt{2}}$
+\\$q_1=\frac{x}{||x||}=\frac{\sqrt{2}}{\pi^{1/4}}x$
+\\$\langle x^2,q_0\rangle=\frac{\sqrt{\pi}/2}{\pi^{1/4}}=\frac{pi^{1/4}}{2}$
+\\$\langle x^2,q_1\rangle=0$
+\\$u_2=x^2-\langle x^2,q_0\rangle q_0=x^2-\frac{1}{2}$
+\\$\langle u_2,u_2\rangle=\frac{3\sqrt{\pi}}{4}-2\cdot\frac{1}{2}\frac{\sqrt{\pi}}{2}+\frac{1}{4}\sqrt{pi}=\frac{\sqrt{\pi}}{2}$
+\\$||u_2||=\frac{\pi^{1/4}}{\sqrt{2}}$
+\\$q_2=\frac{u_2}{||u_2||}=\frac{\sqrt{2}}{\pi^{1/4}}(x^2-\frac{1}{2})$
+\\$q_0=\pi^{-1/4}$, $q_1=\frac{\sqrt{2}}{\pi^{1/4}}x$, $q_2=\frac{\sqrt{2}}{\pi^{1/4}}(x^2-\frac{1}{2})$
+\\$g=\sum^2_{k=0}q_k(1)q_k$
+\\because for any $f=\sum\langle f,q_k\rangle 1_k$ we get $\langle f,g\rangle=\sum\langle f,q_k\rangle q_k(1)=f(1)$
+\\$q_0(1)=\pi^{-1/4}$, $q_1(1)=\frac{\sqrt{2}}{\pi^{1/4}}$, $q_2(1)=\frac{\sqrt{2}}{2\pi^{1/4}}$
+\\$g=q_0(1)q_0+q_1(1)q_1+q_2(1)q_2=\pi^{-1/2}(x^2+2x+\frac{1}{2})$
+\\$g(x)=\pi^{-1/2}(x^2+2x+\frac{1}{2})$
+\end{enumerate}
+
+\newpage\item Let $\{\bm{e}_1,\cdots\bm{e}_m\}$ be an orthonormal subset of $\mathbb{R}^n$. Prove that 
+$$||\bm{v}||^2=\langle \bm{v},\bm{e}_1\rangle ^2+\cdots +\langle \bm{v},\bm{e}_m\rangle ^2$$
+if and only if $\bm{v}\in{\rm Span}(\bm{e}_1,\cdots\bm{e}_m)$
+\\
+\\Assume $v=\sum^m_{i=1}a_ie_i$ for some scalars $a_i$.
+\\Because the $e_i$ are orthonormal, $||v||^2=\langle\sum_ia_ie_i,\sum_ja_je_j\rangle=\sum_{i,j}a_ia_j\langle e_i,e_j\rangle=\sum_i a_i^2$
+\\but $\langle v,e_i\rangle=a_i$, so $||v|^2=\sum^m_{i=1}\langle v,e_i\rangle^2$
+\\conversely assume $||v|^2=\sum^m_{i=1}\langle v,e_i\rangle^2$
+\\define $u=\sum^m_{i=1}\langle v,e_i\rangle e_i$, the orthogonal projection of $v$ onto $\textrm{Span}(e_1,\cdots,e_m)$
+\\$v-u$ is orthogonal to each $e_i$, hence orthogonal to the whole span
+\\$||v||^2=||u||^2+||v-u||^2$, but $||u||^2=\langle\sum_i\langle v,e_i\rangle e_i,\sum_j\langle v,e_j\rangle e_j\rangle=\sum^m_{i=1}\langle v,e_i\rangle^2$
+\\so the assumed equality gives $||v-u||^2=0$, therefore $v=u\in\textrm{Span}(e_1,\cdots,e_m)$
+\\QED
+
+\newpage\item Let $Q\in\mathbb{R}^{n\times n}$ have orthonormal columns. Prove that,
+\begin{enumerate}[a.]
+\item The rows of $Q$ must be orthonormal as well
+\\
+\\$Q^TQ=I_n$ because the $(i,j)$ entry of $Q^TQ$ is the inner product of col $i$ and col $j$, which is $\delta_{ij}$
+\\since $Q$ is square and $Q^TQ=I$, $Q$ is invertivle with inverse $Q^{-1}=Q^T$, thus $QQ^T=I_n$
+\\the $(i,j)$ entry of $QQ^T$ is the dot product of row $i$ of $Q$ with row $j$ of $Q$.
+\\because $QQ^T=I$ those dot products equal $\delta_{ij}$
+\\hence distinct rows are orthogonal and each row has length 1, so the rows are orthonormal
+\\QED
+\\
+\item $||Q{\bm x}||=||{\bm x}||$ for any ${\bm x}\in\mathbb{R}^{n}$
+\\
+\\$||Qx||^2=(Qx)^T(Qx)=x^TQ^TQx=x^TIx=x^Tx=||x||^2$
+\\$||Qx||=||x||$
+\\QED
+\end{enumerate}
+
+\newpage\item  Let let $\bm{u}\in\mathbb{R}^n$ be such that $||\bm{u}||=1$ and define the householder matrix, $H=I-2\bm{u}\bm{u}^T$. 
+
+\begin{enumerate}[a.]
+\item Prove that $H$ is symmetric and that $H=H^{-1}$.
+\\
+\\$H^T=(I-2uu^T)^T=I-2(uu^T)^T=I-2uu^2=H$
+\\so $H$ is symetric
+\\$H^2=I-2uu^T)^2=I-4uu^T+4uu^Tuu^T$
+\\$u^Tu=1$ so $uu^Tuu^T=u(u^Tu)u^T=uu^T$ so
+\\$H^2=I-4uu^T+4uu^T=I$
+\\so $H^{-1}=H$
+\\QED
+\\
+\item Prove that $H$ acts as the identity on the hyperplane, $W=\{\bm{v}:\langle\bm{u},\bm{v}\rangle=0\}$
+\\
+\\if $v\in W$ then $u^Tv=0$
+\\hence $Hv=(I-2uu^T)v=v-2u(u^Tv)=v-2u\cdot0=v$
+\\so every vector in W is fixed by H
+\\QED
+\\
+\item Find a basis $\mathcal{B}$ for $\mathbb{R}^n$ such that $[H]_{\mathcal{B}}$ is diagonal.
+\\
+\\pick an orthonormal basis $\{w_1,\cdots,w_{n-1}\}$ of the hyperplane W (dim$(W)=n-1$)
+\\append $u$ so $B=\{w_1,\cdots,w_{n-1},u\}$ is an orthonormal basis of $\mathbb{R}^n$
+\\for each $i\leq n-1$, $Hw_i=w_i$ by part b, and $H_u=-u$
+\\therefore the matrix of H in this basis is diagonal with entries $1,\cdots,1,-1$
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
+
+
+

@@ -1,0 +1,19 @@
+.model NMOS2 NMOS
++Level = 2
++vt0 = 0.301
++gamma = 0.2
++nsub = 3E17
++lambda = 0.2
++tox = 1.2E-09
++vmax = 8E4
++Uo = 270
+
+.model PMOS2 PMOS
++Level = 2
++vt0 = -0.401
++gamma = 0.2
++nsub = 3E17
++lambda = 0.2
++tox = 2.2E-09
++vmax = 8E4
++Uo = 70

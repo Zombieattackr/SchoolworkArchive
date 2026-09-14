@@ -1,0 +1,188 @@
+[
+    {
+        "id": "dcec226.cbbeae",
+        "type": "mqtt in",
+        "z": "41060c49.066e34",
+        "name": "",
+        "topic": "SRIJITA/MFRC",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2fa80ac1.95bb66",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "2bdd3e6a.a00452"
+            ]
+        ]
+    },
+    {
+        "id": "cfadf74e.3a0098",
+        "type": "mqtt in",
+        "z": "41060c49.066e34",
+        "name": "",
+        "topic": "SRIJITA/UID",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2fa80ac1.95bb66",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "48b366fe.7d9148"
+            ]
+        ]
+    },
+    {
+        "id": "2bdd3e6a.a00452",
+        "type": "websocket out",
+        "z": "41060c49.066e34",
+        "name": "",
+        "server": "69e10a9b.339d74",
+        "client": "",
+        "x": 360,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "48b366fe.7d9148",
+        "type": "websocket out",
+        "z": "41060c49.066e34",
+        "name": "",
+        "server": "1b9d4465.41473c",
+        "client": "",
+        "x": 320,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "829ea06f.fa0fc",
+        "type": "http response",
+        "z": "41060c49.066e34",
+        "name": "",
+        "x": 590,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9f93df47.659bd",
+        "type": "http in",
+        "z": "41060c49.066e34",
+        "name": "",
+        "url": "/attendence",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "7ef028c8.7bc268"
+            ]
+        ]
+    },
+    {
+        "id": "7ef028c8.7bc268",
+        "type": "template",
+        "z": "41060c49.066e34",
+        "name": "Simple Web Page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE HTML>\n<html>\n    <head>\n    <title>Simple Live Display</title>\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/landin_template.css\">\n    <script type=\"text/javascript\">\n        const getCellValue = (tr, idx) => tr.children[0].children[idx].innerText || tr.children[0].children[idx].textContent;\n\n        const comparer = (idx, asc) => (a, b) => ((v1, v2) => \n            v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)\n            )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));\n            \n        function sortTable() {\n            const styleSheet = document.createElement('style')\n            styleSheet.innerHTML = `\n                .order-inactive span {\n                    visibility:hidden;\n                }\n                .order-inactive:hover span {\n                    visibility:visible;\n                }\n                .order-active span {\n                    visibility: visible;\n                }`\n            document.head.appendChild(styleSheet)\n            document.querySelectorAll('th.order').forEach(th => {\n                if (th.querySelector('span') == null) {\n                    const span_elem = document.createElement('span')\n                    span_elem.style = \"font-size:0.8rem; margin-left:0.5rem\"\n                    span_elem.innerHTML = \"▼\"\n                    th.appendChild(span_elem)\n                    th.classList.add('order-inactive')\n                }\n                th.addEventListener('click', (() => {\n                    document.querySelectorAll('th.order').forEach(elem => {\n                        elem.classList.remove('order-active')\n                        elem.classList.add('order-inactive')\n                    })\n                    th.classList.remove('order-inactive')\n                    th.classList.add('order-active')\n                    if (!this.asc) {\n                        th.querySelector('span').innerHTML = '▲'\n                    } else {\n                        th.querySelector('span').innerHTML = '▼'\n                    }\n                    const table = th.closest('table');\n                    Array.from(table.querySelectorAll('tbody:nth-child(n+2)'))\n                        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))\n                        .forEach(tr => table.appendChild(tr) );\n                }))\n            });\n        }\n\n        var record = {};\n        var count = 0;\n        function attendence(){\n            HTML = \"<tr><th class='order'>Scanner</th><th class='order'>Name</th><th class='order'>Timestamp</th><th>Assigned UID</th><th id='total_count'>Total: \" + count + \"</th></tr>\";\n            document.getElementById(\"table1\").innerHTML=HTML;\n        }\n        \n        var ws;\n        var wsUri = \"ws:\";\n        var loc = window.location;\n        console.log(loc);\n        if (loc.protocol === \"https:\") { wsUri = \"wss:\"; }\n        // This needs to point to the web socket in the Node-RED flow in this case it's ws/attendence\n        wsUri += \"//\" + loc.host + loc.pathname.replace(\"attendence\",\"ws/timestamp\");\n        function wsTimestampConnect() {\n            console.log(\"connect\",wsUri);\n            ws = new WebSocket(wsUri);\n            ws.onmessage = function(msg) {\n                var data = msg.data;\n                var scanner = data.split(\"#\")[0];\n                var name = data.split(\"#\")[1];\n                var timestamp = data.split(\"#\")[2];\n                if (document.getElementById(name) !== null){\n                    document.getElementById(name).children[0].innerHTML = scanner;\n                    document.getElementById(name).children[1].innerHTML = name;\n                    document.getElementById(name).children[2].innerHTML = timestamp;\n                } else {\n                    document.getElementById(\"table1\").innerHTML += \"<tr id='\" + name + \"'><td>\" + scanner + \"</td><td>\" + name + \"</td><td>\" + timestamp + \"</td><td></td></tr>\";\n                    count += 1;\n                    document.getElementById(\"total_count\").innerHTML = \"Total: \" + count;\n                }\n                sortTable();\n            }\n            ws.onopen = function() {\n                console.log(\"connected\");\n            }\n            ws.onclose = function() {\n                // in case of lost connection tries to reconnect every 3 secs\n                setTimeout(wsTimestampConnect,3000);\n            }\n        }\n        var wsL;\n        var wsLUri = \"ws:\";\n        var locL = window.location;\n        console.log(locL);\n        if (locL.protocol === \"https:\") { wsLUri = \"wss:\"; }\n        // This needs to point to the web socket in the Node-RED flow in this case it's ws/attendence\n        wsLUri += \"//\" + locL.host + locL.pathname.replace(\"attendence\",\"ws/uid\");\n        function wsUIDConnect() {\n            console.log(\"connect\",wsLUri);\n            ws = new WebSocket(wsLUri);\n            ws.onmessage = function(msg) {\n                var data = msg.data;\n                var name = data.split(\"#\")[1];\n                var uid = data.split(\"#\")[2];\n                document.getElementById(name).children[3].innerHTML = uid; // gaurantee to have registered\n            }\n            ws.onopen = function() {\n                console.log(\"connected\");\n            }\n            ws.onclose = function() {\n                // in case of lost connection tries to reconnect every 3 secs\n                setTimeout(wsUIDConnect,3000);\n            }\n        }\n        \n    </script>\n        <style>\n            table {\n              font-family: arial, sans-serif;\n              border-collapse: collapse;\n              width: 100%;\n            }\n            \n            td, th {\n              border: 1px solid #dddddd;\n              text-align: left;\n              padding: 8px;\n            }\n            \n            tr:nth-child(even) {\n              background-color: #dddddd;\n            }\n        </style>\n    </head>\n    <body onload=\"wsTimestampConnect();wsUIDConnect();attendence()\" onunload=\"ws.disconnect();\">\n        <div class=\"landinMain\" style=\"line-height:200px\">\n            <div class=\"header\" style=\"height:200px; vertical-align:middle\">\n                <h2 style=\"font-size:50px; margin:0px; text-align:center\" ><a href=\"/simple\" style=\"color:white\">Smart Attendence</a></h2>\n            </div>\n        </div>\n        <table>\n            <tr><th style=\"text-align: center; border: none;\"><h1>Check-In</h1></th></tr>\n            <tbody>\n                <tr>\n                    <td style=\"vertical-align: top; border: none\">\n                        <table id=\"table1\"></table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n</html>\n",
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "829ea06f.fa0fc"
+            ]
+        ]
+    },
+    {
+        "id": "8fd3ee10.74469",
+        "type": "http response",
+        "z": "41060c49.066e34",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "text/css"
+        },
+        "x": 550,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "84b721c0.dad09",
+        "type": "template",
+        "z": "41060c49.066e34",
+        "name": "Landin CSS",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "css",
+        "syntax": "mustache",
+        "template": "body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.center {\n  margin-left: auto;\n  margin-right: auto;\n}\n\n/* Style the header */\n.header {\n  background-color: #f44336;\n  color: white;\n  text-align: center;\n  width: 100%;\n  height: 14%;\n  font-size: 62px;\n    \n}\n\n.topright {\n  position: absolute;\n  padding-top: 10px;\n  top: 8px;\n  right: 16px;\n  font-size: 18px;\n}\n\n\n\n.accountBtn {\n    display: flex;\n    justify-content: space-around;\n    background-color: #f44336; /* Red */\n    border: #f000000;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin: 4px 2px;\n    cursor: pointer;\n\n}\n\n/* On mouse-over */\n.accountBtn:hover {\n  color: #f1f1f1;\n}\n\n/* Clear floats after the header */\n.header:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n\ninput[type=text] {\n  margin-left:40%;\n  width: 200px;\n  box-sizing: border-box;\n  border: 2px solid #ccc;\n  border-radius: 4px;\n  font-size: 16px;\n  background-color: white;\n  background-position: 10px 10px; \n  background-repeat: no-repeat;\n  padding: 12px 20px 12px 40px;\n  -webkit-transition: width 0.4s ease-in-out;\n  transition: width 0.4s ease-in-out;\n}\n\ninput[type=text]:focus {\n  width: 30%;\n}\n\n\n.searchBtn {\n    display: flex;\n    justify-content: space-around;\n    background-color: #818181;\n    border: #f000000;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin: 4px 2px;\n    cursor: pointer;\n\n}\n\n/* On mouse-over */\n.searchBtn:hover {\n  color: #f1f1f1;\n}\n\n.pageBtn {\n  justify-content: center;\n    background-color: #818181;\n    border: #f000000;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display:none;\n    font-size: 16px;\n    margin: 4px 2px;\n    cursor: pointer;\n    margin-left: auto;\n    margin-right: auto;\n\n}\n\n/* On mouse-over */\n.pageBtn:hover {\n  color: #f1f1f1;\n}\n\n\n\n/* landin Main content */\n.landinMain {\n  font-size: 20px; /* Increased text to enable scrolling */\n  width: 100%;\n\n}\n\n\n\n.titleBtn {\n  background-color: #f44336; /* Red */\n  border: none;\n  color: white;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 20px;\n  margin: 4px 2px;\n  cursor: pointer;\n}\n\n\n.title {\n    color: white;\n    display: flex;\n    justify-content: space-between;\n\n}\n\n/* On mouse-over */\n.title:hover {\n  color: #f1f1f1;\n}\n\n\n#table {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#table td, #table th {\n  border: 2px solid #ddd;\n  padding: 8px;\n\n\n}\n\n#table tr:nth-child(even){background-color: #f2f2f2;}\n\n#table tr:hover {background-color: #ddd;}\n\n#table th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #ffad33;\n  color: white;\n}\na {\n    color: black;\n    text-decoration: none;\n}\n",
+        "output": "str",
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "8fd3ee10.74469"
+            ]
+        ]
+    },
+    {
+        "id": "1b0ff021.bb64d",
+        "type": "http in",
+        "z": "41060c49.066e34",
+        "name": "landin template",
+        "url": "/landin_template.css",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "84b721c0.dad09"
+            ]
+        ]
+    },
+    {
+        "id": "2fa80ac1.95bb66",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "tls": "",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "69e10a9b.339d74",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/ws/timestamp",
+        "wholemsg": "false"
+    },
+    {
+        "id": "1b9d4465.41473c",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/ws/uid",
+        "wholemsg": "false"
+    }
+]

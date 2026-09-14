@@ -1,0 +1,106 @@
+1 OFDM-MIMO Decoding
+Consider an OFDM transmitter sending bit sequence b, which could be 0 or 1 with equal probability.
+The transmitter uses BPSK modulation, i.e., it sends −1 if b is 0, and +1 if b is 1. The symbols
+are loaded into 64 subcarriers with an appropriate guard band and are converted into time samples
+using IFFT, and an appropriate CP is added. Assume that the channel introduces additive Gaussian
+random noise with zero mean, and a standard deviation of σ besides channel response. We also use
+a legacy OFDM preamble (STS and 2.5 copy of LTS) along with MIMO preamble (One LTS each
+per antenna per time-slot for MIMO channel estimation).
+1. Case 1: (1x2 MIMO) Consider a case where the transmitter has one antenna, and the
+receiver has two antennas, with the received symbol as yi,A = hAxi + ni,A and yi,B = hBxi +
+ni,B, where the ni,A and ni,B are i.i.d. random Gaussian variables, with zero mean and
+standard deviation of σ. The index i represents time-domain samples. What is the receiver’s
+decoding rule that gives the best estimate of bi
+, given yi,A, yi,B, hA, hB, and σ? Also, provide
+the analytical expression for SNR.
+Hint: Use maximum ratio combining.
+2. Case 2: (1x4 MIMO) Consider a case where the transmitter has one antenna, and the
+receiver has four antennas with the received symbol as yi,A = hAxi + ni,A, yi,B = hBxi + ni,B,
+yi,C = hCxi + ni,C, yi,D = hDxi + ni,D where ni,A, ni,B, ni,C, ni,D are i.i.d. random Gaussian
+variables, with zero mean and standard deviation of σ. What is the receiver’s decoding rule
+that gives the best estimate of bi
+, given yi,A, yi,B, yi,C, yi,D, hA, hB, hC, hD and σ? Provide the
+analytical expression for SNR and compare it with the previous case 1, which one is better?
+3. Case 3: (2x1 MIMO) Consider a case where transmitter has two antenna and is only
+transmitting one stream like signal, and the receiver has one antenna, with the received
+symbol as yi = hAxi,A + hBxi,B + ni
+, where ni
+is a random Gaussian variable, with zero
+mean and standard deviation of σ. The transmit precoding implements xi,A = ci,Axi and
+xi,B = ci,Bxi
+, where xi
+is a single stream of data (indexed by time sample i), and ci,A, ci,B
+are precoding coefficients. What is the transmitter’s precoding / receiver’s decoding rule that
+gives the best estimate of bi
+, given yi
+, hA, hB, and σ? Provide the analytical expression for
+SNR and compare it with the expressions from Case 1 and Case 2; which one is better?
+We will implement these examples for the OFDM-MIMO system using the given starter code.
+Starter code
+• You are given the starter code ‘lab6_starter_code.zip’ on Piazza. The main script is ‘hw6.m’.
+The default parameter settings in ‘hw6.m’ are as follows.
+1 SNR_list = 0 : 1 : 1 0 ; % SNR i n dB
+2 N_iter = 1 0 0; % number o f Monte−C a rl o i t e r a t i o n s
+3
+4 USE_CHANNEL_ESTIMATES = 0 ;
+5 CFO_FLAG = 0 ; % f l a g t o e n a bl e CFO
+6 DETECTION_OFFSET = 1 0 0; % t o add p ac ke t d e t e c t i o n e r r o r
+7 LTS_CORR_THRESH = . 8 ; % c o r r e l a t i o n t h r e s h ol d f o r LTS d e t e c t i o n
+8 DO_APPLY_CFO_CORRECTION = 0 ; % f l a g t o e n a bl e CFO c o r r e c t i o n
+The remaining parameters are based on OFDM processing as seen in HW4.
+• Running ‘hw6.m’ will plot the simulated BER values for the three MIMO cases. Since we set
+small SNR values, packet detection failure or error could happen. Packet detection failure
+will cause a warning ‘No LTS Correlation Peaks Found!’, and the code will automatically skip
+this Monte-Carlo iteration, so we can ignore it. But packet detection error will cause an error
+warning ‘something wrong’ and stop the simulation. In this case just rerun the simulation.
+• For debugging or testing, you can save some time by setting a single SNR value and a smaller
+number of iterations, and ‘hw6.m’ will generate a plot with single dot for each case as shown
+below:
+1 SNR_list = 1 0; % SNR i n dB
+2 N_iter = 1 0; % number o f Monte−C a rl o i t e r a t i o n s
+• For deliverables, please set them back to default.
+1 SNR_list = 0 : 1 : 1 0 ; % SNR i n dB
+2 N_iter = 1 0 0; % number o f Monte−C a rl o i t e r a t i o n s
+What you need to implement
+1. Replace the P-code function ‘tx_precoding.p’ by your own code ‘tx_precoding.m’, so ‘hw6.m’
+can still run correctly. This function is directly called in ‘hw6.m’ to perform precoding for
+Case 3 (MIMO 2x1).
+2. Replace the P-code function ‘mimo_processing.p’ by your own code ‘mimo_processing.m’,
+so ‘hw6.m’ can still run correctly. This function is called in function ‘MIMO_OFDM_RX.m’
+to perform signal combining for the three cases.
+• Input ‘syms_f_mat_1A’ is a matrix, where each column is for an OFDM symbol.
+• Input ‘h1A’ is a constant ground truth channel value, which is defined in ‘hw6.m’.
+• Output ‘syms_eq_mat_pilots_case1’ has the identical size to ‘syms_f_mat_1A’, which
+captures the MIMO receiver combining for case 1. Similarly, define for cases 2 and 3.
+• Note that we have done precoding for case 3 in the previous step.
+3. Now, in ‘hw6.m’, turn ON the flag for channel estimate as below.
+1 USE_CHANNEL_ESTIMATES = 1 ;
+This will enable MIMO processing to be done at the receiver based on channel estimates
+(already provided to you) rather than assuming the ground truth channel at the receiver.
+Then, in the function ‘MIMO_OFDM_RX.m’, we can see that the inputs of the function
+mimo_processing() change. Modify your ‘mimo_processing.m’ code so ‘hw6.m’ can work
+correctly in this setting.
+Deliverables
+1. Answer the above three questions for the three cases. Submit your answers.
+2. Run ‘hw6.m’ to generate a BER plot for the three cases using the settings below. Are the
+BER values as expected? Explain for the same BER target, which case requires a higher
+SNR? Explain your answer. Submit the plot with your explanation.
+SNR_list = 0:1:10;
+N_iter = 100;
+USE_CHANNEL_ESTIMATES = 0;
+3. Redo the previous part (deliverable 2) with the following setting. Submit
+the BER-SNR plot with an explanation for changes in the plot compared to deliverable 2.
+SNR_list = 0:1:10;
+N_iter = 100;
+USE_CHANNEL_ESTIMATES = 1;
+4. In the code, we did not use the channel estimates (‘rx_H_est_1A’,...) in
+the MRC precoding for Case 3 (2x1 MIMO). How would you modify the code so we can
+use channel estimates (‘rx_H_est_1A’,...) for MRC precoding? More specifically, how to
+obtain the channel estimates (‘rx_H_est_1A’,...), and how to perform precoding with the
+channel estimates (‘rx_H_est_1A’,...)? Explain briefly and submit your answer. (You are
+not required to implement the code for this part)
+5. We do not ask for CFO correction in this assignment, however, you can play with the code if
+you like.
+6. Upload a single PDF with your answers and plot (no need to include code) to Gradescope.
+Also, compress (into a ZIP file) and upload your finished ‘lab6 starter code’ folder to a separate
+Gradescope portal.

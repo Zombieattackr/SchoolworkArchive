@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{bm}
+\graphicspath{{C:\Users\steve\Pictures}}
+\begin{document}
+
+\noindent{{\Large \bf Summer 2025, 4100 Problem Set 4}
+
+\large
+
+\bigskip
+\noindent{Please complete all problems. For any proof questions, please structure your proof similar to those from lecture.
+
+\bigskip
+
+\begin{enumerate}
+
+\item Use an orthogonal projection to find the point on the plane $S=\{{\bm x}\in\mathbb{R}^3: 3x_1-x_2+4x_3=0\}$ that is closest to the point $(-1,4,2)$.
+
+\item Given vectors,
+$\bm{v}_1=\left[
+\begin{array}{ccc}
+1 \\
+0 \\
+1
+\end{array} \right], \,\,
+\bm{v}_2=\left[
+\begin{array}{ccc}
+2\\
+1 \\
+0
+\end{array} \right], \,\,
+\bm{v}_3=\left[
+\begin{array}{ccc}
+0 \\
+1 \\
+-1
+\end{array} \right]$, use Gram-Schmidt to find a corresponsding orthonormal set $\{\bm{q}_1,\bm{q}_2,\bm{q}_3\}$
+and show that $\textrm{Span}\{\bm{v}_1,\bm{v}_2\}= \textrm{Span}\{\bm{q}_1,\bm{q}_2\}$.
+
+\item Consider the Hilbert space $L^2(\mathbb{R},\,w(x))$ where $w(x)=e^{-x^2}$, equipped with the inner product
+$$\langle f,g \rangle=\displaystyle{\int^{\infty}_{-\infty}{f(x)g(x)e^{-x^2}}}$$
+and norm
+$$||f||=\sqrt{\langle f,f \rangle}=\left(\displaystyle{\int^{\infty}_{-\infty}{|f(x)|^2e^{-x^2}}}\right)^{1/2}.$$
+Let $e_n=x^n$ denote the standard basis.
+
+\begin{enumerate}[a.]
+
+\item Using the fact that $\displaystyle{\int^{\infty}_{-\infty}{e^{-x^2}}}=\sqrt{\pi}$, and using either integration by parts or parameter differentiation, show that $\langle e_i,e_j \rangle =\displaystyle{\int^{\infty}_{-\infty}{x^{i+j}e^{-x^2}}}=\begin{cases}\frac{(2n)!\sqrt{\pi}}{2^{2n}n!} &{\rm if}~~ i+j=2n\\ 
+0 &{\rm if}~~ i+j=2n+1
+\end{cases}$
+
+
+\item Use the Graham-Schmidt and the result above to construct an orthonormal set of polynomials from the set $\{1,x,x^2\}$ and use it to find $g\in\mathbb{P}_2$ such that $f(1)=\displaystyle{\int^{\infty}_{-\infty}{f(x)g(x)e^{-x^2}}}$ for all $f\in\mathbb{P}_2$.
+
+\end{enumerate}
+
+\item Let $\{\bm{e}_1,\cdots\bm{e}_m\}$ be an orthonormal subset of $\mathbb{R}^n$. Prove that 
+$$||\bm{v}||^2=\langle \bm{v},\bm{e}_1\rangle ^2+\cdots +\langle \bm{v},\bm{e}_m\rangle ^2$$
+if and only if $\bm{v}\in{\rm Span}(\bm{e}_1,\cdots\bm{e}_m)$
+
+
+\item Let $Q\in\mathbb{R}^{n\times n}$ have orthonormal columns. Prove that,
+\begin{enumerate}[a.]
+\item The rows of $Q$ must be orthonormal as well
+\item $||Q{\bm x}||=||{\bm x}||$ for any ${\bm x}\in\mathbb{R}^{n}$
+\end{enumerate}
+
+\item  Let let $\bm{u}\in\mathbb{R}^n$ be such that $||\bm{u}||=1$ and define the householder matrix, $H=I-2\bm{u}\bm{u}^T$. 
+
+\begin{enumerate}[a.]
+\item Prove that $H$ is symmetric and that $H=H^{-1}$.
+\item Prove that $H$ acts as the identity on the hyperplane, $W=\{\bm{v}:\langle\bm{u},\bm{v}\rangle=0\}$
+\item Find a basis $\mathcal{B}$ for $\mathbb{R}^n$ such that $[H]_{\mathcal{B}}$ is diagonal.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
+
+
+
